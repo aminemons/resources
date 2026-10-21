@@ -226,3 +226,12 @@ mjx-container[display="true"]{display:block!important;max-width:100%;overflow-x:
    max-width:100%;
  }
 }
+
+.capstone{max-width:790px;margin:54px 0 45px;padding:26px 0;border-top:2px solid #376b4c;border-bottom:1px solid #d4e0d6}
+.capstone h2{font-weight:500;font-size:25px;letter-spacing:-.02em;line-height:1.34;margin:9px 0 11px}
+.capstone>p{font-size:17px;line-height:1.76;color:#374d3c;max-width:740px}
+.capstone h3{font-weight:500;font-size:16px;margin:25px 0 9px;color:#2b563b}
+.capstone ol,.capstone ul{font-size:16px;color:#3b5040;line-height:1.77;padding-left:25px}
+.capstone li{padding:4px 0 5px}
+.capstone .capstone-note{font-size:13px;line-height:1.66;color:#5b7060;margin-top:24px}
+@media(max-width:600px){.capstone h2{font-size:22px}.capstone ol,.capstone ul{font-size:15px}}
