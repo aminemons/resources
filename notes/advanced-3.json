@@ -151,6 +151,26 @@
         "tex": "\\epsilon_{\\mathrm{mesh}}=\\left|\\frac{Q_{\\mathrm{fine}}-Q_{\\mathrm{coarse}}}{Q_{\\mathrm{fine}}}\\right|",
         "caption": "Relative mesh sensitivity in an output Q; not a bound on physical-model error."
       }
+    ],
+    "reading": [
+      {
+        "label": "Open technical chapter",
+        "title": "Semiconductor Device Modeling and Simulation for Electronic Circuit Design",
+        "url": "https://www.intechopen.com/chapters/71973",
+        "task": "Identify physics-based analytical versus fitted compact models, and the validation needed for each."
+      },
+      {
+        "label": "Software documentation",
+        "title": "Silvaco TCAD resources",
+        "url": "https://silvaco.com/resources/technical-library/tcad-training-materials/",
+        "task": "Find the example corresponding to your installed software version. Separate process and device simulators."
+      },
+      {
+        "label": "University practice",
+        "title": "MIT 6.012: PN junction electrostatics and device equations",
+        "url": "https://ocw.mit.edu/courses/6-012-microelectronic-devices-and-circuits-fall-2009/pages/assignments/",
+        "task": "Derive depletion width with a pencil before tuning a TCAD solver."
+      }
     ]
   }
 ]
