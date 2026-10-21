@@ -1,34 +1,58 @@
-# Micro & Nano — Learning Library
+# Learning Library · Micro & Nano
 
-A structured, independent library for microelectronics, nanoelectronics and adjacent engineering fields.
+**Live site:** https://micro-nano-resources.vercel.app/
 
-**Website:** deployed from the repository root on Vercel (index.html + data/resources.json).
+An independent, student-oriented learning portal for micro/nanoelectronics and **Sensors & Smart Systems**. It is not the official ENSNN curriculum or a replacement for academic instruction.
 
-## What's in the library
+## How to study
 
-248 initial curated entries (21 October 2026) spanning 14 disciplines: foundations, semiconductor physics, analog and digital ICs, FPGA/computer architecture, silicon layout and PDKs, RF, photonics, MEMS, materials/fabrication, quantum, embedded systems, scientific computing, and research.
+1. Choose a specialization: **Micro & Nanoelectronics** or **Sensors & Smart Systems**.
+2. Open one of the 14 guided paths. Each contains prerequisites or concepts, specific resources, and practical assignments that result in a real artifact.
+3. Mark steps complete only after doing the exercise. Progress is local to your current browser.
+4. Use the wider catalogue to find supplementary tutorials, tools, books, technical documentation, lab guides and research sources.
 
-Entries include:
-- Books by exact title and author (bibliographic searches, no unauthorized hosted PDFs).
-- Full courses, tutorials, references, documentation and research databases.
-- Open-source and proprietary simulators/design tools with clear access labels.
-- Six guided paths from theory to a practical project.
+The starting collection includes **428 distinct entries, 14 paths and 68 study stages** (catalogue state of 21 October 2026). The catalogue is expected to grow; these counts are not guaranteed to remain fixed.
 
-## Data
+### Sensors & Smart Systems
 
-Edit `data/resources.json`. Every entry has:
-`id`, `domain`, `kind`, `title`, `provider`, `access`, `level`, `url`, `description`.
+The learning paths cover an end-to-end sensing workflow:
+- sensor specifications and transduction,
+- micro/nanosensor device modeling,
+- **Silvaco ATLAS/ATHENA/Victory, DeckBuild and TCAD** plus freely available alternatives,
+- fabrication, cleanroom processes and thin-film synthesis,
+- MEMS and multiphysics models,
+- instrumentation, calibration, measurement uncertainty,
+- embedded firmware, IoT protocols, wireless networks and TinyML,
+- biosensors and lab-on-chip research.
 
-Keep entries accurate and useful. Prefer official vendor, institution or project URLs. Free/open vs paid/institutional access must not be misrepresented. Avoid duplicate titles and stale product pages. Do not add links to pirated textbooks, paywall circumvention or redistributed copyrighted books.
+### Micro & Nanoelectronics
 
-**Important:** A curated URL is not proof of current availability. `data/link-health.json` is an automated health audit, which can be blocked by rate limits or bot protection. A reachable homepage does not verify a specific course enrollment or a license.
+Separate paths cover analog and mixed-signal IC design, digital ASIC RTL-to-GDS, FPGA, semiconductor TCAD, RF, photonic sensors and research reporting. Shared foundations bridge both specializations.
 
-## Operations
+**Naming note:** The site uses the student-provided label “Sensors & Smart Systems.” The official ENSNN website was access-protected during curation. Public 2025–2026 program documentation also uses “Micro-NanoSensors and Instrumentation for Nanotechnology.” Do not treat the website's navigation label as verified formal degree nomenclature.
 
-The site is static: no sign-in, tracking or backend required. Bookmarks stay in the user's browser. Filters and search run locally against the downloaded JSON. Export CSV is available.
+## Catalogue data
 
-GitHub Actions checks non-book links once per week and writes a source audit. This is *not* an autonomous human literature review; newly found resources need curation. Scheduled workflows can be delayed/disabled by GitHub, so check Actions.
+- `data/resources.json`: Resource records: name, type, subject, provider, student tracks, acquisition/licensing, difficulty, learning/practice/reference intent, description and source URL.
+- `data/paths.json`: Structured pathways, each with ordered stages, learning outcomes, exercises and resource IDs.
+- `data/link-health.json`: Automatic HTTP availability audit, **not** a guarantee of pedagogical quality or complete free access.
+
+The interface uses Outfit at accessible body sizes, restrained typography, a left sidebar, specialization-aware browsing, a limited number of useful filters and detailed resource views. Filter state is local; bookmarks and stage completion use browser localStorage, without cloud sync.
+
+### Integrity rules
+
+Only list credible, useful resources. Prefer the source author's official site, directly inspect repository names, and label full courses separately from mere programme/syllabus descriptions. Never claim that a community repo or academic software license has been academically validated by automatic URL checks.
+
+Textbooks are provided as **titles and bibliography search links**, including commercial books. The site does not host copyrighted PDFs or link to unauthorized downloads. Students should use publishers, library services and authorized lending where possible.
+
+Commercial packages such as Silvaco TCAD, Cadence, Ansys and COMSOL are not assumed to be licensed by ENSNN. Practical examples are conceptual unless verified in a real licensed environment.
+
+## Automated maintenance
+
+`.github/workflows/resource-audit.yml` runs a weekly URL audit and rechecks when catalogue or audit scripts change; it saves results to `data/link-health.json`. HTTP 403 or a timeout can indicate an automated-access restriction, **not a broken resource**. Do not automatically remove a resource or change its access claims solely on an HTTP response.
+
+Vercel builds production from the GitHub main branch. Review `https://github.com/aminemons/resources/actions` for audit history and `https://vercel.com/aminemons-projects/micro-nano-resources` for deployments.
 
 ## Contributing
 
-PRs are welcome with title, provider, official resource URL, whether it is free, a clear one-sentence learning purpose, and the relevant discipline. No fabricated claims.
+Propose resources with the exact title, producer, learning purpose, suitable specialization, type, relevant difficulty, access conditions and the best official URL. Avoid generic SEO collections, redundant homepages, inaccurate paid/free flags, and non-working GitHub links.
