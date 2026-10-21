@@ -112,6 +112,10 @@
         "title": "COMSOL MEMS Module (licensed)",
         "url": "https://www.comsol.com/mems-module"
       }
+    ],
+    "prerequisites": [
+      "03-capacitor",
+      "17-mems"
     ]
   }
 ]
