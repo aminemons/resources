@@ -1,0 +1,262 @@
+[
+  {
+    "id": "23-spice-lab",
+    "unit": "Engineering laboratories",
+    "title": "Lab: simulate an RC filter in ngspice",
+    "summary": "Write a real SPICE netlist, inspect a transient and compare the output to the equation.",
+    "level": "Hands-on",
+    "diagram": "rc",
+    "objectives": [
+      "Create a complete SPICE netlist",
+      "Run transient simulation",
+      "Compare simulated voltage with an analytical prediction"
+    ],
+    "sections": [
+      {
+        "title": "Set up a small reproducible problem",
+        "html": "<p>Use a 5 V step source, 10 kΩ resistor and 10 µF capacitor. The capacitor begins uncharged. The theoretical time constant is \\(\\tau=0.1\\ \\mathrm{s}\\). We will model ideal components first; afterward, investigate component tolerances. Install ngspice from its official release documentation, and keep the netlist and simulator version in your laboratory folder.</p>"
+      },
+      {
+        "title": "Create the SPICE deck",
+        "html": "<p>Save the following as <code>rc.cir</code>. SPICE is a circuit-simulation language: each line describes an element, its nodes and its value. The resistor connects nodes <code>in</code> and <code>out</code>, while the capacitor connects <code>out</code> to node <code>0</code> (ground).</p><pre><code>* RC step response — ideal educational circuit\nV1 in 0 PULSE(0 5 0 1n 1n 1 2)\nR1 in out 10k\nC1 out 0 10u IC=0\n.tran 1m 0.5 0 uic\n.control\nrun\nplot v(out)\n.endc\n.end</code></pre><p>Run <code>ngspice rc.cir</code> in an environment that supports graphical plotting, or use a supported batch-export method. The pulse stays high for one second, longer than the 0.5 s simulated window, so this is effectively a step for this experiment.</p>"
+      },
+      {
+        "title": "Interpret instead of simply admiring the graph",
+        "html": "<p>The expected voltage is \\(v_C(t)=5(1-e^{-t/0.1})\\). Read output near 0.10 s, 0.20 s and 0.50 s. A correct transient should approach 3.16 V, 4.32 V and 4.97 V respectively. Explain small differences due to time steps or numerical conditions. Change the capacitor to 20 µF, rerun, and explain why the time constant doubles. Do not change multiple parameters simultaneously if you want a clear comparison.</p>"
+      }
+    ],
+    "example": {
+      "title": "Compare the simulation with theory",
+      "problem": "Compute the capacitor voltage at 0.2 s for R=10 kΩ, C=10 µF and 5 V step input.",
+      "steps": [
+        "The time constant is \\(RC=10000\\times10^{-5}=0.1\\ \\mathrm{s}\\).",
+        "Set \\(t=0.2\\ \\mathrm{s}=2\\tau\\).",
+        "\\(v_C(0.2)=5(1-e^{-2})\\approx4.3233\\ \\mathrm{V}\\).",
+        "Compare your simulator reading with this value and record the observed difference."
+      ]
+    },
+    "checks": [
+      {
+        "prompt": "After doubling capacitance to 20 µF, what is the new time constant?",
+        "answer": "\\(\\tau=10000\\times20\\times10^{-6}=0.2\\ \\mathrm{s}\\)."
+      },
+      {
+        "prompt": "At 0.5 s with the original components, should output be exactly 5 V?",
+        "answer": "Not mathematically; the model gives \\(5(1-e^{-5})\\approx4.9663\\ \\mathrm{V}\\)."
+      }
+    ],
+    "sources": [
+      {
+        "title": "ngspice user documentation",
+        "url": "https://ngspice.sourceforge.io/docs.html"
+      }
+    ]
+  },
+  {
+    "id": "24-python-sensor",
+    "unit": "Engineering laboratories",
+    "title": "Lab: calibrate a sensor with Python",
+    "summary": "Fit real or synthetic calibration observations and report what the regression actually proves.",
+    "level": "Hands-on",
+    "diagram": "calibration",
+    "objectives": [
+      "Fit a slope and offset in physical units",
+      "Compute a residual statistic",
+      "Avoid claiming synthetic calibration is a real measurement"
+    ],
+    "sections": [
+      {
+        "title": "Prepare the measurement table",
+        "html": "<p>We will use a <strong>synthetic, exactly linear</strong> voltage-versus-pressure dataset: 0, 25, 50, 75 and 100 kPa correspond to 0.5, 1.0, 1.5, 2.0 and 2.5 V. Real measurements require repeats, calibration references, traceability and uncertainty analysis. The synthetic example is just for learning the software and units.</p>"
+      },
+      {
+        "title": "Run the complete script",
+        "html": "<p>Save as <code>calibrate.py</code>. Install NumPy and Matplotlib in a reproducible Python environment. The fitted model is \\(V=S p+b\\), with \\(S\\) in V/kPa.</p><pre><code>import numpy as np\nimport matplotlib.pyplot as plt\n\npressure_kpa = np.array([0, 25, 50, 75, 100.])\nvoltage_v = np.array([0.5, 1.0, 1.5, 2.0, 2.5])\n\nsensitivity, offset = np.polyfit(pressure_kpa, voltage_v, 1)\npredicted = sensitivity * pressure_kpa + offset\nrmse_v = np.sqrt(np.mean((voltage_v - predicted)**2))\nunknown_voltage_v = 1.7\nestimated_pressure_kpa = (unknown_voltage_v - offset) / sensitivity\n\nprint(\"Sensitivity (V/kPa):\", sensitivity)\nprint(\"Offset (V):\", offset)\nprint(\"RMSE (V):\", rmse_v)\nprint(\"Estimated pressure (kPa):\", estimated_pressure_kpa)\n\nplt.scatter(pressure_kpa, voltage_v, label=\"Synthetic observations\")\nplt.plot(pressure_kpa, predicted, label=\"Linear fit\")\nplt.xlabel(\"Pressure (kPa)\")\nplt.ylabel(\"Output (V)\")\nplt.legend()\nplt.tight_layout()\nplt.show()</code></pre>"
+      },
+      {
+        "title": "Interpret the data honestly",
+        "html": "<p>Expect a slope near 0.020 V/kPa, an offset near 0.50 V and pressure near 60 kPa at 1.7 V. Since the synthetic points lie perfectly on a line, their fitted residual error is close to zero—this does <strong>not</strong> establish that the sensor has zero measurement uncertainty. With measured data, investigate residual patterns, temperature dependence, hysteresis, repeatability and whether the input falls within the calibrated range.</p>"
+      }
+    ],
+    "example": {
+      "title": "Calculate a measurement from calibration",
+      "problem": "The model is V=0.020 p+0.50 with V in volts and p in kPa. Find p for V=1.30 V.",
+      "steps": [
+        "Subtract the offset: \\(V-b=1.30-0.50=0.80\\ \\mathrm{V}\\).",
+        "Divide by slope: \\(p=0.80/0.020=40\\ \\mathrm{kPa}\\).",
+        "The estimate is interpolation and does not by itself quantify sensor error."
+      ]
+    },
+    "checks": [
+      {
+        "prompt": "Why is a near-zero RMSE from perfectly synthetic data not evidence of sensor precision?",
+        "answer": "There is no realistic measurement noise, drift or calibration uncertainty in the synthetic dataset."
+      },
+      {
+        "prompt": "What pressure corresponds to 2.30 V using the same model?",
+        "answer": "\\(p=(2.30-0.50)/0.020=90\\ \\mathrm{kPa}\\)."
+      }
+    ],
+    "sources": [
+      {
+        "title": "NumPy polynomial fitting",
+        "url": "https://numpy.org/doc/stable/reference/generated/numpy.polyfit.html"
+      },
+      {
+        "title": "NIST Engineering Statistics Handbook",
+        "url": "https://www.itl.nist.gov/div898/handbook/"
+      }
+    ]
+  },
+  {
+    "id": "25-verilog-lab",
+    "unit": "Engineering laboratories",
+    "title": "Lab: verify a four-bit hardware counter",
+    "summary": "A complete minimal module and self-checking testbench that you can compile locally.",
+    "level": "Hands-on",
+    "diagram": "rtl",
+    "objectives": [
+      "Describe a synchronous-reset counter",
+      "Compile a testbench",
+      "Distinguish behavioral verification from timing closure"
+    ],
+    "sections": [
+      {
+        "title": "Write the synthesizable design",
+        "html": "<p>Save this module as <code>counter4.v</code>. A nonblocking assignment models state updates at the rising edge. The reset is synchronous because it is tested only within <code>posedge clk</code>.</p><pre><code>module counter4(input wire clk, input wire rst,\n                output reg [3:0] count);\n  always @(posedge clk) begin\n    if (rst)\n      count &lt;= 4'b0000;\n    else\n      count &lt;= count + 4'b0001;\n  end\nendmodule</code></pre>"
+      },
+      {
+        "title": "Write a self-checking testbench",
+        "html": "<p>Save as <code>tb.v</code>. This creates a clock with 10 ns period (under the defined timescale), asserts reset for one rising edge, then checks the next count. The extra one-nanosecond delay lets nonblocking assignments update before the assertion.</p><pre><code>&#96;timescale 1ns/1ps\nmodule tb;\n  reg clk = 0;\n  reg rst = 1;\n  wire [3:0] count;\n\n  counter4 dut(.clk(clk), .rst(rst), .count(count));\n  always #5 clk = ~clk;\n\n  initial begin\n    @(posedge clk);\n    #1;\n    if (count !== 4'd0) $fatal(1, \"Reset failed\");\n    rst = 0;\n    @(posedge clk);\n    #1;\n    if (count !== 4'd1) $fatal(1, \"Increment failed\");\n    $display(\"PASS: reset and first increment\");\n    $finish;\n  end\nendmodule</code></pre>"
+      },
+      {
+        "title": "Compile, test, then expand",
+        "html": "<p>Run <code>iverilog -g2012 -o counter.vvp tb.v counter4.v</code>, then <code>vvp counter.vvp</code>. If the test passes, add checks for the wraparound 15→0, reset during operation and multiple increments. Be careful about stimulus at the same clock edge as the DUT; testbench races can create misleading failures. A behavioral simulation validates only cases you actually tested, not hardware timing or power.</p>"
+      }
+    ],
+    "example": {
+      "title": "What happens at wraparound?",
+      "problem": "The counter is 4-bit unsigned. It currently contains 14. What are its next three values after successive rising edges with reset low?",
+      "steps": [
+        "First update: \\(14+1=15\\).",
+        "Second update: \\(15+1=16\\), truncated modulo 16 → 0.",
+        "Third update: \\(0+1=1\\). Sequence: 15, 0, 1."
+      ]
+    },
+    "checks": [
+      {
+        "prompt": "Why should a testbench test wraparound and reset, not only the first increment?",
+        "answer": "These are boundary and state-transition cases where bugs often hide; one increment covers too little behavior."
+      },
+      {
+        "prompt": "Does passing Icarus Verilog simulation prove an FPGA implementation meets setup time?",
+        "answer": "No. Functional simulation does not substitute for synthesis, constraint validation or static timing analysis."
+      }
+    ],
+    "sources": [
+      {
+        "title": "Icarus Verilog project",
+        "url": "https://steveicarus.github.io/iverilog/"
+      },
+      {
+        "title": "HDLBits sequential logic tutorials",
+        "url": "https://hdlbits.01xz.net/wiki/Alwaysblock2"
+      }
+    ]
+  },
+  {
+    "id": "26-microheater-lab",
+    "unit": "Engineering laboratories",
+    "title": "Lab: model a microheater temperature step",
+    "summary": "A small runnable Python model of heater thermal dynamics with explicit assumptions.",
+    "level": "Hands-on",
+    "diagram": "heater",
+    "objectives": [
+      "Derive a one-node thermal balance",
+      "Simulate thermal step response",
+      "Explain model limits before optimization"
+    ],
+    "sections": [
+      {
+        "title": "Start with the governing physics",
+        "html": "<p>We model the heater as a uniform lumped thermal mass with thermal resistance \\(R_\\mathrm{th}\\) to fixed ambient and heat capacity \\(C_\\mathrm{th}\\). The governing ODE is \\(C_\\mathrm{th}\\mathrm{d}\\Delta T/\\mathrm{d}t=P-\\Delta T/R_\\mathrm{th}\\). Here \\(P\\) is assumed constant, and the material parameters are treated as temperature independent. These are significant simplifications.</p>"
+      },
+      {
+        "title": "Run an exact first-order response",
+        "html": "<p>Save as <code>heater.py</code>. The exponential is the analytic solution of the stated ODE for an initial rise of zero; NumPy evaluates it at many time points. There is no need to pretend this script is a COMSOL or Silvaco simulation.</p><pre><code>import numpy as np\nimport matplotlib.pyplot as plt\n\npower_w = 0.010\nrth_k_per_w = 2500.0\ncth_j_per_k = 0.002\n\ntau_s = rth_k_per_w * cth_j_per_k\nsteady_rise_k = power_w * rth_k_per_w\n\ntime_s = np.linspace(0, 25, 251)\nrise_k = steady_rise_k * (1 - np.exp(-time_s / tau_s))\n\nprint(\"Thermal time constant (s):\", tau_s)\nprint(\"Steady temperature rise (K):\", steady_rise_k)\n\nplt.plot(time_s, rise_k)\nplt.xlabel(\"Time (s)\")\nplt.ylabel(\"Temperature rise above ambient (K)\")\nplt.grid(True)\nplt.tight_layout()\nplt.show()</code></pre>"
+      },
+      {
+        "title": "What the model leaves out",
+        "html": "<p>A microheater generally has nonuniform temperature, temperature-dependent electrical resistance, contact heat sinking and coupled conduction/radiation/convection. An actual COMSOL or other multiphysics model must specify geometry, boundary conditions, material properties and mesh. If an optimizer reduces energy usage in the lumped model, that does not prove the physical device meets temperature-uniformity constraints.</p>"
+      }
+    ],
+    "example": {
+      "title": "Time to reach ninety percent",
+      "problem": "In the model Rth=2500 K/W and Cth=0.002 J/K, compute how long reaching 90% of steady temperature rise takes.",
+      "steps": [
+        "Time constant \\(\\tau=2500\\times0.002=5\\ \\mathrm{s}\\).",
+        "At 90%, \\(0.9=1-e^{-t/\\tau}\\), so \\(e^{-t/\\tau}=0.1\\).",
+        "\\(t=\\tau\\ln10=5\\times2.302585=11.51\\ \\mathrm{s}\\)."
+      ]
+    },
+    "checks": [
+      {
+        "prompt": "Is 25 K of modeled rise the operating temperature in degrees Celsius?",
+        "answer": "No. It is the rise above the assumed ambient temperature. For 25 °C ambient, steady temperature is approximately 50 °C within the model."
+      },
+      {
+        "prompt": "When Rth doubles at constant power and heat capacity, what changes?",
+        "answer": "Steady rise doubles and the time constant \\(\\tau=R_\\mathrm{th}C_\\mathrm{th}\\) doubles."
+      }
+    ],
+    "sources": [
+      {
+        "title": "MIT MEMS thermal engineering lectures",
+        "url": "https://ocw.mit.edu/courses/6-777j-design-and-fabrication-of-microelectromechanical-devices-spring-2007/pages/lecture-notes/"
+      },
+      {
+        "title": "NumPy exponential function",
+        "url": "https://numpy.org/doc/stable/reference/generated/numpy.exp.html"
+      }
+    ]
+  },
+  {
+    "id": "27-xrd",
+    "unit": "Engineering laboratories",
+    "title": "Sensors and smart systems",
+    "summary": "XRD and Bragg’s law for sensor materials",
+    "level": "Hands-on",
+    "diagram": "Understand what an X-ray diffraction peak says about lattice spacing—and what it does not.",
+    "objectives": "Intermediate",
+    "sections": "bands",
+    "example": [
+      "Distinguish θ from 2θ",
+      "Calculate a d spacing from Bragg’s law",
+      "Avoid overclaiming phase purity from one peak"
+    ],
+    "checks": [
+      {
+        "title": "What a powder diffractogram measures",
+        "html": "<p>Crystalline planes scatter X-rays coherently. Under the usual diffraction geometry and conditions, constructive interference is described by Bragg's law \\(n\\lambda=2d\\sin\\theta\\), where \\(d\\) is spacing between planes, \\(\\lambda\\) is wavelength, and \\(\\theta\\) is the Bragg angle. Instruments commonly label their horizontal axis \\(2\\theta\\)—not \\(\\theta\\). Confusing the two creates large errors.</p>"
+      },
+      {
+        "title": "Peak locations, intensities and widths",
+        "html": "<p>Peak positions help identify periodic spacings and crystalline phases. Peak intensities depend on structure factors, preferred orientation and instrument/sample geometry. Peak width can reflect crystallite size, microstrain and instrumental broadening. A Scherrer estimate needs a suitable peak-width correction, shape factor and assumptions; one number alone does not establish particle size or phase purity.</p>"
+      },
+      {
+        "title": "From an oxide layer to sensing behavior",
+        "html": "<p>An oxide sensing film may change conductivity when analytes interact with its surface. XRD can help investigate bulk crystal phases, but does not directly measure electrical selectivity, surface adsorption chemistry or gas detection limits. Combine XRD with suitable surface characterization, electrical response measurements, repeat tests and device specifications.</p>"
+      }
+    ],
+    "sources": {
+      "title": "Convert a diffraction peak to d spacing",
+      "problem": "A first-order peak using Cu Kα radiation with λ=0.15406 nm occurs at 2θ=30°. Estimate d.",
+      "steps": [
+        "The Bragg angle is \\(\\theta=30^\\circ/2=15^\\circ\\), not 30°.",
+        "For \\(n=1\\), \\(d=\\lambda/(2\\sin\\theta)\\).",
+        "\\(d=0.15406/(2\\sin15^\\circ)\\approx0.2976\\ \\mathrm{nm}\\).",
+        "Actual phase assignment requires comparing many peaks, instrument calibration and likely compositions."
+      ]
+    }
+  }
+]
