@@ -112,6 +112,11 @@
         "title": "MIT 6.012 — Advanced problem sets",
         "url": "https://ocw.mit.edu/courses/6-012-microelectronic-devices-and-circuits-fall-2009/pages/assignments/"
       }
+    ],
+    "prerequisites": [
+      "08-mos-capacitor",
+      "09-mosfet",
+      "28-carrier-transport"
     ]
   }
 ]
