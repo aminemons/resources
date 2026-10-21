@@ -147,6 +147,26 @@
         "tex": "v_{n,\\mathrm{tot}}=\\sqrt{v_{n,1}^2+v_{n,2}^2+\\cdots}",
         "caption": "Root-sum-square only for uncorrelated sources referred to the same node."
       }
+    ],
+    "reading": [
+      {
+        "label": "Practical engineering explanation",
+        "title": "TI Precision Labs — precision analog electronics",
+        "url": "https://www.ti.com/video/series/precision-labs.html",
+        "task": "Trace sources of noise to the same circuit node and compare amplifier headroom with ADC full-scale."
+      },
+      {
+        "label": "Reference textbook",
+        "title": "Sedra & Smith — Microelectronic Circuits",
+        "url": "https://books.google.com/books?q=Sedra+Smith+Microelectronic+Circuits",
+        "task": "Review small-signal amplifiers, bandwidth and noise; reproduce the ENBW integral."
+      },
+      {
+        "label": "Design research",
+        "title": "Systematic circuit design using gm/ID",
+        "url": "https://ietresearch.onlinelibrary.wiley.com/doi/10.1049/iet-cds.2019.0209",
+        "task": "Compare a simple long-channel gm/ID estimate with curve-extracted modern CMOS design."
+      }
     ]
   }
 ]
