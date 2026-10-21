@@ -383,7 +383,8 @@
           "concept": "Diffraction phases and surface chemistry.",
           "deliverable": "Index peaks or tabulate literature binding energies.",
           "resources": [
-            "K004"
+            "K004",
+            "R138"
           ],
           "order": 3
         },
@@ -392,6 +393,7 @@
           "concept": "Surface morphology and dimensional measurements.",
           "deliverable": "Annotated image analysis with scale and roughness.",
           "resources": [
+            "X008",
             "K006"
           ],
           "order": 4
