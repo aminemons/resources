@@ -16,6 +16,15 @@ new vm.Script(script,{filename:"notes.js"});
 for(const l of lessons){
  if(l.id.startsWith("28-")||l.id.startsWith("29-")||l.id.startsWith("30-")||l.id.startsWith("31-")||l.id.startsWith("32-")||l.id.startsWith("33-")){
    assert(l.sections.length>=7&&l.checks.length>=6&&l.example.steps.length>=5,"Advanced study material too short: "+l.id);
+   assert(l.equations?.length>=4,"Advanced chapter missing TeX display derivations: "+l.id);
+   assert(l.equations.every(e=>Number.isInteger(e.after)&&e.after>=0&&e.after<l.sections.length&&e.tex.length>9&&e.caption.length>20),"Equation placement, syntax source or explanation missing: "+l.id);
+   assert(l.reading?.length>=2,"Advanced chapter missing researched bibliography: "+l.id);
+   assert(l.reading.every(r=>r.url.startsWith("https://")&&r.title&&r.task),"Incomplete guided reading: "+l.id);
+   assert(l.capstone?.deliverables?.length>=4&&l.capstone?.acceptance?.length>=4,"Engineering capstone acceptance criteria missing: "+l.id);
+   for(const fig of (l.licensedFigures||[])){
+     assert(fig.src.startsWith("https://")&&fig.creator&&fig.source.startsWith("https://")&&fig.licenseURL.startsWith("https://"),"Missing figure attribution: "+l.id);
+   }
+
    assert(l.checks.every(c=>c.hint&&c.difficulty),"Advanced practice must provide graded difficulty and hints: "+l.id);
  }
 
