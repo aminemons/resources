@@ -3,7 +3,12 @@
     "title": "Micro & Nanoelectronics Resource Library",
     "curated": "2026-10-21",
     "explanation": "Official training, documentation, tools, simulators, references and textbook bibliographic records. Not every link has been live checked; book links are bibliographic searches, not downloadable copies.",
-    "access_note": "Paid textbooks: use the publisher, university/library catalogue, interlibrary loan, or authorized second-hand/lending options."
+    "access_note": "Paid textbooks: use the publisher, university/library catalogue, interlibrary loan, or authorized second-hand/lending options.",
+    "educational_tracks": [
+      "Micro & Nanoelectronics",
+      "Sensors & Smart Systems"
+    ],
+    "formal_title_note": "The two labels are educational navigation groupings. The school official site was not retrievable due to bot challenge; check exact degree titles with ENSNN."
   },
   "resources": [
     {
@@ -17,7 +22,12 @@
       "url": "https://ocw.mit.edu/courses/6-002-circuits-and-electronics-spring-2007/",
       "description": "Circuit laws, RC/RL dynamics, MOS basics and amplifier fundamentals with problems.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Learn"
     },
     {
       "id": "R002",
@@ -30,7 +40,12 @@
       "url": "https://ocw.mit.edu/courses/6-004-computation-structures-spring-2009/",
       "description": "From gates and finite-state machines to building a simple RISC computer.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Learn"
     },
     {
       "id": "R003",
@@ -43,7 +58,12 @@
       "url": "https://ocw.mit.edu/courses/6-012-microelectronic-devices-and-circuits-fall-2009/",
       "description": "Semiconductor device physics connected to digital and analog circuit models.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Learn"
     },
     {
       "id": "R004",
@@ -56,7 +76,12 @@
       "url": "https://ocw.mit.edu/courses/6-013-electromagnetics-and-applications-spring-2009/",
       "description": "Fields, transmission lines, waves and practical electromagnetics.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Learn"
     },
     {
       "id": "R005",
@@ -69,7 +94,12 @@
       "url": "https://ocw.mit.edu/courses/6-003-signals-and-systems-fall-2011/",
       "description": "Convolution, Fourier/Laplace transforms, LTI and frequency response.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Learn"
     },
     {
       "id": "R006",
@@ -82,7 +112,12 @@
       "url": "https://ocw.mit.edu/courses/6-041sc-probabilistic-systems-analysis-and-applied-probability-fall-2013/",
       "description": "Probability foundations used in noise, variability and statistical measurements.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Learn"
     },
     {
       "id": "R007",
@@ -95,7 +130,12 @@
       "url": "https://www.khanacademy.org/science/electrical-engineering",
       "description": "Gentle animated introduction to electrical concepts and devices.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Learn"
     },
     {
       "id": "R008",
@@ -108,7 +148,12 @@
       "url": "https://www.allaboutcircuits.com/textbook/",
       "description": "Open instructional chapters from DC circuits to semiconductors and digital logic.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "R009",
@@ -121,7 +166,12 @@
       "url": "https://nptel.ac.in/",
       "description": "Search VLSI, solid-state devices, analog IC, microfabrication and signal processing.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Learn"
     },
     {
       "id": "R010",
@@ -134,7 +184,12 @@
       "url": "https://ocw.mit.edu/",
       "description": "Search full syllabi, assignments and lecture notes in EE and materials.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Learn"
     },
     {
       "id": "R011",
@@ -147,7 +202,12 @@
       "url": "https://www.electronics-tutorials.ws/",
       "description": "Circuit examples and introductory explanations of analog and digital electronics.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "R012",
@@ -160,7 +220,12 @@
       "url": "https://falstad.com/circuit/",
       "description": "Interactive browser circuit simulator for exploring behavior visually.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R013",
@@ -173,7 +238,12 @@
       "url": "https://github.com/pfalstad/circuitjs1",
       "description": "Source for the Falstad circuit simulator; useful for classroom experiments.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R014",
@@ -186,7 +256,12 @@
       "url": "https://ocw.mit.edu/courses/6-720j-integrated-microelectronic-devices-spring-2007/",
       "description": "Physics and modeling of devices used in IC technology.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Learn"
     },
     {
       "id": "R015",
@@ -199,7 +274,12 @@
       "url": "https://ocw.mit.edu/courses/6-012-microelectronic-devices-and-circuits-fall-2005/pages/lecture-notes/",
       "description": "Free detailed notes on junctions, MOS electrostatics, MOSFETs and amplifiers.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Learn"
     },
     {
       "id": "R016",
@@ -212,7 +292,12 @@
       "url": "https://nanohub.org/",
       "description": "Interactive research and teaching simulators for nanoelectronic devices.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R017",
@@ -225,7 +310,12 @@
       "url": "https://github.com/devsim/devsim",
       "description": "Device-level drift-diffusion simulation with scripting.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R018",
@@ -238,7 +328,12 @@
       "url": "https://github.com/cogenda/Genius-TCAD-Open",
       "description": "TCAD framework for semiconductor device simulation.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R019",
@@ -251,7 +346,12 @@
       "url": "https://www.nextnano.com/",
       "description": "Quantum and semiconductor heterostructure modeling; license terms vary.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R020",
@@ -264,7 +364,12 @@
       "url": "https://www.synopsys.com/manufacturing/tcad.html",
       "description": "Industry device/process simulation, usually available through an institutional license.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R021",
@@ -277,7 +382,12 @@
       "url": "https://silvaco.com/",
       "description": "Process and device simulation suite; check university licensing.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R022",
@@ -290,7 +400,12 @@
       "url": "https://www.ioffe.ru/SVA/NSM/Semicond/",
       "description": "Material parameters and semiconductor properties for technical calculations.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "R023",
@@ -303,7 +418,12 @@
       "url": "https://webbook.nist.gov/chemistry/",
       "description": "Physical and thermochemical property reference.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "R024",
@@ -316,7 +436,12 @@
       "url": "https://eds.ieee.org/",
       "description": "Electron device webinars, technical activity and education resources.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "R025",
@@ -329,7 +454,11 @@
       "url": "https://ngspice.sourceforge.io/",
       "description": "SPICE engine for DC, AC, transient and behavioral simulations.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R026",
@@ -342,7 +471,11 @@
       "url": "https://www.analog.com/en/resources/design-tools-and-calculators/ltspice-simulator.html",
       "description": "Analog simulation with vendor models, waveform inspection and examples.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R027",
@@ -355,7 +488,11 @@
       "url": "https://ra3xdh.github.io/",
       "description": "Graphical schematic front end using external simulation engines.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R028",
@@ -368,7 +505,11 @@
       "url": "https://xschem.sourceforge.io/stefan/index.html",
       "description": "Schematic capture and netlisting for open PDK circuit design.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R029",
@@ -381,7 +522,11 @@
       "url": "https://xyce.sandia.gov/",
       "description": "Parallel SPICE-compatible circuit simulator.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R030",
@@ -394,7 +539,11 @@
       "url": "https://www.cadence.com/en_US/home/tools/custom-ic-analog-rf-design.html",
       "description": "Industry analog and mixed-signal schematic, layout and verification workflow.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R031",
@@ -407,7 +556,11 @@
       "url": "https://www.cadence.com/en_US/home/tools/custom-ic-analog-rf-design/circuit-simulation.html",
       "description": "Transistor-level analog simulation for professional circuit workflows.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R032",
@@ -420,7 +573,11 @@
       "url": "https://www.synopsys.com/implementation-and-signoff/custom-design-platform.html",
       "description": "Custom analog layout and schematic design environment.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R033",
@@ -433,7 +590,11 @@
       "url": "https://www.keysight.com/us/en/products/software/pathwave-design-software/pathwave-advanced-design-system.html",
       "description": "Microwave/RF circuit simulation and co-design.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R034",
@@ -446,7 +607,11 @@
       "url": "https://iic-jku.github.io/analog-circuit-design/aicd.html",
       "description": "Practical analog IC design with modern open-source PDK workflows.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Learn"
     },
     {
       "id": "R035",
@@ -459,7 +624,11 @@
       "url": "https://github.com/bmurmann/EE628",
       "description": "Course materials for transistor-level analog integrated circuit design.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Learn"
     },
     {
       "id": "R036",
@@ -472,7 +641,11 @@
       "url": "https://www.youtube.com/results?search_query=Behzad+Razavi+electronics+lectures",
       "description": "University-level explanations of transistor circuits; search the authorized lecture uploads.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Learn"
     },
     {
       "id": "R037",
@@ -485,7 +658,11 @@
       "url": "https://ez.analog.com/",
       "description": "Design discussions and engineering answers for analog/RF problems.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Read"
     },
     {
       "id": "R038",
@@ -498,7 +675,11 @@
       "url": "https://www.ti.com/video/series/precision-labs.html",
       "description": "Structured lessons on op-amps, ADCs, sensors and power.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Read"
     },
     {
       "id": "R039",
@@ -511,7 +692,11 @@
       "url": "https://pyspice.fabrice-salvaire.fr/",
       "description": "Control SPICE simulations from Python for automated sweeps.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R040",
@@ -524,7 +709,11 @@
       "url": "https://yosyshq.net/yosys/",
       "description": "Synthesize Verilog to gate-level logic; inspect cells and technology maps.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R041",
@@ -537,7 +726,11 @@
       "url": "https://www.veripool.org/verilator/",
       "description": "Fast Verilog/SystemVerilog compilation and simulation with linting.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R042",
@@ -550,7 +743,11 @@
       "url": "https://steveicarus.github.io/iverilog/",
       "description": "Simulate Verilog modules and testbenches locally.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R043",
@@ -563,7 +760,11 @@
       "url": "https://www.cocotb.org/",
       "description": "Python-based RTL verification using familiar testing patterns.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R044",
@@ -576,7 +777,11 @@
       "url": "https://gtkwave.sourceforge.net/",
       "description": "Inspect simulation waveforms and debug digital timing.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R045",
@@ -589,7 +794,11 @@
       "url": "https://yosyshq.readthedocs.io/projects/sby/en/latest/",
       "description": "Formal verification orchestration over SMT/model-checking backends.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R046",
@@ -602,7 +811,11 @@
       "url": "https://www.edaplayground.com/",
       "description": "Browser-based HDL compilation and testbench practice.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R047",
@@ -615,7 +828,11 @@
       "url": "https://hdlbits.01xz.net/wiki/Main_Page",
       "description": "Hundreds of focused Verilog challenges with immediate feedback.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Learn"
     },
     {
       "id": "R048",
@@ -628,7 +845,11 @@
       "url": "https://vlsiverify.com/",
       "description": "SystemVerilog verification, UVM and assertions tutorials.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Learn"
     },
     {
       "id": "R049",
@@ -641,7 +862,11 @@
       "url": "https://eda.sw.siemens.com/en-US/ic/questa/",
       "description": "Professional simulator and functional verification flow.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R050",
@@ -654,7 +879,11 @@
       "url": "https://www.cadence.com/en_US/home/tools/system-design-and-verification/simulation-and-testbench-verification/xcelium-simulator.html",
       "description": "Enterprise HDL simulation and testbench verification.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R051",
@@ -667,7 +896,11 @@
       "url": "https://www.synopsys.com/verification/simulation/vcs.html",
       "description": "Industry SystemVerilog simulator and verification environment.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R052",
@@ -680,7 +913,11 @@
       "url": "https://standards.ieee.org/",
       "description": "Look up IEEE 1800 SystemVerilog, editions and library access.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Read"
     },
     {
       "id": "R053",
@@ -693,7 +930,11 @@
       "url": "https://riscv.org/specifications/",
       "description": "ISA documents for CPU, RTL and SoC design projects.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Read"
     },
     {
       "id": "R054",
@@ -706,7 +947,11 @@
       "url": "https://www.nand2tetris.org/",
       "description": "Build a computer from logic gates to a software stack.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R055",
@@ -719,7 +964,11 @@
       "url": "https://github.com/ZipCPU/zipcpu",
       "description": "Study synthesizable CPU RTL and verification practices.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R056",
@@ -732,7 +981,11 @@
       "url": "https://opentitan.org/",
       "description": "Real security chip platform with professional hardware implementation artifacts.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R057",
@@ -745,7 +998,11 @@
       "url": "https://www.amd.com/en/products/software/adaptive-socs-and-fpgas/vivado.html",
       "description": "FPGA synthesis, implementation and timing closure.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R058",
@@ -758,7 +1015,11 @@
       "url": "https://www.intel.com/content/www/us/en/software/programmable/quartus-prime/overview.html",
       "description": "FPGA hardware development and timing analysis.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R059",
@@ -771,7 +1032,11 @@
       "url": "https://www.latticesemi.com/Products/DesignSoftwareAndIP",
       "description": "Toolchain for supported Lattice FPGA families.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R060",
@@ -784,7 +1049,11 @@
       "url": "https://github.com/YosysHQ/nextpnr",
       "description": "Place and route selected FPGA families with open tooling.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R061",
@@ -797,7 +1066,11 @@
       "url": "https://amaranth-lang.org/",
       "description": "Python-based language and toolchain for logic design.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R062",
@@ -810,7 +1083,11 @@
       "url": "https://github.com/enjoy-digital/litex",
       "description": "Construct FPGA SoCs, peripheral buses and CPU-based systems.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R063",
@@ -823,7 +1100,11 @@
       "url": "https://ocw.mit.edu/courses/6-004-computation-structures-spring-2009/",
       "description": "Architecture basics and practical design of a simple processor.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Learn"
     },
     {
       "id": "R064",
@@ -836,7 +1117,11 @@
       "url": "https://cs61c.org/",
       "description": "Computer architecture, C, memory and RISC-V fundamentals.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Learn"
     },
     {
       "id": "R065",
@@ -849,7 +1134,11 @@
       "url": "https://projectf.io/",
       "description": "Practical HDL and FPGA graphics projects with approachable explanations.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Read"
     },
     {
       "id": "R066",
@@ -862,7 +1151,11 @@
       "url": "https://www.fpga4fun.com/",
       "description": "Hands-on circuit projects, FPGA serial interfaces and video.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Read"
     },
     {
       "id": "R067",
@@ -875,7 +1168,11 @@
       "url": "https://github.com/YosysHQ/picorv32",
       "description": "Small RISC-V CPU core to study integration and verification.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R068",
@@ -888,7 +1185,11 @@
       "url": "https://github.com/lowRISC/ibex",
       "description": "Production-minded open RISC-V CPU RTL and verification reference.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R069",
@@ -901,7 +1202,11 @@
       "url": "https://renode.io/",
       "description": "Virtual embedded system platform for firmware/system tests.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R070",
@@ -914,7 +1219,11 @@
       "url": "https://www.qemu.org/",
       "description": "Machine emulation and CPU simulation for software/hardware bring-up.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R071",
@@ -927,7 +1236,11 @@
       "url": "https://openroad-flow-scripts.readthedocs.io/en/latest/",
       "description": "Automated RTL-to-GDS flow with synthesis, placement, routing and checks.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R072",
@@ -940,7 +1253,11 @@
       "url": "https://openroad.readthedocs.io/en/latest/",
       "description": "STA-driven physical implementation and Tcl workflow.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R073",
@@ -953,7 +1270,11 @@
       "url": "https://openlane2.readthedocs.io/en/latest/",
       "description": "Digital ASIC implementation with reproducible open flows.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R074",
@@ -966,7 +1287,11 @@
       "url": "https://www.klayout.de/",
       "description": "GDS/OASIS viewer, layout scripting, DRC and LVS capabilities.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R075",
@@ -979,7 +1304,11 @@
       "url": "http://opencircuitdesign.com/magic/",
       "description": "Physical layout editor and DRC used in open CMOS flows.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R076",
@@ -992,7 +1321,11 @@
       "url": "http://opencircuitdesign.com/netgen/",
       "description": "Compare extracted layout netlists to schematic circuits.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R077",
@@ -1005,7 +1338,11 @@
       "url": "https://github.com/google/skywater-pdk",
       "description": "Open foundry models, layout rules and standard cells; experimental preview.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R078",
@@ -1018,7 +1355,11 @@
       "url": "https://github.com/IHP-GmbH/IHP-Open-PDK",
       "description": "130nm BiCMOS open PDK for RF, analog, mixed-signal and digital test designs; preview status.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R079",
@@ -1031,7 +1372,11 @@
       "url": "https://github.com/google/gf180mcu-pdk",
       "description": "Open 180nm mixed-signal process kit and design rules; check project status.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R080",
@@ -1044,7 +1389,11 @@
       "url": "https://github.com/The-OpenROAD-Project/asap7",
       "description": "Predictive advanced-node library for education and research, not a commercial fabrication PDK.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R081",
@@ -1057,7 +1406,11 @@
       "url": "https://tinytapeout.com/",
       "description": "Learn practical ASIC design and submit small chips when shuttles are offered.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R082",
@@ -1070,7 +1423,11 @@
       "url": "https://efabless.com/",
       "description": "Community chip design and fabrication ecosystem; check current shuttle pricing and eligibility.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R083",
@@ -1083,7 +1440,11 @@
       "url": "https://openroad-flow-scripts.readthedocs.io/en/latest/tutorials/FlowTutorial.html",
       "description": "Hands-on steps through synthesis, placement, routing and results inspection.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Learn"
     },
     {
       "id": "R084",
@@ -1096,7 +1457,11 @@
       "url": "https://github.com/IHP-GmbH/IHP-Open-PDK/wiki/IHP-OpenPDK-StarterKit",
       "description": "Curated starter kit, example designs and links for analog/RF silicon work.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R085",
@@ -1109,7 +1474,11 @@
       "url": "https://github.com/IHP-GmbH/IHP-AnalogAcademy",
       "description": "Teaching analog IC design through open silicon tools.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R086",
@@ -1122,7 +1491,11 @@
       "url": "https://ocw.mit.edu/courses/6-013-electromagnetics-and-applications-spring-2009/",
       "description": "Electromagnetic waves, Maxwell equations and transmission lines.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Learn"
     },
     {
       "id": "R087",
@@ -1135,7 +1508,11 @@
       "url": "https://iic-jku.github.io/radio-frequency-integrated-circuits/rfic.html",
       "description": "RF IC design topics tied to open-source PDK circuits.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Learn"
     },
     {
       "id": "R088",
@@ -1148,7 +1525,11 @@
       "url": "https://openems.de/",
       "description": "Full-wave FDTD electromagnetic field solver.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R089",
@@ -1161,7 +1542,11 @@
       "url": "https://scikit-rf.readthedocs.io/en/latest/",
       "description": "Network analysis, S-parameters and RF calibration in Python.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R090",
@@ -1174,7 +1559,11 @@
       "url": "https://www.gnuradio.org/",
       "description": "Digital radio and signal-processing flowgraphs.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R091",
@@ -1187,7 +1576,11 @@
       "url": "https://qucs.sourceforge.net/",
       "description": "Graphical electronic circuit / RF schematic simulation.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R092",
@@ -1200,7 +1593,11 @@
       "url": "https://www.ansys.com/products/electronics/ansys-hfss",
       "description": "3D RF and antenna electromagnetic simulation.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R093",
@@ -1213,7 +1610,11 @@
       "url": "https://www.3ds.com/products/simulia/cst-studio-suite",
       "description": "Full-wave antenna, microwave and EMC analysis.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R094",
@@ -1226,7 +1627,11 @@
       "url": "https://www.keysight.com/us/en/products/software/pathwave-design-software/pathwave-advanced-design-system.html",
       "description": "RF, microwave and circuit co-simulation.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R095",
@@ -1239,7 +1644,11 @@
       "url": "https://www.microwaves101.com/",
       "description": "Practical microwave engineering concepts and calculators.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Read"
     },
     {
       "id": "R096",
@@ -1252,7 +1661,11 @@
       "url": "https://www.antenna-theory.com/",
       "description": "Approachable antenna parameters, radiation and feed matching.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Read"
     },
     {
       "id": "R097",
@@ -1265,7 +1678,11 @@
       "url": "https://www.mathworks.com/products/rf.html",
       "description": "RF modeling and measurement tools integrated with MATLAB.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R098",
@@ -1278,7 +1695,11 @@
       "url": "https://gdsfactory.github.io/gdsfactory/",
       "description": "Python programmable layouts for photonics and other hardware.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R099",
@@ -1291,7 +1712,11 @@
       "url": "https://github.com/SiEPIC/SiEPIC-Tools",
       "description": "Silicon photonic waveguide layout, design-rule checks and simulation integration.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R100",
@@ -1304,7 +1729,11 @@
       "url": "https://meep.readthedocs.io/en/latest/",
       "description": "FDTD electromagnetics for waveguides, resonators and optical devices.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R101",
@@ -1317,7 +1746,11 @@
       "url": "https://mpb.readthedocs.io/en/latest/",
       "description": "Photonic band-structure eigenmode solver.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R102",
@@ -1330,7 +1763,11 @@
       "url": "https://www.flexcompute.com/tidy3d/",
       "description": "Cloud optical FDTD; access and usage quotas depend on plan.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R103",
@@ -1343,7 +1780,11 @@
       "url": "https://optics.ansys.com/hc/en-us/articles/360033154434-FDTD-product-reference-manual",
       "description": "Commercial electromagnetic simulation for photonic structures.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R104",
@@ -1356,7 +1797,11 @@
       "url": "https://www.ansys.com/products/optics/interconnect",
       "description": "Photonic integrated circuit system-level circuit modeling.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R105",
@@ -1369,7 +1814,11 @@
       "url": "https://www.comsol.com/wave-optics-module",
       "description": "Multiphysics wave optics, resonators and propagation.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R106",
@@ -1382,7 +1831,11 @@
       "url": "https://github.com/flaport/sax",
       "description": "Differentiable photonic circuit simulation from S-parameters.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R107",
@@ -1395,7 +1848,11 @@
       "url": "https://siepic.ubc.ca/",
       "description": "Teaching, design rules and practical integrated-photonics resources.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Learn"
     },
     {
       "id": "R108",
@@ -1408,7 +1865,11 @@
       "url": "https://www.rp-photonics.com/encyclopedia.html",
       "description": "Comprehensive technical encyclopedia of optics, lasers and photonics.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Learn"
     },
     {
       "id": "R109",
@@ -1421,7 +1882,11 @@
       "url": "https://github.com/SiEPIC/SiEPIC_EBeam_PDK",
       "description": "Photonic layout PDK examples for design workflows.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R110",
@@ -1434,7 +1899,11 @@
       "url": "https://www.photonics.com/",
       "description": "Industry developments, component context and photonics terminology.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Read"
     },
     {
       "id": "R111",
@@ -1447,7 +1916,11 @@
       "url": "https://ocw.mit.edu/search/?q=MEMS",
       "description": "Search MEMS fabrication, mechanical sensors and microsystems courses.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Learn"
     },
     {
       "id": "R112",
@@ -1460,7 +1933,11 @@
       "url": "https://www.comsol.com/",
       "description": "Coupled thermal, electrical, mechanics and sensing simulations.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R113",
@@ -1473,7 +1950,11 @@
       "url": "https://www.csc.fi/en/web/elmer",
       "description": "Finite-element multiphysics solver for thermal and field simulations.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R114",
@@ -1486,7 +1967,11 @@
       "url": "https://fenicsproject.org/",
       "description": "Numerical PDE framework for custom multiphysics model development.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R115",
@@ -1499,7 +1984,11 @@
       "url": "https://gmsh.info/",
       "description": "Finite-element meshing and geometry preprocessing.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R116",
@@ -1512,7 +2001,11 @@
       "url": "https://www.freecad.org/",
       "description": "Parametric CAD to define sensor packages, enclosures and mechanisms.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R117",
@@ -1525,7 +2018,11 @@
       "url": "https://pyvisa.readthedocs.io/en/latest/",
       "description": "Automate oscilloscope, source meter and instrumentation measurements.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R118",
@@ -1538,7 +2035,11 @@
       "url": "https://opendaq.com/",
       "description": "Open source data acquisition ecosystem; check supported hardware.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R119",
@@ -1551,7 +2052,11 @@
       "url": "https://www.nist.gov/pml",
       "description": "Measurement standards, sensor metrology and calibration references.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "R120",
@@ -1564,7 +2069,11 @@
       "url": "https://ieee-sensors.org/",
       "description": "Sensor-device community, events and research topics.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "R121",
@@ -1577,7 +2086,11 @@
       "url": "https://learn.adafruit.com/",
       "description": "Practical sensor wiring, data acquisition and microcontroller exercises.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R122",
@@ -1590,7 +2103,11 @@
       "url": "https://learn.sparkfun.com/",
       "description": "Hardware prototyping, sensors and interfaces.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R123",
@@ -1603,7 +2120,12 @@
       "url": "https://nanohub.org/",
       "description": "Semiconductor, nanotechnology and nano-device simulation and educational material.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "R124",
@@ -1616,7 +2138,12 @@
       "url": "https://ocw.mit.edu/courses/3-091-introduction-to-solid-state-chemistry-fall-2018/",
       "description": "Atomic structure, bonding, solids and materials behavior.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Learn"
     },
     {
       "id": "R125",
@@ -1629,7 +2156,12 @@
       "url": "https://ocw.mit.edu/courses/3-024-electronic-optical-and-magnetic-properties-of-materials-spring-2013/",
       "description": "Material electronic and optical responses.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Learn"
     },
     {
       "id": "R126",
@@ -1642,7 +2174,12 @@
       "url": "https://www.quantum-espresso.org/",
       "description": "First-principles electronic-structure calculations using DFT.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R127",
@@ -1655,7 +2192,12 @@
       "url": "https://siesta-project.org/siesta/",
       "description": "Ab initio simulations for materials and nanostructures.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R128",
@@ -1668,7 +2210,12 @@
       "url": "https://www.lammps.org/",
       "description": "Molecular dynamics for solids, interfaces and nanosystems.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R129",
@@ -1681,7 +2228,12 @@
       "url": "https://wiki.fysik.dtu.dk/ase/",
       "description": "Python atomistic setup, workflows and structure manipulation.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R130",
@@ -1694,7 +2246,12 @@
       "url": "https://jp-minerals.org/vesta/en/",
       "description": "Crystal structure and volumetric data visualization.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R131",
@@ -1707,7 +2264,12 @@
       "url": "https://www.ovito.org/",
       "description": "Visualize and analyze atomistic simulation trajectories.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R132",
@@ -1720,7 +2282,12 @@
       "url": "https://www.vasp.at/",
       "description": "DFT electronic-structure computations via institutional license.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R133",
@@ -1733,7 +2300,12 @@
       "url": "https://www.3ds.com/products/biovia/materials-studio",
       "description": "Materials modeling suite for molecular and periodic simulations.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R134",
@@ -1746,7 +2318,12 @@
       "url": "https://next-gen.materialsproject.org/",
       "description": "Computed materials structures, electronic properties and phase data.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "R135",
@@ -1759,7 +2336,12 @@
       "url": "https://nomad-lab.eu/",
       "description": "Open materials data from simulations and experiments.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "R136",
@@ -1772,7 +2354,12 @@
       "url": "https://aflowlib.org/",
       "description": "High-throughput computed materials and properties.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "R137",
@@ -1785,7 +2372,12 @@
       "url": "https://www.crystallography.net/cod/",
       "description": "Open crystallographic structures.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "R138",
@@ -1798,7 +2390,12 @@
       "url": "https://srdata.nist.gov/xps/",
       "description": "Reference binding energies for surface characterization.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "R139",
@@ -1811,7 +2408,12 @@
       "url": "https://physics.nist.gov/asd",
       "description": "Atomic transition data for spectroscopy.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "R140",
@@ -1824,7 +2426,11 @@
       "url": "https://pennylane.ai/",
       "description": "Quantum differentiable programming and hybrid quantum machine learning.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R141",
@@ -1837,7 +2443,11 @@
       "url": "https://www.ibm.com/quantum/qiskit",
       "description": "Build and simulate quantum circuits with SDK resources.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R142",
@@ -1850,7 +2460,11 @@
       "url": "https://quantumai.google/cirq",
       "description": "Circuit-level programming and simulation.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R143",
@@ -1863,7 +2477,11 @@
       "url": "https://qutip.org/",
       "description": "Open quantum system dynamics, operators and master equations.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R144",
@@ -1876,7 +2494,11 @@
       "url": "https://algassert.com/quirk",
       "description": "Interactive drag-and-drop quantum circuit visualization.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R145",
@@ -1889,7 +2511,11 @@
       "url": "https://learning.quantum.ibm.com/",
       "description": "Quantum computing courses and circuit exercises.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Learn"
     },
     {
       "id": "R146",
@@ -1902,7 +2528,11 @@
       "url": "https://pennylane.ai/codebook/",
       "description": "Quantum circuit and QML exercises with notebooks.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Learn"
     },
     {
       "id": "R147",
@@ -1915,7 +2545,11 @@
       "url": "https://quantum.country/",
       "description": "Intuitive explanations of quantum computing ideas.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Read"
     },
     {
       "id": "R148",
@@ -1928,7 +2562,11 @@
       "url": "https://kwant-project.org/",
       "description": "Mesoscopic electronic transport simulation.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R149",
@@ -1941,7 +2579,11 @@
       "url": "https://qutip.org/docs/latest/",
       "description": "Quantum information processor modeling.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R150",
@@ -1954,7 +2596,12 @@
       "url": "https://www.kicad.org/",
       "description": "Schematic capture and PCB layout for sensor interfaces and prototypes.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R151",
@@ -1967,7 +2614,12 @@
       "url": "https://easyeda.com/",
       "description": "Web-based PCB design and electronics libraries.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R152",
@@ -1980,7 +2632,12 @@
       "url": "https://platformio.org/",
       "description": "Firmware builds, library management and multi-board development.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R153",
@@ -1993,7 +2650,12 @@
       "url": "https://www.zephyrproject.org/",
       "description": "Real-time firmware across embedded hardware platforms.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R154",
@@ -2006,7 +2668,12 @@
       "url": "https://www.freertos.org/",
       "description": "Real-time operating system fundamentals and tasks.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R155",
@@ -2019,7 +2686,12 @@
       "url": "https://www.st.com/en/development-tools/stm32cubeide.html",
       "description": "Integrated embedded STM32 coding and debugging.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R156",
@@ -2032,7 +2704,12 @@
       "url": "https://www.arduino.cc/en/software",
       "description": "Prototype sensors and MCU projects rapidly.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R157",
@@ -2045,7 +2722,12 @@
       "url": "https://docs.espressif.com/projects/esp-idf/en/stable/esp32/",
       "description": "Low-level ESP32 embedded software framework.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R158",
@@ -2058,7 +2740,12 @@
       "url": "https://wokwi.com/",
       "description": "Browser simulation of embedded systems, electronics and firmware.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R159",
@@ -2071,7 +2758,12 @@
       "url": "https://www.tinkercad.com/circuits",
       "description": "Beginner browser circuit and microcontroller simulation.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R160",
@@ -2084,7 +2776,12 @@
       "url": "https://www.youtube.com/@PhilsLab",
       "description": "High-quality PCB, mixed-signal and embedded design walkthroughs.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Learn"
     },
     {
       "id": "R161",
@@ -2097,7 +2794,12 @@
       "url": "https://www.analog.com/en/resources/reference-designs.html",
       "description": "Tested analog subsystem architectures and documentation.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "R162",
@@ -2110,7 +2812,12 @@
       "url": "https://www.ti.com/reference-designs/index.html",
       "description": "Real electronic system schematics and design guidance.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "R163",
@@ -2123,7 +2830,12 @@
       "url": "https://numpy.org/",
       "description": "Vectorized numerical computing for simulation and analysis.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R164",
@@ -2136,7 +2848,12 @@
       "url": "https://scipy.org/",
       "description": "Optimization, signal processing, integration and scientific algorithms.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R165",
@@ -2149,7 +2866,12 @@
       "url": "https://matplotlib.org/",
       "description": "Scientific plots, measured curves and publication figures.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R166",
@@ -2162,7 +2884,12 @@
       "url": "https://pytorch.org/",
       "description": "Deep learning experiments for sensors and hardware-aware modeling.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R167",
@@ -2175,7 +2902,12 @@
       "url": "https://scikit-learn.org/stable/",
       "description": "Classical ML, baselines, regression and cross-validation.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R168",
@@ -2188,7 +2920,12 @@
       "url": "https://docs.jax.dev/en/latest/",
       "description": "Automatic differentiation, accelerated numerics and optimization.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R169",
@@ -2201,7 +2938,12 @@
       "url": "https://optuna.org/",
       "description": "Automated parameter and hyperparameter optimization.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R170",
@@ -2214,7 +2956,12 @@
       "url": "https://pytorch-geometric.readthedocs.io/en/latest/",
       "description": "Graph neural network models for materials and circuits.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R171",
@@ -2227,7 +2974,12 @@
       "url": "https://www.mathworks.com/products/matlab.html",
       "description": "Control, signal processing, data analysis and model-based workflows.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R172",
@@ -2240,7 +2992,12 @@
       "url": "https://octave.org/",
       "description": "MATLAB-like numerical experiments without commercial license.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R173",
@@ -2253,7 +3010,12 @@
       "url": "https://jupyter.org/",
       "description": "Reproducible notebooks for experiments and simulations.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R174",
@@ -2266,7 +3028,12 @@
       "url": "https://docs.docker.com/",
       "description": "Make EDA and scientific simulations reproducible in containers.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R175",
@@ -2279,7 +3046,12 @@
       "url": "https://git-scm.com/doc",
       "description": "Track scientific code, schematics and circuit design experiments.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "R176",
@@ -2292,7 +3064,12 @@
       "url": "https://archive.ics.uci.edu/",
       "description": "Benchmark datasets for classical model evaluation.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "R177",
@@ -2305,7 +3082,12 @@
       "url": "https://huggingface.co/datasets",
       "description": "Browse and download domain-specific data subject to dataset licenses.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "R178",
@@ -2318,7 +3100,12 @@
       "url": "https://course.fast.ai/",
       "description": "Practical deep learning training with an engineering focus.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Learn"
     },
     {
       "id": "R179",
@@ -2331,7 +3118,12 @@
       "url": "https://scholar.google.com/",
       "description": "Find citations, papers and connected research directions.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "R180",
@@ -2344,7 +3136,12 @@
       "url": "https://www.semanticscholar.org/",
       "description": "Explore papers, references and citation networks.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "R181",
@@ -2357,7 +3154,12 @@
       "url": "https://arxiv.org/",
       "description": "Research preprints in devices, photonics, signal processing and ML.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "R182",
@@ -2370,7 +3172,12 @@
       "url": "https://ieeexplore.ieee.org/",
       "description": "Primary conferences and journals for circuits, devices and electronics.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "R183",
@@ -2383,7 +3190,12 @@
       "url": "https://dl.acm.org/",
       "description": "Computer architecture, EDA and systems research.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "R184",
@@ -2396,7 +3208,12 @@
       "url": "https://opg.optica.org/",
       "description": "Peer-reviewed photonics and optics research.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "R185",
@@ -2409,7 +3226,12 @@
       "url": "https://www.spiedigitallibrary.org/",
       "description": "Applied optics, photonics and imaging conference research.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "R186",
@@ -2422,7 +3244,12 @@
       "url": "https://www.sciencedirect.com/",
       "description": "Materials, electronics and engineering journal literature.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "R187",
@@ -2435,7 +3262,12 @@
       "url": "https://hal.science/",
       "description": "French open scientific articles and theses.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "R188",
@@ -2448,7 +3280,12 @@
       "url": "https://openalex.org/",
       "description": "Open bibliographic graphs for discovering labs and researchers.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "R189",
@@ -2461,7 +3298,12 @@
       "url": "https://zenodo.org/",
       "description": "Datasets, software releases and open research artifacts.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "R190",
@@ -2474,7 +3316,12 @@
       "url": "https://core.ac.uk/",
       "description": "Aggregated open-access scholarly outputs.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "R191",
@@ -2487,7 +3334,12 @@
       "url": "https://orcid.org/",
       "description": "Persistent researcher identifier and publication profile.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "R192",
@@ -2500,7 +3352,12 @@
       "url": "https://www.zotero.org/",
       "description": "Manage bibliography, citations and paper annotations.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "R193",
@@ -2513,7 +3370,12 @@
       "url": "https://www.overleaf.com/learn",
       "description": "LaTeX articles, equations, references and scientific reports.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Learn"
     },
     {
       "id": "R194",
@@ -2526,7 +3388,12 @@
       "url": "https://journals.ieeeauthorcenter.ieee.org/",
       "description": "Publication format, writing and submission guidelines.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "R195",
@@ -2539,7 +3406,12 @@
       "url": "https://www.c2n.universite-paris-saclay.fr/en/",
       "description": "Research themes for nanoelectronics, integrated photonics and nanosystems.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "R196",
@@ -2552,7 +3424,12 @@
       "url": "https://www.imec-int.com/en",
       "description": "Semiconductor research direction and advanced-node technology perspective.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "R197",
@@ -2565,7 +3442,12 @@
       "url": "https://sscs.ieee.org/",
       "description": "Solid-state circuit publications, education and technical community.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "R198",
@@ -2578,7 +3460,12 @@
       "url": "https://fossi-foundation.org/",
       "description": "Open-source silicon ecosystem and conferences.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "R199",
@@ -2591,7 +3478,12 @@
       "url": "https://fossi-foundation.org/",
       "description": "Open-source silicon community, projects and events; use its official website for current discussion channels.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "B001",
@@ -2604,7 +3496,12 @@
       "url": "https://books.google.com/books?q=Foundations%20of%20Analog%20and%20Digital%20Electronic%20Circuits%20Anant%20Agarwal%20and%20Jeffrey%20H.%20Lang",
       "description": "Circuit modeling from first principles.",
       "source_status": "bibliographic",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "B002",
@@ -2617,7 +3514,12 @@
       "url": "https://books.google.com/books?q=The%20Art%20of%20Electronics%20Paul%20Horowitz%20and%20Winfield%20Hill",
       "description": "Practical circuit design and measurement reference.",
       "source_status": "bibliographic",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "B003",
@@ -2630,7 +3532,12 @@
       "url": "https://books.google.com/books?q=Learning%20the%20Art%20of%20Electronics%20Thomas%20C.%20Hayes%20and%20Paul%20Horowitz",
       "description": "Hands-on lab companion with practical exercises.",
       "source_status": "bibliographic",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "B004",
@@ -2643,7 +3550,12 @@
       "url": "https://books.google.com/books?q=Microelectronic%20Circuits%20Adel%20S.%20Sedra%2C%20Kenneth%20C.%20Smith%2C%20et%20al.",
       "description": "Broad analog and digital transistor-level circuit textbook.",
       "source_status": "bibliographic",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "B005",
@@ -2656,7 +3568,12 @@
       "url": "https://books.google.com/books?q=Engineering%20Circuit%20Analysis%20William%20Hayt%2C%20Jack%20Kemmerly%20and%20Steven%20Durbin",
       "description": "Rigorous circuit analysis with extensive worked problems.",
       "source_status": "bibliographic",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "B006",
@@ -2669,7 +3586,12 @@
       "url": "https://books.google.com/books?q=Semiconductor%20Device%20Fundamentals%20Robert%20F.%20Pierret",
       "description": "Device physics, carrier transport, diodes and MOSFETs.",
       "source_status": "bibliographic",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "B007",
@@ -2682,7 +3604,12 @@
       "url": "https://books.google.com/books?q=Solid%20State%20Electronic%20Devices%20Ben%20G.%20Streetman%20and%20Sanjay%20Banerjee",
       "description": "Physics behind semiconductor and optoelectronic devices.",
       "source_status": "bibliographic",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "B008",
@@ -2695,7 +3622,12 @@
       "url": "https://books.google.com/books?q=Physics%20of%20Semiconductor%20Devices%20Simon%20M.%20Sze%20and%20Kwok%20K.%20Ng",
       "description": "Deep device theory and semiconductor models.",
       "source_status": "bibliographic",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "B009",
@@ -2708,7 +3640,12 @@
       "url": "https://books.google.com/books?q=Device%20Electronics%20for%20Integrated%20Circuits%20Richard%20S.%20Muller%2C%20Theodore%20I.%20Kamins%20and%20Mansun%20Chan",
       "description": "Integrated device operation and analysis.",
       "source_status": "bibliographic",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "B010",
@@ -2721,7 +3658,12 @@
       "url": "https://books.google.com/books?q=Operation%20and%20Modeling%20of%20the%20MOS%20Transistor%20Yannis%20Tsividis%20and%20Colin%20McAndrew",
       "description": "MOS compact modeling and analog transistor behavior.",
       "source_status": "bibliographic",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "B011",
@@ -2734,7 +3676,11 @@
       "url": "https://books.google.com/books?q=Design%20of%20Analog%20CMOS%20Integrated%20Circuits%20Behzad%20Razavi",
       "description": "Differential pairs, gain stages, feedback and frequency response.",
       "source_status": "bibliographic",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Read"
     },
     {
       "id": "B012",
@@ -2747,7 +3693,11 @@
       "url": "https://books.google.com/books?q=CMOS%20Analog%20Circuit%20Design%20Phillip%20E.%20Allen%20and%20Douglas%20R.%20Holberg",
       "description": "Transistor-level analog building blocks and methodologies.",
       "source_status": "bibliographic",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Read"
     },
     {
       "id": "B013",
@@ -2760,7 +3710,11 @@
       "url": "https://books.google.com/books?q=Analysis%20and%20Design%20of%20Analog%20Integrated%20Circuits%20Paul%20R.%20Gray%20et%20al.",
       "description": "Classical analog IC theory and practical amplifier design.",
       "source_status": "bibliographic",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Read"
     },
     {
       "id": "B014",
@@ -2773,7 +3727,11 @@
       "url": "https://books.google.com/books?q=The%20Designer's%20Guide%20to%20SPICE%20and%20Spectre%20Ken%20Kundert",
       "description": "Accurate and efficient transistor-level circuit simulation.",
       "source_status": "bibliographic",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Read"
     },
     {
       "id": "B015",
@@ -2786,7 +3744,11 @@
       "url": "https://books.google.com/books?q=Understanding%20Delta-Sigma%20Data%20Converters%20Richard%20Schreier%20and%20Gabor%20C.%20Temes",
       "description": "Mixed-signal ADC architecture and theory.",
       "source_status": "bibliographic",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Read"
     },
     {
       "id": "B016",
@@ -2799,7 +3761,11 @@
       "url": "https://books.google.com/books?q=CMOS%20Circuit%20Design%2C%20Layout%2C%20and%20Simulation%20R.%20Jacob%20Baker",
       "description": "End-to-end analog/digital transistor design and layout.",
       "source_status": "bibliographic",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Read"
     },
     {
       "id": "B017",
@@ -2812,7 +3778,11 @@
       "url": "https://books.google.com/books?q=CMOS%20VLSI%20Design%3A%20A%20Circuits%20and%20Systems%20Perspective%20Neil%20H.%20E.%20Weste%20and%20David%20Money%20Harris",
       "description": "Full digital CMOS design with timing and physical tradeoffs.",
       "source_status": "bibliographic",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Read"
     },
     {
       "id": "B018",
@@ -2825,7 +3795,11 @@
       "url": "https://books.google.com/books?q=Digital%20Integrated%20Circuits%3A%20A%20Design%20Perspective%20Jan%20M.%20Rabaey%2C%20Anantha%20Chandrakasan%20and%20Borivoje%20Nikolic",
       "description": "Delay, power, interconnect and CMOS digital design.",
       "source_status": "bibliographic",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Read"
     },
     {
       "id": "B019",
@@ -2838,7 +3812,11 @@
       "url": "https://books.google.com/books?q=SystemVerilog%20for%20Verification%20Chris%20Spear%20and%20Greg%20Tumbush",
       "description": "Constrained random testing and testbench methodologies.",
       "source_status": "bibliographic",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Read"
     },
     {
       "id": "B020",
@@ -2851,7 +3829,11 @@
       "url": "https://books.google.com/books?q=Verilog%20HDL%3A%20A%20Guide%20to%20Digital%20Design%20and%20Synthesis%20Samir%20Palnitkar",
       "description": "Verilog language and synthesizeable digital logic.",
       "source_status": "bibliographic",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Read"
     },
     {
       "id": "B021",
@@ -2864,7 +3846,11 @@
       "url": "https://books.google.com/books?q=RTL%20Modeling%20with%20SystemVerilog%20for%20Simulation%20and%20Synthesis%20Stuart%20Sutherland",
       "description": "Writing robust RTL for synthesis and verification.",
       "source_status": "bibliographic",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Read"
     },
     {
       "id": "B022",
@@ -2877,7 +3863,11 @@
       "url": "https://books.google.com/books?q=Digital%20Design%20and%20Computer%20Architecture%20David%20Money%20Harris%20and%20Sarah%20L.%20Harris",
       "description": "Processor architecture alongside hands-on logic design.",
       "source_status": "bibliographic",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Read"
     },
     {
       "id": "B023",
@@ -2890,7 +3880,11 @@
       "url": "https://books.google.com/books?q=FPGA%20Prototyping%20by%20Verilog%20Examples%20Pong%20P.%20Chu",
       "description": "Practical FPGA RTL and board exercises.",
       "source_status": "bibliographic",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Read"
     },
     {
       "id": "B024",
@@ -2903,7 +3897,11 @@
       "url": "https://books.google.com/books?q=Computer%20Organization%20and%20Design%20RISC-V%20Edition%20David%20A.%20Patterson%20and%20John%20L.%20Hennessy",
       "description": "CPU pipeline, ISA, memory hierarchy and architecture.",
       "source_status": "bibliographic",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Read"
     },
     {
       "id": "B025",
@@ -2916,7 +3914,11 @@
       "url": "https://books.google.com/books?q=Computer%20Architecture%3A%20A%20Quantitative%20Approach%20John%20L.%20Hennessy%20and%20David%20A.%20Patterson",
       "description": "Performance and microarchitecture tradeoffs.",
       "source_status": "bibliographic",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Read"
     },
     {
       "id": "B026",
@@ -2929,7 +3931,11 @@
       "url": "https://books.google.com/books?q=VLSI%20Physical%20Design%3A%20From%20Graph%20Partitioning%20to%20Timing%20Closure%20Andrew%20B.%20Kahng%20et%20al.",
       "description": "Placement, routing, partitioning, timing closure.",
       "source_status": "bibliographic",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Read"
     },
     {
       "id": "B027",
@@ -2942,7 +3948,11 @@
       "url": "https://books.google.com/books?q=Algorithms%20for%20VLSI%20Physical%20Design%20Automation%20Naveed%20A.%20Sherwani",
       "description": "Classic algorithms for layout implementation.",
       "source_status": "bibliographic",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Read"
     },
     {
       "id": "B028",
@@ -2955,7 +3965,11 @@
       "url": "https://books.google.com/books?q=Microwave%20Engineering%20David%20M.%20Pozar",
       "description": "Microwave networks, matching and distributed effects.",
       "source_status": "bibliographic",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Read"
     },
     {
       "id": "B029",
@@ -2968,7 +3982,11 @@
       "url": "https://books.google.com/books?q=RF%20Microelectronics%20Behzad%20Razavi",
       "description": "Receiver, mixer, oscillator and RF IC architectures.",
       "source_status": "bibliographic",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Read"
     },
     {
       "id": "B030",
@@ -2981,7 +3999,11 @@
       "url": "https://books.google.com/books?q=Field%20and%20Wave%20Electromagnetics%20David%20K.%20Cheng",
       "description": "Classical fields, EM waves and boundaries.",
       "source_status": "bibliographic",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Read"
     },
     {
       "id": "B031",
@@ -2994,7 +4016,11 @@
       "url": "https://books.google.com/books?q=Antenna%20Theory%3A%20Analysis%20and%20Design%20Constantine%20A.%20Balanis",
       "description": "Antennas, radiation patterns and array design.",
       "source_status": "bibliographic",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Read"
     },
     {
       "id": "B032",
@@ -3007,7 +4033,11 @@
       "url": "https://books.google.com/books?q=Fundamentals%20of%20Photonics%20Bahaa%20E.%20A.%20Saleh%20and%20Malvin%20Carl%20Teich",
       "description": "Foundational optics, waveguides and optoelectronics.",
       "source_status": "bibliographic",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Read"
     },
     {
       "id": "B033",
@@ -3020,7 +4050,11 @@
       "url": "https://books.google.com/books?q=Silicon%20Photonics%20Design%3A%20From%20Devices%20to%20Systems%20Lukas%20Chrostowski%20and%20Michael%20Hochberg",
       "description": "Practical PIC device and system design workflow.",
       "source_status": "bibliographic",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Read"
     },
     {
       "id": "B034",
@@ -3033,7 +4067,11 @@
       "url": "https://books.google.com/books?q=Photonic%20Devices%20Jia-Ming%20Liu",
       "description": "Optical devices and material interactions.",
       "source_status": "bibliographic",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Read"
     },
     {
       "id": "B035",
@@ -3046,7 +4084,11 @@
       "url": "https://books.google.com/books?q=Optical%20Electronics%20in%20Modern%20Communications%20Amnon%20Yariv%20and%20Pochi%20Yeh",
       "description": "Optical waveguides, lasers and photonic components.",
       "source_status": "bibliographic",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Read"
     },
     {
       "id": "B036",
@@ -3059,7 +4101,11 @@
       "url": "https://books.google.com/books?q=Integrated%20Photonics%20Gin%C3%A9s%20Lifante",
       "description": "Waveguide structures, mode physics and integrated optics.",
       "source_status": "bibliographic",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Read"
     },
     {
       "id": "B037",
@@ -3072,7 +4118,11 @@
       "url": "https://books.google.com/books?q=Fundamentals%20of%20Microfabrication%20and%20Nanotechnology%20Marc%20J.%20Madou",
       "description": "Fabrication steps and process integration for micro/nanosystems.",
       "source_status": "bibliographic",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "B038",
@@ -3085,7 +4135,11 @@
       "url": "https://books.google.com/books?q=An%20Introduction%20to%20Microelectromechanical%20Systems%20Engineering%20Nadim%20Maluf%20and%20Kirt%20Williams",
       "description": "MEMS technology and device physics.",
       "source_status": "bibliographic",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "B039",
@@ -3098,7 +4152,11 @@
       "url": "https://books.google.com/books?q=Microsystem%20Design%20Stephen%20D.%20Senturia",
       "description": "Coupled-domain microsystem and MEMS design.",
       "source_status": "bibliographic",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "B040",
@@ -3111,7 +4169,12 @@
       "url": "https://books.google.com/books?q=Introduction%20to%20Solid%20State%20Physics%20Charles%20Kittel",
       "description": "Band structure, crystals and condensed matter basics.",
       "source_status": "bibliographic",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "B041",
@@ -3124,7 +4187,12 @@
       "url": "https://books.google.com/books?q=Solid%20State%20Physics%20Neil%20W.%20Ashcroft%20and%20N.%20David%20Mermin",
       "description": "Detailed crystalline electronic physics.",
       "source_status": "bibliographic",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "B042",
@@ -3137,7 +4205,12 @@
       "url": "https://books.google.com/books?q=Principles%20of%20Electronic%20Materials%20and%20Devices%20S.%20O.%20Kasap",
       "description": "Electrical, optical and magnetic material properties.",
       "source_status": "bibliographic",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "B043",
@@ -3150,7 +4223,12 @@
       "url": "https://books.google.com/books?q=Nanotechnology%3A%20Principles%20and%20Practices%20Sulabha%20K.%20Kulkarni",
       "description": "Overview of nanotechnology physics and methods.",
       "source_status": "bibliographic",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "B044",
@@ -3163,7 +4241,11 @@
       "url": "https://books.google.com/books?q=Quantum%20Computation%20and%20Quantum%20Information%20Michael%20A.%20Nielsen%20and%20Isaac%20L.%20Chuang",
       "description": "Quantum states, gates, noise, algorithms and information.",
       "source_status": "bibliographic",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Read"
     },
     {
       "id": "B045",
@@ -3176,7 +4258,11 @@
       "url": "https://books.google.com/books?q=Quantum%20Mechanics%3A%20Concepts%20and%20Applications%20Nouredine%20Zettili",
       "description": "Worked quantum mechanics mathematics and problems.",
       "source_status": "bibliographic",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Read"
     },
     {
       "id": "B046",
@@ -3189,7 +4275,11 @@
       "url": "https://books.google.com/books?q=Introduction%20to%20Quantum%20Mechanics%20David%20J.%20Griffiths%20and%20Darrell%20F.%20Schroeter",
       "description": "Wavefunctions, operators and quantum fundamentals.",
       "source_status": "bibliographic",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics"
+      ],
+      "intent": "Read"
     },
     {
       "id": "B047",
@@ -3202,7 +4292,12 @@
       "url": "https://books.google.com/books?q=Pattern%20Recognition%20and%20Machine%20Learning%20Christopher%20M.%20Bishop",
       "description": "Probabilistic ML foundations for sensor and materials models.",
       "source_status": "bibliographic",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "B048",
@@ -3215,7 +4310,12 @@
       "url": "https://books.google.com/books?q=Deep%20Learning%20Ian%20Goodfellow%2C%20Yoshua%20Bengio%20and%20Aaron%20Courville",
       "description": "Mathematical basis of neural networks.",
       "source_status": "bibliographic",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "B049",
@@ -3228,7 +4328,12 @@
       "url": "https://books.google.com/books?q=The%20Elements%20of%20Statistical%20Learning%20Trevor%20Hastie%2C%20Robert%20Tibshirani%20and%20Jerome%20Friedman",
       "description": "Statistical modeling and predictive learning theory.",
       "source_status": "bibliographic",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "X001",
@@ -3241,7 +4346,12 @@
       "url": "https://ocw.mit.edu/courses/6-152j-micro-nano-processing-technology-fall-2005/",
       "description": "Oxidation, diffusion, lithography, deposition, etching and integrated microfabrication labs.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Learn"
     },
     {
       "id": "X002",
@@ -3254,7 +4364,12 @@
       "url": "https://ocw.mit.edu/courses/6-152j-micro-nano-processing-technology-fall-2005/pages/lecture-notes/",
       "description": "Detailed microfabrication lectures including vacuum systems, CVD, PVD and process testing.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Learn"
     },
     {
       "id": "X003",
@@ -3267,7 +4382,12 @@
       "url": "https://nnci.net/",
       "description": "US university nanofabrication infrastructure network, training and facility information.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "X004",
@@ -3280,7 +4400,12 @@
       "url": "https://www.jedec.org/",
       "description": "Semiconductor packaging, memory and device reliability standards and specifications.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "X005",
@@ -3293,7 +4418,12 @@
       "url": "https://www.semi.org/",
       "description": "Semiconductor process, materials and supply-chain standards.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "X006",
@@ -3306,7 +4436,12 @@
       "url": "https://microscopy.org/",
       "description": "Microscopy education, technical seminars and community resources.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "X007",
@@ -3319,7 +4454,12 @@
       "url": "https://www.nist.gov/mml",
       "description": "Physical measurement methods and materials characterization references.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "X008",
@@ -3332,7 +4472,12 @@
       "url": "https://fiji.sc/",
       "description": "Microscopy image analysis and segmentation for experiments.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "X009",
@@ -3345,7 +4490,12 @@
       "url": "https://subversion.xray.aps.anl.gov/trac/pyGSAS",
       "description": "Diffraction analysis and crystallographic refinement.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "X010",
@@ -3358,7 +4508,12 @@
       "url": "https://www.iucr.org/",
       "description": "Crystallographic standards, journal and data resources.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "X011",
@@ -3371,7 +4526,12 @@
       "url": "https://ocw.mit.edu/courses/6-302-feedback-systems-spring-2007/",
       "description": "Stability, transfer functions, root locus, frequency response and compensation.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Learn"
     },
     {
       "id": "X012",
@@ -3384,7 +4544,12 @@
       "url": "https://www.ti.com/video/series/power-supply-design-training-resources.html",
       "description": "Real converter architecture, efficiency, EMI, power layout and practical design issues.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Learn"
     },
     {
       "id": "X013",
@@ -3397,7 +4562,12 @@
       "url": "https://www.ti.com/about-ti/events/power-supply-design-webinar-series.html",
       "description": "Practical webinars on DC/DC design, GaN power and regulator tradeoffs.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Learn"
     },
     {
       "id": "X014",
@@ -3410,7 +4580,12 @@
       "url": "https://www.plexim.com/",
       "description": "Power electronic converter and control system modeling.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "X015",
@@ -3423,7 +4598,12 @@
       "url": "https://openmodelica.org/",
       "description": "Modelica-based dynamic systems, electrical and thermal modeling.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "X016",
@@ -3436,7 +4616,12 @@
       "url": "https://python-control.readthedocs.io/",
       "description": "State space, transfer function and closed-loop feedback analysis.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "X017",
@@ -3449,7 +4634,12 @@
       "url": "https://www.ieee-pels.org/",
       "description": "Conferences, tutorials and standards for power electronics.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "X018",
@@ -3462,7 +4652,12 @@
       "url": "https://www.infineon.com/",
       "description": "Manufacturer application notes and models for power conversion and switching.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "X019",
@@ -3475,7 +4670,12 @@
       "url": "https://electronics.stackexchange.com/",
       "description": "Practical technical Q&A on circuit and system design; verify answers critically.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "X020",
@@ -3488,7 +4688,12 @@
       "url": "https://www.eevblog.com/forum/",
       "description": "Practical discussion of instrumentation, PCB design, reverse engineering and repair.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Explore"
     },
     {
       "id": "X021",
@@ -3501,7 +4706,12 @@
       "url": "https://ocw.mit.edu/courses/18-06sc-linear-algebra-fall-2011/",
       "description": "Matrices, eigenvalues, least squares and linear algebra for simulation and ML.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Learn"
     },
     {
       "id": "X022",
@@ -3514,7 +4724,12 @@
       "url": "https://ocw.mit.edu/courses/18-03sc-differential-equations-fall-2011/",
       "description": "ODEs, Laplace transforms and systems used for circuit dynamics.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Learn"
     },
     {
       "id": "X023",
@@ -3527,7 +4742,12 @@
       "url": "https://ocw.mit.edu/courses/18-02sc-multivariable-calculus-fall-2010/",
       "description": "Gradients, vector calculus and integrals for electromagnetic fields.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Learn"
     },
     {
       "id": "X024",
@@ -3540,7 +4760,12 @@
       "url": "https://www.sympy.org/",
       "description": "Symbolic algebra, equations and exact derivations.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "X025",
@@ -3553,7 +4778,12 @@
       "url": "https://pandas.pydata.org/",
       "description": "Tidy experimental datasets, join measurements and process CSV results.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "X026",
@@ -3566,7 +4796,12 @@
       "url": "https://julialang.org/",
       "description": "High-performance scientific numerical programming and simulations.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "X027",
@@ -3579,11 +4814,16 @@
       "url": "https://openstax.org/subjects/science",
       "description": "Free open physics textbooks with exercises.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "S001",
-      "domain": "Sensors & actuators",
+      "domain": "Sensors & Smart Systems",
       "kind": "Course",
       "title": "NPTEL Sensors and Actuators (IISc)",
       "provider": "Prof. Hardik J. Pandya / IISc",
@@ -3592,11 +4832,15 @@
       "url": "https://onlinecourses.nptel.ac.in/e-learning/preview/noc26_ee13",
       "description": "Detailed lectures on transduction physics, fabrication, simulation, characterization and readout of microsensors and actuators.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Learn"
     },
     {
       "id": "S002",
-      "domain": "Sensors & actuators",
+      "domain": "Sensors & Smart Systems",
       "kind": "Course",
       "title": "NPTEL Sensor Technologies: Physics Fabrication Circuits",
       "provider": "IISER Bhopal",
@@ -3605,11 +4849,15 @@
       "url": "https://nptel.ac.in/courses/108106193",
       "description": "Learn sensor materials, manufacturing, device physics and readout electronics in one sequence.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Learn"
     },
     {
       "id": "S003",
-      "domain": "Sensors & actuators",
+      "domain": "Sensors & Smart Systems",
       "kind": "Course",
       "title": "NPTEL Sensors and Actuators archive",
       "provider": "NPTEL",
@@ -3618,11 +4866,15 @@
       "url": "https://archive.nptel.ac.in/noc/courses/noc22/SEM1/noc22-ee50/",
       "description": "Archived lectures and syllabus; course enrollment might be closed.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Learn"
     },
     {
       "id": "S004",
-      "domain": "Sensors & actuators",
+      "domain": "Sensors & Smart Systems",
       "kind": "Course",
       "title": "Embedded Sensing Actuation and Interfacing Systems",
       "provider": "IIT Kharagpur",
@@ -3631,11 +4883,15 @@
       "url": "https://onlinecourses.nptel.ac.in/noc24_ee68/preview",
       "description": "Design sensor frontends and integrate sensing, actuation and embedded feedback.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Learn"
     },
     {
       "id": "S005",
-      "domain": "Sensors & actuators",
+      "domain": "Sensors & Smart Systems",
       "kind": "Course",
       "title": "NPTEL Sensor Fundamentals and Technologies",
       "provider": "NPTEL",
@@ -3644,11 +4900,15 @@
       "url": "https://nptel.ac.in/courses/117103726",
       "description": "Sensor principles, metrics, calibration, chemical sensing and interfacing.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Learn"
     },
     {
       "id": "S006",
-      "domain": "Sensors & actuators",
+      "domain": "Sensors & Smart Systems",
       "kind": "Course",
       "title": "Michigan EECS 414 Introduction to MEMS",
       "provider": "University of Michigan",
@@ -3657,11 +4917,15 @@
       "url": "https://ece.engin.umich.edu/academics/course-information/course-descriptions/eecs-414/",
       "description": "Micromachining, capacitive and piezoresistive devices, electrothermal transduction; description not full notes.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Learn"
     },
     {
       "id": "S007",
-      "domain": "Sensors & actuators",
+      "domain": "Sensors & Smart Systems",
       "kind": "Course",
       "title": "MIT Design and Fabrication of MEMS",
       "provider": "MIT OpenCourseWare",
@@ -3670,11 +4934,15 @@
       "url": "https://ocw.mit.edu/courses/6-777j-design-and-fabrication-of-microelectromechanical-devices-spring-2007/",
       "description": "Worked MEMS projects and problem sets across fabrication, mechanics, actuators and sensors.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Learn"
     },
     {
       "id": "S008",
-      "domain": "Sensors & actuators",
+      "domain": "Sensors & Smart Systems",
       "kind": "Course",
       "title": "Resonant MEMS lecture videos",
       "provider": "University of Michigan",
@@ -3683,11 +4951,15 @@
       "url": "https://phonon.engin.umich.edu/teaching/",
       "description": "Lecture series on resonant sensors, dynamics and quality factors.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Learn"
     },
     {
       "id": "S009",
-      "domain": "Sensors & actuators",
+      "domain": "Sensors & Smart Systems",
       "kind": "Course",
       "title": "Michigan EECS 425 Integrated Microsystems",
       "provider": "University of Michigan",
@@ -3696,11 +4968,15 @@
       "url": "https://ece.engin.umich.edu/academics/course-information/course-descriptions/eecs-425/",
       "description": "System-level sensor, processing and output integration; course description only.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Learn"
     },
     {
       "id": "S010",
-      "domain": "Sensors & actuators",
+      "domain": "Sensors & Smart Systems",
       "kind": "Course",
       "title": "NPTEL Embedded Sensing full course",
       "provider": "IIT Kharagpur",
@@ -3709,11 +4985,15 @@
       "url": "https://nptel.ac.in/courses/108105376",
       "description": "Lectures on specific sensors, actuators, signal conditioning and embedded design.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Learn"
     },
     {
       "id": "S011",
-      "domain": "Sensors & actuators",
+      "domain": "Sensors & Smart Systems",
       "kind": "Journal",
       "title": "IEEE Sensors Journal",
       "provider": "IEEE",
@@ -3722,11 +5002,15 @@
       "url": "https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=7361",
       "description": "Device and sensor-system research, test methods, design and packaging.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "S012",
-      "domain": "Sensors & actuators",
+      "domain": "Sensors & Smart Systems",
       "kind": "Journal",
       "title": "Sensors and Actuators A",
       "provider": "Elsevier",
@@ -3735,11 +5019,15 @@
       "url": "https://www.sciencedirect.com/journal/sensors-and-actuators-a-physical",
       "description": "Physical and electromechanical sensor engineering research.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "S013",
-      "domain": "Sensors & actuators",
+      "domain": "Sensors & Smart Systems",
       "kind": "Journal",
       "title": "Sensors and Actuators B",
       "provider": "Elsevier",
@@ -3748,11 +5036,15 @@
       "url": "https://www.sciencedirect.com/journal/sensors-and-actuators-b-chemical",
       "description": "Chemical, gas and electrochemical sensing materials and devices.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "S014",
-      "domain": "Sensors & actuators",
+      "domain": "Sensors & Smart Systems",
       "kind": "Journal",
       "title": "MDPI Sensors",
       "provider": "MDPI",
@@ -3761,11 +5053,15 @@
       "url": "https://www.mdpi.com/journal/sensors",
       "description": "Open research articles and sensor case studies; assess individual papers critically.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "S015",
-      "domain": "Sensors & actuators",
+      "domain": "Sensors & Smart Systems",
       "kind": "Journal",
       "title": "IEEE Journal of Microelectromechanical Systems",
       "provider": "IEEE",
@@ -3774,11 +5070,15 @@
       "url": "https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=84",
       "description": "MEMS and NEMS research from process to device measurement.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "S016",
-      "domain": "Sensors & actuators",
+      "domain": "Sensors & Smart Systems",
       "kind": "GitHub repository",
       "title": "MediBrick biomedical sensor hardware",
       "provider": "MediBrick",
@@ -3787,11 +5087,15 @@
       "url": "https://github.com/MediBrick",
       "description": "Reference biosignal sensors, sensor boards and data acquisition firmware.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "S017",
-      "domain": "Sensors & actuators",
+      "domain": "Sensors & Smart Systems",
       "kind": "Book",
       "title": "Handbook of Modern Sensors",
       "provider": "Jacob Fraden",
@@ -3800,11 +5104,15 @@
       "url": "https://books.google.com/books?q=Handbook+of+Modern+Sensors+Jacob+Fraden",
       "description": "Core reference for physical sensor transduction, noise and specifications.",
       "source_status": "bibliographic",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "S018",
-      "domain": "Sensors & actuators",
+      "domain": "Sensors & Smart Systems",
       "kind": "Book",
       "title": "Sensors and Signal Conditioning",
       "provider": "Ramón Pallás-Areny and John G. Webster",
@@ -3813,11 +5121,15 @@
       "url": "https://books.google.com/books?q=Sensors+and+Signal+Conditioning",
       "description": "Real sensor signal conditioning circuits and errors.",
       "source_status": "bibliographic",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "S019",
-      "domain": "Sensors & actuators",
+      "domain": "Sensors & Smart Systems",
       "kind": "Book",
       "title": "Principles of Measurement Systems",
       "provider": "John P. Bentley",
@@ -3826,11 +5138,15 @@
       "url": "https://books.google.com/books?q=Principles+of+Measurement+Systems+Bentley",
       "description": "Design measurement chains and calculate uncertainty.",
       "source_status": "bibliographic",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "S020",
-      "domain": "Sensors & actuators",
+      "domain": "Sensors & Smart Systems",
       "kind": "Book",
       "title": "Microsensors MEMS and Smart Devices",
       "provider": "Julian W. Gardner et al.",
@@ -3839,11 +5155,15 @@
       "url": "https://books.google.com/books?q=Microsensors+MEMS+Smart+Devices",
       "description": "Reference for smart sensors and microsystem architectures.",
       "source_status": "bibliographic",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "S021",
-      "domain": "Sensors & actuators",
+      "domain": "Sensors & Smart Systems",
       "kind": "Book",
       "title": "MEMS and Microsystems",
       "provider": "Tai-Ran Hsu",
@@ -3852,7 +5172,11 @@
       "url": "https://books.google.com/books?q=MEMS+and+Microsystems+Tai+Ran+Hsu",
       "description": "MEMS design, modeling, manufacturing and transducers.",
       "source_status": "bibliographic",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "S022",
@@ -3865,7 +5189,12 @@
       "url": "https://silvaco.com/support/documentation/",
       "description": "User manuals require sign-in; installation instructions and examples are accessible.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "S023",
@@ -3878,7 +5207,12 @@
       "url": "https://silvaco.com/resources/technical-library/tcad-training-materials/",
       "description": "Official guided start to examples, device and process simulation workflows.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Learn"
     },
     {
       "id": "S024",
@@ -3891,7 +5225,12 @@
       "url": "https://silvaco.com/resources/technical-library/",
       "description": "Application notes, models, TCAD papers and simulation methodology.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "S025",
@@ -3904,7 +5243,12 @@
       "url": "https://silvaco.com/tcad/interactive-tools/",
       "description": "Graphical environment for TCAD runs, result analysis and simulation scripts.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "S026",
@@ -3917,7 +5261,12 @@
       "url": "https://silvaco.com/tcad/",
       "description": "Commercial semiconductor device simulations; requires process and device physics knowledge.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "S027",
@@ -3930,7 +5279,12 @@
       "url": "https://silvaco.com/tcad/",
       "description": "Fabrication process modeling by layer deposition, implant, growth and etch.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "S028",
@@ -3943,7 +5297,12 @@
       "url": "https://silvaco.com/tcad/",
       "description": "Advanced semiconductor and photodiode modeling.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "S029",
@@ -3956,7 +5315,12 @@
       "url": "https://silvaco.com/tcad/",
       "description": "Process-derived semiconductor structures and process integration.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "S030",
@@ -3969,7 +5333,12 @@
       "url": "https://silvaco.com/support/documentation/",
       "description": "Edit and run simulation decks, examine convergence and visualization.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "S031",
@@ -3982,7 +5351,12 @@
       "url": "https://silvaco.com/examples/examples-tcad/examples-tcad-technology/examples-tcad-technology-opto-and-photonics/examples-tcad-technology-opto-and-photonics-photodiodes/photodiode-ex01/",
       "description": "Photodiode light generation and current response; executing model requires licensed simulator.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Learn"
     },
     {
       "id": "S032",
@@ -3995,7 +5369,12 @@
       "url": "https://silvaco.com/technical-library/tcad-published-papers/",
       "description": "Device simulation papers including MEMS and optoelectronics.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "S033",
@@ -4008,7 +5387,12 @@
       "url": "https://github.com/MstafaAhmed/silvaco-athena-atlas-mosfet-simulation",
       "description": "Third-party end-to-end process and device deck with output transistor curves.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "S034",
@@ -4021,7 +5405,12 @@
       "url": "https://github.com/arjundatta-silvaco/Silvaco-Python-Data-Analysis",
       "description": "Community postprocessing tools for simulator results.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "S035",
@@ -4034,7 +5423,12 @@
       "url": "https://github.com/LIParadise/NTUEE-2020-Spring-Solid-State-Electronix",
       "description": "Student laboratory material in solid-state devices and TCAD topics.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "S036",
@@ -4047,7 +5441,12 @@
       "url": "https://silvaco.com/resources/technical-library/",
       "description": "Browse historical simulation examples while noting software-version differences.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "M001",
@@ -4060,7 +5459,12 @@
       "url": "https://sfepy.org/",
       "description": "Numerical PDE and finite element modeling for sensor structures.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "M002",
@@ -4073,7 +5477,12 @@
       "url": "https://www.calculix.de/",
       "description": "Structural simulation of membranes and beams with simplified mechanics assumptions.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "M003",
@@ -4086,7 +5495,12 @@
       "url": "https://openmodelica.org/",
       "description": "Lumped electrothermal and electromechanical system simulations.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "M004",
@@ -4099,7 +5513,12 @@
       "url": "https://febio.org/",
       "description": "Bioengineering finite element tools for soft sensor materials.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "M005",
@@ -4112,7 +5531,12 @@
       "url": "https://www.ansys.com/products/structures/ansys-mechanical",
       "description": "Stress, deflection, resonance and heat flow of sensor packages.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "M006",
@@ -4125,7 +5549,12 @@
       "url": "https://www.comsol.com/mems-module",
       "description": "Electrostatic, piezoelectric and thermal coupling for sensors and actuators.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "M007",
@@ -4138,7 +5567,12 @@
       "url": "https://www.comsol.com/semiconductor-module",
       "description": "Semiconductor models coupled to thermal or optical physics.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "M008",
@@ -4151,7 +5585,12 @@
       "url": "https://www.salome-platform.org/",
       "description": "Geometry and mesh generation for MEMS models.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "M009",
@@ -4164,7 +5603,12 @@
       "url": "https://www.comsol.com/support/learning-center",
       "description": "Short structured lessons on solving and checking coupled-physics models.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "M010",
@@ -4177,7 +5621,12 @@
       "url": "https://www.comsol.com/models",
       "description": "Search MEMS pressure sensors, electrothermal actuators and other validated model examples.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "M011",
@@ -4190,7 +5639,12 @@
       "url": "https://github.com/ThomasFabula/piezoelectric_simulation",
       "description": "Community models of piezoelectric MEMS beams and resonators.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "M012",
@@ -4203,7 +5657,12 @@
       "url": "https://github.com/gdsfactory/kfactory",
       "description": "Create parameterized layout hierarchy for chip-scale devices.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "M013",
@@ -4216,7 +5675,12 @@
       "url": "https://openfoam.org/",
       "description": "Computational fluid simulation suitable for simplified microfluidic problems.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "M014",
@@ -4229,7 +5693,12 @@
       "url": "https://pages.nist.gov/fipy/",
       "description": "Finite-volume transport problems for sensors and electrochemistry.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "M015",
@@ -4242,7 +5711,12 @@
       "url": "https://ocw.mit.edu/courses/6-152j-micro-nano-processing-technology-fall-2005/",
       "description": "Process sequence covering resist, vacuum, oxidation, etching and deposition.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Learn"
     },
     {
       "id": "M016",
@@ -4255,7 +5729,12 @@
       "url": "https://nptel.ac.in/courses/113104075",
       "description": "Evaporation, sputtering, CVD and ALD for sensor thin films.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Learn"
     },
     {
       "id": "M017",
@@ -4268,7 +5747,12 @@
       "url": "https://ece.engin.umich.edu/academics/course-information/course-descriptions/eecs-423/",
       "description": "Reference syllabus for MOSFET processing and characterization.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Learn"
     },
     {
       "id": "M018",
@@ -4281,7 +5765,12 @@
       "url": "https://www.eecs.umich.edu/courses/eecs423/orientation.html",
       "description": "Educational MOSFET fabrication lab schedule and safety context.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Learn"
     },
     {
       "id": "M019",
@@ -4294,7 +5783,12 @@
       "url": "https://lnf-wiki.eecs.umich.edu/wiki/User_Resources",
       "description": "Cleanroom process and orientation training materials.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Learn"
     },
     {
       "id": "M020",
@@ -4307,7 +5801,12 @@
       "url": "https://nnci.net/",
       "description": "Facilities, nanotechnology education and fabrication tools.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "M021",
@@ -4320,7 +5819,12 @@
       "url": "https://snfguide.stanford.edu/",
       "description": "Tool and recipe background and laboratory process orientation.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "M022",
@@ -4333,7 +5837,12 @@
       "url": "https://mitnano.mit.edu/",
       "description": "Semiconductor fabrication and microscopy infrastructure references.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "M023",
@@ -4346,7 +5855,12 @@
       "url": "https://www.cnf.cornell.edu/",
       "description": "Research facility pages with microfabrication and microscopy overview.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "M024",
@@ -4359,7 +5873,12 @@
       "url": "https://www.microchemicals.com/",
       "description": "Resist processing and lithography background.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "M025",
@@ -4372,7 +5891,12 @@
       "url": "https://www.evgroup.com/",
       "description": "Wafer bonding concepts and tool capabilities.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "M026",
@@ -4385,7 +5909,12 @@
       "url": "https://www.suss.com/",
       "description": "Mask alignment and lithography tool context, not a full course.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "M027",
@@ -4398,7 +5927,12 @@
       "url": "https://www.kla.com/",
       "description": "Wafer inspection, defects and manufacturing metrology.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "M028",
@@ -4411,7 +5945,12 @@
       "url": "https://plasma.oxinst.com/",
       "description": "Plasma etch and deposition equipment overview.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "M029",
@@ -4424,7 +5963,12 @@
       "url": "https://books.google.com/books?q=Fabrication+Engineering+Micro+Nanoscale+Campbell",
       "description": "Formal fabrication processes and device integration.",
       "source_status": "bibliographic",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "M030",
@@ -4437,7 +5981,12 @@
       "url": "https://books.google.com/books?q=Introduction+to+Microfabrication+Franssila",
       "description": "Accessible MEMS and microchip fabrication textbook.",
       "source_status": "bibliographic",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "M031",
@@ -4450,7 +5999,12 @@
       "url": "https://books.google.com/books?q=Semiconductor+Manufacturing+Technology+Quirk",
       "description": "Production process flows and yield perspective.",
       "source_status": "bibliographic",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "M032",
@@ -4463,7 +6017,12 @@
       "url": "https://books.google.com/books?q=Microchip+Fabrication+Van+Zant",
       "description": "Practical fabrication and facilities overview.",
       "source_status": "bibliographic",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "K001",
@@ -4476,7 +6035,12 @@
       "url": "https://nptel.ac.in/courses/113104075",
       "description": "Vacuum, sputtering, PVD, CVD and crystalline film growth.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Learn"
     },
     {
       "id": "K002",
@@ -4489,7 +6053,12 @@
       "url": "https://ocw.mit.edu/courses/3-091-introduction-to-solid-state-chemistry-fall-2018/",
       "description": "Atomic bonding, crystal structures, defects and materials behavior.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Learn"
     },
     {
       "id": "K003",
@@ -4502,7 +6071,12 @@
       "url": "https://docs.materialsproject.org/",
       "description": "How to interpret calculated structures, electronic properties and phase stability.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "K004",
@@ -4515,7 +6089,12 @@
       "url": "https://subversion.xray.aps.anl.gov/trac/pyGSAS",
       "description": "X-ray diffraction phase identification and Rietveld refinement.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "K005",
@@ -4528,7 +6107,12 @@
       "url": "https://www.ill.eu/sites/fullprof/",
       "description": "Crystallography and diffraction analysis for sample characterization.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "K006",
@@ -4541,7 +6125,12 @@
       "url": "http://gwyddion.net/",
       "description": "Atomic force and scanning probe microscopy surface processing.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "K007",
@@ -4554,7 +6143,12 @@
       "url": "https://hyperspy.org/",
       "description": "Spectroscopy and microscopy analysis across SEM/TEM/EELS datasets.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "K008",
@@ -4567,7 +6161,12 @@
       "url": "https://pymatgen.org/",
       "description": "Crystal structure and DFT materials calculations.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "K009",
@@ -4580,7 +6179,12 @@
       "url": "https://hackingmaterials.lbl.gov/matminer/",
       "description": "Materials ML descriptors and property prediction workflows.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "K010",
@@ -4593,7 +6197,12 @@
       "url": "https://oqmd.org/",
       "description": "Calculated materials electronic and thermodynamic properties.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "K011",
@@ -4606,7 +6215,12 @@
       "url": "https://www.iucr.org/",
       "description": "Crystallographic standards and structure quality background.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "K012",
@@ -4619,7 +6233,12 @@
       "url": "https://books.google.com/books?q=Chemical+Sensors+Biosensors+Eggins",
       "description": "Chemical transduction, interfaces and sample analysis.",
       "source_status": "bibliographic",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "K013",
@@ -4632,7 +6251,12 @@
       "url": "https://books.google.com/books?q=Nanomaterials+Synthesis+Properties+Applications+Edelstein",
       "description": "Synthesis and nanoscale material behavior.",
       "source_status": "bibliographic",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "K014",
@@ -4645,7 +6269,11 @@
       "url": "https://ece.engin.umich.edu/academics/course-information/course-descriptions/ece-509/",
       "description": "Soft lithography, micropumps, bioanalytical devices and implants; syllabus.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Learn"
     },
     {
       "id": "K015",
@@ -4658,7 +6286,11 @@
       "url": "https://pubs.rsc.org/en/journals/journalissues/lc",
       "description": "Microfluidic and bioanalytical sensing research.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "K016",
@@ -4671,7 +6303,11 @@
       "url": "https://www.sciencedirect.com/journal/biosensors-and-bioelectronics",
       "description": "Bioelectronic and biochemical sensors.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "K017",
@@ -4684,7 +6320,11 @@
       "url": "https://pubs.acs.org/journal/ascefj",
       "description": "Chemical sensing science and device benchmarking.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "K018",
@@ -4697,7 +6337,11 @@
       "url": "https://www.comsol.com/microfluidics-module",
       "description": "Flow, laminar transport and mixing at microscale.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "K019",
@@ -4710,7 +6354,11 @@
       "url": "https://openmm.org/",
       "description": "Molecular simulation of biomolecular and receptor interactions.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "K020",
@@ -4723,7 +6371,11 @@
       "url": "https://pybamm.org/",
       "description": "Electrochemical modeling, mainly batteries; adapt physical assumptions carefully.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "K021",
@@ -4736,7 +6388,11 @@
       "url": "https://books.google.com/books?q=Introduction+to+BioMEMS+Albert+Folch",
       "description": "Microfabrication and microfluidics for biosensing.",
       "source_status": "bibliographic",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "K022",
@@ -4749,7 +6405,11 @@
       "url": "https://books.google.com/books?q=Biomedical+Microsystems+Ellis+Meng",
       "description": "Biological microsystem device and packaging engineering.",
       "source_status": "bibliographic",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "K023",
@@ -4762,7 +6422,11 @@
       "url": "https://books.google.com/books?q=Microfluidics+for+Biotechnology+Berthier+Silberzan",
       "description": "Transport mechanisms and design of biofluidic networks.",
       "source_status": "bibliographic",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "K024",
@@ -4775,7 +6439,12 @@
       "url": "https://uncertainty.nist.gov/",
       "description": "Compute uncertainty using standard propagation and Monte Carlo.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "K025",
@@ -4788,7 +6457,12 @@
       "url": "https://www.nist.gov/itl/sed/topic-areas/measurement-uncertainty",
       "description": "Practical sources of bias and statistical uncertainty.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "K026",
@@ -4801,7 +6475,12 @@
       "url": "https://www.nist.gov/pml/nist-technical-note-1297",
       "description": "Formal reporting of measurement uncertainty.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "K027",
@@ -4814,7 +6493,12 @@
       "url": "https://www.itl.nist.gov/div898/handbook/",
       "description": "Experiment design, regression and sensor calibration.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "K028",
@@ -4827,7 +6511,12 @@
       "url": "https://www.analog.com/en/resources/analog-dialogue.html",
       "description": "Deep application articles on low-noise amplifiers, signal chain and ADCs.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "K029",
@@ -4840,7 +6529,12 @@
       "url": "https://www.picotech.com/downloads",
       "description": "Oscilloscope waveform inspection with supported instruments.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "K030",
@@ -4853,7 +6547,12 @@
       "url": "https://sigrok.org/wiki/PulseView",
       "description": "Decode sensor buses and logic analyzer traces.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "K031",
@@ -4866,7 +6565,12 @@
       "url": "https://pymeasure.readthedocs.io/en/latest/",
       "description": "Write repeatable instrument automation scripts.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "K032",
@@ -4879,7 +6583,12 @@
       "url": "https://www.keysight.com/us/en/products/software/pathwave-test-software/benchvue-software.html",
       "description": "Instrument automation and measurement recording.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "K033",
@@ -4892,7 +6601,12 @@
       "url": "https://books.google.com/books?q=Measurement+Instrumentation+and+Sensors+Handbook",
       "description": "Comprehensive instrumentation and metrology reference.",
       "source_status": "bibliographic",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "G001",
@@ -4905,7 +6619,12 @@
       "url": "https://github.com/asinghani/open-eda-course",
       "description": "Lectures and executable notebooks for verilog, verification, silicon layout and open design.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "G002",
@@ -4918,7 +6637,12 @@
       "url": "https://github.com/VLSIDA/chip-tutorials",
       "description": "SPICE, OpenROAD, LibreLane, timing and KLayout through worked guides.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "G003",
@@ -4931,7 +6655,12 @@
       "url": "https://github.com/os-chip-design/chip-design-intro",
       "description": "Step-by-step accessible tutorial from RTL to tapeout.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "G004",
@@ -4944,7 +6673,12 @@
       "url": "https://github.com/Elettronica-UnivAQ/PSEI-ASIC-Lab",
       "description": "University lab with Docker, Xschem, ngspice, Magic and LibreLane on Sky130.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "G005",
@@ -4957,7 +6691,12 @@
       "url": "https://github.com/silicon-vlsi/SI-2026-AnalogIC",
       "description": "Collected video and practical references for transistor-level design.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "G006",
@@ -4970,7 +6709,12 @@
       "url": "https://github.com/bluecmd/learn-sky130",
       "description": "Schematic capture, PDK concepts, transistor examples and layout.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "G007",
@@ -4983,7 +6727,12 @@
       "url": "https://github.com/dangdo44/sky130_adder_4bit",
       "description": "Deeper adder flow showing schematic, timing, extraction and DRC/LVS.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "G008",
@@ -4996,7 +6745,12 @@
       "url": "https://github.com/westonb/sky130-analog",
       "description": "Real transistor biasing and amplifier design examples.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "G009",
@@ -5009,7 +6763,12 @@
       "url": "https://github.com/vibeic/awesome-open-ic",
       "description": "Broad index of open ASIC tools, IP and PDKs; check each linked project individually.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "G010",
@@ -5022,7 +6781,12 @@
       "url": "https://github.com/kitspace/awesome-electronics",
       "description": "Community-curated hardware design and simulator references.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "G011",
@@ -5035,7 +6799,12 @@
       "url": "https://github.com/fossi-foundation",
       "description": "Open silicon design ecosystem and associated repositories.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "G012",
@@ -5048,7 +6817,12 @@
       "url": "https://github.com/The-OpenROAD-Project",
       "description": "Physical implementation, STA and automated digital ASIC design software.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "G013",
@@ -5061,7 +6835,12 @@
       "url": "https://github.com/IHP-GmbH/EMStudio",
       "description": "GDS-fed EM solver and KLayout integration.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "G014",
@@ -5074,7 +6853,12 @@
       "url": "https://github.com/gdsfactory/kfactory",
       "description": "Write parametric hierarchical GDS layouts in Python.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "G015",
@@ -5087,7 +6871,12 @@
       "url": "https://github.com/gdsfactory/gdsfactory-photonics-training",
       "description": "Notebook-based practical waveguide and chip layout exercises.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "G016",
@@ -5100,7 +6889,12 @@
       "url": "https://github.com/OpenSUSI/TR-1um",
       "description": "Community process documentation, basic PDK and DRC/LVS example flows.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "G017",
@@ -5113,7 +6907,12 @@
       "url": "https://vlsida.github.io/chip-tutorials/",
       "description": "Readable tutorial website on open chip design.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "G018",
@@ -5126,7 +6925,12 @@
       "url": "https://librelane.readthedocs.io/en/latest/",
       "description": "Modern open digital chip backend and flow setup.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "G019",
@@ -5139,7 +6943,12 @@
       "url": "https://skywater-pdk.readthedocs.io/en/main/",
       "description": "Read real library, device layer and design-rule documentation.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "G020",
@@ -5152,7 +6961,12 @@
       "url": "https://ihp-open-pdk-docs.readthedocs.io/en/latest/",
       "description": "BiCMOS device layers and layout rules in an open PDK.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "G021",
@@ -5165,7 +6979,12 @@
       "url": "https://github.com/iic-jku/IIC-OSIC-TOOLS",
       "description": "Consolidated EDA tools in a reproducible Docker environment.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "G022",
@@ -5178,7 +6997,12 @@
       "url": "https://github.com/RTimothyEdwards/open_pdks",
       "description": "Open tool compatibility layers, tech mapping and library installation.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "G023",
@@ -5191,7 +7015,12 @@
       "url": "https://tinytapeout.com/",
       "description": "Chips, designs, shuttle options and practical open hardware training.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "G024",
@@ -5204,7 +7033,12 @@
       "url": "https://openroad.readthedocs.io/en/latest/",
       "description": "Commands and methodical tool setup for backend chip design.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "G025",
@@ -5217,7 +7051,12 @@
       "url": "https://xschem.sourceforge.io/stefan/index.html",
       "description": "Schematic capture, netlisting and transistor-level simulations.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "G026",
@@ -5230,7 +7069,12 @@
       "url": "https://ngspice.sourceforge.io/docs.html",
       "description": "Explore SPICE solver syntax and measurement methodology.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "G027",
@@ -5243,7 +7087,12 @@
       "url": "https://projectf.io/",
       "description": "Explanations, RTL source and guided projects for beginners.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "G028",
@@ -5256,7 +7105,12 @@
       "url": "https://hdlbits.01xz.net/wiki/Main_Page",
       "description": "Incremental RTL problems with automated correctness checks.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "G029",
@@ -5269,7 +7123,12 @@
       "url": "https://siepic.ubc.ca/",
       "description": "Photonic device and chip design training.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "G030",
@@ -5282,7 +7141,12 @@
       "url": "https://www.c2n.universite-paris-saclay.fr/en/",
       "description": "Explore actual nanoelectronics, sensing and photonic research.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Micro & Nanoelectronics",
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "I001",
@@ -5295,7 +7159,11 @@
       "url": "https://tinyml.seas.harvard.edu/courses/",
       "description": "Collection of university TinyML courses with actual assignments, projects and teaching materials.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Learn"
     },
     {
       "id": "I002",
@@ -5308,7 +7176,11 @@
       "url": "https://sites.google.com/g.harvard.edu/tinyml/opencourseware",
       "description": "Machine learning for low-power devices with observer-accessible public courseware.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Learn"
     },
     {
       "id": "I003",
@@ -5321,7 +7193,11 @@
       "url": "https://mlsysbook.ai/",
       "description": "Free interactive textbook about efficient reliable ML systems with linked labs and hardware deployment.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Learn"
     },
     {
       "id": "I004",
@@ -5334,7 +7210,11 @@
       "url": "https://github.com/harvard-edge/cs249r_book",
       "description": "Complete book and tutorials for engineering efficient ML systems.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "I005",
@@ -5347,7 +7227,11 @@
       "url": "https://docs.contiki-ng.org/en/master/",
       "description": "Practical IPv6 low power networks, CoAP, RPL, MQTT, energy metering and Cooja simulation.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Learn"
     },
     {
       "id": "I006",
@@ -5360,7 +7244,11 @@
       "url": "https://docs.contiki-ng.org/en/develop/doc/tutorials/index.html",
       "description": "Simulate routing, radio interference and energy behavior in sensor networks before buying boards.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Learn"
     },
     {
       "id": "I007",
@@ -5373,7 +7261,11 @@
       "url": "https://docs.contiki-ng.org/en/develop/doc/tutorials/RPL.html",
       "description": "Learn routing across battery-powered sensing nodes with experiments and trace outputs.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Learn"
     },
     {
       "id": "I008",
@@ -5386,7 +7278,11 @@
       "url": "https://github.com/contiki-ng/contiki-ng",
       "description": "Source and sample programs for wireless network sensor stacks.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "I009",
@@ -5399,7 +7295,11 @@
       "url": "https://docs.zephyrproject.org/latest/samples/sensor/index.html",
       "description": "Real sensor API and firmware samples with device-tree integration.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Learn"
     },
     {
       "id": "I010",
@@ -5412,7 +7312,11 @@
       "url": "https://docs.edgeimpulse.com/",
       "description": "Collect sensor data, train models and profile embedded inference.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Learn"
     },
     {
       "id": "I011",
@@ -5425,7 +7329,11 @@
       "url": "https://ai.google.dev/edge/litert/microcontrollers/overview",
       "description": "Run ML inference on embedded microcontrollers subject to memory and processor constraints.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Learn"
     },
     {
       "id": "I012",
@@ -5438,7 +7346,11 @@
       "url": "https://academy.nordicsemi.com/",
       "description": "Embedded Bluetooth Low Energy, Zephyr and low power sensor networks.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Learn"
     },
     {
       "id": "I013",
@@ -5451,7 +7363,11 @@
       "url": "https://docs.espressif.com/projects/esp-idf/en/stable/esp32/",
       "description": "Wireless MCU firmware, FreeRTOS and peripheral buses.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Learn"
     },
     {
       "id": "I014",
@@ -5464,7 +7380,11 @@
       "url": "https://mosquitto.org/",
       "description": "Learn MQTT messaging between sensor nodes and data acquisition backends.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Learn"
     },
     {
       "id": "I015",
@@ -5477,7 +7397,11 @@
       "url": "https://nodered.org/docs/",
       "description": "Connect sensor streams to dashboards with data flows and MQTT.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Learn"
     },
     {
       "id": "I016",
@@ -5490,7 +7414,11 @@
       "url": "https://thingsboard.io/docs/",
       "description": "Device management, sensor time-series storage and telemetry dashboards.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Learn"
     },
     {
       "id": "I017",
@@ -5503,7 +7431,11 @@
       "url": "https://github.com/zephyrproject-rtos/zephyr",
       "description": "Firmware examples, sensor drivers and unit-test infrastructure.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "I018",
@@ -5516,7 +7448,11 @@
       "url": "https://github.com/tensorflow/tflite-micro",
       "description": "Embedded inference runtimes and examples including keyword spotting and sensors.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "I019",
@@ -5529,7 +7465,11 @@
       "url": "https://github.com/arduino/Arduino",
       "description": "MCU programming core for first sensor-actuator interfaces.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Practice"
     },
     {
       "id": "I020",
@@ -5542,7 +7482,11 @@
       "url": "https://standards.ieee.org/",
       "description": "Discover transducer electronic data sheet and networked sensor interface standards.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Read"
     },
     {
       "id": "I021",
@@ -5555,7 +7499,11 @@
       "url": "https://efficientml.ai/",
       "description": "Neural-network compression, quantization, inference efficiency and on-device deployment.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Learn"
     },
     {
       "id": "I022",
@@ -5568,7 +7516,11 @@
       "url": "https://www.raspberrypi.com/documentation/microcontrollers/",
       "description": "Microcontroller ADC, buses and low-level C/C++ sensor interfacing.",
       "source_status": "curated",
-      "last_checked": null
+      "last_checked": null,
+      "tracks": [
+        "Sensors & Smart Systems"
+      ],
+      "intent": "Learn"
     }
   ]
 }
