@@ -117,6 +117,33 @@
       "08-mos-capacitor",
       "09-mosfet",
       "28-carrier-transport"
+    ],
+    "equations": [
+      {
+        "after": 0,
+        "tex": "|Q_i(x)|\\simeq C'_{\\mathrm{ox}}\\left[V_{\\mathrm{GS}}-V_T-V(x)\\right]",
+        "caption": "Local inversion charge under the ideal gradual-channel approximation."
+      },
+      {
+        "after": 1,
+        "tex": "\\begin{aligned}I_D L&=\\mu_n W C'_{\\mathrm{ox}}\\int_0^{V_{\\mathrm{DS}}}(V_\\mathrm{OV}-V)\\,\\mathrm dV\\\\I_D&=\\frac{\\mu_n C'_{\\mathrm{ox}} W}{L}\\left(V_\\mathrm{OV}V_{\\mathrm{DS}}-\\frac{V_{\\mathrm{DS}}^2}{2}\\right)\\end{aligned}",
+        "caption": "Derivation of the triode-region current from channel charge and drift."
+      },
+      {
+        "after": 2,
+        "tex": "I_{\\mathrm{D,sat}}=\\frac12\\mu_n C'_{\\mathrm{ox}}\\frac WL(V_{\\mathrm{GS}}-V_T)^2",
+        "caption": "Long-channel strong-inversion saturation current."
+      },
+      {
+        "after": 3,
+        "tex": "\\begin{aligned}g_m&=\\left.\\frac{\\partial I_D}{\\partial V_{\\mathrm{GS}}}\\right|_{V_{\\mathrm{DS}}}=\\frac{2I_D}{V_\\mathrm{OV}}\\\\\\frac{g_m}{I_D}&=\\frac{2}{V_\\mathrm{OV}}\\end{aligned}",
+        "caption": "Transconductance and efficiency are local small-signal quantities."
+      },
+      {
+        "after": 4,
+        "tex": "V_T(V_{\\mathrm{SB}})=V_{T0}+\\gamma\\left(\\sqrt{2\\phi_F+V_{\\mathrm{SB}}}-\\sqrt{2\\phi_F}\\right)",
+        "caption": "Classical body-effect model for the stated p-substrate convention."
+      }
     ]
   }
 ]
