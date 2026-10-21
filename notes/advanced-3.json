@@ -171,6 +171,22 @@
         "url": "https://ocw.mit.edu/courses/6-012-microelectronic-devices-and-circuits-fall-2009/pages/assignments/",
         "task": "Derive depletion width with a pencil before tuning a TCAD solver."
       }
-    ]
+    ],
+    "capstone": {
+      "title": "Validate an abrupt silicon PN junction before trusting TCAD",
+      "brief": "Produce a theory-first device dossier that can later be repeated in Silvaco, Victory Device or another drift–diffusion solver.",
+      "deliverables": [
+        "An input specification covering material, NA, ND, ni, temperature, contact locations, bias conditions and chosen outputs.",
+        "Analytical bias sweeps for built-in potential, total depletion width, depleted extension on each side, peak field and junction capacitance per area.",
+        "A planned and, if available, completed mesh-refinement matrix with solver settings and a physically meaningful output comparison.",
+        "A discrepancy report explaining whether differences arise from a numerical mesh, the depletion approximation, contact conditions or a physical model."
+      ],
+      "acceptance": [
+        "Numerical values and units agree with the analytical equations within declared arithmetic accuracy.",
+        "Depletion region extends farther into the more lightly doped material.",
+        "Reverse bias increases W under the assumed depletion model; no unsupported breakdown prediction is made.",
+        "Unavailable proprietary software is explicitly reported as unavailable, never silently treated as run."
+      ]
+    }
   }
 ]
