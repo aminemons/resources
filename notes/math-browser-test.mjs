@@ -31,6 +31,9 @@ try {
    assert.equal(result.externalIllustrations,1,"No licensed MOSFET figure");
    const img=await page.locator(".licensed-figure img").first().evaluate(el=>({loaded:el.complete&&el.naturalWidth>0,width:el.naturalWidth}));
    console.log("LICENSED FIGURE",viewport.name,JSON.stringify(img));
+   const imageFallback=await page.locator(".licensed-figure .figure-fallback").first().evaluate(el=>({hidden:el.hidden}));
+   assert(img.loaded||!imageFallback.hidden,"Figure failed but credited fallback did not appear");
+
    const interactive=await page.locator("#mos-vgs").evaluate(el=>{el.value="1.10";el.dispatchEvent(new Event("input",{bubbles:true}));return document.getElementById("mos-model-readout")?.textContent});
    assert.match(interactive,/VOV = 0\.65 V/,"MOSFET model slider failed");
 
