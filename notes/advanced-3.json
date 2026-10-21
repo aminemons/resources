@@ -124,6 +124,11 @@
         "title": "DEVSIM source (open device solver)",
         "url": "https://github.com/devsim/devsim"
       }
+    ],
+    "prerequisites": [
+      "07-pn-junction",
+      "28-carrier-transport",
+      "10-tcad"
     ]
   }
 ]
