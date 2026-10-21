@@ -125,6 +125,28 @@
       "04-sampling",
       "05-uncertainty",
       "12-readout"
+    ],
+    "equations": [
+      {
+        "after": 1,
+        "tex": "e_n=\\sqrt{4k_B T R}\\quad\\left[\\mathrm{V}/\\sqrt{\\mathrm{Hz}}\\right]",
+        "caption": "Thermal voltage-noise spectral density of a resistor."
+      },
+      {
+        "after": 2,
+        "tex": "\\begin{aligned}B_\\mathrm{ENBW}&=\\int_0^\\infty |H(f)|^2\\,\\mathrm df\\\\&=\\int_0^\\infty\\frac{\\mathrm df}{1+(f/f_c)^2}=\\frac{\\pi}{2}f_c\\end{aligned}",
+        "caption": "First-order low-pass noise-equivalent bandwidth for one-sided white noise."
+      },
+      {
+        "after": 4,
+        "tex": "\\Delta=\\frac{V_\\mathrm{FS}}{2^N},\\qquad v_{q,\\mathrm{rms}}\\simeq\\frac{\\Delta}{\\sqrt{12}}",
+        "caption": "Idealized uniform quantization-error RMS under appropriate signal conditions."
+      },
+      {
+        "after": 3,
+        "tex": "v_{n,\\mathrm{tot}}=\\sqrt{v_{n,1}^2+v_{n,2}^2+\\cdots}",
+        "caption": "Root-sum-square only for uncorrelated sources referred to the same node."
+      }
     ]
   }
 ]
