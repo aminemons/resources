@@ -150,6 +150,22 @@
         "url": "https://books.google.com/books?q=Pierret+Semiconductor+Device+Fundamentals",
         "task": "Work the drift/diffusion and equilibrium exercises; derive dimensions independently."
       }
-    ]
+    ],
+    "capstone": {
+      "title": "Build a one-dimensional carrier-transport verification notebook",
+      "brief": "Write your own Python transport calculator before using TCAD; separate particle flux, conventional current, equilibrium and nonequilibrium assumptions.",
+      "deliverables": [
+        "A unit-tested function accepting n, p, gradients, field, mobility and diffusion coefficients in declared units.",
+        "Plots of electron drift, electron diffusion and net current versus electric field for at least two signed density gradients.",
+        "A numerical equilibrium check showing drift and diffusion cancel to within stated numerical tolerance for a deliberately constructed equilibrium profile.",
+        "A two-page report that explains sign conventions, dimensional analysis, assumptions and known drift–diffusion failure modes."
+      ],
+      "acceptance": [
+        "Reported quantities carry A/cm² or A/m² consistently; conversions are explicit.",
+        "A test with E=0 and a nonzero density gradient produces diffusion current with the correct conventional-current sign.",
+        "A change of carrier gradient sign reverses diffusion current, leaving drift contribution unchanged.",
+        "Code, input parameter file, plotted figures and solver/library versions reproduce the result."
+      ]
+    }
   }
 ]
