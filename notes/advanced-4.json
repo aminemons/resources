@@ -138,6 +138,26 @@
         "tex": "V_\\mathrm{PI}=\\sqrt{\\frac{8kd^3}{27\\varepsilon A}}",
         "caption": "Static pull-in voltage for the ideal rigid-plate linear-spring model."
       }
+    ],
+    "reading": [
+      {
+        "label": "University material",
+        "title": "MIT 6.777: MEMS design and fabrication lecture notes",
+        "url": "https://ocw.mit.edu/courses/6-777j-design-and-fabrication-of-microelectromechanical-devices-spring-2007/pages/lecture-notes/",
+        "task": "Follow co-energy, electrostatic actuator and mechanical stability models; check force signs."
+      },
+      {
+        "label": "Licensed multiphysics reference",
+        "title": "COMSOL — MEMS Module",
+        "url": "https://www.comsol.com/mems-module",
+        "task": "Compare simplified parallel-plate force assumptions with a coupled finite-element formulation."
+      },
+      {
+        "label": "Scientific reference",
+        "title": "Micromachines — MEMS electrostatic actuators",
+        "url": "https://www.mdpi.com/2072-666X/7/10/188",
+        "task": "Observe how actual microfabricated comb-drive geometry differs from the simple parallel-plate model."
+      }
     ]
   }
 ]
