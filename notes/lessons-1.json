@@ -1,0 +1,433 @@
+[
+  {
+    "id": "01-electricity",
+    "unit": "Core foundations",
+    "title": "Voltage, current, resistance and power",
+    "summary": "Learn what is actually moving in a circuit, and how to calculate its behavior.",
+    "level": "Start here",
+    "diagram": "ohm",
+    "objectives": [
+      "Distinguish current from voltage",
+      "Apply Ohm’s law with correct units",
+      "Calculate power and recognize the limitations of the model"
+    ],
+    "sections": [
+      {
+        "title": "What electricity describes",
+        "html": "<p>Every electrical circuit involves <strong>charge</strong>. Charge is a physical quantity measured in coulombs (C). Electrons carry negative charge; in a metal, their slow net drift produces an electric current. By convention, <em>current direction</em> points in the direction positive charge would move, which is opposite to electron drift in a metal.</p><p><strong>Current</strong> measures charge passing through a cross section each second: \\(I = \\mathrm{d}Q/\\mathrm{d}t\\). One ampere means one coulomb per second. <strong>Voltage</strong> is electric potential difference: one volt is one joule of energy exchanged per coulomb. It is defined <em>between two points</em>, never at a point without a reference.</p>"
+      },
+      {
+        "title": "A resistor is a simple model",
+        "html": "<p>For an <em>ohmic resistor</em> held at a reasonably constant temperature, current and voltage are proportional. Choose a direction for current and label the voltage drop using the passive sign convention; then \\(V=IR\\). Resistance is measured in ohms (\\(\\Omega\\)). Real devices such as LEDs, diodes and MOSFETs are nonlinear, so the same constant-\\(R\\) relationship is not a global model of every electronic component.</p><p>Power delivered to a passive resistor is \\(P=VI=I^2R=V^2/R\\). Power is measured in watts, and energy is \\(E=Pt\\) for constant power. The resistor does not “consume current”; it converts supplied electrical energy into heat.</p>"
+      },
+      {
+        "title": "What to do in a real circuit",
+        "html": "<p>Write the source voltage, the actual element voltage and the return path. Convert kiloohms to ohms and milliamperes to amperes before calculating. A voltmeter goes <em>in parallel</em> with the element; an ammeter is inserted <em>in series</em>. Never put an ammeter directly across a voltage source. A resistance measurement is made on a de-energized circuit.</p>"
+      }
+    ],
+    "example": {
+      "title": "A resistor connected to a battery",
+      "problem": "A 3.0 V supply is connected across a 1.5 kΩ resistor. Find current, dissipated power and the energy converted in 60 s.",
+      "steps": [
+        "Convert resistance: \\(R=1.5\\times10^3\\ \\Omega=1500\\ \\Omega\\).",
+        "Current: \\(I=V/R=3.0/1500=0.002\\ \\mathrm{A}=2.0\\ \\mathrm{mA}\\).",
+        "Power: \\(P=VI=3.0\\times0.002=0.006\\ \\mathrm{W}=6.0\\ \\mathrm{mW}\\).",
+        "Energy: \\(E=Pt=0.006\\times60=0.36\\ \\mathrm{J}\\)."
+      ]
+    },
+    "checks": [
+      {
+        "prompt": "A 5 V source drives a 10 kΩ resistor. What current flows?",
+        "answer": "\\(I=5/10000=0.0005\\ \\mathrm{A}=0.5\\ \\mathrm{mA}\\)."
+      },
+      {
+        "prompt": "At fixed resistance, voltage doubles. What happens to current and power?",
+        "answer": "Current doubles because \\(I=V/R\\). Resistor power quadruples because \\(P=V^2/R\\). This assumes constant resistance."
+      }
+    ],
+    "sources": [
+      {
+        "title": "SparkFun: Voltage, current and Ohm’s law",
+        "url": "https://learn.sparkfun.com/tutorials/voltage-current-resistance-and-ohms-law"
+      },
+      {
+        "title": "All About Circuits: Ohm’s Law",
+        "url": "https://www.allaboutcircuits.com/textbook/direct-current/chpt-2/voltage-current-resistance-relate/"
+      }
+    ]
+  },
+  {
+    "id": "02-kirchhoff",
+    "unit": "Core foundations",
+    "title": "Kirchhoff’s laws and circuit networks",
+    "summary": "Understand why currents balance at nodes and voltages balance around loops.",
+    "level": "Beginner",
+    "diagram": "kcl",
+    "objectives": [
+      "Apply KCL at a node",
+      "Apply KVL around a loop",
+      "Recognize series versus parallel elements"
+    ],
+    "sections": [
+      {
+        "title": "Why charge conservation matters",
+        "html": "<p>At an ordinary circuit node, charge cannot accumulate indefinitely. If a node is not storing net charge, the sum of currents entering equals the sum leaving. This is <strong>Kirchhoff’s Current Law</strong> (KCL): \\(\\sum_k I_k=0\\) when a consistent signed convention is used. In lumped circuits this is the starting point for nodal analysis.</p><p>For a series path there is only one current, so every series element carries that current. Parallel branches share the same two nodes, hence the same voltage; their branch currents may differ.</p>"
+      },
+      {
+        "title": "Energy conservation around a loop",
+        "html": "<p>For a lumped circuit with no time-varying magnetic flux linkage that must be represented explicitly, voltage rises and drops around any closed loop add to zero. This is <strong>Kirchhoff’s Voltage Law</strong> (KVL): \\(\\sum_k V_k=0\\), provided you use a consistent travel direction and sign convention.</p><p>Series resistances add: \\(R_\\mathrm{series}=R_1+R_2\\). Parallel resistance satisfies \\(1/R_\\mathrm{parallel}=\\sum_i 1/R_i\\). Always identify the physical connection before reaching for a formula.</p>"
+      },
+      {
+        "title": "A method that scales",
+        "html": "<p>Mark a ground node. Give unknown node voltages names such as \\(V_A\\). Write each branch current as a voltage difference divided by resistance, then apply KCL. Choose arbitrary current directions; if a solved current is negative, the actual direction is opposite. Negative answers are not an automatic mistake.</p>"
+      }
+    ],
+    "example": {
+      "title": "A two-resistor voltage divider",
+      "problem": "A 12 V supply feeds 2 kΩ in series with 4 kΩ to ground. Find series current and the voltage across the 4 kΩ resistor.",
+      "steps": [
+        "Series resistance \\(R_T=2+4=6\\ \\mathrm{k}\\Omega\\).",
+        "\\(I=12/6000=0.002\\ \\mathrm{A}=2\\ \\mathrm{mA}\\).",
+        "\\(V_\\mathrm{out}=I R_2=0.002\\times4000=8\\ \\mathrm{V}\\).",
+        "KVL check: \\(12-4-8=0\\ \\mathrm{V}\\)."
+      ]
+    },
+    "checks": [
+      {
+        "prompt": "Three currents enter a node: 1 mA and 4 mA enter, 2 mA exits. What is the missing outgoing current?",
+        "answer": "\\(I=1+4-2=3\\ \\mathrm{mA}\\) leaves the node."
+      },
+      {
+        "prompt": "Two equal 2 kΩ resistors are in parallel. What is the equivalent resistance?",
+        "answer": "\\(R_\\mathrm{eq}=1/(1/2000+1/2000)=1000\\ \\Omega=1\\ \\mathrm{k}\\Omega\\)."
+      }
+    ],
+    "sources": [
+      {
+        "title": "All About Circuits: Kirchhoff’s Current Law",
+        "url": "https://www.allaboutcircuits.com/textbook/direct-current/chpt-6/kirchhoffs-current-law-kcl/"
+      }
+    ]
+  },
+  {
+    "id": "03-capacitor",
+    "unit": "Core foundations",
+    "title": "Capacitors, transients and RC circuits",
+    "summary": "Explain the exponential charging curve and distinguish a time constant from a charging time.",
+    "level": "Beginner",
+    "diagram": "rc",
+    "objectives": [
+      "Relate charge, capacitance and voltage",
+      "Derive first-order RC behavior",
+      "Estimate settling times"
+    ],
+    "sections": [
+      {
+        "title": "What a capacitor stores",
+        "html": "<p>A capacitor stores separated charge and energy in an electric field. For an ideal capacitor with constant capacitance, \\(Q=CV\\), with \\(C\\) in farads. Its constitutive law is \\(i_C=C\\,\\mathrm{d}v_C/\\mathrm{d}t\\). Consequently, capacitor voltage cannot jump instantaneously unless infinite impulse current is available in the model.</p><p>The stored energy is \\(E=\\tfrac12 CV^2\\). Real capacitors also have leakage, parasitic resistance and inductance, and limits on operating voltage.</p>"
+      },
+      {
+        "title": "Why the curve is exponential",
+        "html": "<p>In a resistor–capacitor series charging circuit, KVL gives \\(V_s=iR+v_C\\). Substitute \\(i=C\\,\\mathrm{d}v_C/\\mathrm{d}t\\) to obtain \\(RC\\,\\mathrm{d}v_C/\\mathrm{d}t+v_C=V_s\\). For an initially discharged ideal capacitor, \\(v_C(t)=V_s(1-e^{-t/(RC)})\\).</p><p>The <strong>time constant</strong> is \\(\\tau=RC\\). At \\(t=\\tau\\), the capacitor has reached about 63.2% of its final voltage. After \\(5\\tau\\), it is about 99.3% there. These are approximate settling milestones, not magic switching times.</p>"
+      },
+      {
+        "title": "Why sensor engineers care",
+        "html": "<p>An RC network can filter fast variations and smooth a sensor signal, but it also slows the response. Its low-pass cutoff in hertz is \\(f_c=1/(2\\pi RC)\\). Larger \\(R\\) or \\(C\\) reduces bandwidth. A good sensor front end balances noise reduction with the response time required by the measurand.</p>"
+      }
+    ],
+    "example": {
+      "title": "Choose the RC time constant",
+      "problem": "An ideal 10 kΩ resistor and a 10 µF capacitor form an RC charging circuit on a 5 V step. Find τ and the capacitor voltage after one time constant.",
+      "steps": [
+        "Convert units: \\(R=10000\\ \\Omega\\), \\(C=10\\times10^{-6}\\ \\mathrm{F}\\).",
+        "The time constant is \\(\\tau=RC=0.10\\ \\mathrm{s}\\).",
+        "At \\(t=\\tau\\), \\(v_C=5(1-e^{-1})\\approx3.16\\ \\mathrm{V}\\).",
+        "The ideal -3 dB cutoff is \\(f_c=1/(2\\pi\\times0.1)\\approx1.59\\ \\mathrm{Hz}\\)."
+      ]
+    },
+    "checks": [
+      {
+        "prompt": "An RC filter has R=1 kΩ and C=1 µF. What is τ?",
+        "answer": "\\(\\tau=1000\\times10^{-6}=0.001\\ \\mathrm{s}=1\\ \\mathrm{ms}\\)."
+      },
+      {
+        "prompt": "At 5τ, is an initially empty capacitor exactly at 100% of the step voltage?",
+        "answer": "No. It is \\(100(1-e^{-5})\\approx99.33\\%\\). The exponential approaches the final value asymptotically."
+      }
+    ],
+    "sources": [
+      {
+        "title": "MIT circuits teaching resources",
+        "url": "https://ocw.mit.edu/courses/6-002-circuits-and-electronics-spring-2007/"
+      }
+    ]
+  },
+  {
+    "id": "04-sampling",
+    "unit": "Core foundations",
+    "title": "Signals, sampling and aliasing",
+    "summary": "From an analog waveform to digital measurements without inventing frequencies.",
+    "level": "Intermediate",
+    "diagram": "sampling",
+    "objectives": [
+      "Explain sampling frequency and Nyquist condition",
+      "Recognize aliasing",
+      "Connect filters to ADC design"
+    ],
+    "sections": [
+      {
+        "title": "Continuous and sampled signals",
+        "html": "<p>A physical quantity such as voltage can vary continuously with time, \\(x(t)\\). An ADC produces samples \\(x[n]=x(nT_s)\\) where \\(T_s=1/f_s\\) is the time between readings and \\(f_s\\) is the sampling rate. The ADC also quantizes amplitude into discrete codes; sampling and quantization are separate operations.</p>"
+      },
+      {
+        "title": "Why frequency folds",
+        "html": "<p>A sinusoid sampled at \\(f_s\\) can look identical to sinusoids at frequencies differing by integer multiples of the sampling rate. For a signal strictly bandlimited below \\(f_\\mathrm{max}\\), ideal reconstruction requires \\(f_s>2f_\\mathrm{max}\\) (with suitable assumptions). Sampling exactly at \\(2f_\\mathrm{max}\\) is a fragile boundary, not a robust design target.</p><p>For a single real tone, the observed alias frequency within 0 to \\(f_s/2\\) is the distance to the nearest integer multiple of \\(f_s\\): \\(f_\\mathrm{alias}=|f-kf_s|\\) for appropriate integer \\(k\\). An analog <strong>anti-alias filter</strong> must attenuate out-of-band energy <em>before</em> sampling.</p>"
+      },
+      {
+        "title": "Practical ADC considerations",
+        "html": "<p>The resolution \\(N\\) of a nominal \\(N\\)-bit uniform ADC corresponds to \\(2^N\\) codes. Its voltage increment is approximately \\(\\Delta V=V_\\mathrm{FS}/2^N\\) when the full-scale input span is \\(V_\\mathrm{FS}\\). This increment is not the same thing as actual accuracy: reference error, noise, offset, nonlinearity, jitter and analog front-end issues matter.</p>"
+      }
+    ],
+    "example": {
+      "title": "A frequency you did not measure",
+      "problem": "A pure 700 Hz sine wave is sampled uniformly at 1000 samples/s without an anti-alias filter. What lower-frequency sine can appear in the digital sequence?",
+      "steps": [
+        "Nyquist frequency \\(f_s/2=500\\ \\mathrm{Hz}\\).",
+        "Since \\(700>500\\ \\mathrm{Hz}\\), this input violates the bandlimit condition.",
+        "The aliased frequency is \\(|700-1000|=300\\ \\mathrm{Hz}\\).",
+        "Filtering <em>after</em> the ADC cannot reliably recover the missing true frequency."
+      ]
+    },
+    "checks": [
+      {
+        "prompt": "A sensor contains useful energy up to 200 Hz. Is 300 samples/s sufficient for ideal reconstruction?",
+        "answer": "No. \\(f_s=300<2\\times200=400\\ \\mathrm{samples/s}\\). Select a faster rate and appropriate analog anti-alias filtering."
+      },
+      {
+        "prompt": "A 12-bit ideal ADC spans 0–3.3 V. What is one nominal code step?",
+        "answer": "\\(\\Delta V=3.3/4096\\approx0.0008057\\ \\mathrm{V}=0.806\\ \\mathrm{mV}\\)."
+      }
+    ],
+    "sources": [
+      {
+        "title": "MIT Signals and Systems",
+        "url": "https://ocw.mit.edu/courses/6-003-signals-and-systems-fall-2011/"
+      }
+    ]
+  },
+  {
+    "id": "05-uncertainty",
+    "unit": "Core foundations",
+    "title": "Measurement, noise and uncertainty",
+    "summary": "Learn why precision, resolution and accuracy are different before reporting sensor results.",
+    "level": "Beginner",
+    "diagram": "calibration",
+    "objectives": [
+      "Separate systematic bias and repeated-measurement scatter",
+      "Read sensor specifications correctly",
+      "Report measurements with units and uncertainty"
+    ],
+    "sections": [
+      {
+        "title": "A measurement is never just a number",
+        "html": "<p>A measurement result should state the measurand, unit, procedure and uncertainty or limitations. <strong>Resolution</strong> describes the smallest indicated change. <strong>Repeatability</strong> describes scatter under similar conditions. <strong>Accuracy</strong> describes closeness to an appropriate reference; it is not interchangeable with digit count.</p><p>A low-noise instrument may still be biased. Calibrate against suitable traceable references, check zero and span, account for temperature and state whether values are raw or corrected.</p>"
+      },
+      {
+        "title": "Statistical scatter",
+        "html": "<p>For \\(n\\) independent repeat readings \\(x_i\\), the sample average is \\(\\bar{x}=(1/n)\\sum_i x_i\\); the sample standard deviation is \\(s=\\sqrt{\\sum_i(x_i-\\bar{x})^2/(n-1)}\\). If independent measurements share comparable scatter, the standard uncertainty of the mean is \\(s/\\sqrt{n}\\). This does <em>not</em> remove calibration bias or correlated drift.</p>"
+      },
+      {
+        "title": "Sensitivity, noise and detection",
+        "html": "<p>A sensor calibration relation \\(y=a x+b\\) has sensitivity \\(a=\\mathrm{d}y/\\mathrm{d}x\\) when the relation is linear. If output noise standard deviation is \\(\\sigma_y\\), input-referred noise is approximately \\(\\sigma_x=\\sigma_y/|a|\\). This local approximation assumes the slope is stable and noise is adequately described; an actual detection limit needs a specified decision rule, blank measurements and statistical treatment.</p>"
+      }
+    ],
+    "example": {
+      "title": "Uncertainty from repeated readings",
+      "problem": "A digital temperature sensor gives 20.0, 20.2 and 19.8 °C in repeat tests. Compute mean, sample standard deviation, and standard uncertainty of the mean.",
+      "steps": [
+        "Mean \\(\\bar{T}=(20.0+20.2+19.8)/3=20.0\\ ^\\circ\\mathrm{C}\\).",
+        "Sum of squared deviations \\(0^2+0.2^2+(-0.2)^2=0.08\\ ^\\circ\\mathrm{C}^2\\).",
+        "Sample standard deviation \\(s=\\sqrt{0.08/(3-1)}=0.20\\ ^\\circ\\mathrm{C}\\).",
+        "Standard uncertainty from repeatability \\(u_\\mathrm{mean}=0.20/\\sqrt{3}\\approx0.115\\ ^\\circ\\mathrm{C}\\). Calibration error is <em>additional</em>, not included here."
+      ]
+    },
+    "checks": [
+      {
+        "prompt": "A 0.01 °C display always reads 0.5 °C above a reference. Is it accurate because of its fine resolution?",
+        "answer": "No. It has fine display resolution but an apparent systematic offset of +0.5 °C that must be investigated or calibrated."
+      },
+      {
+        "prompt": "A sensor has 10 mV/kPa sensitivity and 2 mV RMS output noise. Estimate input-referred RMS noise.",
+        "answer": "\\(\\sigma_p=2/10=0.2\\ \\mathrm{kPa}\\), assuming local linear response."
+      }
+    ],
+    "sources": [
+      {
+        "title": "NIST Engineering Statistics Handbook",
+        "url": "https://www.itl.nist.gov/div898/handbook/"
+      },
+      {
+        "title": "NIST measurement uncertainty",
+        "url": "https://www.nist.gov/itl/sed/topic-areas/measurement-uncertainty"
+      }
+    ]
+  },
+  {
+    "id": "06-semiconductors",
+    "unit": "Semiconductor devices",
+    "title": "Energy bands, carriers and doping",
+    "summary": "Why silicon can act as an insulator or a conductor depending on material properties and impurities.",
+    "level": "Intermediate",
+    "diagram": "bands",
+    "objectives": [
+      "Interpret valence and conduction bands",
+      "Distinguish electrons from holes",
+      "Explain donor and acceptor doping"
+    ],
+    "sections": [
+      {
+        "title": "From atoms to crystal bands",
+        "html": "<p>In a crystal, a very large number of atomic states form allowed energy bands. The <strong>valence band</strong> contains electronic states involved in bonding, while the <strong>conduction band</strong> contains states that can carry mobile electrons. Their separation is the bandgap \\(E_g\\). An electron excited into the conduction band leaves a missing electron in the valence band, conveniently treated as a mobile positive <strong>hole</strong>.</p>"
+      },
+      {
+        "title": "Two types of mobile carriers",
+        "html": "<p>Conduction involves electrons of concentration \\(n\\) and holes of concentration \\(p\\), in units of \\(\\mathrm{cm}^{-3}\\) or \\(\\mathrm{m}^{-3}\\). For a nondegenerate semiconductor at thermal equilibrium, the mass-action relationship is \\(np=n_i^2\\), where \\(n_i\\) is the intrinsic carrier concentration at that temperature. <em>This equality is an equilibrium statement</em>, not a universal law during illumination or strong injection.</p>"
+      },
+      {
+        "title": "Doping is deliberate control",
+        "html": "<p>In silicon, substitutional donors such as phosphorus can supply electrons; acceptors such as boron create holes. N-type means electrons are majority carriers; p-type means holes are majority carriers. Both carrier types remain present. Under the simple assumptions of complete ionization, negligible compensation, equilibrium and \\(N_D\\gg n_i\\), an n-type material has \\(n\\approx N_D\\) and \\(p\\approx n_i^2/N_D\\).</p><p>These formulas become unreliable with degenerate heavy doping, incomplete ionization, strong temperature dependence or nonequilibrium effects. Those situations require richer device models and material parameters.</p>"
+      }
+    ],
+    "example": {
+      "title": "Majority and minority carriers",
+      "problem": "Take silicon at a temperature with intrinsic concentration nᵢ = 1.0×10¹⁰ cm⁻³. A uniformly doped n-type region has Nᴅ = 1.0×10¹⁶ cm⁻³, fully ionized. Estimate n and p.",
+      "steps": [
+        "Since \\(N_D\\gg n_i\\), assume majority electrons \\(n\\approx 10^{16}\\ \\mathrm{cm}^{-3}\\).",
+        "At equilibrium, \\(np=n_i^2\\), so \\(p\\approx(10^{10})^2/10^{16}=10^4\\ \\mathrm{cm}^{-3}\\).",
+        "Electrons dominate, but minority holes are not zero. This estimate assumes nondegenerate behavior and equilibrium."
+      ]
+    },
+    "checks": [
+      {
+        "prompt": "Does n-type silicon contain only electrons and no holes?",
+        "answer": "No. Electrons are the majority mobile carriers and holes are the minority mobile carriers."
+      },
+      {
+        "prompt": "If a suitable equilibrium n-type region has n = 10¹⁵ cm⁻³ and nᵢ = 10¹⁰ cm⁻³, estimate p.",
+        "answer": "\\(p=n_i^2/n=10^{20}/10^{15}=10^5\\ \\mathrm{cm}^{-3}\\)."
+      }
+    ],
+    "sources": [
+      {
+        "title": "MIT 6.012 semiconductor lectures",
+        "url": "https://ocw.mit.edu/courses/6-012-microelectronic-devices-and-circuits-spring-2009/pages/lecture-notes/"
+      }
+    ]
+  },
+  {
+    "id": "07-pn-junction",
+    "unit": "Semiconductor devices",
+    "title": "The PN junction and the diode",
+    "summary": "Understand depletion, built-in electric fields and why a diode has a nonlinear I–V curve.",
+    "level": "Intermediate",
+    "diagram": "pn",
+    "objectives": [
+      "Sketch the depletion region",
+      "Explain forward and reverse bias physically",
+      "Use an ideal diode equation responsibly"
+    ],
+    "sections": [
+      {
+        "title": "What happens when p meets n",
+        "html": "<p>When p-type and n-type regions touch, majority carriers initially diffuse down concentration gradients. Mobile electrons and holes recombine near the interface, exposing fixed ionized donors and acceptors. The resulting <strong>depletion region</strong> holds a space charge that creates an electric field opposing further diffusion. At equilibrium, drift and diffusion currents balance, giving zero net terminal current.</p>"
+      },
+      {
+        "title": "Forward versus reverse bias",
+        "html": "<p>Forward bias reduces the electrostatic barrier and produces an exponentially increasing injection current over an important operating region. Reverse bias increases the barrier and widens the depletion region. Real reverse leakage, high-injection behavior, series resistance and breakdown are not represented by the simplest ideal model.</p>"
+      },
+      {
+        "title": "The Shockley diode approximation",
+        "html": "<p>The common lumped approximation is \\(I=I_S\\big(e^{V_D/(nV_T)}-1\\big)\\), where \\(I_S\\) is a saturation-current parameter, \\(n\\) is the ideality factor and \\(V_T=kT/q\\) is the thermal voltage, about 25.85 mV at 300 K. The factor \\(n\\) should not be confused with electron density \\(n\\) elsewhere. The equation applies under specific modeling assumptions and neglects breakdown and series resistance.</p>"
+      }
+    ],
+    "example": {
+      "title": "A tenfold change in diode current",
+      "problem": "For a diode with ideality factor n = 1 at 300 K, what approximate forward-voltage increment causes a tenfold current increase when the exponential term dominates?",
+      "steps": [
+        "In the exponential region, \\(I\\propto e^{V_D/V_T}\\).",
+        "For \\(I_2/I_1=10\\), \\(10=e^{\\Delta V/V_T}\\).",
+        "Take logarithms: \\(\\Delta V=V_T\\ln(10)\\approx25.85\\ \\mathrm{mV}\\times2.3026\\approx59.5\\ \\mathrm{mV}\\).",
+        "With ideality factor 2, the same approximation predicts around 119 mV per decade."
+      ]
+    },
+    "checks": [
+      {
+        "prompt": "Does a reverse-biased PN junction have no electric field?",
+        "answer": "No. Reverse bias generally increases the depletion electric field and region width."
+      },
+      {
+        "prompt": "At approximately 300 K, what is thermal voltage kT/q?",
+        "answer": "About \\(25.85\\ \\mathrm{mV}\\). Note this is <em>not</em> the typical forward voltage of a silicon diode."
+      }
+    ],
+    "sources": [
+      {
+        "title": "MIT 6.012 PN-junction notes",
+        "url": "https://ocw.mit.edu/courses/6-012-microelectronic-devices-and-circuits-spring-2009/pages/lecture-notes/"
+      }
+    ]
+  },
+  {
+    "id": "08-mos-capacitor",
+    "unit": "Semiconductor devices",
+    "title": "The MOS capacitor and inversion",
+    "summary": "Learn the electrostatics that make MOSFET channels possible.",
+    "level": "Intermediate",
+    "diagram": "moscap",
+    "objectives": [
+      "Identify gate, oxide and substrate",
+      "Describe accumulation, depletion and inversion for p-type silicon",
+      "Explain oxide capacitance per area"
+    ],
+    "sections": [
+      {
+        "title": "Three layers with a purpose",
+        "html": "<p>A MOS capacitor consists of a conductive gate separated from semiconductor by a thin insulating oxide. Applying gate voltage changes charge in the semiconductor near the interface without ideal DC current through the oxide. In a simple flat parallel-plate approximation, the oxide capacitance per area is \\(C'_{\\mathrm{ox}}=\\varepsilon_{\\mathrm{ox}}/t_{\\mathrm{ox}}\\).</p>"
+      },
+      {
+        "title": "Surface regimes for p-type silicon",
+        "html": "<p>For a p-type substrate, a sufficiently negative gate attracts majority holes toward the surface: <strong>accumulation</strong>. A moderate positive gate repels holes and uncovers fixed acceptor charge: <strong>depletion</strong>. At stronger positive surface potential, electrons become numerous near the interface, causing <strong>inversion</strong>. These regimes are field-controlled—not the oxide turning conductive.</p>"
+      },
+      {
+        "title": "What a C–V curve really means",
+        "html": "<p>Measured MOS capacitance depends on voltage, measurement frequency, temperature and carrier response times. In strong inversion, low-frequency and high-frequency capacitance–voltage traces differ because minority carriers cannot always follow rapid excitation. Oxide charge and interface traps shift or distort a real curve. A single voltage threshold should never be treated as completely universal across technologies.</p>"
+      }
+    ],
+    "example": {
+      "title": "Oxide capacitance per square centimeter",
+      "problem": "Estimate C′ox for a 10 nm SiO₂ layer using ε₀ = 8.854×10⁻¹² F/m and relative permittivity 3.9.",
+      "steps": [
+        "Thickness \\(t=10\\ \\mathrm{nm}=10^{-8}\\ \\mathrm{m}\\).",
+        "Oxide permittivity \\(\\varepsilon_\\mathrm{ox}=3.9\\varepsilon_0=3.453\\times10^{-11}\\ \\mathrm{F/m}\\).",
+        "Capacitance per unit area \\(C'_\\mathrm{ox}=\\varepsilon_\\mathrm{ox}/t=3.453\\times10^{-3}\\ \\mathrm{F/m^2}\\).",
+        "Because \\(1\\ \\mathrm{m^2}=10^4\\ \\mathrm{cm^2}\\), this is \\(3.453\\times10^{-7}\\ \\mathrm{F/cm^2}\\), about \\(0.345\\ \\mu\\mathrm{F/cm^2}\\)."
+      ]
+    },
+    "checks": [
+      {
+        "prompt": "For a p-type substrate, which gate-voltage direction tends to induce electron inversion?",
+        "answer": "A sufficiently positive gate voltage relative to the substrate, accounting for flat-band and other device-specific effects."
+      },
+      {
+        "prompt": "If oxide thickness doubles with unchanged permittivity, what happens to ideal C′ox?",
+        "answer": "It halves: \\(C'_{\\mathrm{ox}}=\\varepsilon_{\\mathrm{ox}}/t_{\\mathrm{ox}}\\)."
+      }
+    ],
+    "sources": [
+      {
+        "title": "MIT MOS device lecture sequence",
+        "url": "https://ocw.mit.edu/courses/6-012-microelectronic-devices-and-circuits-spring-2009/pages/lecture-notes/"
+      }
+    ]
+  }
+]
