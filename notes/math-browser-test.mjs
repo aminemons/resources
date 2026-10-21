@@ -29,6 +29,11 @@ try {
    assert(result.figures>=4,"Missing annotated mathematics figures: "+JSON.stringify(result));
    assert.equal(result.status,"","Math error: "+JSON.stringify(result));
    assert.equal(result.externalIllustrations,1,"No licensed MOSFET figure");
+   const img=await page.locator(".licensed-figure img").first().evaluate(el=>({loaded:el.complete&&el.naturalWidth>0,width:el.naturalWidth}));
+   console.log("LICENSED FIGURE",viewport.name,JSON.stringify(img));
+   const interactive=await page.locator("#mos-vgs").evaluate(el=>{el.value="1.10";el.dispatchEvent(new Event("input",{bubbles:true}));return document.getElementById("mos-model-readout")?.textContent});
+   assert.match(interactive,/VOV = 0\.65 V/,"MOSFET model slider failed");
+
    assert.equal(pageErrors.length,0,"Browser errors: "+pageErrors.join(" | "));
    if(viewport.name==="mobile"){
     const offenders=await page.evaluate(()=>[...document.querySelectorAll("body *")].filter(el=>{const b=el.getBoundingClientRect();return b.right>innerWidth+2&&b.width>0&&getComputedStyle(el).position!=="fixed"}).slice(0,20).map(el=>({tag:el.tagName,id:el.id,cls:String(el.className).slice(0,90),right:el.getBoundingClientRect().right,width:el.getBoundingClientRect().width})));
