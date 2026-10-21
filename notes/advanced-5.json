@@ -1,0 +1,125 @@
+[
+  {
+    "id": "32-low-noise-frontends",
+    "unit": "Analog IC and instrumentation",
+    "title": "Design a sensor front-end from a noise and bandwidth budget",
+    "summary": "Derive integrated noise, choose anti-alias bandwidth and gain, compare amplifier noise with ADC quantization, and defend the tradeoffs in a realistic sensor chain.",
+    "level": "Upper undergraduate / Master's",
+    "diagram": "readout",
+    "objectives": [
+      "Convert input voltage spectral density to RMS noise over bandwidth.",
+      "Use equivalent noise bandwidth of a first-order low-pass filter.",
+      "Refer ADC and amplifier noise to the original sensor input.",
+      "Choose gain with output headroom and justify quantization assumptions."
+    ],
+    "sections": [
+      {
+        "title": "1. Start with the measurand and full error budget",
+        "html": "<p>A sensor output is only useful if you can distinguish the smallest target variation from noise, drift, interference and quantization. Start by specifying the measurand range, response time, environmental disturbances and acceptable RMS/peak error. Translate physical sensitivity, for example \\(S=10\\,\\mathrm{mV/kPa}\\), into input-referred requirements. If your desired pressure resolution is \\(0.1\\,\\mathrm{kPa}\\), the output change is 1 mV. That does not mean any 1 mV ADC step automatically guarantees 0.1 kPa accuracy.</p><p>Define where in the signal chain each number is measured: sensor output, amplifier input, amplifier output, ADC code or calibrated physical units. Noise densities cannot be added without referencing them to a common node and a common bandwidth.</p>"
+      },
+      {
+        "title": "2. Resistor thermal noise from physical temperature",
+        "html": "<p>For an ideal resistor at thermal equilibrium, the one-sided *voltage power spectral density* is \\(S_v=4k_BTR\\,\\mathrm{V^2/Hz}\\) over the classical low-frequency regime. Its amplitude spectral density is \\(e_n=\\sqrt{4k_BTR}\\,\\mathrm{V/\\sqrt{Hz}}\\). Across a perfect rectangular passband of width \\(B\\), \\(v_{n,rms}=\\sqrt{4k_BTRB}\\). Here Boltzmann's constant is \\(k_B=1.380649\\times10^{-23}\\,\\mathrm{J/K}\\).</p><p>Resistance and temperature both matter. A 10 kΩ resistor at 300 K with ideal 1 kHz brick-wall noise bandwidth contributes about \\(0.407\\,\\mu\\mathrm{V}_{rms}\\). Do not confuse resistor thermal noise with its DC voltage drop. Actual circuits have complex impedance, frequency-dependent transfer and additional noise.</p>"
+      },
+      {
+        "title": "3. Noise equivalent bandwidth is not always −3 dB bandwidth",
+        "html": "<p>A first-order RC low-pass has magnitude response \\(|H(f)|^2=1/[1+(f/f_c)^2]\\). If a *white* input noise density passes through it, output noise variance is \\(e_n^2\\int_0^{\\infty}|H(f)|^2\\,\\mathrm{d}f\\). Let \\(u=f/f_c\\), so the integral becomes \\(f_c\\int_0^\\infty\\mathrm{d}u/(1+u^2)=f_c(\\pi/2)\\). Therefore its equivalent noise bandwidth is \\(B_{ENBW}=\\pi f_c/2\\), not simply \\(f_c\\).</p><p>Numerically, a 1 kHz single-pole cutoff passes the same white-noise power as an ideal brick-wall 1.571 kHz passband. This derivation assumes a one-sided constant spectral density and an ideal linear time-invariant single-pole filter.</p>"
+      },
+      {
+        "title": "4. A source, amplifier and ADC have different noise mechanisms",
+        "html": "<p>A practical amplifier may contribute input voltage noise, input current noise converted through source impedance, low-frequency 1/f noise, offset and temperature drift. Resistor networks contribute thermal noise. Amplifier input current noise is especially important when source impedance is high. A photodiode adds shot noise related to photocurrent, and sampling amplifiers can introduce switching and charge-injection artifacts.</p><p>If independent uncorrelated RMS noise terms are referred to one node, combine by root-sum-square: \\(v_{rms,total}=\\sqrt{\\sum_i v_{rms,i}^2}\\). Correlated contributions cannot generally be combined this way. Oscillations and externally coupled 50/60 Hz interference are not random white-noise terms.</p>"
+      },
+      {
+        "title": "5. ADC quantization is a model, not a guaranteed random-noise source",
+        "html": "<p>An ideal \\(N\\)-bit uniform converter with full-scale input span \\(V_{FS}\\) has nominal step size \\(\\Delta=V_{FS}/2^N\\). Under the standard additive uniform quantization-error approximation with appropriate signal conditions or dither, the RMS quantization error is \\(\\Delta/\\sqrt{12}\\). For small deterministic signals without dither, quantization distortion is correlated with the input and the white-noise approximation can be poor.</p><p>An ADC also has offset, gain error, INL/DNL, reference noise, sampling jitter, input acquisition error and sometimes missing codes. Effective number of bits (ENOB) is not simply the silicon's nominal bit count. Consult the ADC datasheet's measurement conditions.</p>"
+      },
+      {
+        "title": "6. Gain trades ADC granularity against headroom",
+        "html": "<p>A differential bridge might deliver \\(\\pm5\\,\\mathrm{mV}\\). With amplifier gain 200 and a 1.65 V output reference, ideal output varies between 0.65 and 2.65 V. This fits within a nominal 0–3.3 V ADC range; but the actual amplifier output swing, common-mode voltage and supply limits may make it infeasible. A larger gain may reduce the ADC's input-referred quantization increment while increasing clipping risk.</p><p>To refer ADC quantization RMS noise to sensor input, divide by the *actual small-signal gain*. To refer an amplifier output noise density back to the sensor, divide by gain (for a linear gain stage). Offsets and gain calibration errors should be budgeted separately.</p>"
+      },
+      {
+        "title": "7. Choose bandwidth based on physics, then check aliasing",
+        "html": "<p>If the sensor can change on a 10 ms timescale, a 1 Hz low-pass may remove useful dynamics. Conversely, sampling slowly with no analog anti-alias filter can fold interference into the target band. Choose the physical measurement bandwidth, then anti-alias design, sample rate, ADC, output-data processing and required settling. Filtering after ADC cannot reconstruct data lost to aliasing.</p><p>For a simple sinusoid with maximum physical frequency \\(f_{max}\\), the ideal Nyquist criterion is \\(f_s>2f_{max}\\) when the input is bandlimited. Real engineering calls for transition bands and oversampling margins, not just meeting the inequality at equality.</p>"
+      },
+      {
+        "title": "8. Verify the budget in the simulator and on the bench",
+        "html": "<p>Construct a table of each noise source with spectral density, bandwidth transfer function, input/output reference, RMS value and assumptions. Use SPICE noise analysis for the analog front-end, transient analysis for clipping and settling, and a realistic ADC model for quantization. Verify the result against a scope or spectrum measurement when suitable hardware exists.</p><p>Publish the exact sensor operating range, source impedance, temperature, reference voltage, measurement bandwidth and bias supply; otherwise an impressive 'low-noise' result is not interpretable. Report both predicted noise and measured noise distinctly.</p>"
+      }
+    ],
+    "example": {
+      "title": "A bandwidth-aware front-end and ADC noise comparison",
+      "problem": "An instrumentation chain has an ideal voltage-noise density en=10 nV/√Hz, a one-pole output-referred noise gain of 100 V/V, cutoff fc=1 kHz, and a 12-bit ideal ADC with 0–3.3 V full-scale. Ignore other noise sources and amplifier limitations. Compare amplifier output RMS noise and the ideal quantization RMS approximation.",
+      "steps": [
+        "Use the first-order equivalent noise bandwidth \\(B_{ENBW}=(\\pi/2)f_c=(\\pi/2)(1000)=1570.8\\ \\mathrm{Hz}\\).",
+        "Input RMS amplifier noise \\(v_{n,in}=10\\times10^{-9}\\sqrt{1570.8}\\approx0.3963\\,\\mu\\mathrm{V}_{rms}\\).",
+        "With constant gain \\(G=100\\), output RMS amplifier noise is \\(Gv_{n,in}\\approx39.63\\,\\mu\\mathrm{V}_{rms}\\).",
+        "Ideal ADC step \\(\\Delta=3.3/4096=0.000805664\\ \\mathrm{V}=805.66\\,\\mu\\mathrm{V}\\).",
+        "Under the uniform independent quantization-error model, \\(v_{q,rms}=\\Delta/\\sqrt{12}\\approx232.58\\,\\mu\\mathrm{V}_{rms}\\) at the ADC input.",
+        "ADC noise referred to original sensor input \\(=232.58/100=2.326\\,\\mu\\mathrm{V}_{rms}\\), versus amplifier input noise \\(0.396\\,\\mu\\mathrm{V}\\).",
+        "Under stated assumptions, quantization is larger; this does not account for other analog noise, reference noise, dither or effective converter ENOB."
+      ]
+    },
+    "checks": [
+      {
+        "difficulty": "Concept",
+        "prompt": "Why is the one-sided ENBW of a first-order low pass larger than its −3 dB cutoff?",
+        "hint": "Compute the integral of the squared magnitude transfer function over nonnegative frequencies.",
+        "answer": "\\(B_{ENBW}=\\int_0^\\infty[1+(f/f_c)^2]^{-1}df=(\\pi/2)f_c\\approx1.571f_c\\). The filter passes power above \\(f_c\\) rather than rejecting it completely."
+      },
+      {
+        "difficulty": "Numerical",
+        "prompt": "At 300 K, what is RMS Johnson noise of a 10 kΩ resistor over a 1 kHz ideal rectangular bandwidth?",
+        "hint": "Use (sqrt{4k_BTRB}) with R in ohms and B in hertz.",
+        "answer": "\\(\\sqrt{4(1.380649\\times10^{-23})(300)(10^4)(10^3)}=4.070\\times10^{-7}\\,\\mathrm{V}=0.407\\,\\mu\\mathrm{V}_{rms}\\)."
+      },
+      {
+        "difficulty": "ADC",
+        "prompt": "What ideal quantization increment corresponds to a 10-bit converter spanning 0–2.5 V?",
+        "hint": "Divide input span by (2^{10}).",
+        "answer": "\\(\\Delta=2.5/1024=2.4414\\ \\mathrm{mV}\\)."
+      },
+      {
+        "difficulty": "Noise budgeting",
+        "prompt": "Two uncorrelated input-referred RMS sources contribute 3 µV and 4 µV. Combine them.",
+        "hint": "Do not add RMS numbers directly unless fully correlated.",
+        "answer": "\\(v_{tot}=\\sqrt{3^2+4^2}=5\\,\\mu\\mathrm{V}_{rms}\\)."
+      },
+      {
+        "difficulty": "Gain selection",
+        "prompt": "A bridge spans ±8 mV and a mid-rail biased front-end has ideal gain 150 at 1.65 V. Find output extremes.",
+        "hint": "Use (V_{out}=1.65+150v_{sensor}).",
+        "answer": "Limits \\(1.65\\pm1.20\\) V → \\(0.45\\) V and \\(2.85\\) V. Check real amplifier output swing, common-mode and offset separately."
+      },
+      {
+        "difficulty": "Interpretation",
+        "prompt": "Does 12-bit resolution imply 12-bit effective accuracy on a vibrating or noisy sensor?",
+        "hint": "Separate resolution from errors and environmental interference.",
+        "answer": "No. Noise, reference stability, jitter, INL/DNL, offset, drift, gain error and the sensor's own physical limitations constrain actual accuracy and effective bits."
+      },
+      {
+        "difficulty": "Design",
+        "prompt": "What happens if an ADC samples a 700 Hz interferer at 1 ksample/s without adequate analog filtering?",
+        "hint": "The 700 Hz component exceeds the 500 Hz Nyquist frequency.",
+        "answer": "It can alias into a 300 Hz component, confusing signal interpretation. Filtering only after sampling cannot tell the true component apart from a real 300 Hz signal."
+      }
+    ],
+    "sources": [
+      {
+        "title": "Analog Devices Analog Dialogue: precision signal chain articles",
+        "url": "https://www.analog.com/en/resources/analog-dialogue.html"
+      },
+      {
+        "title": "TI Precision Labs — precision analog education",
+        "url": "https://www.ti.com/video/series/precision-labs.html"
+      },
+      {
+        "title": "NIST Engineering Statistics Handbook",
+        "url": "https://www.itl.nist.gov/div898/handbook/"
+      },
+      {
+        "title": "MIT 6.012 — Analog amplifier stage notes",
+        "url": "https://ocw.mit.edu/courses/6-012-microelectronic-devices-and-circuits-fall-2005/pages/lecture-notes/"
+      }
+    ]
+  }
+]
