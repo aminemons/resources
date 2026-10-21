@@ -1,0 +1,1154 @@
+{
+  "checked": "2026-10-21",
+  "sources": 195,
+  "reachable": 169,
+  "restricted": 12,
+  "needs_review": 14,
+  "note": "Link checks are not an endorsement of current content, free access or download eligibility.",
+  "results": {
+    "http://opencircuitdesign.com/magic/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://opencircuitdesign.com/magic/",
+      "checked": "2026-10-21"
+    },
+    "http://opencircuitdesign.com/netgen/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://opencircuitdesign.com/netgen/",
+      "checked": "2026-10-21"
+    },
+    "https://aflowlib.org/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://aflowlib.org/",
+      "checked": "2026-10-21"
+    },
+    "https://algassert.com/quirk": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://algassert.com/quirk",
+      "checked": "2026-10-21"
+    },
+    "https://amaranth-lang.org/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://amaranth-lang.org/",
+      "checked": "2026-10-21"
+    },
+    "https://archive.ics.uci.edu/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://archive.ics.uci.edu/",
+      "checked": "2026-10-21"
+    },
+    "https://arxiv.org/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://arxiv.org/",
+      "checked": "2026-10-21"
+    },
+    "https://core.ac.uk/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://core.ac.uk/",
+      "checked": "2026-10-21"
+    },
+    "https://course.fast.ai/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://course.fast.ai/",
+      "checked": "2026-10-21"
+    },
+    "https://cs61c.org/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://cs61c.org/fa26/",
+      "checked": "2026-10-21"
+    },
+    "https://dl.acm.org/": {
+      "status": "restricted",
+      "http": 403,
+      "checked": "2026-10-21"
+    },
+    "https://docs.docker.com/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://docs.docker.com/",
+      "checked": "2026-10-21"
+    },
+    "https://docs.espressif.com/projects/esp-idf/en/stable/esp32/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://docs.espressif.com/projects/esp-idf/en/stable/esp32/",
+      "checked": "2026-10-21"
+    },
+    "https://docs.jax.dev/en/latest/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://docs.jax.dev/en/latest/",
+      "checked": "2026-10-21"
+    },
+    "https://easyeda.com/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://easyeda.com/",
+      "checked": "2026-10-21"
+    },
+    "https://eda.sw.siemens.com/en-US/ic/questa/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://www.siemens.com/en-us/products/ic/questa-one/",
+      "checked": "2026-10-21"
+    },
+    "https://eds.ieee.org/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://eds.ieee.org/",
+      "checked": "2026-10-21"
+    },
+    "https://efabless.com/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://chipfoundry.io/efabless",
+      "checked": "2026-10-21"
+    },
+    "https://ez.analog.com/": {
+      "status": "needs_review",
+      "reason": "The read operation timed out",
+      "checked": "2026-10-21"
+    },
+    "https://falstad.com/circuit/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://falstad.com/circuit/",
+      "checked": "2026-10-21"
+    },
+    "https://fenicsproject.org/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://fenicsproject.org/",
+      "checked": "2026-10-21"
+    },
+    "https://fossi-foundation.org/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://fossi-foundation.org/",
+      "checked": "2026-10-21"
+    },
+    "https://gdsfactory.github.io/gdsfactory/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://gdsfactory.github.io/gdsfactory/",
+      "checked": "2026-10-21"
+    },
+    "https://git-scm.com/doc": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://git-scm.com/doc",
+      "checked": "2026-10-21"
+    },
+    "https://github.com/IHP-GmbH/IHP-AnalogAcademy": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://github.com/IHP-GmbH/IHP-AnalogAcademy",
+      "checked": "2026-10-21"
+    },
+    "https://github.com/IHP-GmbH/IHP-Open-PDK": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://github.com/IHP-GmbH/IHP-Open-PDK",
+      "checked": "2026-10-21"
+    },
+    "https://github.com/IHP-GmbH/IHP-Open-PDK/wiki/IHP-OpenPDK-StarterKit": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://github.com/IHP-GmbH/IHP-Open-PDK/wiki/IHP-OpenPDK-StarterKit",
+      "checked": "2026-10-21"
+    },
+    "https://github.com/SiEPIC/SiEPIC-Tools": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://github.com/SiEPIC/SiEPIC-Tools",
+      "checked": "2026-10-21"
+    },
+    "https://github.com/SiEPIC/SiEPIC_EBeam_PDK": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://github.com/SiEPIC/SiEPIC_EBeam_PDK",
+      "checked": "2026-10-21"
+    },
+    "https://github.com/The-OpenROAD-Project/asap7": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://github.com/The-OpenROAD-Project/asap7",
+      "checked": "2026-10-21"
+    },
+    "https://github.com/YosysHQ/nextpnr": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://github.com/YosysHQ/nextpnr",
+      "checked": "2026-10-21"
+    },
+    "https://github.com/YosysHQ/picorv32": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://github.com/YosysHQ/picorv32",
+      "checked": "2026-10-21"
+    },
+    "https://github.com/ZipCPU/zipcpu": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://github.com/ZipCPU/zipcpu",
+      "checked": "2026-10-21"
+    },
+    "https://github.com/bmurmann/EE628": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://github.com/bmurmann/EE628",
+      "checked": "2026-10-21"
+    },
+    "https://github.com/cogenda/Genius-TCAD-Open": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://github.com/cogenda/Genius-TCAD-Open",
+      "checked": "2026-10-21"
+    },
+    "https://github.com/devsim/devsim": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://github.com/devsim/devsim",
+      "checked": "2026-10-21"
+    },
+    "https://github.com/enjoy-digital/litex": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://github.com/enjoy-digital/litex",
+      "checked": "2026-10-21"
+    },
+    "https://github.com/flaport/sax": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://github.com/gdsfactory/sax",
+      "checked": "2026-10-21"
+    },
+    "https://github.com/google/gf180mcu-pdk": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://github.com/google/gf180mcu-pdk",
+      "checked": "2026-10-21"
+    },
+    "https://github.com/google/skywater-pdk": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://github.com/google/skywater-pdk",
+      "checked": "2026-10-21"
+    },
+    "https://github.com/lowRISC/ibex": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://github.com/lowRISC/ibex",
+      "checked": "2026-10-21"
+    },
+    "https://github.com/pfalstad/circuitjs1": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://github.com/pfalstad/circuitjs1",
+      "checked": "2026-10-21"
+    },
+    "https://gmsh.info/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://gmsh.info/",
+      "checked": "2026-10-21"
+    },
+    "https://gtkwave.sourceforge.net/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://gtkwave.sourceforge.net/",
+      "checked": "2026-10-21"
+    },
+    "https://hal.science/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://hal.science/",
+      "checked": "2026-10-21"
+    },
+    "https://hdlbits.01xz.net/wiki/Main_Page": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://hdlbits.01xz.net/wiki/Main_Page",
+      "checked": "2026-10-21"
+    },
+    "https://huggingface.co/datasets": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://huggingface.co/datasets",
+      "checked": "2026-10-21"
+    },
+    "https://ieee-sensors.org/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://ieee-sensors.org/",
+      "checked": "2026-10-21"
+    },
+    "https://ieeexplore.ieee.org/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://ieeexplore.ieee.org/Xplore/home.jsp",
+      "checked": "2026-10-21"
+    },
+    "https://iic-jku.github.io/analog-circuit-design/aicd.html": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://iic-jku.github.io/analog-circuit-design/aicd.html",
+      "checked": "2026-10-21"
+    },
+    "https://iic-jku.github.io/radio-frequency-integrated-circuits/rfic.html": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://iic-jku.github.io/radio-frequency-integrated-circuits/rfic.html",
+      "checked": "2026-10-21"
+    },
+    "https://journals.ieeeauthorcenter.ieee.org/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://journals.ieeeauthorcenter.ieee.org/",
+      "checked": "2026-10-21"
+    },
+    "https://jp-minerals.org/vesta/en/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://jp-minerals.org/vesta/en/",
+      "checked": "2026-10-21"
+    },
+    "https://jupyter.org/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://jupyter.org/",
+      "checked": "2026-10-21"
+    },
+    "https://kwant-project.org/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://kwant-project.org/",
+      "checked": "2026-10-21"
+    },
+    "https://learn.adafruit.com/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://learn.adafruit.com/",
+      "checked": "2026-10-21"
+    },
+    "https://learn.sparkfun.com/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://learn.sparkfun.com/",
+      "checked": "2026-10-21"
+    },
+    "https://learning.quantum.ibm.com/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://quantum.cloud.ibm.com/learning/en",
+      "checked": "2026-10-21"
+    },
+    "https://matplotlib.org/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://matplotlib.org/",
+      "checked": "2026-10-21"
+    },
+    "https://meep.readthedocs.io/en/latest/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://meep.readthedocs.io/en/latest/",
+      "checked": "2026-10-21"
+    },
+    "https://mpb.readthedocs.io/en/latest/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://mpb.readthedocs.io/en/latest/",
+      "checked": "2026-10-21"
+    },
+    "https://nanohub.org/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://nanohub.org/",
+      "checked": "2026-10-21"
+    },
+    "https://next-gen.materialsproject.org/": {
+      "status": "restricted",
+      "http": 403,
+      "checked": "2026-10-21"
+    },
+    "https://ngspice.sourceforge.io/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://ngspice.sourceforge.io/",
+      "checked": "2026-10-21"
+    },
+    "https://nomad-lab.eu/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://nomad-lab.eu/select-gui",
+      "checked": "2026-10-21"
+    },
+    "https://nptel.ac.in/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://nptel.ac.in/",
+      "checked": "2026-10-21"
+    },
+    "https://numpy.org/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://numpy.org/",
+      "checked": "2026-10-21"
+    },
+    "https://octave.org/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://octave.org/",
+      "checked": "2026-10-21"
+    },
+    "https://ocw.mit.edu/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://ocw.mit.edu/",
+      "checked": "2026-10-21"
+    },
+    "https://ocw.mit.edu/courses/3-024-electronic-optical-and-magnetic-properties-of-materials-spring-2013/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://ocw.mit.edu/courses/3-024-electronic-optical-and-magnetic-properties-of-materials-spring-2013/",
+      "checked": "2026-10-21"
+    },
+    "https://ocw.mit.edu/courses/3-091-introduction-to-solid-state-chemistry-fall-2010/": {
+      "status": "needs_review",
+      "http": 404,
+      "checked": "2026-10-21"
+    },
+    "https://ocw.mit.edu/courses/6-002-circuits-and-electronics-spring-2007/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://ocw.mit.edu/courses/6-002-circuits-and-electronics-spring-2007/",
+      "checked": "2026-10-21"
+    },
+    "https://ocw.mit.edu/courses/6-003-signals-and-systems-fall-2011/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://ocw.mit.edu/courses/6-003-signals-and-systems-fall-2011/",
+      "checked": "2026-10-21"
+    },
+    "https://ocw.mit.edu/courses/6-004-computation-structures-spring-2009/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://ocw.mit.edu/courses/6-004-computation-structures-spring-2009/",
+      "checked": "2026-10-21"
+    },
+    "https://ocw.mit.edu/courses/6-012-microelectronic-devices-and-circuits-fall-2005/pages/lecture-notes/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://ocw.mit.edu/courses/6-012-microelectronic-devices-and-circuits-fall-2005/pages/lecture-notes/",
+      "checked": "2026-10-21"
+    },
+    "https://ocw.mit.edu/courses/6-012-microelectronic-devices-and-circuits-fall-2009/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://ocw.mit.edu/courses/6-012-microelectronic-devices-and-circuits-fall-2009/",
+      "checked": "2026-10-21"
+    },
+    "https://ocw.mit.edu/courses/6-013-electromagnetics-and-applications-spring-2009/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://ocw.mit.edu/courses/6-013-electromagnetics-and-applications-spring-2009/",
+      "checked": "2026-10-21"
+    },
+    "https://ocw.mit.edu/courses/6-041sc-probabilistic-systems-analysis-and-applied-probability-fall-2013/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://ocw.mit.edu/courses/6-041sc-probabilistic-systems-analysis-and-applied-probability-fall-2013/",
+      "checked": "2026-10-21"
+    },
+    "https://ocw.mit.edu/courses/6-720j-integrated-microelectronic-devices-spring-2007/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://ocw.mit.edu/courses/6-720j-integrated-microelectronic-devices-spring-2007/",
+      "checked": "2026-10-21"
+    },
+    "https://ocw.mit.edu/search/?q=MEMS": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://ocw.mit.edu/search/?q=MEMS",
+      "checked": "2026-10-21"
+    },
+    "https://openalex.org/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://openalex.org/",
+      "checked": "2026-10-21"
+    },
+    "https://opendaq.com/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://opendaq.com/",
+      "checked": "2026-10-21"
+    },
+    "https://openems.de/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://www.openems.de/",
+      "checked": "2026-10-21"
+    },
+    "https://openlane2.readthedocs.io/en/latest/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://openlane2.readthedocs.io/en/latest/",
+      "checked": "2026-10-21"
+    },
+    "https://openroad-flow-scripts.readthedocs.io/en/latest/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://openroad-flow-scripts.readthedocs.io/en/latest/",
+      "checked": "2026-10-21"
+    },
+    "https://openroad-flow-scripts.readthedocs.io/en/latest/tutorials/FlowTutorial.html": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://openroad-flow-scripts.readthedocs.io/en/latest/tutorials/FlowTutorial.html",
+      "checked": "2026-10-21"
+    },
+    "https://openroad.readthedocs.io/en/latest/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://openroad.readthedocs.io/en/latest/",
+      "checked": "2026-10-21"
+    },
+    "https://opentitan.org/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://opentitan.org/",
+      "checked": "2026-10-21"
+    },
+    "https://opg.optica.org/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://opg.optica.org/",
+      "checked": "2026-10-21"
+    },
+    "https://optuna.org/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://optuna.org/",
+      "checked": "2026-10-21"
+    },
+    "https://orcid.org/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://orcid.org/",
+      "checked": "2026-10-21"
+    },
+    "https://pennylane.ai/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://pennylane.ai/",
+      "checked": "2026-10-21"
+    },
+    "https://pennylane.ai/codebook/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://pennylane.ai/codebook/",
+      "checked": "2026-10-21"
+    },
+    "https://physics.nist.gov/asd": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://www.nist.gov/pml/atomic-spectra-database",
+      "checked": "2026-10-21"
+    },
+    "https://platformio.org/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://platformio.org/",
+      "checked": "2026-10-21"
+    },
+    "https://projectf.io/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://projectf.io/",
+      "checked": "2026-10-21"
+    },
+    "https://pyspice.fabrice-salvaire.fr/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://pyspice.fabrice-salvaire.fr/",
+      "checked": "2026-10-21"
+    },
+    "https://pytorch-geometric.readthedocs.io/en/latest/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://pytorch-geometric.readthedocs.io/en/latest/",
+      "checked": "2026-10-21"
+    },
+    "https://pytorch.org/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://pytorch.org/",
+      "checked": "2026-10-21"
+    },
+    "https://pyvisa.readthedocs.io/en/latest/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://pyvisa.readthedocs.io/en/latest/",
+      "checked": "2026-10-21"
+    },
+    "https://quantum.country/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://quantum.country/",
+      "checked": "2026-10-21"
+    },
+    "https://quantumai.google/cirq": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://quantumai.google/cirq",
+      "checked": "2026-10-21"
+    },
+    "https://qucs.sourceforge.net/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://qucs.sourceforge.net/",
+      "checked": "2026-10-21"
+    },
+    "https://qutip.org/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://qutip.org/",
+      "checked": "2026-10-21"
+    },
+    "https://qutip.org/docs/latest/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://qutip.org/docs/latest/",
+      "checked": "2026-10-21"
+    },
+    "https://ra3xdh.github.io/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://ra3xdh.github.io/",
+      "checked": "2026-10-21"
+    },
+    "https://renode.io/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://antmicro.com/platforms/renode/",
+      "checked": "2026-10-21"
+    },
+    "https://riscv.org/specifications/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://riscv.org/specifications/ratified/",
+      "checked": "2026-10-21"
+    },
+    "https://scholar.google.com/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://scholar.google.com/",
+      "checked": "2026-10-21"
+    },
+    "https://scikit-learn.org/stable/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://scikit-learn.org/stable/",
+      "checked": "2026-10-21"
+    },
+    "https://scikit-rf.readthedocs.io/en/latest/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://scikit-rf.readthedocs.io/en/latest/",
+      "checked": "2026-10-21"
+    },
+    "https://scipy.org/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://scipy.org/",
+      "checked": "2026-10-21"
+    },
+    "https://siepic.ubc.ca/": {
+      "status": "needs_review",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)>",
+      "checked": "2026-10-21"
+    },
+    "https://siesta-project.org/siesta/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://siesta-project.org/siesta/",
+      "checked": "2026-10-21"
+    },
+    "https://silvaco.com/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://silvaco.com/",
+      "checked": "2026-10-21"
+    },
+    "https://srdata.nist.gov/xps/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://srdata.nist.gov/xps/",
+      "checked": "2026-10-21"
+    },
+    "https://sscs.ieee.org/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://sscs.ieee.org/",
+      "checked": "2026-10-21"
+    },
+    "https://standards.ieee.org/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://standards.ieee.org/",
+      "checked": "2026-10-21"
+    },
+    "https://steveicarus.github.io/iverilog/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://steveicarus.github.io/iverilog/",
+      "checked": "2026-10-21"
+    },
+    "https://tinytapeout.com/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://tinytapeout.com/",
+      "checked": "2026-10-21"
+    },
+    "https://vlsiverify.com/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://vlsiverify.com/",
+      "checked": "2026-10-21"
+    },
+    "https://webbook.nist.gov/chemistry/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://webbook.nist.gov/chemistry/",
+      "checked": "2026-10-21"
+    },
+    "https://wiki.fysik.dtu.dk/ase/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://ase-lib.org/",
+      "checked": "2026-10-21"
+    },
+    "https://wokwi.com/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://wokwi.com/",
+      "checked": "2026-10-21"
+    },
+    "https://www.3ds.com/products/biovia/materials-studio": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://www.3ds.com/products/biovia/materials-studio",
+      "checked": "2026-10-21"
+    },
+    "https://www.3ds.com/products/simulia/cst-studio-suite": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://www.3ds.com/products/simulia/cst-studio-suite",
+      "checked": "2026-10-21"
+    },
+    "https://www.allaboutcircuits.com/textbook/": {
+      "status": "restricted",
+      "http": 403,
+      "checked": "2026-10-21"
+    },
+    "https://www.amd.com/en/products/software/adaptive-socs-and-fpgas/vivado.html": {
+      "status": "needs_review",
+      "reason": "The read operation timed out",
+      "checked": "2026-10-21"
+    },
+    "https://www.analog.com/en/resources/design-tools-and-calculators/ltspice-simulator.html": {
+      "status": "needs_review",
+      "reason": "The read operation timed out",
+      "checked": "2026-10-21"
+    },
+    "https://www.analog.com/en/resources/reference-designs.html": {
+      "status": "needs_review",
+      "reason": "The read operation timed out",
+      "checked": "2026-10-21"
+    },
+    "https://www.ansys.com/products/electronics/ansys-hfss": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://ansys.synopsys.com/products/electronics/ansys-hfss",
+      "checked": "2026-10-21"
+    },
+    "https://www.ansys.com/products/optics/ansys-lumerical-fdtd": {
+      "status": "needs_review",
+      "http": 404,
+      "checked": "2026-10-21"
+    },
+    "https://www.ansys.com/products/optics/ansys-lumerical-interconnect": {
+      "status": "needs_review",
+      "http": 404,
+      "checked": "2026-10-21"
+    },
+    "https://www.antenna-theory.com/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://www.antenna-theory.com/",
+      "checked": "2026-10-21"
+    },
+    "https://www.arduino.cc/en/software": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://www.arduino.cc/en/software",
+      "checked": "2026-10-21"
+    },
+    "https://www.c2n.universite-paris-saclay.fr/en/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://www.c2n.universite-paris-saclay.fr/en/",
+      "checked": "2026-10-21"
+    },
+    "https://www.cadence.com/en_US/home/tools/custom-ic-analog-rf-design.html": {
+      "status": "restricted",
+      "http": 403,
+      "checked": "2026-10-21"
+    },
+    "https://www.cadence.com/en_US/home/tools/custom-ic-analog-rf-design/circuit-simulation.html": {
+      "status": "restricted",
+      "http": 403,
+      "checked": "2026-10-21"
+    },
+    "https://www.cadence.com/en_US/home/tools/system-design-and-verification/simulation-and-testbench-verification/xcelium-simulator.html": {
+      "status": "restricted",
+      "http": 403,
+      "checked": "2026-10-21"
+    },
+    "https://www.cocotb.org/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://www.cocotb.org/",
+      "checked": "2026-10-21"
+    },
+    "https://www.comsol.com/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://www.comsol.com/",
+      "checked": "2026-10-21"
+    },
+    "https://www.comsol.com/wave-optics-module": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://www.comsol.com/wave-optics-module",
+      "checked": "2026-10-21"
+    },
+    "https://www.crystallography.net/cod/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://www.crystallography.net/cod/",
+      "checked": "2026-10-21"
+    },
+    "https://www.csc.fi/en/web/elmer": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://csc.fi/koulutuskalenteri/elmer-fem-free-webinar-series/",
+      "checked": "2026-10-21"
+    },
+    "https://www.edaplayground.com/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://www.edaplayground.com/",
+      "checked": "2026-10-21"
+    },
+    "https://www.electronics-tutorials.ws/": {
+      "status": "needs_review",
+      "reason": "The read operation timed out",
+      "checked": "2026-10-21"
+    },
+    "https://www.flexcompute.com/tidy3d/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://www.flexcompute.com/tidy3d/",
+      "checked": "2026-10-21"
+    },
+    "https://www.fpga4fun.com/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://www.fpga4fun.com/",
+      "checked": "2026-10-21"
+    },
+    "https://www.freecad.org/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://www.freecad.org/",
+      "checked": "2026-10-21"
+    },
+    "https://www.freertos.org/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://www.freertos.org/",
+      "checked": "2026-10-21"
+    },
+    "https://www.gnuradio.org/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://www.gnuradio.org/",
+      "checked": "2026-10-21"
+    },
+    "https://www.ibm.com/quantum/qiskit": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://www.ibm.com/quantum/qiskit",
+      "checked": "2026-10-21"
+    },
+    "https://www.imec-int.com/en": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://www.imec-int.com/en",
+      "checked": "2026-10-21"
+    },
+    "https://www.intel.com/content/www/us/en/software/programmable/quartus-prime/overview.html": {
+      "status": "restricted",
+      "http": 403,
+      "checked": "2026-10-21"
+    },
+    "https://www.ioffe.ru/SVA/NSM/Semicond/": {
+      "status": "needs_review",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1010)>",
+      "checked": "2026-10-21"
+    },
+    "https://www.keysight.com/us/en/products/software/pathwave-design-software/pathwave-advanced-design-system.html": {
+      "status": "restricted",
+      "http": 403,
+      "checked": "2026-10-21"
+    },
+    "https://www.khanacademy.org/science/electrical-engineering": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://www.khanacademy.org/science/electrical-engineering",
+      "checked": "2026-10-21"
+    },
+    "https://www.kicad.org/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://www.kicad.org/",
+      "checked": "2026-10-21"
+    },
+    "https://www.klayout.de/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://www.klayout.de/",
+      "checked": "2026-10-21"
+    },
+    "https://www.lammps.org/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://www.lammps.org/",
+      "checked": "2026-10-21"
+    },
+    "https://www.latticesemi.com/Products/DesignSoftwareAndIP": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://www.latticesemi.com/Products/DesignSoftwareAndIP",
+      "checked": "2026-10-21"
+    },
+    "https://www.mathworks.com/products/matlab.html": {
+      "status": "restricted",
+      "http": 403,
+      "checked": "2026-10-21"
+    },
+    "https://www.mathworks.com/products/rf.html": {
+      "status": "restricted",
+      "http": 403,
+      "checked": "2026-10-21"
+    },
+    "https://www.microwaves101.com/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://www.microwaves101.com/",
+      "checked": "2026-10-21"
+    },
+    "https://www.nand2tetris.org/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://www.nand2tetris.org/",
+      "checked": "2026-10-21"
+    },
+    "https://www.nextnano.com/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://www.nextnano.com/",
+      "checked": "2026-10-21"
+    },
+    "https://www.nist.gov/pml": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://www.nist.gov/pml",
+      "checked": "2026-10-21"
+    },
+    "https://www.opensourceicdesign.com/": {
+      "status": "needs_review",
+      "reason": "<urlopen error [Errno -2] Name or service not known>",
+      "checked": "2026-10-21"
+    },
+    "https://www.overleaf.com/learn": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://www.overleaf.com/learn",
+      "checked": "2026-10-21"
+    },
+    "https://www.ovito.org/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://www.ovito.org/",
+      "checked": "2026-10-21"
+    },
+    "https://www.photonics.com/": {
+      "status": "restricted",
+      "http": 403,
+      "checked": "2026-10-21"
+    },
+    "https://www.qemu.org/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://www.qemu.org/",
+      "checked": "2026-10-21"
+    },
+    "https://www.quantum-espresso.org/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://www.quantum-espresso.org/",
+      "checked": "2026-10-21"
+    },
+    "https://www.rp-photonics.com/encyclopedia.html": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://www.rp-photonics.com/encyclopedia.html",
+      "checked": "2026-10-21"
+    },
+    "https://www.sciencedirect.com/": {
+      "status": "restricted",
+      "http": 403,
+      "checked": "2026-10-21"
+    },
+    "https://www.semanticscholar.org/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://www.semanticscholar.org/",
+      "checked": "2026-10-21"
+    },
+    "https://www.spiedigitallibrary.org/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://www.spiedigitallibrary.org/",
+      "checked": "2026-10-21"
+    },
+    "https://www.st.com/en/development-tools/stm32cubeide.html": {
+      "status": "needs_review",
+      "reason": "The read operation timed out",
+      "checked": "2026-10-21"
+    },
+    "https://www.synopsys.com/implementation-and-signoff/custom-design-platform.html": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://www.synopsys.com/implementation-and-signoff/custom-design-platform.html",
+      "checked": "2026-10-21"
+    },
+    "https://www.synopsys.com/manufacturing/tcad.html": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://www.synopsys.com/manufacturing/tcad.html",
+      "checked": "2026-10-21"
+    },
+    "https://www.synopsys.com/verification/simulation/vcs.html": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://www.synopsys.com/verification/simulation/vcs.html",
+      "checked": "2026-10-21"
+    },
+    "https://www.ti.com/reference-designs/index.html": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://www.ti.com/reference-designs/index.html",
+      "checked": "2026-10-21"
+    },
+    "https://www.ti.com/video/series/precision-labs/ti-precision-labs-overview.html": {
+      "status": "needs_review",
+      "http": 404,
+      "checked": "2026-10-21"
+    },
+    "https://www.tinkercad.com/circuits": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://www.tinkercad.com/circuits",
+      "checked": "2026-10-21"
+    },
+    "https://www.vasp.at/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://vasp.at/",
+      "checked": "2026-10-21"
+    },
+    "https://www.veripool.org/verilator/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://www.veripool.org/verilator/",
+      "checked": "2026-10-21"
+    },
+    "https://www.youtube.com/@PhilsLab": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://www.youtube.com/@PhilsLab",
+      "checked": "2026-10-21"
+    },
+    "https://www.youtube.com/results?search_query=Behzad+Razavi+electronics+lectures": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://www.youtube.com/results?search_query=Behzad+Razavi+electronics+lectures",
+      "checked": "2026-10-21"
+    },
+    "https://www.zephyrproject.org/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://www.zephyrproject.org/",
+      "checked": "2026-10-21"
+    },
+    "https://www.zotero.org/": {
+      "status": "needs_review",
+      "http": 503,
+      "checked": "2026-10-21"
+    },
+    "https://xschem.sourceforge.io/stefan/index.html": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://xschem.sourceforge.io/stefan/index.html",
+      "checked": "2026-10-21"
+    },
+    "https://xyce.sandia.gov/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://xyce.sandia.gov/",
+      "checked": "2026-10-21"
+    },
+    "https://yosyshq.net/yosys/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://yosyshq.net/yosys/",
+      "checked": "2026-10-21"
+    },
+    "https://yosyshq.readthedocs.io/projects/sby/en/latest/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://yosyshq.readthedocs.io/projects/sby/en/latest/",
+      "checked": "2026-10-21"
+    },
+    "https://zenodo.org/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://zenodo.org/",
+      "checked": "2026-10-21"
+    }
+  }
+}
