@@ -1,261 +1,393 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Micro & Nano — Learning Library</title>
-<meta name="description" content="A practical library for microelectronics, nanoelectronics, IC design, FPGA, photonics, semiconductor physics and scientific research. Books, courses, tools, simulators and learning paths.">
-<meta name="theme-color" content="#f8faf7">
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f6f7f5"><meta name="description" content="Micro and nanoelectronics, sensors and smart systems. Guided technical learning, books, courses, simulators, documentation and research resources.">
+<title>Learning Library · Micro & Nano</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#fafbf9;--nav:#f4f6f2;--ink:#26362b;--text:#435548;--muted:#54665a;--line:#dce5dc;--paper:#fff;--highlight:#e5eee6;--forest:#385e47;--soft:#f5f8f4;color-scheme:light}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font:16px/1.58 Outfit,system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased}
-a{color:inherit}button,input,select{font:inherit}button{cursor:pointer}a,button{-webkit-tap-highlight-color:transparent}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid #669677;outline-offset:3px}[hidden]{display:none!important}
-.layout{min-height:100vh}.sidebar{position:fixed;inset:0 auto 0 0;width:258px;z-index:30;border-right:1px solid var(--line);background:var(--nav);padding:26px 16px 22px;display:flex;flex-direction:column;overflow-y:auto;scrollbar-width:thin}
-.brand{display:flex;align-items:center;gap:12px;text-decoration:none;padding:4px 12px 14px;margin-bottom:26px}.brand-emblem{flex:none;width:36px;height:36px;display:grid;place-items:center;border-radius:11px;background:var(--forest);color:white}.brand-emblem svg{width:19px;height:19px}.brand strong{display:block;font-weight:600;font-size:16px;letter-spacing:-.03em;line-height:1.3}.brand small{color:var(--muted);font-size:12px}
-.side-label{font-size:11px;letter-spacing:.095em;text-transform:uppercase;color:#61736a;margin:24px 11px 9px}
-.side-label:first-of-type{margin-top:0}.side-menu{display:grid;gap:3px}.side-btn{border:0;background:transparent;width:100%;color:#4e6052;display:flex;align-items:center;gap:12px;min-height:41px;text-align:left;padding:9px 11px;border-radius:9px;line-height:1.3;font-size:14px;transition:background-color .15s,color .15s}.side-btn svg{width:17px;height:17px;stroke-width:1.65;flex-shrink:0}.side-btn .nm{flex:1}.side-btn .small-number{font-size:12px;color:#66796c;font-variant-numeric:tabular-nums}.side-btn:hover{background:#e9eee8;color:#284735}.side-btn[aria-current="page"]{background:var(--highlight);color:#235039;font-weight:500}
-.topics{display:grid;gap:1px}.topics .side-btn{font-size:13px;min-height:38px;padding:8px 11px}.topics .side-btn .small-number{font-size:11px}.sidefoot{margin-top:auto;padding:25px 11px 5px;color:var(--muted);font-size:12px;line-height:1.65}.sidefoot a{text-decoration:none;color:#355c43}.sidefoot a:hover{text-decoration:underline;text-underline-offset:3px}.sidefoot hr{border:0;border-top:1px solid var(--line);margin:12px 0}
-.mobilebar{display:none}.scrim{display:none}
-.main{margin-left:258px;min-width:0}.inner{max-width:1100px;margin:0 auto;padding:0 57px 95px}
-.topline{min-height:61px;display:flex;justify-content:flex-end;align-items:center;border-bottom:1px solid #e6ece5;font-size:12px;color:#596b5d}
-.intro{padding:56px 0 34px}.intro h1{font-size:clamp(34px,3.8vw,44px);font-weight:500;line-height:1.15;letter-spacing:-.038em;margin:0 0 13px;max-width:670px}.intro p{max-width:675px;font-size:16px;line-height:1.65;color:var(--muted);margin:0}
-.path-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:14px 0 30px}
-.path-card{border:1px solid var(--line);background:#fff;border-radius:12px;padding:19px;min-height:150px;text-align:left;color:var(--ink);display:flex;flex-direction:column;gap:12px;transition:transform .16s ease,border-color .16s ease,background .16s}
-.path-card:hover{transform:translateY(-2px);border-color:#aecab5;background:#fcfdfb}
-.path-card .path-number{font-size:13px;color:#607766}
-.path-card strong{font-size:17px;line-height:1.28;font-weight:500;letter-spacing:-.012em}
-.path-card small{font-size:13px;line-height:1.5;color:var(--muted)}
-.section-header{display:flex;justify-content:space-between;align-items:baseline;gap:12px;border-bottom:1px solid var(--line);padding:0 0 17px}
-.section-header h2{font-size:22px;font-weight:500;letter-spacing:-.02em;line-height:1.3;margin:0}.resultcount{font-size:14px;color:#53665a;white-space:nowrap}
-.tools{display:flex;gap:10px;margin-top:21px}.search{flex:1;min-width:0;display:flex;align-items:center;gap:11px;background:#fff;border:1px solid #d9e2d9;border-radius:10px;padding:0 16px;height:50px}
-.search:focus-within{border-color:#7b9d86;box-shadow:0 0 0 3px #e0ece3}.search svg{width:18px;height:18px;flex:none;color:#63756a}.search input{height:100%;width:100%;outline:0;border:0;background:none;font-size:15px;color:var(--ink)}.search input::placeholder{color:#728074}
-.soft-button{background:#fff;border:1px solid #d9e2d9;border-radius:10px;min-width:109px;height:50px;display:flex;align-items:center;justify-content:center;gap:9px;padding:0 13px;color:#425749;font-size:14px}.soft-button:hover{background:#f0f5ef}.soft-button svg{width:17px;height:17px}
-.filters{display:grid;grid-template-columns:1fr 1fr 1fr auto;align-items:end;gap:14px;margin-top:12px;background:#fff;border:1px solid var(--line);border-radius:11px;padding:18px}
-.filters label{display:grid;gap:7px;color:#596b5f;font-size:13px;min-width:0}.filters select{width:100%;height:42px;padding:0 9px;border:1px solid #d8e3d9;background:#fff;color:#2c4534;border-radius:8px;font-size:14px;min-width:0}
-.clear{border:0;background:none;color:#2f6246;font-size:13px;text-decoration:underline;text-underline-offset:4px;padding:9px}
-.records{margin-top:22px;background:#fff;border:1px solid var(--line);border-radius:13px;overflow:hidden}.record{padding:25px 26px 24px;border-bottom:1px solid #e8eee7;transition:background-color .16s}.record:last-child{border-bottom:0}.record:hover{background:#fcfdfa}
-.rtop{display:flex;align-items:center;justify-content:space-between;gap:15px}.category{font-size:13px;color:#536a58}.rbookmark{border:0;background:none;padding:6px;margin:-5px -6px -5px 0;color:#66796b;border-radius:7px;display:grid;place-items:center}.rbookmark:hover{background:#ecf4ed;color:#2a6740}.rbookmark svg{width:18px;height:18px}.rbookmark[aria-pressed="true"]{color:#2a6740}.rbookmark[aria-pressed="true"] svg{fill:#daebde}
-.record h3{font-size:19px;letter-spacing:-.016em;font-weight:500;line-height:1.35;margin:11px 0 5px}.publisher{font-size:13px;color:#607168;margin:0}.rdesc{font-size:15px;color:#485d4e;line-height:1.63;margin:13px 0 14px;max-width:740px}
-.rbottom{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}.access{font-size:13px;color:#566b5a}.ract{display:flex;gap:21px;align-items:center}.ract button,.ract a{border:0;background:none;color:#335c43;font-size:14px;font-weight:500;text-decoration:none;padding:5px 0}.ract a{font-weight:400}.ract button:hover,.ract a:hover{text-decoration:underline;text-underline-offset:4px}
-.empty{text-align:center;padding:66px 23px;color:#596a5d}.empty h3{font-weight:500;color:#2c4836;font-size:18px;margin:0 0 8px}.empty p{margin:0}
-.note{max-width:760px;color:#5a6d5f;font-size:13px;line-height:1.72;margin:28px 0}
-.paths{margin-top:20px}.path-intro{margin:0 0 21px;line-height:1.7;color:#52685b;font-size:15px}.path-switch{display:flex;gap:9px;overflow-x:auto;padding:0 0 17px;scrollbar-width:thin}
-.path-pill{background:#fff;border:1px solid #d8e3d9;border-radius:10px;color:#49604e;white-space:nowrap;padding:8px 14px;font-size:13px}.path-pill[aria-pressed="true"]{background:#355f44;color:white;border-color:#355f44}
-.step{display:flex;gap:22px;border-bottom:1px solid #e3eae2;padding:22px 0}.step-num{font-size:15px;color:#567760;min-width:25px}.step-main{flex:1}.step h3{font-size:18px;font-weight:500;margin:0 0 6px}.step p{font-size:14px;color:#52675a;line-height:1.7;margin:0 0 11px}.step button{border:0;background:none;padding:0;color:#2b6342;font-size:14px}
-.detail{margin:0 0 0 auto;width:min(100%,565px);height:100dvh;max-height:100dvh;border:0;border-left:1px solid var(--line);overflow-y:auto;background:#fff;box-shadow:-15px 0 50px #2030211a;animation:arrive .2s ease}
-.detail::backdrop{background:#172c1e65;backdrop-filter:blur(2px)}
-@keyframes arrive{from{transform:translateX(23px);opacity:.7}to{transform:translateX(0);opacity:1}}
-.detail-head{display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;background:#fffffff5;border-bottom:1px solid var(--line);min-height:70px;padding:0 31px;backdrop-filter:blur(10px);font-size:14px;color:#617064}
-.detail-head button{border:1px solid #e0e7df;background:#fff;border-radius:9px;width:36px;height:36px;display:grid;place-items:center;color:#405743}.detail-head svg{width:19px;height:19px}
-.detail-body{padding:33px 36px 60px}.detail-kicker{font-size:14px;color:#53715b;margin:0 0 12px}.detail-body h2{font-weight:500;font-size:30px;letter-spacing:-.028em;line-height:1.22;margin:0 0 11px}.detail-provider{font-size:15px;color:#5d7161;margin:0 0 26px}
-.detail-stat{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:22px}.detail-stat span{font-size:13px;color:#4a604d;background:#eff3ee;border-radius:7px;padding:5px 10px}
-.dsection{border-top:1px solid #e1e9e0;padding:19px 0 0;margin-top:21px}.dsection h3{font-size:15px;font-weight:500;color:#3d5944;margin:0 0 7px}.dsection p{font-size:15px;line-height:1.75;color:#4c5e51;margin:0}
-.dactions{display:flex;gap:11px;flex-wrap:wrap;margin-top:30px}.visit{border:0;background:#365f46;color:white;text-decoration:none;border-radius:9px;min-height:45px;display:flex;align-items:center;padding:10px 19px;font-size:14px}.visit:hover{background:#284e36}.dsave{border:1px solid #c4d5c8;border-radius:9px;background:#fff;color:#365942;padding:10px 17px;font-size:14px}.original-url{word-break:break-word;font-size:12px;color:#617267;margin-top:18px}
-@media(max-width:1170px){.inner{padding:0 30px 80px}}
-@media(max-width:860px){.sidebar{transform:translateX(-102%);transition:transform .25s;box-shadow:16px 0 35px #1a30241b}.sidebar.open{transform:translateX(0)}.scrim{display:block;position:fixed;inset:0;z-index:25;background:#182e2060}.main{margin-left:0}.mobilebar{display:flex;align-items:center;justify-content:space-between;min-height:61px;border-bottom:1px solid var(--line)}.mobilebar button{border:0;background:none;color:#2a4d37;padding:8px;margin-left:-8px}.mobilebar svg{width:23px;height:23px}.mobilebar span{font-size:15px;font-weight:500}.topline{display:none}.intro{padding-top:40px}.path-cards{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:580px){.inner{padding:0 17px 62px}.intro{padding:34px 0 26px}.intro h1{font-size:34px}.intro p{font-size:15px}.path-cards{grid-template-columns:1fr;margin-top:10px;gap:9px}.path-card{min-height:auto;gap:4px;padding:16px}.path-card small{max-width:350px}.section-header h2{font-size:20px}.tools{gap:8px}.search{height:48px}.soft-button{min-width:46px;height:48px;padding:0 12px}.soft-button .btn-text{display:none}.filters{grid-template-columns:1fr;gap:11px}.record{padding:21px 19px}.record h3{font-size:18px}.rdesc{font-size:14px}.detail-body{padding:28px 24px}.detail-head{padding:0 24px}.detail-body h2{font-size:26px}}
-@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+:root{color-scheme:light;--bg:#fafaf8;--nav:#f3f5f1;--ink:#1e2b24;--text:#37483e;--muted:#495c50;--subtle:#586d5e;--border:#d9e0d9;--panel:#fff;--hover:#f6f9f5;--active:#e5ede4;--green:#2d5b41;--focus:#3b7957}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.63 Outfit,system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+button,input,select{font:inherit}button{cursor:pointer;color:inherit}a{color:inherit}a,button{-webkit-tap-highlight-color:transparent}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid #52896a;outline-offset:3px}
+[hidden]{display:none!important}
+body.dialog-open{overflow:hidden}
+.app{min-height:100vh}
+.sidebar{position:fixed;inset:0 auto 0 0;width:264px;background:var(--nav);border-right:1px solid var(--border);z-index:30;display:flex;flex-direction:column;gap:0;padding:29px 17px 24px;overflow-y:auto;scrollbar-width:thin}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none;margin:0 9px 47px;min-height:38px}
+.logo-symbol{display:grid;place-items:center;width:37px;height:37px;background:#2c5940;color:white;border-radius:11px;flex-shrink:0}
+.logo-symbol svg{width:20px;height:20px}
+.logo-name{font-size:17px;font-weight:600;letter-spacing:-.035em;line-height:1.2;display:block}
+.logo-small{display:block;font-size:12px;color:#536659;margin-top:5px;line-height:1.2}
+.nav-section{font-size:12px;letter-spacing:.018em;color:#5a6d60;padding:17px 11px 9px}
+.nav-section.first{padding-top:0}
+.sideitem{width:100%;display:flex;align-items:center;gap:13px;text-align:left;min-height:45px;padding:10px 12px;background:transparent;border:0;border-radius:9px;font-size:15px;color:#415748;line-height:1.25;transition:background .15s,color .15s}
+.sideitem svg{height:19px;width:19px;stroke-width:1.65;flex-shrink:0}
+.sideitem:hover{background:#eaf0e9}
+.sideitem[aria-current="page"]{background:var(--active);color:#1e4d32;font-weight:500}
+.navcount{margin-left:auto;color:#617569;font-size:12px;font-weight:400}
+.sidebottom{margin-top:auto;padding:24px 10px 0;color:#4c5f52;font-size:13px;line-height:1.65}
+.sidebottom a{text-decoration:none;display:block;padding:6px 0}.sidebottom a:hover{text-decoration:underline;text-underline-offset:3px}
+.sidebar-rule{height:1px;background:var(--border);margin:13px 0 16px}
+.site-note{font-size:12px;color:#536659;line-height:1.6;margin-top:14px}
+.mobile-header{display:none}
+.scrim{display:none}
+.main{margin-left:264px;min-width:0}
+.content{max-width:1120px;margin:auto;padding:0 66px 90px}
+.topbar{display:flex;align-items:center;justify-content:flex-end;min-height:62px;border-bottom:1px solid #e4e9e3;color:#56675a;font-size:13px}
+.intro{padding:52px 0 37px}
+.eyeline{font-size:13px;color:#365e46;font-weight:500;margin:0 0 13px;letter-spacing:.005em}
+.intro h1{font-size:clamp(33px,3.5vw,46px);font-weight:500;line-height:1.18;letter-spacing:-.034em;margin:0 0 13px;max-width:740px}
+.intro p{color:var(--muted);font-size:17px;line-height:1.66;max-width:705px;margin:0}
+.track-choices{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin:0 0 42px}
+.track-btn{border:1px solid var(--border);background:white;border-radius:13px;padding:25px 25px 22px;text-align:left;display:flex;flex-direction:column;gap:9px;min-height:181px;transition:background .16s,border .16s,transform .16s}
+.track-btn:hover{background:#fcfdfb;border-color:#95b49c;transform:translateY(-1px)}
+.track-btn .track-title{font-size:21px;font-weight:500;letter-spacing:-.02em}
+.track-btn .track-description{font-size:15px;line-height:1.56;color:#506456;max-width:430px}
+.track-btn .track-link{margin-top:auto;font-size:14px;font-weight:500;color:#285f3d;padding-top:10px}
+.section-title{display:flex;justify-content:space-between;align-items:baseline;gap:20px;padding-bottom:16px;border-bottom:1px solid var(--border)}
+.section-title h2{font-size:23px;line-height:1.3;font-weight:500;letter-spacing:-.018em;margin:0}
+.section-title span{font-size:14px;color:#536558;white-space:nowrap}
+.prose{font-size:16px;line-height:1.7;color:var(--muted);max-width:790px}
+.prose.lead{margin:15px 0 23px}
+.quick-paths{margin-top:21px;border:1px solid var(--border);border-radius:12px;background:#fff;overflow:hidden}
+.pathrow{display:flex;width:100%;gap:18px;align-items:center;border:0;background:#fff;padding:20px 24px;text-align:left;border-bottom:1px solid #e5ebe4;transition:background .16s}
+.pathrow:last-child{border-bottom:0}.pathrow:hover{background:var(--hover)}
+.pathno{font-size:13px;color:#637466;width:31px;flex-shrink:0}
+.pathcopy{flex:1;min-width:0}
+.pathcopy strong{display:block;font-size:18px;font-weight:500;letter-spacing:-.01em;line-height:1.36}
+.pathcopy small{font-size:14px;color:#506253;line-height:1.48;display:block;margin-top:4px}
+.chevron{font-size:20px;color:#5c7562;flex-shrink:0}
+.contentview{margin:0}
+.mode-line{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 24px}
+.mode-btn{border:1px solid var(--border);background:#fff;padding:9px 16px;border-radius:9px;font-size:14px;color:#3d5342;transition:background .15s}
+.mode-btn[aria-pressed="true"]{background:#315b42;color:#fff;border-color:#315b42}
+.mode-btn:hover:not([aria-pressed="true"]){background:#eff3ed}
+.path-summary{border:1px solid var(--border);background:#fff;padding:27px;border-radius:13px;margin-bottom:22px}
+.path-heading{font-size:27px;line-height:1.26;font-weight:500;letter-spacing:-.025em;margin:0 0 10px}
+.path-summary p{font-size:16px;color:var(--muted);line-height:1.68;margin:0 0 18px}
+.path-summary .outcome{border-top:1px solid #e4eae2;padding-top:16px;font-size:15px;color:#354e3e}
+.path-summary .outcome strong{font-weight:500}
+.progressline{margin-top:14px;font-size:13px;color:#4c6652}
+.progressbar{height:5px;width:100%;background:#e8eee7;overflow:hidden;border-radius:30px;margin-top:8px}
+.progressbar i{display:block;height:100%;background:#3d7650;border-radius:30px;transition:width .2s}
+.steps{background:#fff;border:1px solid var(--border);border-radius:13px;overflow:hidden}
+.stage{padding:25px 26px;border-bottom:1px solid #e3eae2}
+.stage:last-child{border-bottom:0}
+.stage-top{display:flex;align-items:flex-start;gap:15px}
+.stage-check{margin:5px 0 0;width:20px;height:20px;accent-color:#315e43;flex-shrink:0}
+.stage-body{flex:1;min-width:0}
+.stage-label{font-size:13px;color:#53705a}
+.stage h3{margin:5px 0 7px;font-weight:500;letter-spacing:-.012em;font-size:20px;line-height:1.36}
+.stage .stage-learn{margin:0 0 11px;color:#526357;font-size:15px;line-height:1.65}
+.stage .task{font-size:15px;color:#293e2e;background:#f0f5ef;border-radius:9px;padding:13px 15px;line-height:1.62;margin:11px 0}
+.stage .task strong{font-weight:500}
+.stage-reference{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.resource-chip{border:1px solid #d5e1d6;border-radius:7px;background:#fff;padding:7px 11px;color:#2e5c3c;font-size:13px;text-align:left}
+.resource-chip:hover{background:#f0f6ef}
+.path-note{margin-top:17px;color:#536356;font-size:13px;line-height:1.65}
+.library-toolbar{display:flex;gap:9px;align-items:stretch;margin:19px 0 13px}
+.search-box{height:49px;flex:1;min-width:0;display:flex;align-items:center;gap:11px;padding:0 16px;border:1px solid #cdd8ce;border-radius:9px;background:#fff}
+.search-box:focus-within{border-color:#799a81;box-shadow:0 0 0 3px #e3ede4}
+.search-box svg{height:19px;width:19px;color:#586a5d}
+.search-box input{border:0;background:none;outline:0;width:100%;height:100%;color:#22372a;font-size:16px}
+.search-box input::placeholder{color:#617269}
+.toolbar-button{height:49px;min-width:105px;border:1px solid #d1ddd2;border-radius:9px;background:#fff;padding:0 13px;font-size:14px;color:#3d5444;display:flex;align-items:center;justify-content:center;gap:8px}
+.toolbar-button:hover{background:#eff4ee}.toolbar-button svg{height:17px;width:17px}
+.filters{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px 17px;background:#fff;border:1px solid var(--border);border-radius:10px;padding:20px;margin-bottom:16px}
+.filters label{display:grid;gap:7px;color:#4b5e50;font-size:13px;min-width:0}
+.filters select{width:100%;min-width:0;min-height:43px;padding:7px 9px;border-radius:8px;border:1px solid #cfdace;background:#fff;color:#263c2d;font-size:14px}
+.filters .filter-clear{border:0;background:transparent;color:#2b6942;font-size:14px;padding:0;text-align:left;grid-column:1/-1;width:max-content}
+.results{border:1px solid var(--border);background:#fff;border-radius:12px;overflow:hidden}
+.resource{padding:23px 25px 22px;border-bottom:1px solid #e4eae3}
+.resource:last-child{border-bottom:0}
+.resource:hover{background:#fdfefc}
+.resource-top{display:flex;align-items:center;justify-content:space-between;gap:15px}
+.resource-meta{font-size:13px;color:#4e6855}
+.savebutton{display:flex;align-items:center;justify-content:center;border:0;background:none;border-radius:7px;width:37px;height:35px;color:#5d7060;flex-shrink:0}
+.savebutton:hover{background:#e7eee6;color:#285a3b}
+.savebutton[aria-pressed="true"]{color:#2e6141}
+.savebutton[aria-pressed="true"] svg{fill:#dcece0}
+.resource h3{font-size:19px;font-weight:500;line-height:1.36;letter-spacing:-.012em;margin:10px 0 5px}
+.resource-provider{margin:0;color:#526558;font-size:14px}
+.resource-desc{margin:11px 0 14px;color:#425747;font-size:15px;line-height:1.65;max-width:800px}
+.resource-footer{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.resource-access{font-size:13px;color:#4a5d50}
+.resource-actions{display:flex;align-items:center;gap:20px}
+.textbutton,.reslink{border:0;background:none;color:#286142;font-weight:500;font-size:14px;padding:3px 0;text-decoration:none}
+.reslink{font-weight:400}.textbutton:hover,.reslink:hover{text-decoration:underline;text-underline-offset:4px}
+.more{display:block;width:100%;border:1px solid #d0ddd2;background:#fff;border-radius:9px;padding:14px;margin-top:17px;color:#2c5f43;font-size:15px}
+.more:hover{background:#f2f7f1}
+.empty{text-align:center;padding:65px 22px;color:#57695a}
+.empty strong{font-size:19px;font-weight:500;color:#294533;display:block;margin-bottom:7px}
+.caution{color:#506154;line-height:1.75;font-size:14px;margin-top:24px;max-width:780px}
+.detail{border:0;border-left:1px solid var(--border);margin:0 0 0 auto;width:min(100%,590px);height:100dvh;max-height:100dvh;background:#fff;box-shadow:-20px 0 50px #1a2f211a;overflow-y:auto;animation:slide .2s ease-out}
+@keyframes slide{from{transform:translateX(18px);opacity:.8}to{transform:translateX(0);opacity:1}}
+.detail::backdrop{background:#1c29235e;backdrop-filter:blur(2px)}
+.detail-head{position:sticky;top:0;z-index:2;display:flex;justify-content:space-between;align-items:center;min-height:70px;border-bottom:1px solid var(--border);background:#fffffff5;padding:0 32px;color:#536456;font-size:14px;backdrop-filter:blur(12px)}
+.detail-head button{display:grid;place-items:center;border:1px solid var(--border);border-radius:9px;width:38px;height:38px;background:#fff}
+.detail-head button svg{height:19px;width:19px}
+.detail-body{padding:33px 36px 60px}
+.detail-sub{font-size:13px;color:#47624d;margin-bottom:14px}
+.detail-body h2{font-size:29px;font-weight:500;line-height:1.28;letter-spacing:-.025em;margin:0 0 10px}
+.detail-by{font-size:15px;color:#526555;margin:0 0 27px}
+.detail-group{border-top:1px solid #e3eae2;padding:20px 0 0;margin:21px 0}
+.detail-group h3{font-size:15px;font-weight:500;color:#36553e;margin:0 0 8px}
+.detail-group p{font-size:16px;color:#425347;line-height:1.72;margin:0;overflow-wrap:anywhere}
+.detail-buttons{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
+.detail-visit{background:#315d43;color:#fff;border:0;border-radius:8px;padding:12px 18px;text-decoration:none;font-size:15px}
+.detail-visit:hover{background:#254c34}
+.detail-save{border:1px solid #c9d7ca;background:#fff;border-radius:8px;padding:12px 17px;font-size:15px;color:#365741}
+.microcopy{font-size:12px!important;color:#576c5d!important;margin-top:20px!important;word-break:break-word}
+@media(max-width:1180px){.content{padding:0 35px 75px}}
+@media(max-width:820px){
+.sidebar{transform:translateX(-103%);transition:transform .22s;box-shadow:20px 0 50px #16321c14}
+.sidebar.open{transform:translateX(0)}
+.scrim{display:block;position:fixed;inset:0;background:#172b1e60;z-index:25}
+.main{margin-left:0}
+.mobile-header{display:flex;justify-content:space-between;align-items:center;min-height:63px;border-bottom:1px solid var(--border)}
+.mobile-header button{background:none;border:0;padding:8px;margin-left:-8px}
+.mobile-header svg{height:22px;width:22px}
+.mobile-header span{font-size:15px;font-weight:500}
+.topbar{display:none}
+.intro{padding-top:39px}
+}
+@media(max-width:640px){
+.content{padding:0 17px 66px}
+.intro{padding:31px 0 26px}
+.intro h1{font-size:34px}
+.intro p{font-size:16px}
+.track-choices{grid-template-columns:1fr;margin-bottom:31px;gap:10px}
+.track-btn{min-height:145px;padding:20px}
+.section-title h2{font-size:21px}
+.pathrow{padding:19px;gap:12px}
+.pathcopy strong{font-size:17px}
+.library-toolbar{gap:7px}
+.toolbar-button{min-width:45px;padding:0 11px}
+.toolbar-button .btntext{display:none}
+.filters{grid-template-columns:1fr;padding:17px}
+.resource{padding:20px}
+.resource h3{font-size:18px}
+.stage{padding:21px 17px}
+.path-summary{padding:20px}
+.detail-head{padding:0 22px}
+.detail-body{padding:27px 23px 40px}
+.detail-body h2{font-size:25px}
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
 </style></head>
 <body>
-<div class="layout">
+<div class="app">
 <aside class="sidebar" id="sidebar" aria-label="Library navigation">
-<a class="brand" href="#" id="homeBrand"><span class="brand-emblem"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5a3 3 0 0 1 3-3h14v17H6a3 3 0 0 0-3 3V5z"/><path d="M3 18a3 3 0 0 1 3-3h14"/></svg></span><span><strong>Micro & Nano</strong><small>Learning library</small></span></a>
-<div class="side-label">Library</div>
-<nav class="side-menu" id="views">
-<button type="button" class="side-btn" data-view="all" aria-current="page"><span data-icon="layers"></span><span class="nm">Everything</span><span class="small-number" id="n-all"></span></button>
-<button type="button" class="side-btn" data-view="paths"><span data-icon="route"></span><span class="nm">Learning paths</span></button>
-<button type="button" class="side-btn" data-view="books"><span data-icon="book"></span><span class="nm">Bookshelf</span><span class="small-number" id="n-books"></span></button>
-<button type="button" class="side-btn" data-view="learn"><span data-icon="graduation"></span><span class="nm">Courses & lessons</span></button>
-<button type="button" class="side-btn" data-view="tools"><span data-icon="cpu"></span><span class="nm">Tools & simulators</span></button>
-<button type="button" class="side-btn" data-view="research"><span data-icon="search"></span><span class="nm">Research sources</span></button>
-<button type="button" class="side-btn" data-view="saved"><span data-icon="bookmark"></span><span class="nm">Saved</span><span class="small-number" id="n-saved"></span></button>
+<a class="logo" href="#" id="homeLink">
+<span class="logo-symbol"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5a3 3 0 0 1 3-3h14v17H6a3 3 0 0 0-3 3V5z"/><path d="M3 18a3 3 0 0 1 3-3h14"/></svg></span>
+<span><span class="logo-name">Learning Library</span><span class="logo-small">Micro & Nano · ENSNN</span></span></a>
+<div class="nav-section first">Study</div>
+<nav aria-label="Study navigation">
+<button class="sideitem" data-nav="home" aria-current="page"><span data-icon="home"></span> Start here</button>
+<button class="sideitem" data-nav="paths"><span data-icon="route"></span> Learning paths</button>
+<button class="sideitem" data-nav="resources"><span data-icon="book"></span> All resources <span class="navcount" id="resCount"></span></button>
+<button class="sideitem" data-nav="saved"><span data-icon="bookmark"></span> Saved <span class="navcount" id="saveCount"></span></button>
 </nav>
-<div class="side-label">Disciplines</div>
-<nav class="topics" id="domains" aria-label="Disciplines"></nav>
-<div class="sidefoot"><hr><a href="https://github.com/aminemons/resources" target="_blank" rel="noopener noreferrer">View repository ↗</a><br><a href="https://competitionsnano.vercel.app/" target="_blank" rel="noopener noreferrer">Competition Atlas ↗</a><div id="checkedText" style="margin-top:14px">Curated for micro & nanoelectronics.</div></div>
+<div class="nav-section">Specializations</div>
+<nav aria-label="Specializations">
+<button class="sideitem" data-track="Micro & Nanoelectronics"><span data-icon="chip"></span> Micro & Nanoelectronics</button>
+<button class="sideitem" data-track="Sensors & Smart Systems"><span data-icon="sensor"></span> Sensors & Smart Systems</button>
+</nav>
+<div class="sidebottom">
+<div class="sidebar-rule"></div>
+<a target="_blank" rel="noopener noreferrer" href="https://github.com/aminemons/resources">GitHub repository ↗</a>
+<a target="_blank" rel="noopener noreferrer" href="https://competitionsnano.vercel.app/">Competition Atlas ↗</a>
+<div class="site-note">Independent student learning guide. Not an official school syllabus. Saved items and stage progress remain in this browser.</div>
+</div>
 </aside>
-<div class="scrim" id="scrim" hidden></div>
-<div class="main"><div class="inner">
-<div class="mobilebar"><button id="mobileMenu" aria-label="Open navigation" aria-expanded="false"><span data-icon="menu"></span></button><span>Micro & Nano</span><span style="width:30px"></span></div>
-<div class="topline">A practical reference for learning and building</div>
-<header class="intro"><h1 id="heroTitle">Everything you need to keep learning.</h1><p id="heroSub">Books, courses, IC design software, simulators, papers and real projects—organized by the work you want to do.</p></header>
-<section id="featured" aria-label="Recommended learning directions">
-<div class="path-cards">
-<button class="path-card" data-path="asic"><span class="path-number">01 / Digital hardware</span><strong>From Verilog to a real chip</strong><small>RTL, testbenches, synthesis, layout and tapeout.</small></button>
-<button class="path-card" data-path="analog"><span class="path-number">02 / Analog design</span><strong>Design a transistor-level circuit</strong><small>Device models, SPICE, sizing and custom layout.</small></button>
-<button class="path-card" data-path="photonics"><span class="path-number">03 / Photonics</span><strong>Build an integrated optical sensor</strong><small>Resonators, FDTD, layout and verification.</small></button>
-</div></section>
-<section id="listing" aria-labelledby="viewTitle">
-<div class="section-header"><h2 id="viewTitle">Explore the collection</h2><span class="resultcount" id="count">Loading…</span></div>
-<div class="tools" id="toolbar">
-<label class="search"><span data-icon="search"></span><input id="q" type="search" placeholder="Search topics, books, tools, courses…" aria-label="Search resources" autocomplete="off"></label>
-<button class="soft-button" id="filterToggle" aria-controls="filters" aria-expanded="false"><span data-icon="filter"></span><span class="btn-text">Filters</span></button>
-<button class="soft-button" id="export"><span data-icon="download"></span><span class="btn-text">Export</span></button>
+<div id="scrim" class="scrim" hidden></div>
+<div class="main"><div class="content">
+<div class="mobile-header"><button id="mobileMenu" aria-label="Open menu" aria-expanded="false"><span data-icon="menu"></span></button><span>Learning Library</span><span style="width:30px"></span></div>
+<div class="topbar">Reference and practice, in one place</div>
+<header class="intro"><div class="eyeline" id="eyeline">Micro & Nano · Learning resources</div><h1 id="pageTitle">Study with a clear direction.</h1><p id="pageSubtitle">Follow an organized learning path, work through its exercises, and use the wider library when you need more depth.</p></header>
+<section id="homeView">
+<div class="track-choices">
+<button class="track-btn" data-home-track="Micro & Nanoelectronics"><span class="track-title">Micro & Nanoelectronics</span><span class="track-description">IC design, semiconductor devices, FPGA, photonics, RF, and physical design.</span><span class="track-link">Explore this specialization →</span></button>
+<button class="track-btn" data-home-track="Sensors & Smart Systems"><span class="track-title">Sensors & Smart Systems</span><span class="track-description">Sensing physics, Silvaco, MEMS, fabrication, readout electronics, networking and intelligence.</span><span class="track-link">Explore this specialization →</span></button>
+</div>
+<div class="section-title"><h2>Where to begin</h2><span id="homeMeta"></span></div>
+<p class="prose lead">Start with the shared foundations, then choose the direction you actually want to build in. Each pathway has theory, tools and a practical result to produce.</p>
+<div id="homePaths" class="quick-paths"></div>
+</section>
+<section id="pathsView" hidden>
+<div class="mode-line" id="pathTracks" role="group" aria-label="Specialization for learning paths"></div>
+<div id="pathList" class="quick-paths"></div>
+</section>
+<section id="guideView" hidden><div class="mode-line"><button class="mode-btn" id="backPaths">← Learning paths</button></div><div id="guideContent"></div></section>
+<section id="resourcesView" hidden>
+<div class="section-title"><h2 id="libraryTitle">Resource library</h2><span id="libraryCount">Loading…</span></div>
+<div class="mode-line" id="resourceTracks" role="group" aria-label="Filter resources by specialization"></div>
+<div class="library-toolbar">
+<label class="search-box"><span data-icon="search"></span><input type="search" id="search" aria-label="Search resources" placeholder="Search a topic, tool, course or book…" autocomplete="off"></label>
+<button class="toolbar-button" id="toggleFilters" aria-controls="filters" aria-expanded="false"><span data-icon="filter"></span><span class="btntext">Filters</span></button>
+<button class="toolbar-button" id="exportCSV"><span data-icon="download"></span><span class="btntext">Export</span></button>
 </div>
 <div class="filters" id="filters" hidden>
-<label>Format<select id="kind"><option value="">All formats</option></select></label>
-<label>Access<select id="access"><option value="">All access types</option><option value="free">Free / open</option><option value="paid">Paid / licensed</option><option value="mixed">Mixed</option></select></label>
-<label>Level<select id="level"><option value="">All levels</option><option value="Beginner">Beginner</option><option value="Intermediate">Intermediate</option><option value="Advanced">Advanced</option></select></label>
-<button class="clear" id="clear">Clear filters</button>
+<label>What are you trying to do?<select id="purpose"><option value="">All</option><option value="Learn">Learn a topic</option><option value="Practice">Practice with tools</option><option value="Read">Read & reference</option><option value="Explore">Explore communities</option></select></label>
+<label>Subject<select id="topic"><option value="">All subjects</option></select></label>
+<label>Cost<select id="access"><option value="">Any access</option><option value="free">Free / open</option><option value="paid">Paid / licensed</option></select></label>
+<label>Difficulty<select id="level"><option value="">Any level</option><option value="Beginner">Beginner</option><option value="Intermediate">Intermediate</option><option value="Advanced">Advanced</option></select></label>
+<label>Resource format<select id="kind"><option value="">Any format</option></select></label>
+<label>Order<select id="sort"><option value="relevant">Learning first</option><option value="alphabetical">Alphabetical</option><option value="subject">By subject</option></select></label>
+<button class="filter-clear" id="clearFilters">Clear all filters</button>
 </div>
-<div id="records" class="records"><div class="empty">Loading resources…</div></div>
-<p class="note">Paid books are included as reading recommendations; the book links search bibliographic listings, not free downloads. For full texts, try the publisher, university libraries, interlibrary loans or authorized lending services. Software access and academic licensing can change, so check each provider before installation.</p>
+<div id="results" class="results"><div class="empty">Loading the catalogue…</div></div>
+<button class="more" id="showMore" hidden>Show more resources</button>
+<p class="caution">Books are listed by title and author; they are not downloadable copies. For commercial software, follow the institutional licensing rules. Community repositories and links require independent evaluation before reliance; link accessibility does not establish that a tutorial is complete or accurate.</p>
 </section>
-<section id="pathView" hidden aria-label="Learning paths">
-<div class="section-header"><h2>Choose a learning direction</h2><span class="resultcount">Structured starting points</span></div>
-<div class="paths"><p class="path-intro">Each path pairs theory with a usable tool and a small project. Open any linked resource to learn why it belongs at that step.</p><div id="pathSwitch" class="path-switch"></div><div id="pathSteps"></div></div>
-</section>
-</div></div></div>
-<dialog class="detail" id="detail" aria-labelledby="detailTitle"><div class="detail-head"><span>Resource details</span><button id="closeDetail" aria-label="Close details"><span data-icon="close"></span></button></div><div class="detail-body" id="detailBody"></div></dialog>
+</div></div>
+</div>
+<dialog id="detail" class="detail" aria-labelledby="detailTitle">
+<div class="detail-head"><span>Resource information</span><button type="button" id="closeDetail" aria-label="Close resource information"><span data-icon="close"></span></button></div>
+<div id="detailBody" class="detail-body"></div>
+</dialog>
 <script>
 "use strict";
-const SVG={
-layers:'<rect x="3" y="4" width="18" height="4" rx="1"/><rect x="3" y="10" width="18" height="4" rx="1"/><rect x="3" y="16" width="18" height="4" rx="1"/>',
-route:'<circle cx="6" cy="5" r="2"/><circle cx="18" cy="19" r="2"/><path d="M6 7v5a5 5 0 0 0 5 5h5M14 7h6m-3-3 3 3-3 3"/>',
+const pathsDataURL="./data/paths.json",resourcesDataURL="./data/resources.json";
+const ICONS={
+home:'<path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/><path d="M9 21v-8h6v8"/>',
+route:'<circle cx="5" cy="5" r="2"/><circle cx="19" cy="19" r="2"/><path d="M5 7v5a5 5 0 0 0 5 5h7M14 6h6m-3-3 3 3-3 3"/>',
 book:'<path d="M3 5a3 3 0 0 1 3-3h14v17H6a3 3 0 0 0-3 3V5z"/><path d="M3 18a3 3 0 0 1 3-3h14"/>',
-graduation:'<path d="m2 9 10-5 10 5-10 5zM6 12v5c3 2 9 2 12 0v-5M22 10v6"/>',
-cpu:'<rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 2v4m6-4v4M9 18v4m6-4v4M2 9h4m-4 6h4m12-6h4m-4 6h4"/>',
-search:'<circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 5 5"/>',
 bookmark:'<path d="M6 3.5A1.5 1.5 0 0 1 7.5 2h9A1.5 1.5 0 0 1 18 3.5V22l-6-4-6 4z"/>',
-filter:'<path d="M4 6h16M7 12h10M10 18h4"/>',
-download:'<path d="M12 3v13m-5-5 5 5 5-5M4 18v3h16v-3"/>',
+chip:'<rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 2v4m6-4v4M9 18v4m6-4v4M2 9h4m-4 6h4m12-6h4m-4 6h4"/>',
+sensor:'<circle cx="12" cy="12" r="2"/><path d="M7.5 7.5a6.4 6.4 0 0 0 0 9m9-9a6.4 6.4 0 0 1 0 9M4 4a11.4 11.4 0 0 0 0 16m16-16a11.4 11.4 0 0 1 0 16"/>',
 menu:'<path d="M4 7h16M4 12h16M4 17h16"/>',
 close:'<path d="m5 5 14 14M19 5 5 19"/>',
-arrow:'<path d="M7 17 17 7M8 7h9v9"/>'
+filter:'<path d="M4 6h16M7 12h10M10 18h4"/>',
+search:'<circle cx="10.6" cy="10.6" r="6.6"/><path d="m16 16 5 5"/>',
+download:'<path d="M12 3v13m-5-5 5 5 5-5M4 18v3h16v-3"/>'
 };
-const ico=k=>'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+(SVG[k]||"")+'</svg>';
-document.querySelectorAll("[data-icon]").forEach(e=>e.innerHTML=ico(e.dataset.icon));
-const $=id=>document.getElementById(id);
-const escapeHTML=v=>String(v??"").replace(/[&<>"']/g,s=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[s]));
-const link=u=>{try{const v=new URL(u);return v.protocol==="https:"||v.protocol==="http:"?v.href:"#"}catch{return"#"}};
-let items=[],currentView="all",domain="",chosenPath="asic",selected=null,saved=new Set();
-try{saved=new Set(JSON.parse(localStorage.getItem("micro-nano-saved")||"[]"))}catch{}
-const paths={
-asic:{name:"Digital IC design",steps:[
-["MIT 6.004 Computation Structures","Understand logic, finite-state machines and processors before writing RTL."],
-["HDLBits","Practice Verilog in short exercises until sequential logic feels natural."],
-["Icarus Verilog","Run a simulation locally and make a testbench before using an FPGA."],
-["cocotb","Test the RTL with repeatable Python-driven verification."],
-["OpenROAD Flow Scripts","Learn synthesis, placement, timing and routing in an open ASIC flow."],
-["Tiny Tapeout","Turn a minimal design into a real submission after reviewing the shuttle conditions."]
-]},
-analog:{name:"Analog IC design",steps:[
-["MIT 6.012 Microelectronic Devices and Circuits","Learn MOS device behavior and gain stages before selecting transistor sizes."],
-["Design of Analog CMOS Integrated Circuits","Read amplifier and biasing chapters as a design reference."],
-["LTspice","Simulate bias points, transient response, gain and noise with practical models."],
-["Xschem","Create hierarchical transistor schematics for open silicon design."],
-["IHP SG13G2 BiCMOS Open PDK","Move from generic transistors to process-specific devices and layouts."],
-["KLayout","Inspect layout, connectivity and design rules."]
-]},
-photonics:{name:"Integrated photonics",steps:[
-["Fundamentals of Photonics","Build intuition about propagation, interference, modes and resonances."],
-["MEEP","Simulate resonators and study spectral response and mode profiles."],
-["gdsfactory","Draw parameterized waveguides, couplers and ring structures."],
-["SiEPIC Tools for KLayout","Practice photonic layout, connectivity and verification."],
-["Silicon Photonics Design: From Devices to Systems","Connect the component design to fabrication and measurement."]
-]},
-devices:{name:"Semiconductor devices",steps:[
-["MIT 6.012 lecture notes","Master junctions, electrostatics and MOSFET operation."],
-["Semiconductor Device Fundamentals","Work through device physics derivations and exercises."],
-["nanoHUB online simulation tools","Try interactive device simulations before advanced TCAD."],
-["DEVSIM semiconductor simulator","Explore spatial carrier profiles and drift-diffusion simulation."],
-["SkyWater SKY130 PDK","Connect device models and rules to an integrated-circuit process."]
-]},
-fpga:{name:"FPGA & embedded hardware",steps:[
-["Digital Design and Computer Architecture","Review combinational logic, datapaths, state machines and simple CPUs."],
-["HDLBits","Practice synthesizable Verilog with immediate tests."],
-["Project F FPGA tutorials","Build timing-aware display and practical digital circuits."],
-["AMD Vivado Design Suite","Synthesize, implement and inspect FPGA timing constraints."],
-["LiteX","Progress to RISC-V systems and integrated peripherals."],
-["KiCad","Build a companion board and learn pinout/power integrity basics."]
-]},
-research:{name:"Research & scientific computing",steps:[
-["MIT 6.041 Probabilistic Systems Analysis","Review uncertainty, statistics and stochastic behavior."],
-["NumPy","Handle simulation and measurement arrays."],
-["SciPy","Fit curves and optimize a physical model."],
-["Matplotlib","Create reproducible scientific graphs and figures."],
-["Google Scholar","Build a focused map of recent papers and citation chains."],
-["Zotero","Manage references and write citations without losing sources."]
-]}};
-const titleIndex=new Map();
-const titleViews={all:["Everything you need to keep learning.","Books, courses, IC design software, simulators, papers and real projects—organized by the work you want to do.","Explore the collection"],books:["A shelf of books worth studying.","Core textbooks for electronics, integrated circuits, photonics, nanotechnology and research. Paid titles are references, not downloads.","Bookshelf"],learn:["Start with the right explanation.","Courses, tutorials and learning materials with practical exercises.","Courses & lessons"],tools:["Choose tools for the actual job.","Simulation, design, verification and data analysis environments, from open source to professional.","Tools & simulators"],research:["Find better technical evidence.","Papers, standards, material databases and research communities.","Research sources"],saved:["Your personal reading list.","Saved resources live only in this browser.","Saved resources"],paths:["Learn with a direction.","A small number of deliberate steps from first principles to a working engineering project.","Guided paths"]};
-function isLearn(r){return ["Course","Learning site"].includes(r.kind)}
-function isTool(r){return ["Tool","Simulator","Simulation","Framework","Library","PDK","Project"].includes(r.kind)}
-function isResearch(r){return ["Database","Dataset","Reference"].includes(r.kind)}
-function accessType(s){if(/^paid/i.test(s)||s.includes("institutional")||s.includes("library"))return"paid";if(s==="Free"||s==="Open-source"||s==="Free account"||s==="Free viewing"||s==="Free resources")return"free";return"mixed"}
-function matchesView(r){if(domain)return r.domain===domain;if(currentView==="all")return true;if(currentView==="books")return r.kind==="Book";if(currentView==="learn")return isLearn(r);if(currentView==="tools")return isTool(r);if(currentView==="research")return isResearch(r);if(currentView==="saved")return saved.has(r.id);return true}
-function menuActive(){document.querySelectorAll(".side-btn").forEach(b=>{b.removeAttribute("aria-current");if(domain&&b.dataset.domain===domain||!domain&&b.dataset.view===currentView)b.setAttribute("aria-current","page")})}
-function setView(v,field=""){
- currentView=v;domain=field;
- $("pathView").hidden=v!=="paths";$("listing").hidden=v==="paths";$("featured").hidden=v!=="all"||!!field;
- const labels=field?[field,"Handpicked resources and engineering tools for "+field.toLowerCase()+".",field]:titleViews[v]||titleViews.all;
- $("heroTitle").textContent=labels[0];$("heroSub").textContent=labels[1];$("viewTitle").textContent=labels[2];
- menuActive();if(v==="paths")drawPath();else render();closeNav();
- window.scrollTo({top:0,behavior:"smooth"});
+const icon=k=>'<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">'+(ICONS[k]||"")+'</svg>';
+document.querySelectorAll("[data-icon]").forEach(e=>e.innerHTML=icon(e.dataset.icon));
+const $=id=>document.getElementById(id),esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const safeLink=url=>{try{const u=new URL(url);return["https:","http:"].includes(u.protocol)?u.href:"#"}catch{return"#"}};
+const TRACKS=["Micro & Nanoelectronics","Sensors & Smart Systems"];
+const commonPathTrack="Both";
+let rows=[],paths=[],byId=new Map(),view="home",track="all",currentPath=null,visible=36,onlySaved=false,saved=new Set(),done=new Set();
+try{saved=new Set(JSON.parse(localStorage.getItem("library-saved-v2")||"[]"));done=new Set(JSON.parse(localStorage.getItem("library-progress-v2")||"[]"))}catch{}
+function saveStorage(){try{localStorage.setItem("library-saved-v2",JSON.stringify([...saved]));localStorage.setItem("library-progress-v2",JSON.stringify([...done]))}catch{}}
+function trackName(){return track==="all"?"All specializations":track}
+function assignHead(k,h,sub,eyeline){$("pageTitle").textContent=h;$("pageSubtitle").textContent=sub;$("eyeline").textContent=eyeline||"Learning Library"}
+function visibleView(k){view=k;["homeView","pathsView","guideView","resourcesView"].forEach(n=>$(n).hidden=n!==k+"View");}
+function closeMenu(){$("sidebar").classList.remove("open");$("scrim").hidden=true;$("mobileMenu").setAttribute("aria-expanded","false")}
+function openMenu(){$("sidebar").classList.add("open");$("scrim").hidden=false;$("mobileMenu").setAttribute("aria-expanded","true")}
+function navActive(active){document.querySelectorAll("[data-nav],[data-track]").forEach(x=>x.removeAttribute("aria-current"));let chosen=null;if(active==="track")chosen=document.querySelector('[data-track="'+track+'"]');else chosen=document.querySelector('[data-nav="'+active+'"]');if(chosen)chosen.setAttribute("aria-current","page")}
+function switchTo(k,goTop=true){
+ if(k==="home"){track="all";onlySaved=false;assignHead("home","Study with a clear direction.","Follow an organized learning path, work through its exercises, and use the wider library when you need more depth.","Micro & Nano · Learning resources");visibleView("home");navActive("home");}
+ if(k==="paths"){onlySaved=false;assignHead("paths",track==="all"?"Choose a learning path.":trackName(),"Work through the subjects in order. Every stage includes a practical exercise and the resources needed to complete it.","Guided learning");visibleView("paths");renderPaths();navActive(track==="all"?"paths":"track");}
+ if(k==="resources"||k==="saved"){onlySaved=k==="saved";assignHead(k,k==="saved"?"Your saved resources.":"Explore the library.","Search courses, detailed tutorials, software, textbooks, GitHub examples and scientific references.","Resource catalogue");visibleView("resources");visible=36;renderResources();navActive(k);}
+ closeMenu();if(goTop)window.scrollTo({top:0,behavior:"smooth"});
 }
-function drawDomains(){
- const counts={};for(const x of items)counts[x.domain]=(counts[x.domain]||0)+1;
- $("domains").innerHTML=Object.keys(counts).sort().map(x=>'<button type="button" class="side-btn" data-domain="'+escapeHTML(x)+'"><span class="nm">'+escapeHTML(x)+'</span><span class="small-number">'+counts[x]+'</span></button>').join("");
- $("domains").querySelectorAll("[data-domain]").forEach(b=>b.onclick=()=>setView("all",b.dataset.domain));
- $("n-all").textContent=items.length;$("n-books").textContent=items.filter(r=>r.kind==="Book").length;updateSavedCount();
+function selectedPaths(){return paths.filter(p=>p.track==="Both"||track==="all"||p.track===track)}
+function pathLine(p,i){const doneNum=p.steps.filter(s=>done.has(p.slug+":"+s.order)).length;return '<button type="button" class="pathrow" data-path="'+esc(p.slug)+'"><span class="pathno">'+String(i+1).padStart(2,"0")+'</span><span class="pathcopy"><strong>'+esc(p.name)+'</strong><small>'+esc(p.description)+(doneNum?" · "+doneNum+" of "+p.steps.length+" completed":"")+'</small></span><span class="chevron">›</span></button>'}
+function renderHome(){let x=paths.filter(p=>["foundation","smart-systems","analog","silvaco","asic","sensor-device"].includes(p.slug));$("homePaths").innerHTML=x.map(pathLine).join("");$("homeMeta").textContent=paths.length+" structured paths";}
+function trackChooser(container){
+ container.innerHTML=['all',...TRACKS].map(t=>'<button class="mode-btn" type="button" aria-pressed="'+String(t===track)+'" data-choose-track="'+esc(t)+'">'+esc(t==="all"?"All":t)+'</button>').join("");
 }
-function updateSavedCount(){$("n-saved").textContent=items.filter(r=>saved.has(r.id)).length}
-function save(r){if(saved.has(r.id))saved.delete(r.id);else saved.add(r.id);try{localStorage.setItem("micro-nano-saved",JSON.stringify([...saved]))}catch{}
- updateSavedCount();render();if(selected?.id===r.id)drawDetail(r)}
-function render(){
- if(currentView==="paths")return;
- const search=$("q").value.trim().toLowerCase(),kind=$("kind").value,access=$("access").value,level=$("level").value;
- let found=items.map((r,i)=>({...r,index:i})).filter(r=>matchesView(r)&&(!search||[r.title,r.provider,r.domain,r.kind,r.description].join(" ").toLowerCase().includes(search))&&(!kind||r.kind===kind)&&(!access||accessType(r.access)===access)&&(!level||r.level===level||r.level==="All levels"));
- found.sort((a,b)=>a.domain.localeCompare(b.domain)||a.title.localeCompare(b.title));
- $("count").textContent=found.length+(found.length===1?" resource":" resources");
- $("records").innerHTML=found.length?found.map(r=>{
- const isSaved=saved.has(r.id);
- return '<article class="record"><div class="rtop"><span class="category">'+escapeHTML(r.domain)+' · '+escapeHTML(r.kind)+'</span><button type="button" class="rbookmark" data-save="'+r.index+'" aria-pressed="'+isSaved+'" aria-label="'+(isSaved?"Remove saved resource":"Save resource")+'">'+ico("bookmark")+'</button></div>'+
- '<h3>'+escapeHTML(r.title)+'</h3><p class="publisher">'+escapeHTML(r.provider)+'</p><p class="rdesc">'+escapeHTML(r.description)+'</p><div class="rbottom"><span class="access">'+escapeHTML(r.access)+'</span><span class="ract"><button type="button" data-detail="'+r.index+'">Details</button><a href="'+escapeHTML(link(r.url))+'" target="_blank" rel="noopener noreferrer">'+(r.kind==="Book"?"Find book":"Open resource")+' ↗</a></span></div></article>'
- }).join(""):'<div class="empty"><h3>No matching resources</h3><p>Try a different phrase, discipline or access filter.</p></div>';
+function renderPaths(){
+ trackChooser($("pathTracks"));$("pathList").innerHTML=selectedPaths().map(pathLine).join("");
 }
-function drawPath(){
- $("pathSwitch").innerHTML=Object.entries(paths).map(([k,v])=>'<button class="path-pill" data-path="'+k+'" aria-pressed="'+(chosenPath===k)+'">'+escapeHTML(v.name)+'</button>').join("");
- const p=paths[chosenPath];
- $("pathSteps").innerHTML=p.steps.map(([name,why],i)=>{
- const r=titleIndex.get(name.toLowerCase());
- return '<div class="step"><div class="step-num">'+String(i+1).padStart(2,"0")+'</div><div class="step-main"><h3>'+escapeHTML(name)+'</h3><p>'+escapeHTML(why)+'</p>'+(r?'<button data-path-resource="'+escapeHTML(r.id)+'">View resource →</button>':'<span>Search the catalogue</span>')+'</div></div>';
- }).join("");
- $("pathSwitch").querySelectorAll("[data-path]").forEach(b=>b.onclick=()=>{chosenPath=b.dataset.path;drawPath()});
- $("pathSteps").querySelectorAll("[data-path-resource]").forEach(b=>b.onclick=()=>{const r=items.find(x=>x.id===b.dataset.pathResource);if(r)openDetail(r)});
+function openPath(slug){
+ const p=paths.find(x=>x.slug===slug);if(!p)return;
+ currentPath=p;assignHead("guide",p.name,p.description,"Guided learning · "+p.track);visibleView("guide");renderGuide();navActive("paths");closeMenu();window.scrollTo({top:0,behavior:"smooth"});
 }
-function drawDetail(r){
- selected=r;
- const sections=[["What it helps you do",r.description],["How to access it",r.kind==="Book"?"This is a bibliographic book search. Check publishers, university libraries, interlibrary loan or authorized lending. Availability is not guaranteed.":r.access+" — check the provider for current licensing, accounts and system requirements."],["Where it fits",r.domain+"; recommended level: "+r.level],["Source confidence",r.kind==="Book"?"Bibliographic entry; links to a book catalogue search.":"Curated link to the provider or a relevant resource page; automated checking does not confirm all site content."]];
- $("detailBody").innerHTML='<p class="detail-kicker">'+escapeHTML(r.domain)+'</p><h2 id="detailTitle">'+escapeHTML(r.title)+'</h2><p class="detail-provider">'+escapeHTML(r.provider)+'</p><div class="detail-stat"><span>'+escapeHTML(r.kind)+'</span><span>'+escapeHTML(r.level)+'</span><span>'+escapeHTML(r.access)+'</span></div>'+
- sections.map(s=>'<section class="dsection"><h3>'+escapeHTML(s[0])+'</h3><p>'+escapeHTML(s[1])+'</p></section>').join("")+
- '<div class="dactions"><a class="visit" target="_blank" rel="noopener noreferrer" href="'+escapeHTML(link(r.url))+'">'+(r.kind==="Book"?"Find this book":"Open resource")+' ↗</a><button class="dsave" id="detailSave">'+(saved.has(r.id)?"Remove from saved":"Save for later")+'</button></div><p class="original-url">'+escapeHTML(r.url)+'</p>';
- $("detailSave").onclick=()=>save(r)
+function renderGuide(){
+ const p=currentPath;const completed=p.steps.filter(s=>done.has(p.slug+":"+s.order)).length;
+ const pct=p.steps.length?Math.round(100*completed/p.steps.length):0;
+ $("guideContent").innerHTML='<div class="path-summary"><h2 class="path-heading">'+esc(p.name)+'</h2><p>'+esc(p.description)+'</p><div class="outcome"><strong>What you should produce:</strong> '+esc(p.goal)+'</div><div class="progressline">'+completed+' of '+p.steps.length+' stages completed</div><div class="progressbar" aria-hidden="true"><i style="width:'+pct+'%"></i></div></div>'+
+ '<div class="steps">'+p.steps.map(s=>{
+ const resources=s.resources.map(id=>byId.get(id)).filter(Boolean);
+ return '<section class="stage"><div class="stage-top"><input class="stage-check" type="checkbox" aria-label="Mark '+esc(s.name)+' completed" data-done="'+esc(p.slug)+':'+s.order+'" '+(done.has(p.slug+":"+s.order)?"checked":"")+'><div class="stage-body"><div class="stage-label">Stage '+s.order+'</div><h3>'+esc(s.name)+'</h3><p class="stage-learn">'+esc(s.concept)+'</p><div class="task"><strong>Practice:</strong> '+esc(s.deliverable)+'</div><div class="stage-reference">'+resources.map(r=>'<button type="button" class="resource-chip" data-reference="'+esc(r.id)+'">'+esc(r.title)+' ↗</button>').join("")+'</div></div></div></section>'
+ }).join("")+'</div><p class="path-note">Tick a stage only after completing the exercise. Progress is stored in this browser and is not a formal school record. Some resources require an academic software license.</p>';
 }
-function openDetail(r){drawDetail(r);$("detail").showModal()}
-function closeNav(){$("sidebar").classList.remove("open");$("scrim").hidden=true;$("mobileMenu").setAttribute("aria-expanded","false")}
-function openNav(){$("sidebar").classList.add("open");$("scrim").hidden=false;$("mobileMenu").setAttribute("aria-expanded","true")}
-$("mobileMenu").onclick=()=>$("sidebar").classList.contains("open")?closeNav():openNav();$("scrim").onclick=closeNav;
-$("homeBrand").onclick=e=>{e.preventDefault();setView("all")};
-document.querySelectorAll("#views .side-btn").forEach(b=>b.onclick=()=>setView(b.dataset.view));
-$("filterToggle").onclick=()=>{const x=$("filterToggle").getAttribute("aria-expanded")==="true";$("filterToggle").setAttribute("aria-expanded",String(!x));$("filters").hidden=x};
-$("clear").onclick=()=>{$("q").value="";$("kind").value="";$("level").value="";$("access").value="";render()};
-["q","kind","access","level"].forEach(k=>$(k).addEventListener(k==="q"?"input":"change",render));
-$("records").onclick=e=>{const s=e.target.closest("[data-save]"),d=e.target.closest("[data-detail]");if(s)save(items[Number(s.dataset.save)]);else if(d)openDetail(items[Number(d.dataset.detail)])};
-document.querySelectorAll(".path-card").forEach(b=>b.onclick=()=>{chosenPath=b.dataset.path;setView("paths")});
-$("closeDetail").onclick=()=>$("detail").close();$("detail").onclick=e=>{if(e.target===$("detail"))$("detail").close()};
-document.addEventListener("keydown",e=>{if(e.key==="Escape")closeNav();if(e.key==="/"&&!e.ctrlKey&&!e.metaKey&&!e.altKey&&!["INPUT","TEXTAREA","SELECT"].includes(document.activeElement.tagName)&&!$("detail").open){e.preventDefault();$("q").focus()}});
-$("export").onclick=()=>{
- const fields=["domain","kind","title","provider","access","level","url","description"];
- const rows=[fields.join(","),...items.map(r=>fields.map(k=>'"'+String(r[k]??"").replace(/"/g,'""')+'"').join(","))];
- const blob=new Blob(["\uFEFF"+rows.join("\r\n")],{type:"text/csv;charset=utf-8"});const href=URL.createObjectURL(blob);const a=document.createElement("a");a.href=href;a.download="micro-nano-resources.csv";a.click();setTimeout(()=>URL.revokeObjectURL(href),1000)
+function accessKind(r){const a=(r.access||"").toLowerCase();return /paid|institutional|license|library|academic terms|subscription/.test(a)?"paid":"free"}
+function passes(r){
+ const q=$("search").value.trim().toLowerCase();
+ if(onlySaved&&!saved.has(r.id))return false;
+ if(track!=="all"&&!(r.tracks||[]).includes(track))return false;
+ if($("topic").value&&r.domain!==$("topic").value)return false;
+ if($("kind").value&&r.kind!==$("kind").value)return false;
+ if($("purpose").value&&r.intent!==$("purpose").value)return false;
+ if($("level").value&&r.level!==$("level").value&&r.level!=="All levels")return false;
+ if($("access").value&&accessKind(r)!==$("access").value)return false;
+ if(q&&!([r.title,r.provider,r.domain,r.kind,r.description,r.access].join(" ").toLowerCase().includes(q)))return false;
+ return true;
+}
+function matched(){
+ const a=rows.filter(passes),sort=$("sort").value;
+ const weight=x=>x.intent==="Learn"?0:x.intent==="Practice"?1:x.intent==="Read"?2:3;
+ return a.sort((x,y)=>sort==="alphabetical"?x.title.localeCompare(y.title):sort==="subject"?x.domain.localeCompare(y.domain)||x.title.localeCompare(y.title):weight(x)-weight(y)||x.domain.localeCompare(y.domain)||x.title.localeCompare(y.title));
+}
+function refreshFilters(){
+ const eligible=rows.filter(r=>track==="all"||(r.tracks||[]).includes(track));
+ const last=$("topic").value;
+ $("topic").innerHTML='<option value="">All subjects</option>'+[...new Set(eligible.map(r=>r.domain))].sort().map(k=>'<option value="'+esc(k)+'">'+esc(k)+'</option>').join("");
+ $("topic").value=[...$("topic").options].some(x=>x.value===last)?last:"";
+}
+function renderResources(){
+ if(view!=="resources")return;
+ trackChooser($("resourceTracks"));refreshFilters();
+ const a=matched();$("libraryTitle").textContent=onlySaved?"Saved resources":"Resource library";$("libraryCount").textContent=a.length+(a.length===1?" resource":" resources");
+ const shown=a.slice(0,visible);
+ $("resCount").textContent=rows.length;$("saveCount").textContent=saved.size||"";
+ $("results").innerHTML=shown.length?shown.map(r=>{
+ const isSaved=saved.has(r.id),isBook=r.kind==="Book";
+ return '<article class="resource"><div class="resource-top"><span class="resource-meta">'+esc(r.domain)+' · '+esc(r.kind)+'</span><button class="savebutton" type="button" data-save="'+esc(r.id)+'" aria-label="'+(isSaved?"Remove saved resource":"Save resource")+'" aria-pressed="'+isSaved+'">'+icon("bookmark")+'</button></div><h3>'+esc(r.title)+'</h3><p class="resource-provider">'+esc(r.provider)+'</p><p class="resource-desc">'+esc(r.description)+'</p><div class="resource-footer"><span class="resource-access">'+esc(r.access)+'</span><span class="resource-actions"><button class="textbutton" data-detail="'+esc(r.id)+'">Details</button><a class="reslink" target="_blank" rel="noopener noreferrer" href="'+esc(safeLink(r.url))+'">'+(isBook?"Find book":"Open")+' ↗</a></span></div></article>';
+ }).join(""):'<div class="empty"><strong>No matching resources</strong>Try removing a filter or searching a broader topic.</div>';
+ $("showMore").hidden=shown.length>=a.length;
+ $("showMore").textContent="Show more ("+(a.length-shown.length)+" remaining)";
+}
+function showDetail(r){
+ const isBook=r.kind==="Book",state=saved.has(r.id);
+ const explanation=isBook?"Bibliographic reference only. Look for legal library access, the publisher, interlibrary loan or authorized used copies. The search link does not mean a free PDF exists.":accessKind(r)==="paid"?"This may require a commercial or institutional license. Check the provider's documentation and the school library/lab before assuming access.":"Availability may change. Use the publisher or project's official documentation and check the source and license before relying on it.";
+ $("detailBody").innerHTML='<div class="detail-sub">'+esc(r.domain)+' · '+esc(r.kind)+'</div><h2 id="detailTitle">'+esc(r.title)+'</h2><p class="detail-by">'+esc(r.provider)+' · '+esc(r.level)+'</p><section class="detail-group"><h3>What it is useful for</h3><p>'+esc(r.description)+'</p></section><section class="detail-group"><h3>Availability</h3><p>'+esc(r.access)+'. '+esc(explanation)+'</p></section><section class="detail-group"><h3>Who it is for</h3><p>'+esc(r.tracks.join(" / "))+'</p></section><div class="detail-buttons"><a class="detail-visit" target="_blank" rel="noopener noreferrer" href="'+esc(safeLink(r.url))+'">'+(isBook?"Search book listing":"Open source")+' ↗</a><button class="detail-save" id="detailBookmark">'+(state?"Remove from saved":"Save resource")+'</button></div><p class="microcopy">'+esc(r.url)+'</p>';
+ $("detailBookmark").onclick=()=>{toggleSave(r.id);showDetail(r)};
+ if(!$("detail").open)$("detail").showModal();
+}
+function toggleSave(id){
+ saved.has(id)?saved.delete(id):saved.add(id);saveStorage();$("saveCount").textContent=saved.size||"";
+ if(view==="resources")renderResources();
+}
+function setTrack(t,where){
+ track=t;refreshFilters();
+ if(where==="resources"){visible=36;renderResources();navActive("resources");}
+ else{renderPaths();navActive(track==="all"?"paths":"track");}
+}
+$("homeLink").onclick=e=>{e.preventDefault();switchTo("home")};
+document.querySelectorAll("[data-nav]").forEach(b=>b.onclick=()=>switchTo(b.dataset.nav));
+document.querySelectorAll("[data-track]").forEach(b=>b.onclick=()=>{track=b.dataset.track;switchTo("paths")});
+$("mobileMenu").onclick=()=>$("sidebar").classList.contains("open")?closeMenu():openMenu();$("scrim").onclick=closeMenu;
+document.querySelectorAll("[data-home-track]").forEach(b=>b.onclick=()=>{track=b.dataset.homeTrack;switchTo("paths")});
+$("homePaths").onclick=e=>{const a=e.target.closest("[data-path]");if(a)openPath(a.dataset.path)};
+$("pathList").onclick=e=>{const a=e.target.closest("[data-path]");if(a)openPath(a.dataset.path)};
+$("pathTracks").onclick=e=>{const b=e.target.closest("[data-choose-track]");if(b)setTrack(b.dataset.chooseTrack,"paths")};
+$("resourceTracks").onclick=e=>{const b=e.target.closest("[data-choose-track]");if(b)setTrack(b.dataset.chooseTrack,"resources")};
+$("backPaths").onclick=()=>switchTo("paths");
+$("guideContent").addEventListener("change",e=>{const c=e.target.closest("[data-done]");if(!c)return;c.checked?done.add(c.dataset.done):done.delete(c.dataset.done);saveStorage();renderGuide()});
+$("guideContent").addEventListener("click",e=>{const b=e.target.closest("[data-reference]");if(b){const r=byId.get(b.dataset.reference);if(r)showDetail(r)}});
+$("results").onclick=e=>{const save=e.target.closest("[data-save]"),detail=e.target.closest("[data-detail]");if(save)toggleSave(save.dataset.save);else if(detail){const r=byId.get(detail.dataset.detail);if(r)showDetail(r)}};
+$("closeDetail").onclick=()=>$("detail").close();$("detail").addEventListener("click",e=>{if(e.target===$("detail"))$("detail").close()});
+$("toggleFilters").onclick=()=>{const expanding=$("filters").hidden;$("filters").hidden=!expanding;$("toggleFilters").setAttribute("aria-expanded",String(expanding))};
+["search","purpose","topic","access","level","kind","sort"].forEach(id=>$(id).addEventListener(id==="search"?"input":"change",()=>{visible=36;renderResources()}));
+$("clearFilters").onclick=()=>{["search","purpose","topic","access","level","kind"].forEach(id=>$(id).value="");$("sort").value="relevant";renderResources()};
+$("showMore").onclick=()=>{visible+=36;renderResources()};
+$("exportCSV").onclick=()=>{
+ const headers=["title","domain","kind","provider","access","level","url","description"];
+ const lines=[headers.join(","),...matched().map(r=>headers.map(k=>'"'+String(r[k]||"").replace(/"/g,'""')+'"').join(","))];
+ const blob=new Blob(["\uFEFF"+lines.join("\r\n")],{type:"text/csv;charset=utf-8"}),url=URL.createObjectURL(blob),a=document.createElement("a");
+ a.href=url;a.download="micro-nano-learning-resources.csv";a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
 };
-fetch("./data/resources.json",{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("Fetch "+r.status);return r.json()}).then(data=>{
- items=Array.isArray(data.resources)?data.resources:[];
- titleIndex.clear();for(const r of items)titleIndex.set(r.title.toLowerCase(),r);
- [...new Set(items.map(r=>r.kind))].sort().forEach(k=>{const o=document.createElement("option");o.textContent=k;o.value=k;$("kind").appendChild(o)});
- drawDomains();
- const day=data.meta?.curated;
- if(day)$("checkedText").textContent="Catalogue curated "+day+". Source availability is reviewed separately.";
- setView("all");
-}).catch(err=>{console.error(err);$("records").innerHTML='<div class="empty"><h3>Library data unavailable</h3><p>See the repository for the catalogue.</p></div>'; $("count").textContent="Unavailable"});
+document.addEventListener("keydown",e=>{if(e.key==="Escape")closeMenu();if(e.key==="/"&&!e.altKey&&!e.ctrlKey&&!e.metaKey&&!$("detail").open&&!["INPUT","TEXTAREA","SELECT"].includes(document.activeElement.tagName)&&view==="resources"){e.preventDefault();$("search").focus()}});
+Promise.all([fetch(resourcesDataURL,{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("Resources "+r.status);return r.json()}),fetch(pathsDataURL,{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("Paths "+r.status);return r.json()})]).then(([catalog,curriculum])=>{
+ rows=catalog.resources||[];paths=curriculum.paths||[];byId=new Map(rows.map(r=>[r.id,r]));$("resCount").textContent=rows.length;$("saveCount").textContent=saved.size||"";
+ const kinds=[...new Set(rows.map(r=>r.kind))].sort();
+ $("kind").innerHTML='<option value="">Any format</option>'+kinds.map(k=>'<option value="'+esc(k)+'">'+esc(k)+'</option>').join("");
+ renderHome();switchTo("home",false);
+}).catch(err=>{console.error(err);$("homePaths").innerHTML='<div class="empty"><strong>Could not load the curriculum</strong>Please consult the source files on GitHub.</div>';});
 </script></body></html>
