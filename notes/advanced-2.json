@@ -181,6 +181,22 @@
         "licenseURL": "https://creativecommons.org/licenses/by-sa/2.5/",
         "source": "https://commons.wikimedia.org/wiki/File:Scheme_of_metal_oxide_semiconductor_field-effect_transistor.svg"
       }
-    ]
+    ],
+    "capstone": {
+      "title": "Characterize and design an NMOS bias point from scratch",
+      "brief": "Compare a hand-derived long-channel model with simulated I–V families; quantify how model nonidealities change a useful analog bias decision.",
+      "deliverables": [
+        "A Python model producing labelled ID–VDS families for at least five overdrives, with the triode/saturation boundaries shown.",
+        "A voltage-bias table for three chosen operating points listing ID, VOV, gm, gm/ID and theoretical gain when a load is specified.",
+        "An ngspice or equivalent comparison using a documented LEVEL=1 illustrative model, then one realistic compact-model example if a lawful PDK is available.",
+        "A 5–8 page comparison discussing region selection, power, output swing, process/temperature caveats and what cannot be inferred without measured data."
+      ],
+      "acceptance": [
+        "Every I–V curve is continuous at VDS=VOV and the saturation-boundary prediction is demonstrated analytically.",
+        "A numerical finite-difference gm estimate agrees with the ideal analytic derivative within stated tolerance for a sufficiently small voltage increment.",
+        "Units for β, gm, current, power and voltage are consistent.",
+        "The model is identified as ideal or simulated; no fabricated silicon measurements are claimed."
+      ]
+    }
   }
 ]
