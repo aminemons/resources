@@ -31,6 +31,26 @@ Separate paths cover analog and mixed-signal IC design, digital ASIC RTL-to-GDS,
 
 **Naming note:** The site uses the student-provided label “Sensors & Smart Systems.” The official ENSNN website was access-protected during curation. Public 2025–2026 program documentation also uses “Micro-NanoSensors and Instrumentation for Nanotechnology.” Do not treat the website's navigation label as verified formal degree nomenclature.
 
+
+## Study Notes (original engineering textbook)
+
+**Read at:** https://micro-nano-resources.vercel.app/notes/
+
+The original notes use a layered progression rather than an inflated collection of titles:
+
+- **Foundation (27 chapters):** basic circuit analysis, semiconductor devices, sensor calibration, MEMS, microfabrication, Verilog, photonics, measurements, experiments and four runnable example labs.
+- **Upper-level engineering (6 extended chapters):** carrier drift–diffusion, equilibrium/nonequilibrium continuity and Poisson coupling; deriving MOSFET I–V and transconductance; a validated analytic PN baseline for device TCAD; coupled MEMS force and pull-in; noise-equivalent bandwidth and ADC budgets; metal-oxide gas sensing, surface kinetics, humidity and calibration.
+
+Each upper-level chapter includes named prerequisites, equations and derivation stages, explicit model assumptions, a detailed numerical example, **six or seven problems with hints and full reasoning**, references, and original conceptual or equation-derived figures. The teaching content is independent of external links; those links enable deeper study and fact checking.
+
+**Limitations:** The six upper-level chapters are substantive targeted material, not an assertion that the entire ENSNN or Paris-Saclay syllabus has been recreated. The older foundation chapters are shorter and remain introductory. Device or chemical lab recipes have not been certified for use with real equipment.
+
+### Technical and content testing
+
+`notes/test.mjs` validates the catalogue, lesson structure, equation delimiter balance, unit-level numerical checks and higher-depth requirements. `notes/ui-test.mjs` exercises chapter routing, learned progress, practice hints, search and calculated plots in a deterministic browser-like environment. GitHub Actions executes both whenever teaching content changes. These automated checks cannot replace an editorial peer review or a full cross-browser visual inspection.
+
+Examples and teaching diagrams are originally written, not reproduced from copyrighted books or journal figures. References include MIT 6.012, MIT 6.777, MIT 6.152 and official Silvaco documentation and training.
+
 ## Catalogue data
 
 - `data/resources.json`: Resource records: name, type, subject, provider, student tracks, acquisition/licensing, difficulty, learning/practice/reference intent, description and source URL.
