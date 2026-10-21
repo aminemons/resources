@@ -169,6 +169,22 @@
         "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/",
         "source": "https://commons.wikimedia.org/wiki/File:MEMS.png"
       }
-    ]
+    ],
+    "capstone": {
+      "title": "Verify the static pull-in limit of a capacitive MEMS device",
+      "brief": "Develop a parameterized electromechanical model, then compare stability criteria to numerical equilibria across the physically stable branch.",
+      "deliverables": [
+        "A derivation of electrical co-energy force for voltage drive and the mechanical restoring-force model.",
+        "A numerical root finder for force balance on the interval 0≤x<d/3, with a stability check against differential electrostatic stiffness.",
+        "Curves of displacement versus voltage up to the analytical pull-in limit and sensitivity studies for k, gap and area.",
+        "A model-discrepancy discussion covering fringing fields, beam/membrane deformation, residual stress, packaging and pull-in solver convergence."
+      ],
+      "acceptance": [
+        "Derived pull-in occurs at x/d=1/3 for the stated ideal assumptions.",
+        "VPI scales as sqrt(k) and d^(3/2) in the analytic model.",
+        "No physically stable voltage-controlled equilibrium is reported above the computed pull-in threshold.",
+        "Any real device or FEM claim is separate from this reduced-order prediction."
+      ]
+    }
   }
 ]
