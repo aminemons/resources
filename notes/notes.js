@@ -153,6 +153,66 @@ function renderGuidedReading(chapter){
  return '<section class="guided-reading"><h2>Read further—then test your understanding</h2><p>The articles and books below are study references, not substitute solutions. Each includes a specific question to investigate.</p>'+
  items.map((item,i)=>'<article class="reading-entry"><small>'+esc(item.label)+'</small><a href="'+esc(item.url)+'" target="_blank" rel="noopener noreferrer">'+esc(item.title)+' ↗</a><p>'+esc(item.task)+'</p></article>').join("")+'</section>';
 }
+
+function renderConceptExplorer(c){
+ if(c.id==="29-mosfet-derivation")return '<section class="concept-lab" id="moslab"><div class="concept-kicker">Interactive model · Long-channel NMOS</div><h2>Change the gate and drain voltages</h2><p>Keep the device geometry constant and move the bias point. The curve and operating region are calculated from the ideal charge-sheet model, not from a measured transistor.</p><div class="model-controls"><label for="mos-vgs">Gate voltage, VGS <output id="mos-vgs-text">0.80 V</output><input id="mos-vgs" type="range" min="0" max="1.50" value="0.80" step="0.05"></label><label for="mos-vds">Drain voltage, VDS <output id="mos-vds-text">0.40 V</output><input id="mos-vds" type="range" min="0" max="1.50" value="0.40" step="0.05"></label></div><svg viewBox="0 0 600 312" id="mos-model-svg" role="img" aria-label="Ideal MOSFET drain current versus drain source voltage"><path d="M66 20V260H569" stroke="#718b78" stroke-width="2" fill="none"/><path d="M66 210H569M66 160H569M66 110H569M66 60H569" stroke="#e3ece4" stroke-width="1"/><text x="11" y="27">ID (µA)</text><text x="290" y="303">VDS (V)</text><text x="54" y="265">0</text><text x="525" y="283">1.5</text><text x="22" y="65">100</text><path id="mos-model-curve" d="" fill="none" stroke="#2c7650" stroke-width="3"/><circle id="mos-model-point" cx="0" cy="0" r="6" fill="#215a3b" stroke="#fff" stroke-width="2"/></svg><p id="mos-model-readout" class="concept-readout" aria-live="polite"></p><p class="model-caveat">Fixed parameters: VT = 0.45 V, β = 200 µA/V². This ideal model omits subthreshold current, channel-length modulation, mobility degradation, series resistance and short-channel effects.</p></section>';
+ if(c.id==="31-mems-coupled")return '<section class="concept-lab" id="memslab"><div class="concept-kicker">Interactive model · Static electrostatic actuator</div><h2>Approach the pull-in instability</h2><p>Change the applied voltage and observe the stable displacement predicted by the ideal linear-spring, parallel-plate model.</p><div class="model-controls"><label for="mems-volt">Applied voltage <output id="mems-volt-text">1.00 V</output><input id="mems-volt" type="range" min="0" max="4.50" value="1.00" step="0.05"></label></div><div class="mems-gap"><div class="plate">Moving electrode</div><div class="mems-space" id="mems-space">Vacuum / air gap</div><div class="plate">Fixed electrode</div></div><p id="mems-readout" class="concept-readout" aria-live="polite"></p><p class="model-caveat">k = 0.5 N/m, d = 2 µm and A = 10⁻⁸ m². The critical value is approximately 3.66 V, for a rigid parallel-plate actuator at fixed voltage only.</p></section>';
+ return "";
+}
+function mountConceptExplorer(c){
+ if(c.id==="29-mosfet-derivation"){
+  const g=$("mos-vgs"),d=$("mos-vds");
+  if(!g||!d)return;
+  const beta=200,vt=0.45,xMax=1.5,yMax=120;
+  const current=(vg,vd)=>{
+   const ov=Math.max(0,vg-vt);
+   if(ov<=0)return 0;
+   return beta*(vd<ov?ov*vd-vd*vd/2:ov*ov/2);
+  };
+  const xy=(v,i)=>[66+503*v/xMax,260-240*i/yMax];
+  const redraw=()=>{
+   const vg=+g.value,vd=+d.value,ov=Math.max(0,vg-vt);
+   $("mos-vgs-text").textContent=vg.toFixed(2)+" V";
+   $("mos-vds-text").textContent=vd.toFixed(2)+" V";
+   let curve="";
+   for(let i=0;i<=150;i++){
+    const v=xMax*i/150,[x,y]=xy(v,current(vg,v));
+    curve+=(i?"L":"M")+x.toFixed(2)+","+y.toFixed(2);
+   }
+   $("mos-model-curve").setAttribute("d",curve);
+   const [px,py]=xy(vd,current(vg,vd));
+   $("mos-model-point").setAttribute("cx",px.toFixed(2));
+   $("mos-model-point").setAttribute("cy",py.toFixed(2));
+   const region=ov<=0?"Cutoff (ideal)":vd<ov?"Triode / linear":"Saturation (ideal)";
+   $("mos-model-readout").textContent="ID ≈ "+current(vg,vd).toFixed(2)+" µA · VOV = "+ov.toFixed(2)+" V · "+region;
+  };
+  g.addEventListener("input",redraw);d.addEventListener("input",redraw);redraw();
+ }
+ if(c.id==="31-mems-coupled"){
+  const input=$("mems-volt");if(!input)return;
+  const k=0.5,d=2e-6,area=1e-8,eps=8.8541878128e-12;
+  const vpi=Math.sqrt(8*k*d**3/(27*eps*area));
+  const redraw=()=>{
+   const v=+input.value;
+   $("mems-volt-text").textContent=v.toFixed(2)+" V";
+   if(v>=vpi){
+    $("mems-space").style.height="16px";
+    $("mems-readout").textContent="No stable static branch beyond ideal pull-in ("+vpi.toFixed(2)+" V). This does not model post-contact motion.";
+    return;
+   }
+   let lo=0,hi=d/3;
+   for(let i=0;i<65;i++){
+    const x=(lo+hi)/2;
+    const residual=k*x-eps*area*v*v/(2*(d-x)**2);
+    if(residual<0)lo=x;else hi=x;
+   }
+   const displacement=(lo+hi)/2;
+   $("mems-space").style.height=Math.max(20,95*(1-displacement/d))+"px";
+   $("mems-readout").textContent="Stable displacement ≈ "+(displacement*1e6).toFixed(4)+" µm ("+(displacement/d*100).toFixed(1)+"% of initial gap).";
+  };
+  input.addEventListener("input",redraw);redraw();
+ }
+}
 function lesson(c){
  document.title=c.title+" | Micro & Nano Study Notes";
  const i=chapters.indexOf(c),done=read.has(c.id);
@@ -162,7 +222,7 @@ function lesson(c){
  '<div class="essentials"><span>'+esc(c.level)+' · '+c.sections.length+' explanations · '+c.checks.length+' problems</span><div class="actions"><button id="print" class="plain-btn">Print</button><button id="printAnswers" class="plain-btn">Print with solutions</button><button id="read" class="plain-btn">'+(done?"✓ Read":"Mark read")+'</button></div></div>'+
  '<div class="prereqs">'+(c.prerequisites?.length?'<span>Review first</span> '+c.prerequisites.map(id=>lookup.get(id)).filter(Boolean).map(p=>'<a href="'+lessonUrl(p.id)+'" data-open="'+p.id+'">'+esc(p.title)+'</a>').join(' · '):'')+'</div>'+'<nav class="article-outline" aria-label="Within this chapter"><div class="outline-heading">In this lesson</div><ol>'+c.sections.map((part,n)=>'<li><a href="#part-'+n+'">'+esc(part.title.replace(/^\\d+\\.\\s*/,''))+'</a></li>').join('')+'</ol></nav>'+'<section class="objectives"><h2>You will learn to</h2><ul>'+c.objectives.map(t=>'<li>'+esc(t)+'</li>').join("")+'</ul></section>'+
  c.sections.map((part,n)=>'<section class="lesson-section" id="part-'+n+'"><h2>'+(n+1)+'. '+esc(part.title)+'</h2>'+part.html+'</section>'+(c.equations||[]).filter(eq=>eq.after===n).map(renderEquation).join("")).join("")+
- diagram(c.diagram)+quantitativeFigure(c.id)+renderLicensedFigures(c)+
+ diagram(c.diagram)+quantitativeFigure(c.id)+renderLicensedFigures(c)+renderConceptExplorer(c)+
  '<section class="example"><span class="number">Worked example</span><h2>'+esc(example.title)+'</h2><p class="problem">'+esc(example.problem)+'</p><details><summary>Show the complete worked solution</summary><div class="solution"><ol class="steps">'+example.steps.map(s=>'<li><div>'+s+'</div></li>').join("")+'</ol></div></details></section>'+
  '<section id="exercises"><h2 class="divider-title">Practice problems</h2><p class="intro-desc">Attempt the problem without notes, open a hint only if needed, then compare your method and units to the full solution.</p>'+
  c.checks.map((q,n)=>'<div class="exercise"><h3>Exercise '+(n+1)+(q.difficulty?' · '+esc(q.difficulty):'')+'</h3><p>'+esc(q.prompt)+'</p>'+(q.hint?'<details class="hint"><summary>Show a hint</summary><div class="solution">'+esc(q.hint)+'</div></details>':'')+'<details class="answer"><summary>Reveal answer and explanation</summary><div class="solution">'+q.answer+'</div></details></div>').join("")+'</section>'+
@@ -178,7 +238,7 @@ function lesson(c){
   window.addEventListener("afterprint",()=>details.forEach((node,i)=>node.open=previous[i]),{once:true});
   window.print();
  };
- linkNext($("content"));math();
+ linkNext($("content"));mountConceptExplorer(c);math();
 }
 $("menu").onclick=()=>openSide(!$("sidebar").classList.contains("open"));
 $("cover").onclick=closeSide;
