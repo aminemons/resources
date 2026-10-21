@@ -4,7 +4,7 @@ import vm from "node:vm";
 
 const load=name=>fs.readFileSync(new URL(name,import.meta.url),"utf8");
 const store=new Map(),nodes=new Map();
-const required=["sidebar","cover","menu","search","toc","content","topHome","read","print"];
+const required=["sidebar","cover","menu","search","toc","content","topHome","read","print","printAnswers"];
 function makeNode(id){
  return {id,innerHTML:"",textContent:"",value:"",hidden:true,
    classList:{open:false,toggle(name,val){this.open=val??!this.open;return this.open},contains(name){return this.open}},
@@ -22,6 +22,7 @@ vm.runInContext(load("notes.js"),context,{filename:"notes.js",timeout:8000});
 for(let i=0;i<5;i++)await new Promise(resolve=>setImmediate(resolve));
 assert(nodes.get("content").innerHTML.includes("Voltage, current, resistance and power"),"Deep-linked chapter did not render");
 assert(nodes.get("content").innerHTML.includes("Show the complete worked solution"),"Worked steps not available");
+assert(nodes.get("content").innerHTML.includes("Print with solutions"),"Solution printing is unavailable");
 assert(nodes.get("content").innerHTML.includes("Reveal answer and explanation"),"Exercise solutions not available");
 assert(nodes.get("content").innerHTML.includes("Original instructional vector figure"),"Figure not present");
 assert(nodes.get("toc").innerHTML.includes("Engineering laboratories"),"Lab table of contents missing");
