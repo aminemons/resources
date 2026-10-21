@@ -120,7 +120,9 @@ function toc(){
  }).join(""):'<p class="loading">No matching lesson.</p>';
  $("toc").querySelectorAll("[data-chapter]").forEach(b=>b.onclick=()=>route(b.dataset.chapter));
 }
-function math(){if(window.MathJax&&typeof window.MathJax.typesetPromise==="function"){window.MathJax.typesetPromise([$("content")]).catch(err=>console.error("Equation render",err))}}
+function math(){const engine=window.MathJax;if(typeof engine?.typesetPromise!=="function"){const status=$("math-status");if(status){status.hidden=false;status.textContent="Loading mathematical notation…"}return}const el=$("math-status");if(el)el.hidden=true;engine.typesetClear?.([$("content")]);engine.typesetPromise([$("content")]).catch(e=>console.error(e))}
+window.addEventListener("mathjax-ready",()=>{if(current)math()});
+window.addEventListener("mathjax-failed",()=>{const e=$("math-status");if(e){e.hidden=false;e.textContent="Equation renderer unavailable. Please check your connection."}});
 function route(id,push=true){
  current=lookup.has(id)?id:null;
  if(push)history.pushState({id:current},"",current?lessonUrl(current):"./");
