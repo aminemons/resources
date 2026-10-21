@@ -144,7 +144,7 @@ function lesson(c){
  $("content").innerHTML='<p class="eyebrow">'+esc(c.unit)+' · Chapter '+String(i+1).padStart(2,"0")+'</p>'+
  '<h1>'+esc(c.title)+'</h1><p class="lede">'+esc(c.summary)+'</p>'+
  '<div class="essentials"><span>'+esc(c.level)+' · '+c.sections.length+' explanations · '+c.checks.length+' problems</span><div class="actions"><button id="print" class="plain-btn">Print</button><button id="printAnswers" class="plain-btn">Print with solutions</button><button id="read" class="plain-btn">'+(done?"✓ Read":"Mark read")+'</button></div></div>'+
- '<section class="objectives"><h2>You will learn to</h2><ul>'+c.objectives.map(t=>'<li>'+esc(t)+'</li>').join("")+'</ul></section>'+
+ '<div class="prereqs">'+(c.prerequisites?.length?'<span>Review first</span> '+c.prerequisites.map(id=>lookup.get(id)).filter(Boolean).map(p=>'<a href="'+lessonUrl(p.id)+'" data-open="'+p.id+'">'+esc(p.title)+'</a>').join(' · '):'')+'</div>'+'<section class="objectives"><h2>You will learn to</h2><ul>'+c.objectives.map(t=>'<li>'+esc(t)+'</li>').join("")+'</ul></section>'+
  c.sections.map((s,n)=>'<section class="lesson-section" id="part-'+n+'"><h2>'+(n+1)+'. '+esc(s.title)+'</h2>'+s.html+'</section>').join("")+
  diagram(c.diagram)+quantitativeFigure(c.id)+
  '<section class="example"><span class="number">Worked example</span><h2>'+esc(example.title)+'</h2><p class="problem">'+esc(example.problem)+'</p><details><summary>Show the complete worked solution</summary><div class="solution"><ol class="steps">'+example.steps.map(s=>'<li><div>'+s+'</div></li>').join("")+'</ol></div></details></section>'+
