@@ -167,6 +167,22 @@
         "url": "https://books.google.com/books?q=Fraden+Handbook+of+Modern+Sensors",
         "task": "Contrast transduction physics with complete instrumentation-chain accuracy and drift."
       }
-    ]
+    ],
+    "capstone": {
+      "title": "Plan a defensible metal-oxide gas-sensor characterization study",
+      "brief": "Treat chemical mechanism as a hypothesis. Demonstrate how calibration, interferents, humidity and thermal transients change the measured conclusion.",
+      "deliverables": [
+        "A device cross-section and process-selection rationale with a clearly stated list of available fabrication and characterization equipment.",
+        "A synthetic or experimental dataset of baseline and analyte responses at multiple concentrations, humidity levels and repeated cycles; label synthetic data prominently.",
+        "An explicit response metric, time-constant/response-time calculation and a concentration model with residual analysis.",
+        "A research-style report with selectivity experiments, a heating-power budget, uncertainty and a discussion of alternative explanations."
+      ],
+      "acceptance": [
+        "Response ratio and percentage resistance change are not mixed.",
+        "Any assumed kinetic law is checked against residuals and not presented as established surface chemistry.",
+        "Blank measurements, interferents and drift are discussed before detection-limit or selectivity claims.",
+        "Chemical fabrication and hazardous gas work are performed only under institutional safety procedures."
+      ]
+    }
   }
 ]
