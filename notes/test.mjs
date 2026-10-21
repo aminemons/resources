@@ -57,7 +57,9 @@ const diffusion=q*35*2e18;
 near(drift,-10.8146922795,1e-8);
 near(diffusion,11.215236438,1e-8);
 near(drift+diffusion,0.4005441585,1e-8);
-near(0.5*200*(0.2**2),4,1e-10); // MOS current in microamperes
+near(0.5*200*(0.2**2),4,1e-10);
+near(0.5*5000*(0.4**2),400,1e-8); // MOSFET saturation current in microamperes
+near(1e-3/(1/5000+1/125000+1/10000),3.24675324675,1e-8); // loaded analog gain magnitude // MOS current in microamperes
 near(200*0.2,40,1e-10);          // MOS gm in microsiemens
 const epsSi=11.7*8.8541878128e-14;
 const na=1e17,nd=1e16,ni=1e10,vt=0.0258519998;
