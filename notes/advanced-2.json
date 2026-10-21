@@ -1,0 +1,117 @@
+[
+  {
+    "id": "29-mosfet-derivation",
+    "unit": "Advanced semiconductor physics",
+    "title": "Derive the MOSFET I–V law and identify where it breaks",
+    "summary": "Develop the gradual-channel model from inversion charge, obtain triode/saturation and transconductance, then test short-channel and body-bias limits.",
+    "level": "Upper undergraduate / Master's",
+    "diagram": "mosfet",
+    "objectives": [
+      "Derive I–V by integrating inversion charge rather than memorizing it.",
+      "Compute saturation boundaries and bias headroom.",
+      "Extract gm, gm/ID and a first-order output resistance.",
+      "Explain body effect, DIBL and velocity saturation as distinct phenomena."
+    ],
+    "sections": [
+      {
+        "title": "1. Prerequisites: the MOS electrostatic boundary",
+        "html": "<p>An ideal enhancement NMOS is formed in p-type silicon under a gate dielectric. A positive gate-to-source bias changes the electrostatic surface potential; beyond a threshold approximation it supports an electron inversion channel. The threshold is not a universal material constant: it responds to substrate doping, oxide thickness, gate work function, trapped charge, body bias, temperature, channel geometry and drain-induced barrier lowering.</p><p>In an ideal strong-inversion charge-sheet model, with source at \\(V_S=0\\) and local channel potential \\(V(x)\\), the magnitude of mobile inversion charge per area is approximately \\(|Q_i(x)|=C'_{ox}[V_{GS}-V_T-V(x)]\\). We assume constant mobility, negligible depletion-charge variation along the channel, a long device, a gradual electric field and charge near the Si–oxide interface. The bracket must remain nonnegative wherever the charge-sheet approximation is used.</p>"
+      },
+      {
+        "title": "2. Relate channel charge to current",
+        "html": "<p>A slice of inversion channel has mobile charge per unit length \\(W|Q_i(x)|\\). Under the local drift approximation, its current is \\(I_D=\\mu_n W|Q_i(x)|\\,\\mathrm{d}V/\\mathrm{d}x\\). This is a conventional drain-current magnitude with \\(V\\) increasing from source to drain.</p><p>Substitute the charge relation, define overdrive \\(V_{OV}=V_{GS}-V_T\\), multiply by \\(\\mathrm{d}x\\), and integrate from source to drain: \\(I_D\\int_0^L\\mathrm{d}x=\\mu_n WC'_{ox}\\int_0^{V_{DS}}(V_{OV}-V)\\,\\mathrm{d}V\\). Evaluating the integral gives \\(I_D=(\\mu_n C'_{ox}W/L)[V_{OV}V_{DS}-V_{DS}^2/2]\\), the ideal triode/linear-region law.</p><p>Check units: \\(\\mu_n C'_{ox}(W/L)\\) has units A/V². Multiplying by volts squared gives amperes. Do this check before typing a number; confusing \\(C'_{ox}\\) per unit area with device-total capacitance breaks the derivation.</p>"
+      },
+      {
+        "title": "3. Why the long-channel current saturates",
+        "html": "<p>At the drain end \\(x=L\\), charge-sheet inversion approaches zero when \\(V_{DS}=V_{OV}\\). Substituting the boundary into the triode expression yields \\(I_{D,sat}=\\tfrac12\\mu_n C'_{ox}(W/L)V_{OV}^2\\). Beyond this ideal boundary, the extra drain bias drops mainly across a near-drain high-field region; the simplest long-channel model treats the terminal current as constant.</p><p>**Saturation here does not mean unlimited voltage tolerance or absolute current independence.** Channel-length modulation increases drain current with \\(V_{DS}\\), and velocity saturation changes scaling for short channels. The square-law derivation only controls a limited operating regime. Its actual use is to understand bias trends, not to predict modern nanometer-CMOS signoff accuracy.</p>"
+      },
+      {
+        "title": "4. Differential parameters: gm, gds and intrinsic gain",
+        "html": "<p>For the ideal saturation expression, \\(g_m=(\\partial I_D/\\partial V_{GS})_{V_{DS}}=\\mu_n C'_{ox}(W/L)V_{OV}=2I_D/V_{OV}\\). Thus \\(g_m/I_D=2/V_{OV}\\) in strong-inversion square-law conditions. It is a useful first-order efficiency measure: high transconductance for a given bias current can help analog gain, but bandwidth, noise, inversion level and matching impose competing constraints.</p><p>A first-order channel-length modulation model uses \\(I_D\\approx I_{D0}(1+\\lambda V_{DS})\\). Locally \\(g_{ds}\\approx\\lambda I_{D0}\\), so \\(r_o\\approx1/(\\lambda I_D)\\) when \\(\\lambda V_{DS}\\) is small and the approximation is consistently applied. Intrinsic small-signal voltage gain magnitude is roughly \\(g_mr_o\\); it declines as finite output conductance grows.</p>"
+      },
+      {
+        "title": "5. Body bias and the depletion region",
+        "html": "<p>For an NMOS in a p-type body, increasing reverse source-to-body voltage \\(V_{SB}>0\\) generally expands depletion charge and increases threshold. The classical expression is \\(V_T(V_{SB})=V_{T0}+\\gamma[\\sqrt{2\\phi_F+V_{SB}}-\\sqrt{2\\phi_F}]\\). Here \\(2\\phi_F\\) is a positive magnitude in that convention. The body-effect coefficient \\(\\gamma\\) depends on semiconductor and oxide parameters.</p><p>A source-follower whose source rises can therefore experience both reduced \\(V_{GS}\\) and increased \\(V_T\\). These are separate effects. Some modern devices have heavily engineered bodies or alternative structures; apply the model only when its premises are valid.</p>"
+      },
+      {
+        "title": "6. Scaling breaks assumptions in several different ways",
+        "html": "<p>Shorter channels experience strong lateral fields. Carrier speed ceases to increase linearly with field (velocity saturation), drain electric field lowers the source-channel barrier (DIBL), and junction electrostatics encroach into the channel (short-channel rolloff). Gate leakage, subthreshold current, quantum effects and parasitic resistances can also matter. A model that fits one I–V curve does not uniquely identify which mechanism is responsible.</p><p>An effective simulator comparison varies one physical mechanism at a time and reports its effect on threshold, subthreshold slope, output current and temperature behavior. Device width, finger geometry and layout parasitics must be treated explicitly when moving from a transistor model to a real amplifier.</p>"
+      },
+      {
+        "title": "7. From physical theory to circuit design",
+        "html": "<p>To design a common-source or differential-stage bias, first choose power/current and available supply swing. Obtain realistic transistor curves or PDK models; calculate \\(g_m\\), \\(g_{ds}\\), and capacitances around the actual operating point. Only then decide the gain, speed and noise budget. Use hand calculations to detect a mistaken bias, and simulator corner checks to explore process and temperature variability.</p><p>Do not present a hand-derived square-law current as a foundry simulation result. In reports, label analytical estimate, compact-model prediction, TCAD prediction and measurement separately.</p>"
+      }
+    ],
+    "example": {
+      "title": "From overdrive to gain efficiency and output resistance",
+      "problem": "An illustrative long-channel NMOS has β = μn C′ox(W/L)=200 µA/V², VOV=0.20 V and an independent local channel-length-modulation parameter λ=0.08 V⁻¹. Estimate nominal saturated current and ideal gm from the square-law part, then a first-order ro at this current. State why the numbers are only approximate.",
+      "steps": [
+        "Check units: \\(\\beta=200\\ \\mu\\mathrm{A/V^2}=2\\times10^{-4}\\ \\mathrm{A/V^2}\\).",
+        "Ideal current \\(I_{D0}=(\\beta/2)V_{OV}^2=(200/2)\\times(0.20)^2\\ \\mu\\mathrm{A}=4.0\\ \\mu\\mathrm{A}\\).",
+        "Ideal \\(g_m=\\beta V_{OV}=200\\times0.20=40.0\\ \\mu\\mathrm{A/V}=40.0\\ \\mu\\mathrm{S}\\).",
+        "Transconductance efficiency \\(g_m/I_{D0}=40/4=10\\ \\mathrm{V^{-1}}\\).",
+        "A first estimate \\(r_o\\approx1/(\\lambda I_{D0})=1/(0.08\\times4\\times10^{-6})=3.125\\ \\mathrm{M}\\Omega\\).",
+        "Idealized intrinsic gain \\(g_mr_o\\approx40\\times10^{-6}\\times3.125\\times10^6=125\\ \\mathrm{V/V}\\).",
+        "The \\(g_m\\) and \\(r_o\\) estimates combine simple approximations; for a consistent finite-\\(\\lambda\\) operating point, account for the chosen \\(V_{DS}\\) and extract both derivatives from the same local current model or simulated I–V data."
+      ]
+    },
+    "checks": [
+      {
+        "difficulty": "Foundation",
+        "prompt": "Derive the triode-region I–V law by integrating a linearly decreasing inversion charge.",
+        "hint": "Write (|Q_i(x)|=C'_{ox}(V_{OV}-V)), then integrate (I_D dx=mu W|Q_i|dV) along the channel.",
+        "answer": "\\(I_DL=\\mu_nWC'_{ox}\\int_0^{V_{DS}}(V_{OV}-V)dV=\\mu_nWC'_{ox}(V_{OV}V_{DS}-V_{DS}^2/2)\\). Divide by \\(L\\)."
+      },
+      {
+        "difficulty": "Bias condition",
+        "prompt": "For VGS=1.1 V and VT=0.45 V, what VDS marks the ideal long-channel saturation boundary?",
+        "hint": "Compute (V_{OV}=V_{GS}-V_T).",
+        "answer": "\\(V_{OV}=1.1-0.45=0.65\\ \\mathrm{V}\\). Ideal long-channel saturation starts at about \\(V_{DS}\\ge0.65\\ \\mathrm{V}\\), within model assumptions."
+      },
+      {
+        "difficulty": "Engineering units",
+        "prompt": "With β=1 mA/V² and VOV=0.3 V, calculate ID,sat and gm.",
+        "hint": "Use (I_D=\beta V_{OV}^2/2), (g_m=\beta V_{OV}).",
+        "answer": "\\(I_{D,sat}=0.5(1)(0.3)^2=0.045\\ \\mathrm{mA}=45\\ \\mu\\mathrm{A}\\). \\(g_m=0.3\\ \\mathrm{mA/V}=0.3\\ \\mathrm{mS}\\)."
+      },
+      {
+        "difficulty": "Circuit analysis",
+        "prompt": "A stage has gm=2 mS, ro=50 kΩ and RD=10 kΩ. Estimate gain ignoring other loads.",
+        "hint": "For AC-grounded supply and fixed source, (A_vapprox-g_m(R_Dparallel r_o)).",
+        "answer": "\\(R_D\\parallel r_o=10\\times50/(10+50)=8.333\\ \\mathrm{k}\\Omega\\). \\(A_v\\approx-0.002\\times8333=-16.67\\ \\mathrm{V/V}\\)."
+      },
+      {
+        "difficulty": "Physical interpretation",
+        "prompt": "Two NMOS devices have the same W/L, but one has a much shorter L. Must their measured ID–VG curves match?",
+        "hint": "What effects violate a simple long-channel W/L law?",
+        "answer": "No. Velocity saturation, DIBL, channel-length modulation, source/drain series resistance, mobility degradation and geometry-dependent threshold can alter current even at identical \\(W/L\\)."
+      },
+      {
+        "difficulty": "Design critique",
+        "prompt": "If a circuit designer maximizes gm/ID without considering capacitance, does bandwidth automatically increase?",
+        "hint": "Consider transit frequency and loading.",
+        "answer": "No. Bandwidth depends on \\(g_m/C\\), poles, parasitic loading and bias. A transistor can have favorable \\(g_m/I_D\\) while increased area and capacitance harm speed."
+      },
+      {
+        "difficulty": "Body effect",
+        "prompt": "For γ=0.4 V^0.5, 2φF=0.6 V, and VSB=0.4 V, estimate ΔVT.",
+        "hint": "Apply (Delta V_T=gamma(sqrt{2phi_F+V_{SB}}-sqrt{2phi_F})).",
+        "answer": "\\(\\Delta V_T=0.4(\\sqrt{1.0}-\\sqrt{0.6})\\approx0.4(1-0.77460)\\approx0.0902\\ \\mathrm{V}\\). This is a classical square-root estimate."
+      }
+    ],
+    "sources": [
+      {
+        "title": "MIT 6.012 — MOSFET I–V and equivalent models",
+        "url": "https://ocw.mit.edu/courses/6-012-microelectronic-devices-and-circuits-fall-2005/pages/lecture-notes/"
+      },
+      {
+        "title": "MIT 6.012 — MOSFET drain current modeling",
+        "url": "https://ocw.mit.edu/courses/6-012-microelectronic-devices-and-circuits-fall-2009/pages/lecture-notes/"
+      },
+      {
+        "title": "MIT 6.012 — Advanced problem sets",
+        "url": "https://ocw.mit.edu/courses/6-012-microelectronic-devices-and-circuits-fall-2009/pages/assignments/"
+      }
+    ]
+  }
+]
