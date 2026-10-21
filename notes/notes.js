@@ -71,6 +71,40 @@ function diagram(type){
  }
  return '<figure class="figure"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 240" role="img" aria-label="'+esc(label)+'" style="font-family:Outfit,system-ui,sans-serif">'+s+'</svg><figcaption>'+esc(label)+' Original instructional vector figure.</figcaption></figure>';
 }
+function quantitativeFigure(id){
+ const W=560,H=296,left=82,right=514,top=38,bottom=243;
+ const axis=(labelX,labelY,xTicks,yTicks,xMax,yMax)=>{
+  let a='<rect x="16" y="16" width="528" height="263" rx="10" fill="#f9fcfa"/><path d="M'+left+' '+top+'V'+bottom+'H'+right+'" stroke="#506e5b" stroke-width="2" fill="none"/>';
+  for(let i=0;i<=xTicks;i++){const v=i*xMax/xTicks,x=left+(right-left)*i/xTicks;a+='<path d="M'+x+' '+bottom+'v5" stroke="#6f8b75"/><text x="'+x+'" y="'+(bottom+20)+'" font-size="12" text-anchor="middle" fill="#3b5644">'+Number(v.toFixed(3))+'</text>';}
+  for(let i=0;i<=yTicks;i++){const v=i*yMax/yTicks,y=bottom-(bottom-top)*i/yTicks;a+='<path d="M'+left+' '+y+'H'+right+'" stroke="#e3ebe5"/><text x="'+(left-9)+'" y="'+(y+4)+'" font-size="12" text-anchor="end" fill="#3b5644">'+Number(v.toFixed(3))+'</text>';}
+  a+='<text x="'+((left+right)/2)+'" y="286" font-size="14" text-anchor="middle" fill="#263d2e">'+labelX+'</text><text x="30" y="29" font-size="14" fill="#263d2e">'+labelY+'</text>';
+  return a;
+ };
+ const poly=(fn,xMax,yMax,color)=>{let pts=[];for(let i=0;i<=180;i++){const xx=i*xMax/180,yy=fn(xx);pts.push((left+(right-left)*xx/xMax).toFixed(2)+","+(bottom-(bottom-top)*Math.min(yMax,Math.max(0,yy))/yMax).toFixed(2));}return '<polyline points="'+pts.join(" ")+'" fill="none" stroke="'+color+'" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>';};
+ let inner='',caption='';
+ if(id==="29-mosfet-derivation"){
+  inner=axis('Drain-source voltage VDS (V)','Drain current (µA)',5,4,1,40);
+  const beta=200;
+  const colors=['#2c6b56','#387f97','#ae7d47'];
+  [0.2,0.4,0.6].forEach((ov,i)=>{inner+=poly(vds=>beta*(vds<ov?ov*vds-vds*vds/2:ov*ov/2),1,40,colors[i]);inner+='<path d="M'+(235+i*107)+' 29h21" stroke="'+colors[i]+'" stroke-width="3"/><text x="'+(259+i*107)+'" y="33" font-size="12" fill="#334f3b">'+ov.toFixed(1)+' V</text>';});
+  caption="Derived long-channel NMOS I–V characteristics for β = 200 µA/V² and VOV = 0.2, 0.4, 0.6 V. Ideal model: no channel-length modulation, not a silicon measurement.";
+ }else if(id==="30-tcad-validation"){
+  inner=axis('Reverse-bias magnitude VR (V)','Depletion W (µm)',5,5,5,1);
+  const vbi=0.7738435817,w0=0.3317798693;
+  inner+=poly(vr=>w0*Math.sqrt((vbi+vr)/vbi),5,1,'#347e64');
+  const y=bottom-(bottom-top)*w0;
+  inner+='<circle cx="'+left+'" cy="'+y+'" r="5" fill="#276349"/><text x="100" y="'+(y-13)+'" font-size="12" fill="#285c40">W0 ≈ 0.332 µm</text>';
+  caption="Abrupt-depletion approximation for silicon at 300 K, NA = 10¹⁷ cm⁻³ and ND = 10¹⁶ cm⁻³. Analytical baseline, not a TCAD result.";
+ }else if(id==="31-mems-coupled"){
+  inner=axis('Normalized displacement x/d','Force / (k·d)',5,4,.65,1.5);
+  inner+=poly(z=>z,.65,1.5,'#377c9b');
+  inner+=poly(z=>(4/27)/Math.pow(1-z,2),.65,1.5,'#af7950');
+  const x=left+(right-left)*(1/3)/.65,y=bottom-(bottom-top)*(1/3)/1.5;
+  inner+='<circle cx="'+x+'" cy="'+y+'" r="5" fill="#285d45"/><text x="'+(x+12)+'" y="'+(y-11)+'" font-size="12" fill="#244d37">Pull-in: x/d = 1/3</text><text x="400" y="63" fill="#377c9b" font-size="12">Spring</text><text x="400" y="79" fill="#af7950" font-size="12">Electrostatic</text>';
+  caption="Ideal static force balance at the critical pull-in voltage: mechanical spring force z and electrostatic force (4/27)/(1−z)², z = x/d. Constant-voltage parallel plates only.";
+ }else return "";
+ return '<figure class="figure" data-quantitative="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 '+W+' '+H+'" role="img" aria-label="'+esc(caption)+'" style="font-family:Outfit,system-ui,sans-serif">'+inner+'</svg><figcaption>'+esc(caption)+' The curves are generated from the equations in this lesson.</figcaption></figure>';
+}
 let chapters=[],lookup=new Map(),current=null,searchTerm="",read=new Set();
 try{read=new Set(JSON.parse(localStorage.getItem("micro-nano-textbook-read")||"[]"))}catch{}
 function persist(){try{localStorage.setItem("micro-nano-textbook-read",JSON.stringify([...read]))}catch{}}
@@ -112,7 +146,7 @@ function lesson(c){
  '<div class="essentials"><span>'+esc(c.level)+' · '+c.sections.length+' explanations · '+c.checks.length+' problems</span><div class="actions"><button id="print" class="plain-btn">Print</button><button id="printAnswers" class="plain-btn">Print with solutions</button><button id="read" class="plain-btn">'+(done?"✓ Read":"Mark read")+'</button></div></div>'+
  '<section class="objectives"><h2>You will learn to</h2><ul>'+c.objectives.map(t=>'<li>'+esc(t)+'</li>').join("")+'</ul></section>'+
  c.sections.map((s,n)=>'<section class="lesson-section" id="part-'+n+'"><h2>'+(n+1)+'. '+esc(s.title)+'</h2>'+s.html+'</section>').join("")+
- diagram(c.diagram)+
+ diagram(c.diagram)+quantitativeFigure(c.id)+
  '<section class="example"><span class="number">Worked example</span><h2>'+esc(example.title)+'</h2><p class="problem">'+esc(example.problem)+'</p><details><summary>Show the complete worked solution</summary><div class="solution"><ol class="steps">'+example.steps.map(s=>'<li><div>'+s+'</div></li>').join("")+'</ol></div></details></section>'+
  '<section id="exercises"><h2 class="divider-title">Practice problems</h2><p class="intro-desc">Attempt the problem without notes, open a hint only if needed, then compare your method and units to the full solution.</p>'+
  c.checks.map((q,n)=>'<div class="exercise"><h3>Exercise '+(n+1)+(q.difficulty?' · '+esc(q.difficulty):'')+'</h3><p>'+esc(q.prompt)+'</p>'+(q.hint?'<details class="hint"><summary>Show a hint</summary><div class="solution">'+esc(q.hint)+'</div></details>':'')+'<details class="answer"><summary>Reveal answer and explanation</summary><div class="solution">'+q.answer+'</div></details></div>').join("")+'</section>'+
