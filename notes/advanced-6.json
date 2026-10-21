@@ -120,6 +120,11 @@
         "title": "MIT — Micro/Nano Processing Technology",
         "url": "https://ocw.mit.edu/courses/6-152j-micro-nano-processing-technology-fall-2005/"
       }
+    ],
+    "prerequisites": [
+      "16-sensor-response",
+      "18-fabrication",
+      "05-uncertainty"
     ]
   }
 ]
