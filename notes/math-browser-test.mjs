@@ -39,6 +39,26 @@ try {
    console.log(viewport.name.toUpperCase()+" MathJax PASS",JSON.stringify(result));
    await page.close();
  }
+
+ const extra=await browser.newPage({viewport:{width:1024,height:820}});
+ for(const id of ["28-carrier-transport","29-mosfet-derivation","30-tcad-validation","31-mems-coupled","32-low-noise-frontends","33-gas-sensor-chemistry"]){
+   await extra.goto("http://127.0.0.1:8765/?lesson="+id,{waitUntil:"domcontentloaded"});
+   await extra.locator(".lesson-section").first().waitFor({timeout:15000});
+   await extra.waitForFunction(()=>document.querySelectorAll(".math-figure mjx-container").length>=4,{timeout:20000});
+   const x=await extra.evaluate(()=>({
+     errors:document.querySelectorAll("mjx-merror").length,
+     formulas:document.querySelectorAll("mjx-container").length,
+     displayEquations:document.querySelectorAll(".math-figure mjx-container[display='true']").length,
+     capstone:!!document.querySelector(".capstone"),
+     readingEntries:document.querySelectorAll(".reading-entry").length,
+     chapter:document.querySelector("h1")?.textContent
+   }));
+   assert.equal(x.errors,0,"Invalid TeX in "+id+": "+JSON.stringify(x));
+   assert(x.displayEquations>=4,"Display equations missing in "+id);
+   assert(x.capstone&&x.readingEntries>=2,"Advanced study/support sections absent: "+id);
+   console.log("CHAPTER PASS",id,JSON.stringify(x));
+ }
+ await extra.close();
 }finally{
  await browser.close();
 }
