@@ -147,6 +147,26 @@
         "tex": "S_R=\\frac{R_\\mathrm{air}}{R_\\mathrm{gas}},\\quad \\Delta_R=\\frac{R_\\mathrm{air}-R_\\mathrm{gas}}{R_\\mathrm{air}}",
         "caption": "Two distinct response metrics—never compare them without stating definitions."
       }
+    ],
+    "reading": [
+      {
+        "label": "Research overview",
+        "title": "Materials Chemistry review of metal-oxide gas sensors",
+        "url": "https://pubs.rsc.org/en/content/articlehtml/2025/tc/d5tc00145e",
+        "task": "Compare observed chemiresistance data against the oversimplified one-species adsorption picture."
+      },
+      {
+        "label": "Open access review",
+        "title": "Humidity effects on chemiresistive gas sensors",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9784667/",
+        "task": "List at least three ways humidity can affect a sensor result and design a controlled comparison."
+      },
+      {
+        "label": "Reference textbook",
+        "title": "Fraden — Handbook of Modern Sensors",
+        "url": "https://books.google.com/books?q=Fraden+Handbook+of+Modern+Sensors",
+        "task": "Contrast transduction physics with complete instrumentation-chain accuracy and drift."
+      }
     ]
   }
 ]
