@@ -116,6 +116,28 @@
     "prerequisites": [
       "03-capacitor",
       "17-mems"
+    ],
+    "equations": [
+      {
+        "after": 0,
+        "tex": "C(x)=\\frac{\\varepsilon A}{d-x},\\qquad F_m=kx",
+        "caption": "Variable-gap capacitance and a one-degree-of-freedom restoring spring."
+      },
+      {
+        "after": 1,
+        "tex": "F_e=\\left.\\frac{\\partial (\\frac12 C V^2)}{\\partial x}\\right|_V=\\frac{\\varepsilon A V^2}{2(d-x)^2}",
+        "caption": "Constant-voltage attractive electrostatic force via co-energy."
+      },
+      {
+        "after": 2,
+        "tex": "\\begin{aligned}kx&=\\frac{\\varepsilon A V^2}{2(d-x)^2}\\\\k&=\\frac{\\varepsilon A V^2}{(d-x)^3}\\\\\\Rightarrow\\quad x_\\mathrm{PI}&=\\frac d3\\end{aligned}",
+        "caption": "Force and stiffness conditions jointly determine ideal static pull-in."
+      },
+      {
+        "after": 3,
+        "tex": "V_\\mathrm{PI}=\\sqrt{\\frac{8kd^3}{27\\varepsilon A}}",
+        "caption": "Static pull-in voltage for the ideal rigid-plate linear-spring model."
+      }
     ]
   }
 ]
