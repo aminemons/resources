@@ -5,7 +5,7 @@
     "title": "Carrier transport, quasi-Fermi levels and continuity equations",
     "summary": "Derive drift–diffusion from carrier motion, enforce dimensional consistency, connect recombination to continuity, and reason about when a local transport model fails.",
     "level": "Upper undergraduate / Master's",
-    "diagram": "bands",
+    "diagram": "transport",
     "objectives": [
       "Derive the conventional current signs for electron and hole drift and diffusion.",
       "Calculate a field and gradient contribution without mixing cm and m.",
