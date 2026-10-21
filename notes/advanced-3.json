@@ -129,6 +129,28 @@
       "07-pn-junction",
       "28-carrier-transport",
       "10-tcad"
+    ],
+    "equations": [
+      {
+        "after": 1,
+        "tex": "\\begin{aligned}V_{\\mathrm{bi}}&=V_\\mathrm{th}\\ln\\left(\\frac{N_A N_D}{n_i^2}\\right)\\\\W&=\\sqrt{\\frac{2\\varepsilon_s}{q}\\left(\\frac1{N_A}+\\frac1{N_D}\\right)(V_\\mathrm{bi}-V_a)}\\end{aligned}",
+        "caption": "Analytic built-in voltage and depletion width, with forward applied bias Va."
+      },
+      {
+        "after": 1,
+        "tex": "\\begin{aligned}N_Ax_p&=N_Dx_n\\\\x_p&=\\frac{N_D}{N_A+N_D}W,\\quad x_n=\\frac{N_A}{N_A+N_D}W\\end{aligned}",
+        "caption": "Charge neutrality determines how depletion extends into each side."
+      },
+      {
+        "after": 2,
+        "tex": "\\begin{aligned}\\nabla\\cdot(\\varepsilon\\nabla\\psi)&=-\\rho\\\\\\rho&=q(p-n+N_D^+-N_A^-)\\end{aligned}",
+        "caption": "Electrostatic boundary-value equation within device simulation."
+      },
+      {
+        "after": 3,
+        "tex": "\\epsilon_{\\mathrm{mesh}}=\\left|\\frac{Q_{\\mathrm{fine}}-Q_{\\mathrm{coarse}}}{Q_{\\mathrm{fine}}}\\right|",
+        "caption": "Relative mesh sensitivity in an output Q; not a bound on physical-model error."
+      }
     ]
   }
 ]
