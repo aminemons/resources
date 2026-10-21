@@ -1,0 +1,125 @@
+[
+  {
+    "id": "33-gas-sensor-chemistry",
+    "unit": "Sensors and intelligent microsystems",
+    "title": "From a metal-oxide sensing film to a calibrated gas sensor",
+    "summary": "Connect thin-film structure, surface reactions, electron depletion, adsorption dynamics, heater power, interference and measurable resistance change.",
+    "level": "Upper undergraduate / Master's",
+    "diagram": "sensor",
+    "objectives": [
+      "Explain the often-used metal-oxide depletion model without treating it as universally proven.",
+      "Derive a first-order coverage model and its response time.",
+      "Calculate and clearly define sensor response metrics.",
+      "Design an experiment that separates concentration, humidity, heater temperature and recovery dynamics."
+    ],
+    "sections": [
+      {
+        "title": "1. Choose a measurand, not a fashionable material",
+        "html": "<p>Before selecting SnO₂, ZnO or WO₃, specify the gas, target concentration range, acceptable false positives, response time, expected humidity and ambient temperature, power budget and lifetime. Material choice is connected to chemistry and end-use; a sensor for industrial methane safety differs from one monitoring indoor VOCs. A laboratory demonstration of resistance change is not evidence of reliable field selectivity or a certified safety instrument.</p><p>The first device drawing should show substrate, electrodes, sensing film, possible microheater, sensing-chamber flow and readout. Write which features are actually fabricated and which are only proposed. Include a comparison to a commercial or established baseline when possible.</p>"
+      },
+      {
+        "title": "2. Why an n-type metal oxide changes resistance",
+        "html": "<p>In the traditional ionosorption picture for n-type oxides, ambient oxygen at the surface can accept electrons and alter local carrier concentration and intergranular barriers, increasing resistance in air compared with an oxygen-poor state. Exposure to an appropriate reducing gas can modify surface reactions and return mobile charge, decreasing resistance under some conditions. The details depend on material, operating temperature, adsorbates and catalytic surface.</p><p>**Important research nuance:** The textbook oxygen-ion surface model is a useful starting hypothesis, not an exhaustive microscopic proof. Recent spectroscopy-focused literature challenges simple assignments of the active adsorbed species in some metal-oxide gas sensors. Report the *observed resistance and operating conditions* first; treat the atomistic explanation as a model to be supported by complementary evidence.</p>"
+      },
+      {
+        "title": "3. Separate material synthesis, patterning and packaging",
+        "html": "<p>A thin-film sensor might involve substrate cleaning, contact patterning, selected oxide deposition, annealing (if required and compatible), insulating and passivation layers, electrical probing and controlled packaging. Methods such as sputtering, sol-gel processing, CVD, ALD and hydrothermal synthesis produce different morphologies and impurities. There is no generic 'one best synthesis recipe' across oxides.</p><p>For actual lab work, the responsible institution must approve chemicals, temperature, flammable/toxic gases, ventilation, safe gas cylinders and disposal. The teaching material here describes high-level engineering decisions, not a validated laboratory recipe. Pair morphology inspection (SEM/AFM), crystal-phase work (XRD) and surface analysis (XPS where appropriate) with electrical device testing.</p>"
+      },
+      {
+        "title": "4. A first-order adsorption model",
+        "html": "<p>As an intentionally simplified kinetic model, let \\(\\theta\\in[0,1]\\) be the fraction of available sites occupied by an adsorbate. Assume one site per adsorbate, constant temperature, no lateral interactions and spatially uniform concentration \\(C\\). Then \\(\\mathrm{d}\\theta/\\mathrm{d}t=k_{ads}C(1-\\theta)-k_{des}\\theta\\). Here \\(k_{ads}C\\) and \\(k_{des}\\) are both in \\(\\mathrm{s^{-1}}\\).</p><p>Rearrange: \\(\\mathrm{d}\\theta/\\mathrm{d}t+[k_{ads}C+k_{des}]\\theta=k_{ads}C\\). For a concentration step held constant, the equilibrium coverage is \\(\\theta_\\infty=k_{ads}C/(k_{ads}C+k_{des})=KC/(1+KC)\\), with \\(K=k_{ads}/k_{des}\\). The coverage approaches equilibrium exponentially with \\(\\tau=1/(k_{ads}C+k_{des})\\). This does **not** establish that actual resistance follows this exact exponential; multiple reaction, diffusion and transport processes can dominate.</p>"
+      },
+      {
+        "title": "5. Define the response before comparing papers",
+        "html": "<p>Many papers on n-type reducing-gas sensors use \\(S=R_{air}/R_{gas}\\), which is dimensionless and above 1 when resistance decreases. Other papers use \\((R_{air}-R_{gas})/R_{air}\\), \\((R_{gas}-R_{air})/R_{air}\\) or percent change. These measures are *not interchangeable*. Always state the exact formula, whether the test is reducing/oxidizing, target species and baseline conditions.</p><p>If dry air resistance is 30 kΩ and the exposure resistance is 12 kΩ, then \\(R_{air}/R_{gas}=2.5\\), while fractional decrease is \\((30-12)/30=0.60\\), or 60%. A logarithmic response or sensitivity derivative requires still another definition. A high response under one concentration does not automatically imply low detection limit.</p>"
+      },
+      {
+        "title": "6. Temperature and humidity are coupled confounders",
+        "html": "<p>Heater setpoint changes reaction rates, activation energies, carrier concentration and sometimes morphology or long-term stability. Humidity can compete for surface sites, alter baseline resistance and affect selectivity. A careful experiment varies concentration, humidity and temperature deliberately, with adequate stabilization and controls. Reporting a single trace at one favorable condition does not characterize the device.</p><p>On-chip heating adds a power/time tradeoff; pulsed-temperature operation is possible but requires careful reconstruction of sensing dynamics and thermal transients. For example, an electrical heater's instantaneous power can be measured through the real voltage and current: \\(P(t)=V(t)I(t)\\). Average pulse-cycle energy is \\(E=\\int P(t)dt\\), not automatically \\(V_{peak}^2/R\\) times the entire observation interval.</p>"
+      },
+      {
+        "title": "7. Calibration and detection claims",
+        "html": "<p>To calibrate concentration, collect replicates at multiple reference concentrations including blanks and interfering substances. Define the response transform you fit, estimate uncertainties and check reversibility/hysteresis. Limit of detection cannot be established reliably from one noiseless simulated curve. Baseline noise and the decision criterion must be defined, and a low theoretical LOD is not equivalent to a low validated practical LOD.</p><p>Many published reports have strong response but inadequate selectivity or recovery, or lack long-term drift testing. Explicitly examine humidity and power consumption. Label synthetic datasets as synthetic and preserve raw instrument logs.</p>"
+      },
+      {
+        "title": "8. A student research design that can yield a defensible result",
+        "html": "<p>One realizable *planning* project is to compare two oxide-film morphologies at the same device geometry and controlled operating temperature. Use a common readout, standardized gas exposures, repeated cycles and sensor drift analysis. Quantify response, \\(t_{90}\\), recovery, power, response to interferents and uncertainty. If fabrication access is unavailable, build a transport/kinetic model, perform numerical sensitivity analyses and state the limitation openly.</p><p>Organize output into an evidence table: material characterization, electrical baseline, test conditions, concentration-response, interference, repeatability, aging and physical interpretation. Good work separates observation from model, unlike a paper that claims a mechanism solely from one I–V trace.</p>"
+      }
+    ],
+    "example": {
+      "title": "Resistive response and ideal first-order adsorption dynamics",
+      "problem": "A notional n-type oxide gives Rair=30 kΩ and Rgas=12 kΩ at one controlled exposure. A separate simplified adsorption model assumes kads=0.02 ppm⁻¹s⁻¹, kdes=0.10 s⁻¹ and concentration step C=50 ppm. Calculate resistance response, fractional change, equilibrium coverage and ideal coverage time constant.",
+      "steps": [
+        "Define response explicitly: \\(S_R=R_{air}/R_{gas}=30/12=2.5\\) (dimensionless).",
+        "Fractional decrease \\( (R_{air}-R_{gas})/R_{air}=(30-12)/30=0.60=60\\%\\).",
+        "Adsorption pseudo-first-order rate \\(k_{ads}C=(0.02\\ \\mathrm{ppm^{-1}s^{-1}})(50\\ \\mathrm{ppm})=1.0\\ \\mathrm{s^{-1}}\\).",
+        "Total rate \\(k_{ads}C+k_{des}=1.0+0.10=1.10\\ \\mathrm{s^{-1}}\\).",
+        "Steady coverage \\(\\theta_\\infty=1.0/1.10=0.9091\\).",
+        "Time constant \\(\\tau=1/1.10\\approx0.9091\\ \\mathrm{s}\\). If coverage begins at zero, \\(\\theta(t)=0.9091(1-e^{-1.1t})\\).",
+        "Do not claim that the electrical sensor's observed \\(t_{90}\\) equals the coverage model's \\(t_{90}\\); film transport, chamber exchange and electronic readout may also limit response."
+      ]
+    },
+    "checks": [
+      {
+        "difficulty": "Mechanism",
+        "prompt": "Why does resistance often decrease for an n-type SnO₂ sensor exposed to a suitable reducing gas?",
+        "hint": "State it as a model with electron depletion and its reversal.",
+        "answer": "In the traditional model, oxygen-related surface reactions deplete conduction electrons in air; a suitable reducing gas can modify surface charge and lower grain-barrier/depletion resistance. The detailed species and mechanisms need experimental support."
+      },
+      {
+        "difficulty": "Measurement",
+        "prompt": "Compute Rair/Rgas for 60 kΩ and 15 kΩ.",
+        "hint": "Define which resistance is numerator.",
+        "answer": "\\(S_R=60/15=4\\), dimensionless."
+      },
+      {
+        "difficulty": "Response definitions",
+        "prompt": "For Rair=30 kΩ and Rgas=12 kΩ, what percent decrease occurred relative to air?",
+        "hint": "Use air as reference.",
+        "answer": "\\(100(30-12)/30=60\\%\\). This differs numerically from response ratio 2.5."
+      },
+      {
+        "difficulty": "Dynamics",
+        "prompt": "For kads C=0.30 s⁻¹ and kdes=0.20 s⁻¹, find θ∞ and τ.",
+        "hint": "Divide adsorption rate by rate sum; τ is reciprocal of sum.",
+        "answer": "\\(\\theta_\\infty=0.3/0.5=0.6\\); \\(\\tau=1/0.5=2\\ \\mathrm{s}\\)."
+      },
+      {
+        "difficulty": "Modeling",
+        "prompt": "What assumption breaks if multiple adsorbates compete for the same sites?",
+        "hint": "A one-species Langmuir occupancy law uses only one occupancy variable.",
+        "answer": "Competing adsorption requires coupled coverage balances or a modified adsorption model; \\(\\theta=KC/(1+KC)\\) for one species may be inadequate."
+      },
+      {
+        "difficulty": "Experiment",
+        "prompt": "Give four controls required before claiming strong gas selectivity.",
+        "hint": "Include humidity, interferents, blank, temperature and replicates.",
+        "answer": "Use known blank/baseline conditions, several interfering gases, controlled humidity and temperature, repeated concentration sweeps with recovery, and independent gas concentration verification."
+      },
+      {
+        "difficulty": "Research",
+        "prompt": "Can an XRD phase match alone demonstrate a 1 ppm gas detection limit?",
+        "hint": "Think about measurement noise and statistical decision thresholds.",
+        "answer": "No. XRD informs crystalline structure; detection claims require electrical signal-versus-gas data, blank noise, calibration and a defined decision criterion."
+      }
+    ],
+    "sources": [
+      {
+        "title": "ACS Chemical Reviews — Selectivity in chemiresistive gas sensors",
+        "url": "https://pubs.acs.org/doi/10.1021/acs.chemrev.4c00592"
+      },
+      {
+        "title": "RSC Journal of Materials Chemistry C — metal oxide resistive sensor review",
+        "url": "https://pubs.rsc.org/en/content/articlehtml/2025/tc/d5tc00145e"
+      },
+      {
+        "title": "Open review — humidity effects in chemiresistive gas sensors",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9784667/"
+      },
+      {
+        "title": "MIT — Micro/Nano Processing Technology",
+        "url": "https://ocw.mit.edu/courses/6-152j-micro-nano-processing-technology-fall-2005/"
+      }
+    ]
+  }
+]
