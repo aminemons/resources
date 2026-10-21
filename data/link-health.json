@@ -1,9 +1,9 @@
 {
   "checked": "2026-10-21",
-  "sources": 195,
-  "reachable": 169,
-  "restricted": 12,
-  "needs_review": 14,
+  "sources": 194,
+  "reachable": 170,
+  "restricted": 14,
+  "needs_review": 10,
   "note": "Link checks are not an endorsement of current content, free access or download eligibility.",
   "results": {
     "http://opencircuitdesign.com/magic/": {
@@ -423,9 +423,10 @@
       "final_url": "https://ocw.mit.edu/courses/3-024-electronic-optical-and-magnetic-properties-of-materials-spring-2013/",
       "checked": "2026-10-21"
     },
-    "https://ocw.mit.edu/courses/3-091-introduction-to-solid-state-chemistry-fall-2010/": {
-      "status": "needs_review",
-      "http": 404,
+    "https://ocw.mit.edu/courses/3-091-introduction-to-solid-state-chemistry-fall-2018/": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://ocw.mit.edu/courses/3-091-introduction-to-solid-state-chemistry-fall-2018/",
       "checked": "2026-10-21"
     },
     "https://ocw.mit.edu/courses/6-002-circuits-and-electronics-spring-2007/": {
@@ -534,6 +535,11 @@
       "status": "reachable",
       "http": 200,
       "final_url": "https://opg.optica.org/",
+      "checked": "2026-10-21"
+    },
+    "https://optics.ansys.com/hc/en-us/articles/360033154434-FDTD-product-reference-manual": {
+      "status": "restricted",
+      "http": 403,
       "checked": "2026-10-21"
     },
     "https://optuna.org/": {
@@ -651,9 +657,8 @@
       "checked": "2026-10-21"
     },
     "https://scholar.google.com/": {
-      "status": "reachable",
-      "http": 200,
-      "final_url": "https://scholar.google.com/",
+      "status": "restricted",
+      "http": 403,
       "checked": "2026-10-21"
     },
     "https://scikit-learn.org/stable/": {
@@ -783,14 +788,10 @@
       "final_url": "https://ansys.synopsys.com/products/electronics/ansys-hfss",
       "checked": "2026-10-21"
     },
-    "https://www.ansys.com/products/optics/ansys-lumerical-fdtd": {
-      "status": "needs_review",
-      "http": 404,
-      "checked": "2026-10-21"
-    },
-    "https://www.ansys.com/products/optics/ansys-lumerical-interconnect": {
-      "status": "needs_review",
-      "http": 404,
+    "https://www.ansys.com/products/optics/interconnect": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://ansys.synopsys.com/products/optics/interconnect",
       "checked": "2026-10-21"
     },
     "https://www.antenna-theory.com/": {
@@ -845,9 +846,8 @@
       "checked": "2026-10-21"
     },
     "https://www.crystallography.net/cod/": {
-      "status": "reachable",
-      "http": 200,
-      "final_url": "https://www.crystallography.net/cod/",
+      "status": "needs_review",
+      "reason": "<urlopen error [Errno 104] Connection reset by peer>",
       "checked": "2026-10-21"
     },
     "https://www.csc.fi/en/web/elmer": {
@@ -988,11 +988,6 @@
       "final_url": "https://www.nist.gov/pml",
       "checked": "2026-10-21"
     },
-    "https://www.opensourceicdesign.com/": {
-      "status": "needs_review",
-      "reason": "<urlopen error [Errno -2] Name or service not known>",
-      "checked": "2026-10-21"
-    },
     "https://www.overleaf.com/learn": {
       "status": "reachable",
       "http": 200,
@@ -1074,9 +1069,10 @@
       "final_url": "https://www.ti.com/reference-designs/index.html",
       "checked": "2026-10-21"
     },
-    "https://www.ti.com/video/series/precision-labs/ti-precision-labs-overview.html": {
-      "status": "needs_review",
-      "http": 404,
+    "https://www.ti.com/video/series/precision-labs.html": {
+      "status": "reachable",
+      "http": 200,
+      "final_url": "https://www.ti.com/video/series/precision-labs.html",
       "checked": "2026-10-21"
     },
     "https://www.tinkercad.com/circuits": {
