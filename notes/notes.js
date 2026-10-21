@@ -121,7 +121,7 @@ function toc(){
  $("toc").querySelectorAll("[data-chapter]").forEach(b=>b.onclick=()=>route(b.dataset.chapter));
 }
 function math(){const engine=window.MathJax;if(typeof engine?.typesetPromise!=="function"){const status=$("math-status");if(status){status.hidden=false;status.textContent="Loading mathematical notation…"}return}const el=$("math-status");if(el)el.hidden=true;engine.typesetClear?.([$("content")]);engine.typesetPromise([$("content")]).catch(e=>console.error(e))}
-window.addEventListener("mathjax-ready",()=>{if(current)math()});
+window.addEventListener("mathjax-ready",()=>{Promise.resolve(window.MathJax?.startup?.promise).then(()=>{if(current)math()})});
 window.addEventListener("mathjax-failed",()=>{const e=$("math-status");if(e){e.hidden=false;e.textContent="Equation renderer unavailable. Please check your connection."}});
 function route(id,push=true){
  current=lookup.has(id)?id:null;
@@ -139,6 +139,20 @@ function home(){
  $("content").innerHTML='<p class="eyebrow">Original engineering study notes</p><h1>Understand the subject from the beginning.</h1><p class="lede">Read a concept, work through the equations, inspect a technical figure and solve problems without leaving the site. Chapters cover circuits, semiconductor devices, IC design, MEMS sensors, microfabrication and practical research.</p><div class="essentials"><span>'+chapters.length+' chapters · '+[...read].filter(id=>lookup.has(id)).length+' read here · '+groups.length+' units</span><a class="primary-btn" href="'+lessonUrl(chapters[0].id)+'" data-open="'+chapters[0].id+'">Start chapter 1 →</a></div><h2 class="divider-title">Subjects</h2><div class="catalog">'+groups.map(unit=>{const list=chapters.filter(c=>c.unit===unit);return '<button data-open="'+list[0].id+'"><strong>'+esc(unit)+'</strong><small>'+list.length+' lessons · '+esc(list[0].title)+'</small></button>'}).join("")+'</div><h2 class="divider-title">Upper-level study</h2><p class="intro-desc">Graduate-level device models, assumptions, derivations and quantitative engineering exercises.</p><div class="lesson-index">'+chapters.filter(c=>/^(28|29|30|31|32|33)-/.test(c.id)).map(c=>'<button class="index-row" data-open="'+c.id+'"><span class="idx">→</span><span><strong>'+esc(c.title)+'</strong><small>'+esc(c.summary)+'</small></span></button>').join("")+'</div><h2 class="divider-title">All chapters</h2>'+entries+'<p class="note">These original lessons provide a foundation and do not replace specialist textbooks, foundry rules, current software manuals or supervised laboratory safety training.</p>';
  linkNext($("content"));
 }
+function renderEquation(eq){
+ return '<figure class="math-figure"><div class="math-display">\\['+esc(eq.tex)+'\\]</div><figcaption>'+esc(eq.caption)+'</figcaption></figure>';
+}
+function renderLicensedFigures(chapter){
+ return (chapter.licensedFigures||[]).map(fig=>'<figure class="licensed-figure">'+
+ '<img src="'+esc(fig.src)+'" alt="'+esc(fig.alt)+'" loading="lazy" decoding="async" referrerpolicy="no-referrer">'+
+ '<figcaption>'+esc(fig.caption)+'<span> Image: <a href="'+esc(fig.source)+'" target="_blank" rel="noopener noreferrer">'+esc(fig.creator)+'</a> · <a href="'+esc(fig.licenseURL)+'" target="_blank" rel="noopener noreferrer">'+esc(fig.license)+'</a>. Unmodified licensed educational figure.</span></figcaption></figure>').join("");
+}
+function renderGuidedReading(chapter){
+ const items=chapter.reading||[];
+ if(!items.length)return "";
+ return '<section class="guided-reading"><h2>Read further—then test your understanding</h2><p>The articles and books below are study references, not substitute solutions. Each includes a specific question to investigate.</p>'+
+ items.map((item,i)=>'<article class="reading-entry"><small>'+esc(item.label)+'</small><a href="'+esc(item.url)+'" target="_blank" rel="noopener noreferrer">'+esc(item.title)+' ↗</a><p>'+esc(item.task)+'</p></article>').join("")+'</section>';
+}
 function lesson(c){
  document.title=c.title+" | Micro & Nano Study Notes";
  const i=chapters.indexOf(c),done=read.has(c.id);
@@ -147,12 +161,13 @@ function lesson(c){
  '<h1>'+esc(c.title)+'</h1><p class="lede">'+esc(c.summary)+'</p>'+
  '<div class="essentials"><span>'+esc(c.level)+' · '+c.sections.length+' explanations · '+c.checks.length+' problems</span><div class="actions"><button id="print" class="plain-btn">Print</button><button id="printAnswers" class="plain-btn">Print with solutions</button><button id="read" class="plain-btn">'+(done?"✓ Read":"Mark read")+'</button></div></div>'+
  '<div class="prereqs">'+(c.prerequisites?.length?'<span>Review first</span> '+c.prerequisites.map(id=>lookup.get(id)).filter(Boolean).map(p=>'<a href="'+lessonUrl(p.id)+'" data-open="'+p.id+'">'+esc(p.title)+'</a>').join(' · '):'')+'</div>'+'<section class="objectives"><h2>You will learn to</h2><ul>'+c.objectives.map(t=>'<li>'+esc(t)+'</li>').join("")+'</ul></section>'+
- c.sections.map((s,n)=>'<section class="lesson-section" id="part-'+n+'"><h2>'+(n+1)+'. '+esc(s.title)+'</h2>'+s.html+'</section>').join("")+
- diagram(c.diagram)+quantitativeFigure(c.id)+
+ c.sections.map((part,n)=>'<section class="lesson-section" id="part-'+n+'"><h2>'+(n+1)+'. '+esc(part.title)+'</h2>'+part.html+'</section>'+(c.equations||[]).filter(eq=>eq.after===n).map(renderEquation).join("")).join("")+
+ diagram(c.diagram)+quantitativeFigure(c.id)+renderLicensedFigures(c)+
  '<section class="example"><span class="number">Worked example</span><h2>'+esc(example.title)+'</h2><p class="problem">'+esc(example.problem)+'</p><details><summary>Show the complete worked solution</summary><div class="solution"><ol class="steps">'+example.steps.map(s=>'<li><div>'+s+'</div></li>').join("")+'</ol></div></details></section>'+
  '<section id="exercises"><h2 class="divider-title">Practice problems</h2><p class="intro-desc">Attempt the problem without notes, open a hint only if needed, then compare your method and units to the full solution.</p>'+
  c.checks.map((q,n)=>'<div class="exercise"><h3>Exercise '+(n+1)+(q.difficulty?' · '+esc(q.difficulty):'')+'</h3><p>'+esc(q.prompt)+'</p>'+(q.hint?'<details class="hint"><summary>Show a hint</summary><div class="solution">'+esc(q.hint)+'</div></details>':'')+'<details class="answer"><summary>Reveal answer and explanation</summary><div class="solution">'+q.answer+'</div></details></div>').join("")+'</section>'+
  '<section><h2 class="divider-title">Further reading</h2><p class="note">These references support the subject. The explanatory text, examples and vector diagrams here are originally authored, not scanned or copied from the linked books or papers.</p><ul class="source-list">'+c.sources.map(s=>'<li><a href="'+esc(s.url)+'" target="_blank" rel="noopener noreferrer">'+esc(s.title)+' ↗</a></li>').join("")+'</ul></section>'+
+ renderGuidedReading(c)+
  '<div class="nextprev">'+(chapters[i-1]?'<a href="'+lessonUrl(chapters[i-1].id)+'" data-open="'+chapters[i-1].id+'" class="nav-next"><small>← Previous</small>'+esc(chapters[i-1].title)+'</a>':'<span></span>')+(chapters[i+1]?'<a href="'+lessonUrl(chapters[i+1].id)+'" data-open="'+chapters[i+1].id+'" class="nav-next"><small>Next →</small>'+esc(chapters[i+1].title)+'</a>':"")+'</div>';
  $("read").onclick=()=>{read.has(c.id)?read.delete(c.id):read.add(c.id);persist();$("read").textContent=read.has(c.id)?"✓ Read":"Mark read";toc()};
  $("print").onclick=()=>window.print();
