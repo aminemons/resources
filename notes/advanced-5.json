@@ -167,6 +167,22 @@
         "url": "https://ietresearch.onlinelibrary.wiley.com/doi/10.1049/iet-cds.2019.0209",
         "task": "Compare a simple long-channel gm/ID estimate with curve-extracted modern CMOS design."
       }
-    ]
+    ],
+    "capstone": {
+      "title": "Design a pressure-sensor analog readout with a defensible noise budget",
+      "brief": "Start from a sensor specification rather than picking an amplifier at random, and evaluate signal range, noise, bandwidth and ADC limitations together.",
+      "deliverables": [
+        "A complete requirement sheet: sensitivity, target physical resolution, source impedance, maximum input signal, bandwidth, temperature and power budget.",
+        "An annotated chain showing bias/protection, amplifier, anti-alias filter and ADC with gain and headroom calculations.",
+        "A spreadsheet or script combining thermal noise, amplifier noise, noise-equivalent bandwidth and ideal ADC quantization with explicit assumptions.",
+        "A technical comparison of two different gains or cutoffs with plots and a written choice, including measurement and calibration plans."
+      ],
+      "acceptance": [
+        "All noise components are referred to the same circuit node and correct bandwidth.",
+        "No ADC input exceeds its allowed full-scale range under the modeled sensor extrema.",
+        "The reported Johnson noise and one-pole ENBW agree with analytic values.",
+        "The final report distinguishes accuracy, input-referred noise, ADC codes and physical sensor resolution."
+      ]
+    }
   }
 ]
