@@ -1,0 +1,129 @@
+[
+  {
+    "id": "30-tcad-validation",
+    "unit": "Device simulation and verification",
+    "title": "A defensible TCAD study: abrupt PN junction to MOSFET",
+    "summary": "Specify a device physically, derive an analytical baseline, plan a Silvaco or open-solver workflow, study mesh and models, and produce a research-grade validation report.",
+    "level": "Upper undergraduate / Master's",
+    "diagram": "tcad",
+    "objectives": [
+      "Compute an abrupt PN-junction built-in potential and depletion width.",
+      "Design a simulation matrix separating geometry, mesh, physical-model and bias effects.",
+      "Distinguish numerical convergence from physical validity.",
+      "Explain exactly when Silvaco examples require licensed tools and version-matched documentation."
+    ],
+    "sections": [
+      {
+        "title": "1. Ask a question with one measurable output",
+        "html": "<p>A good TCAD task is not 'simulate a transistor'. A well-scoped question is: *for a specified silicon abrupt junction at 300 K, how does depletion width vary under reverse bias, and how closely does a drift–diffusion solution approach the depletion approximation?* The output can be field profile, carrier density, built-in voltage or capacitance per unit area. Every output must have a unit and a normalization rule.</p><p>Before choosing software, write a device specification: material and crystal region, dimensional geometry, impurity doping, junction location, electrode placement, operating temperature, boundary potentials, optical input if applicable, and which solver physics is enabled. Those inputs define the scientific experiment.</p>"
+      },
+      {
+        "title": "2. Calculate a baseline analytically",
+        "html": "<p>For nondegenerate, uniformly doped p and n regions at thermal equilibrium, with fully ionized dopants and the abrupt-depletion approximation, the built-in voltage is \\(V_{bi}=V_{th}\\ln(N_AN_D/n_i^2)\\). The depletion width for applied terminal junction bias \\(V_a\\) is \\(W=\\sqrt{(2\\varepsilon_s/q)(1/N_A+1/N_D)(V_{bi}-V_a)}\\), where positive \\(V_a\\) means forward bias and the depletion approximation requires a physically meaningful positive barrier.</p><p>Charge neutrality in the ideal depleted slabs gives \\(N_Ax_p=N_Dx_n\\) and \\(W=x_p+x_n\\). Therefore \\(x_p=WN_D/(N_A+N_D)\\) and \\(x_n=WN_A/(N_A+N_D)\\). The depletion region extends farther into the *more lightly doped* side. Check this directional prediction before ever running a solver.</p>"
+      },
+      {
+        "title": "3. Formulate the coupled numerical problem",
+        "html": "<p>A semiconductor drift–diffusion solver typically couples Poisson's equation \\(\\nabla\\cdot(\\varepsilon\\nabla\\psi)=-\\rho\\) with electron and hole continuity equations. The current models include drift, diffusion and physical effects such as recombination or mobility fields, depending on selected options. Region-dependent permittivity, band edges and intrinsic concentration matter at heterojunctions.</p><p>Boundary conditions are not decoration: ideal Ohmic contacts, Schottky contacts, surface recombination, interface charge and thermal conditions can change predicted results. Place contacts on defined boundaries rather than assuming a plotted material surface is electrically contacted. Decide whether your output is a 1D current density, 2D current per depth or 3D total current.</p>"
+      },
+      {
+        "title": "4. Mesh-convergence study, not mesh theatre",
+        "html": "<p>Build a reasonably coarse mesh, refine it near the junction and other strong-gradient regions, then repeat with tighter spacing. Compare the actual quantity of interest, not merely the smoothness of the plotted profile. A useful convergence table records mesh element count, minimum local spacing, solver tolerance, iteration count and output. Always inspect conservation residuals and solver warnings.</p><p>Suppose increasing refinement changes peak electric field by 8%, then 3%, then 0.5%. The last comparison suggests decreasing discretization sensitivity but does not independently quantify model error. If your physical-material parameters are wrong, all meshes can converge beautifully to the wrong answer. For nonlinear solvers, test sensitivity to initial guess and continuation procedure.</p>"
+      },
+      {
+        "title": "5. Separate physical models from numerical settings",
+        "html": "<p>Varying junction doping changes real device physics. Varying mesh size should ideally change only discretization error. Varying mobility, Shockley–Read–Hall lifetime, Auger recombination, bandgap narrowing or high-field models changes the *assumed physics*. Treat each as a different experiment. A matrix whose rows change five conditions simultaneously cannot identify which change caused the output.</p><p>A useful first study fixes a doping pair and temperature, then evaluates (A) mesh resolution, (B) model selection, (C) bias and (D) geometry separately. Later, design-of-experiments methods can explore interaction terms. Use a scripted parameter file rather than manually editing dozens of untracked copies.</p>"
+      },
+      {
+        "title": "6. Silvaco software: which piece does what?",
+        "html": "<p>Silvaco ATLAS and Victory Device perform device simulations. ATHENA and Victory Process are designed for process sequences that can produce a device structure. DeckBuild can orchestrate script-based workflows, while plotting tools visualize solutions. Start from the vendor's *installed* examples that match your software release. The official documentation page explains that user manuals and installed software require portal access and appropriate licensing; a public training-guide page does not mean the solvers are free.</p><p>An open-source option such as DEVSIM can be useful for learning the Poisson/drift–diffusion solver structure. But you cannot assume a community DEVSIM script implements all the semiconductor physics of a proprietary example. When comparing two tools, use matched equations, contacts, geometry, material parameters and units—not merely matching figure titles.</p>"
+      },
+      {
+        "title": "7. A reproducible, license-independent check",
+        "html": "<p>A useful independently runnable preliminary study computes analytical depletion width versus reverse bias in Python. It does not replace a full numerical PDE solver, but gives a trusted curve to compare with a simulator. Below is a deliberately small computation using SI/centimeter conversions explicitly, with a positive reverse-bias magnitude \\(V_R\\).</p><p><pre><code>import math\nq = 1.602176634e-19      # C\neps0 = 8.8541878128e-14  # F/cm\neps_si = 11.7 * eps0     # F/cm\nvt = 0.0258519998        # V, about 300 K\nni = 1.0e10              # cm^-3\nna, nd = 1.0e17, 1.0e16 # cm^-3\n\nvbi = vt * math.log(na * nd / ni**2)\n\nfor vr in [0.0, 1.0, 3.0, 5.0]:\n    width_cm = math.sqrt(\n        2 * eps_si / q * (1 / na + 1 / nd) * (vbi + vr)\n    )\n    width_um = width_cm * 1e4\n    print(f\"reverse bias = {vr:.1f} V, W = {width_um:.4f} um\")</code></pre></p><p>Reproduce a smooth \\(W(V_R)\\) curve and verify \\(W\\propto\\sqrt{V_{bi}+V_R}\\) under this approximation. Log every constant. Report the source of silicon permittivity, temperature and intrinsic carrier concentration assumptions. For reverse breakdown, strong depletion-region generation or highly doped tunneling junctions, this simple expression cannot substitute for a full physical simulation.</p>"
+      },
+      {
+        "title": "8. The final report is part of the technical result",
+        "html": "<p>Write a concise study record: question, device drawing with scale, physical equations, assumed properties and sources, boundary conditions, mesh sequence, solver version and warnings, raw outputs, analytical comparison, uncertainty/sensitivity and limitations. If you cannot run a licensed example, say **analytical baseline and planned TCAD workflow**, not *completed Silvaco simulation*. Include the complete parameter file and script.</p><p>One publishable-looking color map never establishes a validated device. A properly documented negative result or model mismatch may be more informative than a visually impressive uncalibrated plot.</p>"
+      }
+    ],
+    "example": {
+      "title": "An asymmetric silicon PN junction: built-in potential and depletion width",
+      "problem": "At 300 K assume ni=1.0×10¹⁰ cm⁻³, Na=1.0×10¹⁷ cm⁻³, Nd=1.0×10¹⁶ cm⁻³, Vth=0.025852 V and εSi=11.7×8.854×10⁻¹⁴ F/cm. Compute Vbi and the equilibrium depletion width, including the extension into each side.",
+      "steps": [
+        "Doping product \\(N_A N_D=10^{33}\\ \\mathrm{cm^{-6}}\\) and \\(n_i^2=10^{20}\\ \\mathrm{cm^{-6}}\\). Their ratio is dimensionless \\(10^{13}\\).",
+        "\\(V_{bi}=0.025852\\ln(10^{13})\\approx0.77384\\ \\mathrm{V}\\).",
+        "\\(\\varepsilon_s=11.7\\times8.8541878128\\times10^{-14}\\approx1.03694\\times10^{-12}\\ \\mathrm{F/cm}\\).",
+        "Compute \\((1/N_A+1/N_D)=10^{-17}+10^{-16}=1.1\\times10^{-16}\\ \\mathrm{cm^3}\\).",
+        "\\(W=\\sqrt{(2\\varepsilon_s/q)(1/N_A+1/N_D)V_{bi}}\\approx3.318\\times10^{-5}\\ \\mathrm{cm}=0.3318\\ \\mu\\mathrm{m}\\).",
+        "Into p-side \\(x_p=WN_D/(N_A+N_D)\\approx0.03016\\ \\mu\\mathrm{m}\\). Into n-side \\(x_n=WN_A/(N_A+N_D)\\approx0.3016\\ \\mu\\mathrm{m}\\).",
+        "The n-side is ten times more lightly doped and its depleted extension is ten times larger. The analytic result is the benchmark for a subsequently refined numerical model, not a numerical TCAD result."
+      ]
+    },
+    "checks": [
+      {
+        "difficulty": "Basic model",
+        "prompt": "For the same junction, what happens qualitatively to W as reverse-bias magnitude increases?",
+        "hint": "Look at the square-root dependence on Vbi+VR.",
+        "answer": "It increases approximately as \\(\\sqrt{V_{bi}+V_R}\\) for the depletion approximation."
+      },
+      {
+        "difficulty": "Units",
+        "prompt": "Convert 3.0×10⁻⁵ cm into micrometers.",
+        "hint": "One centimeter contains 10⁴ micrometers.",
+        "answer": "\\(3.0\\times10^{-5}\\ \\mathrm{cm}\\times10^4\\ \\mu\\mathrm{m/cm}=0.30\\ \\mu\\mathrm{m}\\)."
+      },
+      {
+        "difficulty": "Charge neutrality",
+        "prompt": "If NA=10¹⁷ and ND=10¹⁶ cm⁻³, which side has the larger depletion width and by what factor?",
+        "hint": "Use (N_Ax_p=N_Dx_n).",
+        "answer": "The n-side: \\(x_n/x_p=N_A/N_D=10\\)."
+      },
+      {
+        "difficulty": "Quantitative",
+        "prompt": "Using Vbi≈0.77384 V, find W at reverse bias VR=3 V if equilibrium width is W0=0.3318 µm.",
+        "hint": "Form a ratio so most constants cancel.",
+        "answer": "\\(W/W_0=\\sqrt{(V_{bi}+3)/V_{bi}}\\approx\\sqrt{3.77384/0.77384}\\approx2.208\\). Thus \\(W\\approx0.733\\ \\mu\\mathrm{m}\\)."
+      },
+      {
+        "difficulty": "Simulation review",
+        "prompt": "The 1D current density looks converged but terminal current changes by a factor of 100 between tools. Name three checks.",
+        "hint": "Think units, contacts and physical model.",
+        "answer": "Check current normalization (A vs A/cm² or A/µm), contact/bias definitions, carrier models and parameter units. Also inspect geometry depth assumptions and recombination/temperature settings."
+      },
+      {
+        "difficulty": "Physical models",
+        "prompt": "What is wrong with saying mesh refinement proves SRH lifetime is correct?",
+        "hint": "Separate the discretization from model parameters.",
+        "answer": "Refinement tests numerical error for the chosen SRH model; it cannot determine a physical recombination lifetime. Calibration or independent material evidence is needed."
+      },
+      {
+        "difficulty": "Research judgment",
+        "prompt": "A paper reports only a final rainbow field plot with no geometry, dimensions or solver. Can another engineer reproduce it?",
+        "hint": "Which inputs and conditions are necessary?",
+        "answer": "Not reliably. Geometry, mesh, materials, contacts, bias, physics, solver version, normalization and parameter files are necessary for a reproducible study."
+      }
+    ],
+    "sources": [
+      {
+        "title": "MIT 6.012 — junction electrostatics and modeling",
+        "url": "https://ocw.mit.edu/courses/6-012-microelectronic-devices-and-circuits-fall-2005/pages/lecture-notes/"
+      },
+      {
+        "title": "Silvaco — TCAD training guides",
+        "url": "https://silvaco.com/resources/technical-library/tcad-training-materials/"
+      },
+      {
+        "title": "Silvaco — manuals, license and examples explained",
+        "url": "https://silvaco.com/support/documentation/"
+      },
+      {
+        "title": "Silvaco — technical simulation papers",
+        "url": "https://silvaco.com/resources/technical-library/"
+      },
+      {
+        "title": "DEVSIM source (open device solver)",
+        "url": "https://github.com/devsim/devsim"
+      }
+    ]
+  }
+]
