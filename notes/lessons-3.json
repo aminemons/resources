@@ -1,0 +1,336 @@
+[
+  {
+    "id": "17-mems",
+    "unit": "Sensors and smart systems",
+    "title": "Capacitive MEMS pressure sensors",
+    "summary": "How a moving microstructure turns force or pressure into an electrical signal.",
+    "level": "Intermediate",
+    "diagram": "mems",
+    "objectives": [
+      "Derive a parallel-plate capacitance relation",
+      "Estimate displacement sensitivity",
+      "Recognize mechanical limits and parasitic capacitance"
+    ],
+    "sections": [
+      {
+        "title": "What moves inside the sensor?",
+        "html": "<p>A capacitive MEMS pressure sensor often contains a compliant diaphragm facing a fixed electrode. Pressure produces diaphragm deflection; the gap changes; so does capacitance. In a greatly simplified parallel-plate model \\(C=\\varepsilon A/d\\), where \\(A\\) is overlap area, \\(d\\) is spacing and \\(\\varepsilon\\) is dielectric permittivity. This approximation neglects fringing fields, bending geometry and structural nonlinearities.</p>"
+      },
+      {
+        "title": "How displacement affects the reading",
+        "html": "<p>For a rigid movable plate displaced by a small amount \\(x\\) toward the fixed plate, the new gap is \\(d-x\\) and \\(C(x)=\\varepsilon A/(d-x)\\). For \\(x\\ll d\\), the fractional change is approximately \\(\\Delta C/C_0\\approx x/d\\). This makes small gaps sensitive but increases electrostatic force, fabrication difficulty and the risk of pull-in or contact.</p>"
+      },
+      {
+        "title": "The actual sensing system",
+        "html": "<p>The structure must be modeled together with membrane mechanics, temperature, packaging, parasitic capacitances and electronic readout. A finite-element solution should report mesh studies and boundary conditions; a meaningful measurement needs a known pressure reference. Designs using differential capacitors can help suppress common disturbances, but only with appropriate symmetry and readout electronics.</p>"
+      }
+    ],
+    "example": {
+      "title": "Capacitance of an ideal micromachined plate",
+      "problem": "Calculate an ideal air-gap capacitor with area 1 mm² and spacing 10 µm. What approximate capacitance change comes from a small 1 µm approach?",
+      "steps": [
+        "Area \\(A=(1\\,\\mathrm{mm})^2=10^{-6}\\ \\mathrm{m^2}\\), gap \\(d=10^{-5}\\ \\mathrm{m}\\).",
+        "Initial \\(C_0=\\varepsilon_0A/d=8.854\\times10^{-13}\\ \\mathrm{F}=0.8854\\ \\mathrm{pF}\\).",
+        "At new gap \\(d-x=9\\ \\mu\\mathrm{m}\\), \\(C_1=8.854\\times10^{-12}\\times10^{-6}/(9\\times10^{-6})\\approx0.984\\ \\mathrm{pF}\\).",
+        "Change \\(\\Delta C\\approx0.0984\\ \\mathrm{pF}\\). The small-displacement approximation predicts \\(0.0885\\ \\mathrm{pF}\\), which is less accurate here because \\(x/d=10\\%\\)."
+      ]
+    },
+    "checks": [
+      {
+        "prompt": "If the plate gap halves in the ideal rigid-plate model, what happens to capacitance?",
+        "answer": "It doubles, since \\(C=\\varepsilon A/d\\). Mechanical stability may limit whether such a configuration is feasible."
+      },
+      {
+        "prompt": "Why can PCB wiring affect a sub-pF capacitive sensor?",
+        "answer": "Parasitic capacitance from tracks, cables and input circuitry may be comparable to or much larger than the intended signal. Guarding and suitable differential readout may be needed."
+      }
+    ],
+    "sources": [
+      {
+        "title": "MIT MEMS lectures and case studies",
+        "url": "https://ocw.mit.edu/courses/6-777j-design-and-fabrication-of-microelectromechanical-devices-spring-2007/pages/lecture-notes/"
+      }
+    ]
+  },
+  {
+    "id": "18-fabrication",
+    "unit": "Sensors and smart systems",
+    "title": "Fabrication: from mask to sensor",
+    "summary": "Lithography, thin films and etching as a coordinated sequence—not disconnected vocabulary.",
+    "level": "Intermediate",
+    "diagram": "process",
+    "objectives": [
+      "Distinguish deposition, patterning and etching",
+      "Read a conceptual process traveler",
+      "Identify fabrication and safety constraints"
+    ],
+    "sections": [
+      {
+        "title": "Fabrication is an ordered transformation",
+        "html": "<p>Microfabrication starts from a wafer and adds, modifies or removes material in deliberate steps. Deposition creates layers by processes such as evaporation, sputtering, CVD or ALD. Photolithography transfers a pattern from a mask onto photoresist. Etching transfers that pattern into a film. Doping changes material electronic properties. Cleaning and metrology are present throughout.</p>"
+      },
+      {
+        "title": "A conceptual microheater process",
+        "html": "<p>A <em>conceptual</em> thin-film heater flow might begin with a suitable insulated substrate, patterned resistive material, patterned metallic contacts and a protective layer, followed by electrical probing and packaging. However, material compatibility, adhesion, temperature limits, solvents, plasma conditions, equipment safety and institutional process rules determine the actual recipe. You cannot infer a qualified cleanroom procedure from a diagram alone.</p>"
+      },
+      {
+        "title": "What should be checked after each operation?",
+        "html": "<p>Typical variables include film thickness, sheet resistance, roughness, alignment, edge quality, etch depth, defects, contact resistance and adhesion. The traveler should state the layer and its purpose, the process class, the inspection required, and acceptance criteria. A fabricated sensing device is not “working” until its mechanical, electrical and functional response is characterized.</p>"
+      }
+    ],
+    "example": {
+      "title": "Sheet resistance and number of squares",
+      "problem": "A rectangular uniform thin-film track has sheet resistance 20 Ω/□, length 500 µm and width 25 µm. Estimate resistance ignoring contacts and current spreading.",
+      "steps": [
+        "For a simple uniform rectangular film, \\(R=R_s(L/W)\\).",
+        "Number of squares \\(N=L/W=500/25=20\\).",
+        "Resistance \\(R=20\\ \\Omega/\\square\\times20\\,\\square=400\\ \\Omega\\).",
+        "Actual heater resistance can differ due to film nonuniformity, self-heating, geometry and contact resistances."
+      ]
+    },
+    "checks": [
+      {
+        "prompt": "Does photolithography itself automatically remove the underlying metal?",
+        "answer": "No. It patterns a resist or mask. A subsequent etching or lift-off process typically transfers that geometry to the deposited material."
+      },
+      {
+        "prompt": "A 100 µm by 10 µm track has Rs=5 Ω/□. Estimate resistance.",
+        "answer": "It contains 10 squares, so \\(R\\approx5\\times10=50\\ \\Omega\\), ignoring contacts."
+      }
+    ],
+    "sources": [
+      {
+        "title": "MIT micro/nano processing course",
+        "url": "https://ocw.mit.edu/courses/6-152j-micro-nano-processing-technology-fall-2005/"
+      },
+      {
+        "title": "MIT MEMS fabrication lectures",
+        "url": "https://ocw.mit.edu/courses/6-777j-design-and-fabrication-of-microelectromechanical-devices-spring-2007/pages/lecture-notes/"
+      }
+    ]
+  },
+  {
+    "id": "19-microheater",
+    "unit": "Sensors and smart systems",
+    "title": "Microheaters and electrothermal sensors",
+    "summary": "Connect electrical power, temperature and response speed in a first-order thermal model.",
+    "level": "Intermediate",
+    "diagram": "heater",
+    "objectives": [
+      "Calculate Joule heating",
+      "Build a thermal RC model",
+      "Recognize why material properties vary with temperature"
+    ],
+    "sections": [
+      {
+        "title": "Heat is part of the device behavior",
+        "html": "<p>A microheater converts electrical power to heat. Under an approximately constant resistance, \\(P=I^2R=V^2/R\\). Under an applied fixed voltage, resistance changes with temperature can alter power. A simplified lumped model represents the heater and surroundings by thermal resistance \\(R_\\mathrm{th}\\) in K/W and thermal capacitance \\(C_\\mathrm{th}\\) in J/K.</p>"
+      },
+      {
+        "title": "A useful first-order balance",
+        "html": "<p>Let \\(\\Delta T\\) be temperature above ambient. For a constant input power \\(P\\), the lumped energy balance is \\(C_\\mathrm{th}\\,\\mathrm{d}\\Delta T/\\mathrm{d}t=P-\\Delta T/R_\\mathrm{th}\\). Its steady temperature rise is \\(\\Delta T_\\infty=PR_\\mathrm{th}\\) and time constant \\(\\tau_\\mathrm{th}=R_\\mathrm{th}C_\\mathrm{th}\\). These relations omit spatial hot spots, radiation nonlinearities and temperature-dependent material behavior.</p>"
+      },
+      {
+        "title": "What makes a good design study",
+        "html": "<p>Useful objectives may include reducing average power subject to a target active-area temperature, uniformity and response constraints. In COMSOL or another field solver, independently check geometry, boundary conditions and mesh refinement. A small model that matches physical behavior is more valuable than an impressive-looking temperature image with unknown convection or material parameters.</p>"
+      }
+    ],
+    "example": {
+      "title": "Electrothermal step response",
+      "problem": "A simplified heater receives 10 mW, with Rth=2500 K/W and Cth=0.002 J/K. Estimate steady rise, time constant and rise at t=τ.",
+      "steps": [
+        "Power \\(P=0.010\\ \\mathrm{W}\\). Steady rise \\(P R_\\mathrm{th}=0.010\\times2500=25\\ \\mathrm{K}\\).",
+        "Time constant \\(\\tau=R_\\mathrm{th}C_\\mathrm{th}=2500\\times0.002=5\\ \\mathrm{s}\\).",
+        "After one time constant from ambient, \\(\\Delta T(5)=25(1-e^{-1})\\approx15.8\\ \\mathrm{K}\\).",
+        "This is a lumped illustration, not a safe operating specification for any physical microheater."
+      ]
+    },
+    "checks": [
+      {
+        "prompt": "Under constant resistance, voltage across a heater doubles. What happens to power?",
+        "answer": "\\(P=V^2/R\\), so it quadruples."
+      },
+      {
+        "prompt": "For Rth=1000 K/W and P=20 mW, estimate steady temperature rise.",
+        "answer": "\\(\\Delta T\\approx0.020\\times1000=20\\ \\mathrm{K}\\), within the constant-parameter lumped approximation."
+      }
+    ],
+    "sources": [
+      {
+        "title": "MIT MEMS thermal-domain lectures",
+        "url": "https://ocw.mit.edu/courses/6-777j-design-and-fabrication-of-microelectromechanical-devices-spring-2007/pages/lecture-notes/"
+      }
+    ]
+  },
+  {
+    "id": "20-iot",
+    "unit": "Sensors and smart systems",
+    "title": "From sensing to wireless data",
+    "summary": "Sampling, firmware, transmission, power and reliability as one embedded system.",
+    "level": "Intermediate",
+    "diagram": "iot",
+    "objectives": [
+      "Draw an entire data chain",
+      "Calculate basic transmission throughput",
+      "Describe realistic failure modes"
+    ],
+    "sections": [
+      {
+        "title": "A smart sensor is more than a sensing element",
+        "html": "<p>A sensing element outputs a physical signal. A <strong>smart system</strong> must condition it, sample it, assign a useful timestamp, possibly calibrate or classify it, and communicate a valid result. The signal chain may include a sensor, amplifier, ADC, microcontroller, radio link, gateway and data store. Each stage can change precision, timing and energy usage.</p>"
+      },
+      {
+        "title": "Bandwidth and power are coupled",
+        "html": "<p>Transmitting every raw sample consumes memory, bandwidth and radio energy. Local filtering or feature extraction reduces traffic, but may discard information. For fixed-length samples, payload bit rate before framing is \\(B=f_s N b\\), where \\(f_s\\) is samples/s per channel, \\(N\\) is channels and \\(b\\) is transmitted bits/sample. Protocol headers, retransmissions, encryption and timestamps add overhead.</p>"
+      },
+      {
+        "title": "Reliability is part of design",
+        "html": "<p>Real networks have packet loss, delay, outages and clock drift. A record should distinguish <em>measurement timestamp</em> from arrival time. Include missing-data markers and sequence numbers where appropriate. Ensure alarms have safe fallback behavior rather than silently accepting stale readings. Test worst-case battery conditions, reconnection and power interruptions.</p>"
+      }
+    ],
+    "example": {
+      "title": "Estimate a sensor’s raw data rate",
+      "problem": "Four sensor channels each produce 100 samples/s, with 16-bit payload per reading. Compute raw data rate, ignoring timestamps and protocol overhead.",
+      "steps": [
+        "Samples per second across all channels \\(=4\\times100=400\\).",
+        "Payload bit rate \\(=400\\times16=6400\\ \\mathrm{bit/s}=6.4\\ \\mathrm{kbit/s}\\).",
+        "Payload byte rate \\(=6400/8=800\\ \\mathrm{byte/s}\\).",
+        "Actual link budget must be higher to include framing, metadata, encryption and retransmissions."
+      ]
+    },
+    "checks": [
+      {
+        "prompt": "Why should telemetry contain sampling timestamps, not only cloud receipt times?",
+        "answer": "Network latency and disconnection can delay delivery, so receipt time may not represent the physical sampling instant."
+      },
+      {
+        "prompt": "Two 12-bit channels each send 50 samples/s. What is raw bit rate?",
+        "answer": "\\(2\\times50\\times12=1200\\ \\mathrm{bit/s}\\)."
+      }
+    ],
+    "sources": [
+      {
+        "title": "Zephyr sensor samples",
+        "url": "https://docs.zephyrproject.org/latest/samples/sensor/index.html"
+      },
+      {
+        "title": "Contiki-NG documentation",
+        "url": "https://docs.contiki-ng.org/en/master/"
+      }
+    ]
+  },
+  {
+    "id": "21-photonics",
+    "unit": "Photonics and quantum",
+    "title": "Integrated photonics and microring sensors",
+    "summary": "Learn why guided light resonates and how wavelength shift can measure a quantity.",
+    "level": "Intermediate",
+    "diagram": "ring",
+    "objectives": [
+      "Explain resonant ring coupling",
+      "Relate wavelength shift to effective index",
+      "Compute free spectral range approximately"
+    ],
+    "sections": [
+      {
+        "title": "Light travels as guided modes",
+        "html": "<p>An optical waveguide confines electromagnetic fields through refractive index contrast and structure. A mode has propagation constant \\(\\beta=2\\pi n_\\mathrm{eff}/\\lambda\\), where \\(n_\\mathrm{eff}\\) is an effective modal index. A microring placed near a straight bus waveguide can receive light through evanescent coupling. At resonance, a round-trip phase approaches an integer multiple of \\(2\\pi\\).</p>"
+      },
+      {
+        "title": "The resonance condition",
+        "html": "<p>For a uniform ring of circumference \\(L\\), a basic resonance approximation is \\(m\\lambda_m=n_\\mathrm{eff}(\\lambda_m)L\\), with integer \\(m\\). Changes in temperature, cladding refractive index or geometry shift the resonance. Near a resonance, the free spectral range (FSR) in wavelength is approximately \\(\\Delta\\lambda\\approx\\lambda^2/(n_g L)\\), where \\(n_g\\) is the group index, not generally the same as phase effective index.</p>"
+      },
+      {
+        "title": "How this becomes a sensor",
+        "html": "<p>A sensor uses a measured optical resonance shift to infer temperature, pressure, strain or a nearby analyte. The device needs a calibrated wavelength sensitivity, stable optical coupling and a way to distinguish target effects from unwanted thermal drift. Loss, linewidth and coupling regime affect precision. A credible FDTD simulation should examine mesh, material dispersion, boundaries and numerical convergence before claiming a detection limit.</p>"
+      }
+    ],
+    "example": {
+      "title": "Approximate microring FSR",
+      "problem": "A ring has radius 10 µm, group index ng=4.0 and operates near 1550 nm. Estimate its wavelength FSR.",
+      "steps": [
+        "Circumference \\(L=2\\pi r=2\\pi\\times10\\ \\mu\\mathrm{m}\\approx62.83\\ \\mu\\mathrm{m}\\).",
+        "Use \\(\\Delta\\lambda\\approx\\lambda^2/(n_gL)\\) with consistent units.",
+        "\\(\\Delta\\lambda\\approx(1.55\\ \\mu\\mathrm{m})^2/(4\\times62.83\\ \\mu\\mathrm{m})\\approx0.00956\\ \\mu\\mathrm{m}\\).",
+        "That is approximately \\(9.56\\ \\mathrm{nm}\\). This is a local approximation; dispersion and coupling effects can shift the actual value."
+      ]
+    },
+    "checks": [
+      {
+        "prompt": "Does a change in ambient temperature necessarily imply a change in analyte concentration?",
+        "answer": "No. Temperature is an interfering variable unless measured and compensated or controlled."
+      },
+      {
+        "prompt": "If ring circumference doubles and ng remains constant, what happens to the approximate FSR?",
+        "answer": "It halves, since \\(\\Delta\\lambda\\propto1/L\\)."
+      }
+    ],
+    "sources": [
+      {
+        "title": "MEEP electromagnetic simulation docs",
+        "url": "https://meep.readthedocs.io/en/latest/"
+      },
+      {
+        "title": "gdsfactory photonics layout",
+        "url": "https://gdsfactory.github.io/gdsfactory/"
+      }
+    ]
+  },
+  {
+    "id": "22-research",
+    "unit": "Research methods",
+    "title": "A reproducible scientific mini-project",
+    "summary": "From a meaningful question to equations, baselines, files, uncertainty and an honest conclusion.",
+    "level": "Beginner",
+    "diagram": "research",
+    "objectives": [
+      "Write a testable engineering hypothesis",
+      "Document simulation/measurement assumptions",
+      "Produce a report another student can reproduce"
+    ],
+    "sections": [
+      {
+        "title": "Begin with a falsifiable question",
+        "html": "<p>“AI improves sensors” is a topic, not a research claim. A useful question might be: <em>Can the peak-temperature nonuniformity of a microheater be reduced at the same average heating power, under a specified geometry and boundary conditions?</em> Define inputs, outputs, constraints and a baseline before optimization.</p>"
+      },
+      {
+        "title": "Record methods before results",
+        "html": "<p>Keep geometry files, code versions, physical material parameters, random seeds where needed, solver tolerances, datasets and data splits. Separate raw observations from cleaned or simulated ones. Report model assumptions and uncertainty. A simulation curve without the exact boundary conditions and material properties is rarely reproducible.</p>"
+      },
+      {
+        "title": "Avoid exaggerated conclusions",
+        "html": "<p>If a device was not fabricated, write <strong>simulation predicts</strong> rather than <strong>experiment demonstrates</strong>. If only synthetic data were used, state that. Compare against at least one simple baseline and consider whether a proposed improvement survives parameter changes. Unverified public tutorials, preprints and vendor application notes have different evidence levels.</p>"
+      }
+    ],
+    "example": {
+      "title": "Turn an idea into a benchmark",
+      "problem": "Your baseline heater model has a spatial temperature spread of 20 K, while a changed design gives 15 K at the same specified average heating power. Quantify the reduction and state a limitation.",
+      "steps": [
+        "Define spread consistently (e.g., max temperature minus min temperature over the active area).",
+        "Absolute reduction \\(=20-15=5\\ \\mathrm{K}\\).",
+        "Relative reduction \\(=(20-15)/20\\times100=25\\%\\).",
+        "This result supports a 25% reduction <em>in that model under those conditions</em>; it is not proof of a fabricated device, and must be checked against mesh and model uncertainty."
+      ]
+    },
+    "checks": [
+      {
+        "prompt": "Should an ML method be described as better without testing a simple baseline?",
+        "answer": "No. Define a fair baseline, hold constraints constant and compare on independent or held-out conditions."
+      },
+      {
+        "prompt": "Is a numerical solver finishing without errors the same as physical validation?",
+        "answer": "No. Validation requires appropriate comparison against physical theory or experimental evidence, with model assumptions and uncertainties stated."
+      }
+    ],
+    "sources": [
+      {
+        "title": "NIST engineering statistics handbook",
+        "url": "https://www.itl.nist.gov/div898/handbook/"
+      },
+      {
+        "title": "MIT OCW project approach",
+        "url": "https://ocw.mit.edu/courses/6-777j-design-and-fabrication-of-microelectromechanical-devices-spring-2007/pages/syllabus/"
+      }
+    ]
+  }
+]
