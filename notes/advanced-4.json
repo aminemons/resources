@@ -1,0 +1,117 @@
+[
+  {
+    "id": "31-mems-coupled",
+    "unit": "Sensors and intelligent microsystems",
+    "title": "MEMS electromechanics: capacitance, spring force and pull-in",
+    "summary": "Derive electrostatic force from energy, balance it against an effective mechanical spring, and predict instability before attempting a FEM model.",
+    "level": "Upper undergraduate / Master's",
+    "diagram": "mems",
+    "objectives": [
+      "Differentiate constant-voltage from fixed-charge electrostatic actuation.",
+      "Derive parallel-plate force and electrostatic stiffness.",
+      "Derive the one-third-gap pull-in displacement and pull-in voltage.",
+      "Explain why a real MEMS membrane cannot be reduced to a rigid plate."
+    ],
+    "sections": [
+      {
+        "title": "1. Separate the mechanical and electrical domains",
+        "html": "<p>A capacitive microsystem contains a mechanical element whose motion changes electric geometry. Let the movable electrode approach a fixed electrode by \\(x\\); the nominal gap is \\(d\\) and the remaining gap is \\(d-x\\), with \\(0\\le x<d\\). In the ideal rigid parallel-plate approximation, \\(C(x)=\\varepsilon A/(d-x)\\). A mechanical restoring spring has force magnitude \\(F_m=kx\\), where \\(k\\) is a structural stiffness in N/m. This is only a one-coordinate model of a real membrane or beam.</p><p>Before solving anything, ask whether the electrical boundary is constant *voltage* or constant *charge*. These are physically different experiments. Under a voltage source, external electrical work is done as capacitance changes. It is incorrect to differentiate stored electrical energy \\(\\tfrac12CV^2\\) at constant V as if the voltage supply were disconnected without accounting for source work.</p>"
+      },
+      {
+        "title": "2. Derive force from co-energy at constant voltage",
+        "html": "<p>For a quasi-static voltage-controlled parallel-plate actuator, the relevant electrical co-energy is \\(W'_e(x)=\\tfrac12 C(x)V^2\\). The attractive force magnitude along increasing x is \\(F_e=\\partial W'_e/\\partial x|_V=\\tfrac12V^2\\,\\mathrm{d}C/\\mathrm{d}x\\). Since \\(\\mathrm{d}C/\\mathrm{d}x=\\varepsilon A/(d-x)^2\\), we obtain \\(F_e=\\varepsilon AV^2/[2(d-x)^2]\\).</p><p>The attraction grows faster than linearly as the gap closes. This positive feedback is the physical source of electrostatic collapse. Fringing fields change the force for small area-to-gap ratios. Dielectric layers, contact stops and residual stress also change the measured behavior, so the equation is a reference estimate, not an actual fabricated design.</p>"
+      },
+      {
+        "title": "3. Static balance and stability are different equations",
+        "html": "<p>Static equilibrium requires \\(kx=\\varepsilon AV^2/[2(d-x)^2]\\). But solving that equation only finds a *candidate* equilibrium. Stability demands that a small increase in x produce net restoring force; for a linear spring this corresponds to \\(k>\\mathrm{d}F_e/\\mathrm{d}x\\).</p><p>Differentiate the electrostatic force: \\(\\mathrm{d}F_e/\\mathrm{d}x=\\varepsilon AV^2/(d-x)^3\\). At the critical static limit, equality holds. Divide this expression by the equilibrium-force expression: \\(k/(kx)= [\\varepsilon AV^2/(d-x)^3]/[\\varepsilon AV^2/(2(d-x)^2)]\\), hence \\(1/x=2/(d-x)\\). Solving gives \\(x=d/3\\).</p><p>The ideal constant-voltage parallel-plate spring actuator loses static stability at one-third of the original gap. That is **not** a universal limit for all sensor structures: nonparallel plates, tailored springs, feedback actuation, mechanical stops and fixed-charge drive can alter it.</p>"
+      },
+      {
+        "title": "4. Pull-in voltage and design parameters",
+        "html": "<p>Insert \\(x=d/3\\) into static force balance. The remaining gap is \\(2d/3\\), so \\(k(d/3)=\\varepsilon AV_{PI}^2/[2(2d/3)^2]\\). Rearranging yields \\(V_{PI}=\\sqrt{8kd^3/(27\\varepsilon A)}\\). The formula shows that reducing the original gap dramatically reduces pull-in voltage, because \\(V_{PI}\\propto d^{3/2}\\). Increasing area also lowers required voltage, assuming the same spring stiffness.</p><p>Do not use the result to select an operating voltage without including process tolerances, vibration, stiction, humidity and dielectric charging. Robust devices need design margin and measured material properties.</p>"
+      },
+      {
+        "title": "5. Piezoresistive and capacitive sensing are not interchangeable",
+        "html": "<p>A capacitive pressure sensor uses diaphragm displacement to change capacitance. A piezoresistive diaphragm uses strain-induced resistance change. For a simplified silicon piezoresistor under defined stress, \\(\\Delta R/R\\) may be approximated using a gauge-factor or piezoresistive coefficient formulation, but anisotropic crystal orientation and stress tensor components matter. The capacitive model cannot predict piezoresistive response without a separate electromechanical constitutive model.</p><p>A physical design workflow maps pressure to spatial membrane deformation, deformation to sensing output, output to readout noise and ADC codes, and finally calibrates against pressure. A COMSOL stress map is a step in this chain, not the final sensor specification.</p>"
+      },
+      {
+        "title": "6. Finite-element validation plan",
+        "html": "<p>For the simplified device, construct a 2D axisymmetric or 3D model as appropriate, define structural material properties (Young's modulus, Poisson ratio, residual stress and density), clamped boundaries, electrode geometry and electrical conditions. First solve the mechanical deflection under small pressure with electrostatics disabled. Then introduce coupled electrostatic loading and a sweep in drive voltage, with a continuation method near instability.</p><p>Check element quality near the thin membrane, mesh refinement, force/displacement curve, reaction-force balance and how the solver behaves near loss of stability. Do not interpret the last converged load point as an exact physical pull-in value; nonlinear solvers can stop for numerical reasons before or after bifurcation.</p>"
+      },
+      {
+        "title": "7. Coupling to instrumentation and temperature",
+        "html": "<p>MEMS capacitance may be tens of femtofarads with parasitic interconnect capacitances several orders larger. Differential bridge methods, switched-capacitor circuits and charge amplifiers can improve practical measurement, but their offset, drift, excitation interference and noise must be quantified. Temperature changes stiffness, thermal expansion and dielectric properties; packaging can create apparent pressure changes.</p><p>A complete report includes geometry tolerances, FEM assumptions, bias-sweep curves, transducer sensitivity, amplifier architecture, calibration plan and an uncertainty budget. Safety requires supervised use of high voltages or moving microstructures when hardware is involved.</p>"
+      }
+    ],
+    "example": {
+      "title": "Ideal electrostatic pull-in of a movable microelectrode",
+      "problem": "A voltage-driven rigid-plate actuator has effective linear stiffness k=0.50 N/m, initial air gap d=2.0 µm and plate area A=(100 µm)². Use ε₀=8.8541878128×10⁻¹² F/m. Compute C0, critical displacement and VPI. Check assumptions.",
+      "steps": [
+        "Area \\(A=(100\\times10^{-6}\\,\\mathrm{m})^2=10^{-8}\\,\\mathrm{m^2}\\). Gap \\(d=2\\times10^{-6}\\,\\mathrm{m}\\).",
+        "Initial ideal capacitance \\(C_0=\\varepsilon_0A/d=(8.8541878\\times10^{-12})(10^{-8})/(2\\times10^{-6})=4.4271\\times10^{-14}\\,\\mathrm{F}=44.27\\,\\mathrm{fF}\\).",
+        "Ideal pull-in displacement \\(x_{PI}=d/3=0.6667\\,\\mu\\mathrm{m}\\). Remaining gap is \\(1.3333\\,\\mu\\mathrm{m}\\).",
+        "Compute \\(V_{PI}=\\sqrt{8kd^3/(27\\varepsilon_0 A)}\\). Numerator \\(8(0.5)(2\\times10^{-6})^3=3.2\\times10^{-17}\\).",
+        "Denominator \\(27(8.8541878\\times10^{-12})(10^{-8})=2.39063\\times10^{-18}\\).",
+        "Voltage \\(V_{PI}=\\sqrt{13.385}\\approx3.659\\,\\mathrm{V}\\).",
+        "This predicts only an ideal static one-degree-of-freedom stability limit under voltage drive. A real deforming diaphragm has nonuniform gap, parasitic electrostatics and material tolerances."
+      ]
+    },
+    "checks": [
+      {
+        "difficulty": "Physical model",
+        "prompt": "Why must electrostatic co-energy be used for a voltage-driven actuator?",
+        "hint": "Remember that a voltage source exchanges electrical energy during movement.",
+        "answer": "At fixed voltage, the external source supplies/removes energy as capacitance changes. The appropriate derivative for the force can be expressed using co-energy \\(W'_e=\\tfrac12 CV^2\\); treating capacitor stored energy as an isolated system would miss source work."
+      },
+      {
+        "difficulty": "Derivation",
+        "prompt": "Starting from C=εA/(d−x), derive attractive force at fixed V.",
+        "hint": "Differentiate C with respect to x and multiply by V²/2.",
+        "answer": "\\(\\mathrm{d}C/\\mathrm{d}x=\\varepsilon A/(d-x)^2\\); therefore \\(F_e=V^2(\\mathrm{d}C/\\mathrm{d}x)/2=\\varepsilon AV^2/[2(d-x)^2]\\)."
+      },
+      {
+        "difficulty": "Stability",
+        "prompt": "Derive the critical x/d for an ideal linear spring and constant-voltage plate.",
+        "hint": "Combine (kx=F_e) with (k=mathrm{d}F_e/mathrm{d}x).",
+        "answer": "Divide the stiffness condition by equilibrium: \\(1/x=2/(d-x)\\). Hence \\(d-x=2x\\), so \\(x=d/3\\)."
+      },
+      {
+        "difficulty": "Scaling",
+        "prompt": "If spring stiffness doubles with geometry unchanged, by what factor does VPI change?",
+        "hint": "Use (V_{PI}proptosqrt{k}).",
+        "answer": "It increases by \\(\\sqrt2\\approx1.414\\)."
+      },
+      {
+        "difficulty": "Scaling",
+        "prompt": "If initial gap doubles at fixed k and A, by what factor does VPI change?",
+        "hint": "Use (V_{PI}propto d^{3/2}).",
+        "answer": "It increases by \\(2^{3/2}=2.828\\)."
+      },
+      {
+        "difficulty": "Readout",
+        "prompt": "Why can cable capacitance invalidate a direct capacitance measurement?",
+        "hint": "Compare femtofarad device signal against picofarad wiring capacitance.",
+        "answer": "The parasitic background and its drift can exceed the MEMS signal by orders of magnitude. Proper shielding/guarding, differential arrangements, on-chip frontends or calibration may be necessary."
+      },
+      {
+        "difficulty": "Research design",
+        "prompt": "A coupled-field solver returns an unstable result after a voltage sweep. Does that prove physical collapse at that voltage?",
+        "hint": "Consider numerical convergence versus static bifurcation.",
+        "answer": "No. Solver failure can be numerical. Verify mesh convergence, continuation, force balance and stability, and compare to analytical and eventually measured pull-in conditions."
+      }
+    ],
+    "sources": [
+      {
+        "title": "MIT 6.777 — Graduate MEMS design and fabrication notes",
+        "url": "https://ocw.mit.edu/courses/6-777j-design-and-fabrication-of-microelectromechanical-devices-spring-2007/pages/lecture-notes/"
+      },
+      {
+        "title": "MIT 6.777 — Problem sets and solutions",
+        "url": "https://ocw.mit.edu/courses/6-777j-design-and-fabrication-of-microelectromechanical-devices-spring-2007/"
+      },
+      {
+        "title": "COMSOL MEMS Module (licensed)",
+        "url": "https://www.comsol.com/mems-module"
+      }
+    ]
+  }
+]
