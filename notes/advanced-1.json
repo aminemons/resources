@@ -1,0 +1,110 @@
+[
+  {
+    "id": "28-carrier-transport",
+    "unit": "Advanced semiconductor physics",
+    "title": "Carrier transport, quasi-Fermi levels and continuity equations",
+    "summary": "Derive drift–diffusion from carrier motion, enforce dimensional consistency, connect recombination to continuity, and reason about when a local transport model fails.",
+    "level": "Upper undergraduate / Master's",
+    "diagram": "bands",
+    "objectives": [
+      "Derive the conventional current signs for electron and hole drift and diffusion.",
+      "Calculate a field and gradient contribution without mixing cm and m.",
+      "Use carrier continuity to connect current divergence with generation and recombination.",
+      "Explain Einstein relation, electrochemical potential and model limitations."
+    ],
+    "sections": [
+      {
+        "title": "1. Begin with charge and flux—not a memorized current formula",
+        "html": "<p>An electron carries charge \\(-q\\), with \\(q=1.602176634\\times10^{-19}\\,\\mathrm{C}\\). A number flux counts particles crossing area per unit time, in \\(\\mathrm{cm^{-2}s^{-1}}\\) or \\(\\mathrm{m^{-2}s^{-1}}\\). Conventional electric current flows in the direction of positive charge transport. An electron number flux toward +x therefore represents conventional current toward −x. Writing the sign convention first is essential; the most common student error is assigning the electron particle velocity directly to current direction.</p><p>Electrical carrier mobilities are usually supplied as \\(\\mathrm{cm^2/(V\\,s)}\\) in semiconductor tables. Under a local low-field mobility approximation, the electron drift velocity is \\(v_{n,x}=-\\mu_n E_x\\); the hole drift velocity is \\(v_{p,x}=+\\mu_p E_x\\). Multiplying by charge and density gives the *same sign* for both drift-current contributions: \\(J_{n,\\mathrm{drift}}=q\\mu_n nE_x\\) and \\(J_{p,\\mathrm{drift}}=q\\mu_p pE_x\\). Units: \\(q[\\mathrm{C}]\\mu[\\mathrm{cm^2/(V\\,s)}]n[\\mathrm{cm^{-3}}]E[\\mathrm{V/cm}]=\\mathrm{A/cm^2}\\).</p>"
+      },
+      {
+        "title": "2. Derive diffusion signs independently",
+        "html": "<p>Fick's law says a particle number flux points down the concentration gradient: \\(F_n=-D_n\\,\\mathrm{d}n/\\mathrm{d}x\\) and \\(F_p=-D_p\\,\\mathrm{d}p/\\mathrm{d}x\\). Multiply each by its charge: electron charge is negative, hole charge is positive. Therefore the conventional diffusion-current densities are \\(J_{n,\\mathrm{diff}}=+qD_n\\,\\mathrm{d}n/\\mathrm{d}x\\) and \\(J_{p,\\mathrm{diff}}=-qD_p\\,\\mathrm{d}p/\\mathrm{d}x\\).</p><p>Combining drift and diffusion gives the textbook one-dimensional, low-field, nondegenerate forms \\(J_n=q\\mu_n nE+qD_n\\,\\mathrm{d}n/\\mathrm{d}x\\) and \\(J_p=q\\mu_p pE-qD_p\\,\\mathrm{d}p/\\mathrm{d}x\\). There is no contradiction if electron diffusion and electron drift oppose one another. A carrier gradient can create current even when the externally applied field is zero. Beware that sign conventions may differ in textbooks using particle flux rather than *conventional electric current*.</p>"
+      },
+      {
+        "title": "3. Equilibrium connects drift and diffusion through a potential",
+        "html": "<p>In a uniform-temperature, nondegenerate semiconductor at thermodynamic equilibrium, the net electron and hole currents both vanish—even when the built-in electric field is nonzero. This requires a balance between field-driven motion and concentration-gradient-driven motion. For electrons, setting \\(J_n=0\\) yields \\(E=-(D_n/\\mu_n)(1/n)\\,\\mathrm{d}n/\\mathrm{d}x\\).</p><p>The Einstein relation, \\(D_n/\\mu_n=D_p/\\mu_p=k_BT/q=V_{\\mathrm{th}}\\), gives \\(E=-V_{\\mathrm{th}}\\,\\mathrm{d}(\\ln n)/\\mathrm{d}x\\) in equilibrium under the stated assumptions. At 300 K, \\(V_{\\mathrm{th}}\\approx25.85\\,\\mathrm{mV}\\). A built-in field is not evidence that an equilibrium junction delivers power. It prevents unlimited interdiffusion and is balanced by the opposing diffusion terms.</p>"
+      },
+      {
+        "title": "4. Nonequilibrium needs separate carrier electrochemical potentials",
+        "html": "<p>Under illumination, injection or applied bias, the material can depart from equilibrium. Electron and hole populations may each be approximated by their own quasi-Fermi levels when local quasi-equilibrium is justified. The gradient of an appropriate carrier electrochemical potential drives transport. A single constant equilibrium Fermi level no longer describes the carrier populations throughout the device.</p><p>For low-injection minority-carrier problems, the excess carrier density often follows a differential equation involving diffusion and recombination. In a simple one-dimensional neutral region without an internal field and with first-order lifetime approximation, \\(D\\,\\mathrm{d}^2\\Delta n/\\mathrm{d}x^2-\\Delta n/\\tau=0\\) at steady state. This motivates the diffusion length \\(L=\\sqrt{D\\tau}\\), which is a characteristic decay length, not the size of an actual manufactured region.</p>"
+      },
+      {
+        "title": "5. Derive continuity from a small volume",
+        "html": "<p>Take a slab of cross-sectional area \\(A\\) and thickness \\(\\mathrm{d}x\\). Its electron population changes because electron current enters/exits and because electrons are generated/recombined. Charge conservation yields \\(\\partial n/\\partial t=(1/q)\\,\\partial J_n/\\partial x+G_n-R_n\\). For holes, \\(\\partial p/\\partial t=-(1/q)\\,\\partial J_p/\\partial x+G_p-R_p\\). The opposite current divergence signs trace back to negative electron charge.</p><p>Check a limiting case: in a spatially uniform carrier population with no net generation or recombination, \\(\\partial J/\\partial x=0\\) for steady state. Current is then position-independent in the one-dimensional model. Physical devices may have recombination in space, time-varying charge, different cross-sectional areas or displacement current; do not force a constant conduction current into an inappropriate model.</p>"
+      },
+      {
+        "title": "6. Poisson couples mobile carriers to electric field",
+        "html": "<p>In one dimension, \\(\\mathrm{d}E/\\mathrm{d}x=\\rho/\\varepsilon\\), with electrostatic charge density \\(\\rho=q(p-n+N_D^+-N_A^-)\\). Using \\(E=-\\mathrm{d}\\psi/\\mathrm{d}x\\), \\(\\mathrm{d}^2\\psi/\\mathrm{d}x^2=-\\rho/\\varepsilon\\). The equilibrium or nonequilibrium electrostatic potential affects carrier densities, and carrier densities affect electric field. This coupling is the foundation of drift–diffusion TCAD.</p><p>Solving transport alone with a guessed electric field can be acceptable as an approximation in special cases. Predicting full junction behavior normally requires Poisson, electron continuity, hole continuity, material parameters, contacts and physical boundary conditions solved together.</p>"
+      },
+      {
+        "title": "7. Recognize when drift–diffusion stops being adequate",
+        "html": "<p>The local mobility approximation can be poor under strong fields (velocity saturation), nanometer channels (quasi-ballistic or quantum effects), very low temperatures (incomplete ionization), degenerate doping (generalized Einstein relation), strong tunneling, self-heating or severe material inhomogeneity. A simulation is not more scientific simply because the solver converged. You must know which physical assumptions you are testing.</p><p>A useful research habit is to compare an analytic limiting case, a coarse- and fine-mesh numerical result, and an independent reference or measured dataset. State explicitly whether your conclusion comes from mathematics, simulation or experiment.</p>"
+      }
+    ],
+    "example": {
+      "title": "Two currents nearly cancel: a field plus a concentration gradient",
+      "problem": "An illustrative 1D n-type silicon region has local n=2.00×10¹⁵ cm⁻³, electron mobility μn=1350 cm²/(V·s), diffusivity Dn=35.0 cm²/s, field E=−25 V/cm, and a local concentration gradient dn/dx=+2.00×10¹⁸ cm⁻⁴. Compute the two conventional electron-current contributions and net current density. This is a local model, not a claim that the whole nonuniform region is in equilibrium.",
+      "steps": [
+        "Use \\(q=1.602176634\\times10^{-19}\\,\\mathrm{C}\\). Check that all distances are in cm so the answer is in \\(\\mathrm{A/cm^2}\\).",
+        "Drift: \\(J_{n,d}=q\\mu_n nE=(1.602176634\\times10^{-19})(1350)(2.00\\times10^{15})(-25)=-10.8147\\ \\mathrm{A/cm^2}\\).",
+        "Diffusion: \\(J_{n,\\mathrm{diff}}=qD_n\\,\\mathrm{d}n/\\mathrm{d}x=(1.602176634\\times10^{-19})(35.0)(2.00\\times10^{18})=+11.2152\\ \\mathrm{A/cm^2}\\).",
+        "Net conventional electron current: \\(J_n=-10.8147+11.2152=+0.4005\\ \\mathrm{A/cm^2}\\). The positive sign is the direction of conventional current.",
+        "The two large contributions nearly cancel. Do not round each to one significant digit before subtracting.",
+        "Compare \\(D_n/\\mu_n=35/1350=0.02593\\ \\mathrm{V}\\) to the thermal voltage near room temperature. They are consistent with an Einstein-like parameter set, but \\(J_n\\ne0\\), so the stated local conditions are not exactly equilibrium."
+      ]
+    },
+    "checks": [
+      {
+        "difficulty": "Foundation",
+        "prompt": "At 300 K and μn=1000 cm²/(V·s), estimate Dn using the nondegenerate Einstein relation.",
+        "hint": "Multiply mobility by the thermal voltage, approximately 0.02585 V.",
+        "answer": "\\(D_n\\approx\\mu_n V_\\mathrm{th}=1000\\times0.02585=25.85\\ \\mathrm{cm^2/s}\\)."
+      },
+      {
+        "difficulty": "Signs",
+        "prompt": "The electron density increases along +x and the electric field is zero. What direction is *conventional* electron diffusion current?",
+        "hint": "Think of electron particle flux and the negative carrier charge separately.",
+        "answer": "\\(F_n=-D_n\\,\\mathrm{d}n/\\mathrm{d}x<0\\): particles go toward −x. Since electrons carry −q, \\(J_{n,\\mathrm{diff}}=qD_n\\,\\mathrm{d}n/\\mathrm{d}x>0\\): conventional current points +x."
+      },
+      {
+        "difficulty": "Quantitative",
+        "prompt": "Calculate the electron drift current density for n=10¹⁶ cm⁻³, μn=1000 cm²/(V·s), E=−10 V/cm.",
+        "hint": "Use (J=qmu nE) without losing the minus sign.",
+        "answer": "\\(J_n=(1.60218\\times10^{-19})(1000)(10^{16})(-10)=-16.02\\ \\mathrm{A/cm^2}\\)."
+      },
+      {
+        "difficulty": "Derivation",
+        "prompt": "Derive the steady-state excess-minority-carrier diffusion length in a neutral region.",
+        "hint": "Start from (DDelta n''-Delta n/\tau=0), and try (Delta n=e^{-x/L}).",
+        "answer": "Substitute \\(\\Delta n=e^{-x/L}\\), giving \\(D/L^2-1/\\tau=0\\). Thus \\(L=\\sqrt{D\\tau}\\). Only the decaying exponential is retained for a semi-infinite region with no generation far away."
+      },
+      {
+        "difficulty": "Interpretation",
+        "prompt": "Can a built-in junction field generate continuous useful work from an isolated PN junction at thermal equilibrium?",
+        "hint": "Separate a local electric field from net carrier current and available terminal energy.",
+        "answer": "No. At thermal equilibrium, drift and diffusion balance and the electrochemical potential is constant. There is no sustained useful terminal current from the isolated junction."
+      },
+      {
+        "difficulty": "Research",
+        "prompt": "A drift–diffusion device solver converges for a 5 nm channel. Is that enough to publish a transport conclusion?",
+        "hint": "Identify which physical transport model might fail at this scale.",
+        "answer": "No. Very short channels may exhibit quantum confinement, nonlocal transport or quasi-ballistic behavior. A convergence check is numerical; physical validity requires model assessment and comparison to experimental data or a more suitable transport description."
+      }
+    ],
+    "sources": [
+      {
+        "title": "MIT 6.012 — Carrier Transport (Lecture 3)",
+        "url": "https://ocw.mit.edu/courses/6-012-microelectronic-devices-and-circuits-fall-2005/pages/lecture-notes/"
+      },
+      {
+        "title": "MIT 6.012 — Solving the semiconductor equations",
+        "url": "https://ocw.mit.edu/courses/6-012-microelectronic-devices-and-circuits-fall-2009/pages/lecture-notes/"
+      },
+      {
+        "title": "MIT 6.012 — Problem sets",
+        "url": "https://ocw.mit.edu/courses/6-012-microelectronic-devices-and-circuits-fall-2009/pages/assignments/"
+      }
+    ]
+  }
+]
