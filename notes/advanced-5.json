@@ -120,6 +120,11 @@
         "title": "MIT 6.012 — Analog amplifier stage notes",
         "url": "https://ocw.mit.edu/courses/6-012-microelectronic-devices-and-circuits-fall-2005/pages/lecture-notes/"
       }
+    ],
+    "prerequisites": [
+      "04-sampling",
+      "05-uncertainty",
+      "12-readout"
     ]
   }
 ]
