@@ -24,4 +24,5 @@ jobs:
       - name: Verify textbook structure and calculations
         run: |
           node notes/test.mjs
+          node notes/ui-test.mjs
           node --check notes/notes.js
