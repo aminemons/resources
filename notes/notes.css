@@ -235,3 +235,33 @@ mjx-container[display="true"]{display:block!important;max-width:100%;overflow-x:
 .capstone li{padding:4px 0 5px}
 .capstone .capstone-note{font-size:13px;line-height:1.66;color:#5b7060;margin-top:24px}
 @media(max-width:600px){.capstone h2{font-size:22px}.capstone ol,.capstone ul{font-size:15px}}
+
+/* Start teaching sooner: compact chapter header with optional secondary information. */
+.topbar{height:54px}
+.reader{padding-top:31px}
+.reader h1{font-size:clamp(32px,3.1vw,42px);line-height:1.18;letter-spacing:-.03em;margin-bottom:14px}
+.lede{font-size:17px;line-height:1.66;margin-bottom:10px}
+.essentials{margin:15px 0 18px;padding:9px 0;gap:10px}
+.essentials .actions{gap:7px}
+.prereqs{margin:0 0 15px;padding-bottom:12px;font-size:13px}
+.prereqs span{display:inline;margin-right:10px}
+.article-outline{margin:10px 0 13px;padding:0;border-top:0;border-bottom:0}
+.article-outline summary,.objectives summary{list-style:none;cursor:pointer;font-size:14px;color:#365b42;font-weight:500;padding:8px 0}
+.article-outline summary::-webkit-details-marker,.objectives summary::-webkit-details-marker{display:none}
+.article-outline summary::after,.objectives summary::after{content:" +";color:#668774}
+.article-outline[open] summary::after,.objectives[open] summary::after{content:" −"}
+.article-outline ol{padding-top:10px;padding-bottom:17px}
+.objectives{background:transparent;border:0;border-bottom:1px solid #dce6de;border-radius:0;padding:0 0 7px;margin:8px 0 24px}
+.objectives ul{margin-top:5px;padding-bottom:14px}
+.lesson-section{margin-top:18px}
+@media(max-width:850px){.reader{padding-top:25px}}
+@media(max-width:550px){
+.reader h1{font-size:clamp(30px,8vw,36px);line-height:1.2}
+.lede{font-size:16px;line-height:1.63}
+.essentials{font-size:12px;gap:10px}
+.essentials .actions{gap:6px}
+.essentials .plain-btn{font-size:12px;padding:7px 9px;min-height:34px}
+.prereqs{font-size:12px}
+.prereqs span{display:block}
+.lesson-section{margin-top:15px}
+}
