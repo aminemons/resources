@@ -144,7 +144,7 @@ function renderEquation(eq){
 }
 function renderLicensedFigures(chapter){
  return (chapter.licensedFigures||[]).map(fig=>'<figure class="licensed-figure">'+
- '<img src="'+esc(fig.src)+'" alt="'+esc(fig.alt)+'" loading="lazy" decoding="async"><div class="figure-fallback" hidden>Reference illustration could not load here. <a href="'+esc(fig.source)+'" target="_blank" rel="noopener noreferrer">Open the credited original figure ↗</a></div>'+
+ '<img src="'+esc(fig.src)+'" alt="'+esc(fig.alt)+'" loading="lazy" decoding="async"><div class="figure-fallback">External reference illustration (opens at its source). <a href="'+esc(fig.source)+'" target="_blank" rel="noopener noreferrer">Open the credited original figure ↗</a></div>'+
  '<figcaption>'+esc(fig.caption)+'<span> Image: <a href="'+esc(fig.source)+'" target="_blank" rel="noopener noreferrer">'+esc(fig.creator)+'</a> · <a href="'+esc(fig.licenseURL)+'" target="_blank" rel="noopener noreferrer">'+esc(fig.license)+'</a>. Unmodified licensed educational figure.</span></figcaption></figure>').join("");
 }
 function renderGuidedReading(chapter){
@@ -249,6 +249,7 @@ function lesson(c){
    const fallback=img.parentElement.querySelector(".figure-fallback");
    const unavailable=()=>{img.hidden=true;if(fallback)fallback.hidden=false};
    img.addEventListener("error",unavailable);
+   img.addEventListener("load",()=>{if(fallback)fallback.hidden=true});
    if(img.complete&&img.naturalWidth===0)unavailable();
  });
  math();
