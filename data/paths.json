@@ -1,0 +1,815 @@
+{
+  "meta": {
+    "updated": "2026-10-21",
+    "note": "Educational tracks serving ENSNN students. Official current degree labels should be confirmed with the school; paths are not claimed to be the authorized ENSNN syllabus."
+  },
+  "paths": [
+    {
+      "slug": "foundation",
+      "name": "Engineering foundations",
+      "track": "Both",
+      "description": "Circuits, devices, mathematics, signals and scientific computing.",
+      "goal": "A notebook with circuit calculations, MOS physics and reproducible plots.",
+      "steps": [
+        {
+          "name": "Circuits and SPICE",
+          "concept": "DC/AC analysis, basic transistors and feedback.",
+          "deliverable": "Verify a transistor bias point and an RC transient.",
+          "resources": [
+            "R001",
+            "R012"
+          ],
+          "order": 1
+        },
+        {
+          "name": "Signals and mathematics",
+          "concept": "Fourier/Laplace transforms, sampling and uncertainty.",
+          "deliverable": "Simulate filtering a noisy signal and report units and error.",
+          "resources": [
+            "R005",
+            "R006"
+          ],
+          "order": 2
+        },
+        {
+          "name": "Semiconductor physics",
+          "concept": "Bands, junctions, transport and MOS electrostatics.",
+          "deliverable": "Calculate and explain a diode and MOS device.",
+          "resources": [
+            "R003",
+            "B006"
+          ],
+          "order": 3
+        },
+        {
+          "name": "Reproducible Python",
+          "concept": "Data arrays, scientific fitting, scientific plotting and version control.",
+          "deliverable": "Publish a notebook regenerating every figure.",
+          "resources": [
+            "R163",
+            "R164",
+            "R165",
+            "R175"
+          ],
+          "order": 4
+        }
+      ]
+    },
+    {
+      "slug": "smart-systems",
+      "name": "Sensors & Smart Systems",
+      "track": "Sensors & Smart Systems",
+      "description": "An end-to-end sensing system: physical sensor, readout, calibration, firmware, communication and intelligence.",
+      "goal": "A tested sensing node with uncertainty and energy measurements.",
+      "steps": [
+        {
+          "name": "Specify and select",
+          "concept": "Sensor principle, measurand, operating range and performance metrics.",
+          "deliverable": "Specification and comparison matrix for three candidate sensors.",
+          "resources": [
+            "S001",
+            "S017"
+          ],
+          "order": 1
+        },
+        {
+          "name": "Model transduction",
+          "concept": "Chemical, capacitive, piezoelectric, thermal and optical conversion.",
+          "deliverable": "Transfer function and simulation with stated assumptions.",
+          "resources": [
+            "S007",
+            "S002"
+          ],
+          "order": 2
+        },
+        {
+          "name": "Signal conditioning",
+          "concept": "Sensor amplifiers, ADCs, noise and calibration.",
+          "deliverable": "SPICE circuit and noise/ADC budget.",
+          "resources": [
+            "R026",
+            "S018"
+          ],
+          "order": 3
+        },
+        {
+          "name": "Embedded acquisition",
+          "concept": "ADC, SPI, I2C, timestamps and MCU firmware.",
+          "deliverable": "Sensor acquisition firmware handling missed measurements.",
+          "resources": [
+            "I009",
+            "I013"
+          ],
+          "order": 4
+        },
+        {
+          "name": "Networks & protocols",
+          "concept": "BLE, MQTT, RPL and power-aware wireless networks.",
+          "deliverable": "MQTT telemetry or simulated multi-hop sensor mesh.",
+          "resources": [
+            "I005",
+            "I014"
+          ],
+          "order": 5
+        },
+        {
+          "name": "Embedded intelligence",
+          "concept": "Baseline detection, TinyML and hardware limitations.",
+          "deliverable": "Compare threshold, statistics and tiny ML error/latency.",
+          "resources": [
+            "I002",
+            "I003"
+          ],
+          "order": 6
+        },
+        {
+          "name": "Validation",
+          "concept": "Repeatability, drift, uncertainty, battery use and robustness.",
+          "deliverable": "Calibration plots, uncertainty budget and test report.",
+          "resources": [
+            "K026",
+            "K031"
+          ],
+          "order": 7
+        }
+      ]
+    },
+    {
+      "slug": "sensor-device",
+      "name": "Micro/nanosensor design",
+      "track": "Sensors & Smart Systems",
+      "description": "Select a sensing principle, develop a fabrication concept and validate a physical model.",
+      "goal": "Sensor device proposal with layouts, numerical results and test plan.",
+      "steps": [
+        {
+          "name": "Sensor architecture",
+          "concept": "Choose transduction physics and selectivity strategy.",
+          "deliverable": "Design brief with measurable output and interfering variables.",
+          "resources": [
+            "S012",
+            "S013"
+          ],
+          "order": 1
+        },
+        {
+          "name": "Sensing materials",
+          "concept": "Crystal properties, thin film layers and functionalization.",
+          "deliverable": "Material selection matrix with justified citations.",
+          "resources": [
+            "K002",
+            "K012"
+          ],
+          "order": 2
+        },
+        {
+          "name": "Fabrication flow",
+          "concept": "Lithography, deposition, etch, contacts, packaging.",
+          "deliverable": "Mask list, cross-sections and process flow.",
+          "resources": [
+            "M015",
+            "M016"
+          ],
+          "order": 3
+        },
+        {
+          "name": "Simulation",
+          "concept": "Choose electrical TCAD or MEMS multiphysics correctly.",
+          "deliverable": "Mesh-convergence and parameter-sweep plots.",
+          "resources": [
+            "S026",
+            "M006",
+            "R017"
+          ],
+          "order": 4
+        },
+        {
+          "name": "Characterization",
+          "concept": "Sensor readout, controls and repeatability.",
+          "deliverable": "Calibrated measured-or-simulated curves marked honestly.",
+          "resources": [
+            "R117",
+            "K027"
+          ],
+          "order": 5
+        }
+      ]
+    },
+    {
+      "slug": "silvaco",
+      "name": "Silvaco and TCAD",
+      "track": "Both",
+      "description": "Device/process simulation from physical equations to validated model decks.",
+      "goal": "MOSFET or photodiode model with reproducible curves and convergence checks.",
+      "steps": [
+        {
+          "name": "Transport equations",
+          "concept": "Poisson, drift-diffusion, recombination and doping.",
+          "deliverable": "Analytic baseline device response.",
+          "resources": [
+            "R015",
+            "B006"
+          ],
+          "order": 1
+        },
+        {
+          "name": "Learn the tool flow",
+          "concept": "Meshing, physical models, boundary conditions and sweeps.",
+          "deliverable": "Document a device geometry and the installed simulator version.",
+          "resources": [
+            "S023",
+            "S022"
+          ],
+          "order": 2
+        },
+        {
+          "name": "Device simulation",
+          "concept": "Bias and optical generation in a semiconductor.",
+          "deliverable": "Run and analyze ID–VG/ID–VD or photocurrent curves.",
+          "resources": [
+            "S026",
+            "S031"
+          ],
+          "order": 3
+        },
+        {
+          "name": "Process simulation",
+          "concept": "Implantation, diffusion, deposition, oxidation and etching.",
+          "deliverable": "Conceptual ATHENA/Victory process sequence.",
+          "resources": [
+            "S027",
+            "S029"
+          ],
+          "order": 4
+        },
+        {
+          "name": "Verify the results",
+          "concept": "Mesh density, solver errors, convergence, model validity.",
+          "deliverable": "Mesh independence report with clearly noted assumptions.",
+          "resources": [
+            "R017",
+            "S024"
+          ],
+          "order": 5
+        }
+      ]
+    },
+    {
+      "slug": "fabrication",
+      "name": "Microfabrication and cleanroom",
+      "track": "Both",
+      "description": "Manufacturing concepts with practical process planning and supervised lab requirements.",
+      "goal": "Conceptual process traveler and inspection plan, not an unperformed fabrication claim.",
+      "steps": [
+        {
+          "name": "Cleanroom practice",
+          "concept": "Contamination, vacuum and institutional safety requirements.",
+          "deliverable": "Safety/process dependency checklist.",
+          "resources": [
+            "M018",
+            "M019"
+          ],
+          "order": 1
+        },
+        {
+          "name": "Thin film techniques",
+          "concept": "PVD, sputtering, CVD, oxidation, ALD.",
+          "deliverable": "Pick film growth routes for active layer and contacts.",
+          "resources": [
+            "M016",
+            "M015"
+          ],
+          "order": 2
+        },
+        {
+          "name": "Pattern & etch",
+          "concept": "Photolithography, resists, masks, etch and metrology.",
+          "deliverable": "Mask-level drawings and intermediate device cross sections.",
+          "resources": [
+            "M024",
+            "M021"
+          ],
+          "order": 3
+        },
+        {
+          "name": "Testing & reproducibility",
+          "concept": "Layer thickness, alignment, defects and process yield.",
+          "deliverable": "Inspection checklist and tolerances.",
+          "resources": [
+            "M027",
+            "M030"
+          ],
+          "order": 4
+        }
+      ]
+    },
+    {
+      "slug": "mems",
+      "name": "MEMS modeling and actuation",
+      "track": "Sensors & Smart Systems",
+      "description": "Micromechanics, transduction, coupled-field models and realistic device packaging.",
+      "goal": "Simulated microcantilever, membrane or electrothermal actuator with design sweeps.",
+      "steps": [
+        {
+          "name": "Microscale mechanics",
+          "concept": "Beam and membrane stiffness, resonance and damping.",
+          "deliverable": "Hand estimates for a cantilever or membrane.",
+          "resources": [
+            "B039",
+            "S007"
+          ],
+          "order": 1
+        },
+        {
+          "name": "Coupled physics",
+          "concept": "Electrostatic, mechanical, piezoelectric and thermal coupling.",
+          "deliverable": "Compare simple model against coupled FEM.",
+          "resources": [
+            "M006",
+            "M001"
+          ],
+          "order": 2
+        },
+        {
+          "name": "Mesh & calibration",
+          "concept": "Geometry, constraints, boundary conditions and convergence.",
+          "deliverable": "Show at least two meshes and one parameter sensitivity.",
+          "resources": [
+            "M008",
+            "M009"
+          ],
+          "order": 3
+        },
+        {
+          "name": "Readout & validation",
+          "concept": "Capacitance/strain/temperature outputs and electronics.",
+          "deliverable": "Simulated response converted into an electronic measurement.",
+          "resources": [
+            "S018",
+            "R026"
+          ],
+          "order": 4
+        }
+      ]
+    },
+    {
+      "slug": "materials",
+      "name": "Nanomaterials and characterization",
+      "track": "Sensors & Smart Systems",
+      "description": "Synthesis method selection, structure, surface measurement and reproducibility.",
+      "goal": "Characterization plan with spectral/micrograph analysis and uncertainty.",
+      "steps": [
+        {
+          "name": "Materials physics",
+          "concept": "Bonds, phases, defects and functional nanostructures.",
+          "deliverable": "Select an oxide or semiconductor material for a sensing application.",
+          "resources": [
+            "K002",
+            "K003"
+          ],
+          "order": 1
+        },
+        {
+          "name": "Thin film preparation",
+          "concept": "Growth, sputtering, CVD and processing tradeoffs.",
+          "deliverable": "Flowchart with process conditions to research, not unsafe procedural recipes.",
+          "resources": [
+            "K001",
+            "M030"
+          ],
+          "order": 2
+        },
+        {
+          "name": "XRD/XPS",
+          "concept": "Diffraction phases and surface chemistry.",
+          "deliverable": "Index peaks or tabulate literature binding energies.",
+          "resources": [
+            "K004"
+          ],
+          "order": 3
+        },
+        {
+          "name": "SEM/AFM",
+          "concept": "Surface morphology and dimensional measurements.",
+          "deliverable": "Annotated image analysis with scale and roughness.",
+          "resources": [
+            "K006"
+          ],
+          "order": 4
+        },
+        {
+          "name": "Measure effects",
+          "concept": "Electrode I–V, temperature or gas response, replicate data.",
+          "deliverable": "Curves with raw data, controls and uncertainty.",
+          "resources": [
+            "K027",
+            "K031"
+          ],
+          "order": 5
+        }
+      ]
+    },
+    {
+      "slug": "biosensors",
+      "name": "Biosensors and lab-on-chip",
+      "track": "Sensors & Smart Systems",
+      "description": "Biorecognition, microfluidic transport, biochemical transduction and controls.",
+      "goal": "Well-justified LoC design with microfluidic flow and measurement strategy.",
+      "steps": [
+        {
+          "name": "Biorecognition",
+          "concept": "Enzymes, antibodies, nonspecific binding and chemical interferences.",
+          "deliverable": "Target/probe selection and specificity checklist.",
+          "resources": [
+            "K012",
+            "K016"
+          ],
+          "order": 1
+        },
+        {
+          "name": "Signal conversion",
+          "concept": "Electrochemical and optical readout.",
+          "deliverable": "Plan an assay with negative controls and measurable output.",
+          "resources": [
+            "K017",
+            "S002"
+          ],
+          "order": 2
+        },
+        {
+          "name": "Microfluidics",
+          "concept": "Flow, diffusion and transport in small channels.",
+          "deliverable": "Estimate diffusion length and residence time.",
+          "resources": [
+            "K021",
+            "K018"
+          ],
+          "order": 3
+        },
+        {
+          "name": "Device integration",
+          "concept": "Packaging, electrode placement and electronics.",
+          "deliverable": "Microsystem diagram from inlet to digital output.",
+          "resources": [
+            "K015",
+            "R038"
+          ],
+          "order": 4
+        }
+      ]
+    },
+    {
+      "slug": "wireless",
+      "name": "Sensor networks, IoT and TinyML",
+      "track": "Sensors & Smart Systems",
+      "description": "Sensing, reliable data transmission, low-power networks and edge processing.",
+      "goal": "Live or simulated multi-node system with telemetry, anomaly detection and power budget.",
+      "steps": [
+        {
+          "name": "Firmware",
+          "concept": "MCU peripherals, interrupts, sensor APIs.",
+          "deliverable": "Working sensor polling and fault handling.",
+          "resources": [
+            "I013",
+            "I009"
+          ],
+          "order": 1
+        },
+        {
+          "name": "Network protocols",
+          "concept": "BLE, MQTT, CoAP, RPL mesh and radio interference.",
+          "deliverable": "Run a multi-node Cooja example.",
+          "resources": [
+            "I005",
+            "I006"
+          ],
+          "order": 2
+        },
+        {
+          "name": "Dashboards",
+          "concept": "Timestamps, telemetry streams and alerts.",
+          "deliverable": "Publish MQTT packets and plot real/simulated data.",
+          "resources": [
+            "I014",
+            "I015"
+          ],
+          "order": 3
+        },
+        {
+          "name": "On-device inference",
+          "concept": "Quantization, model profiling and TinyML.",
+          "deliverable": "Deploy inference and compare with simple threshold baseline.",
+          "resources": [
+            "I002",
+            "I010"
+          ],
+          "order": 4
+        },
+        {
+          "name": "Reliability",
+          "concept": "Packet loss, drift, battery energy and robust alerts.",
+          "deliverable": "Power and packet-loss report with failure handling.",
+          "resources": [
+            "I012",
+            "I007"
+          ],
+          "order": 5
+        }
+      ]
+    },
+    {
+      "slug": "analog",
+      "name": "Analog and mixed-signal IC",
+      "track": "Micro & Nanoelectronics",
+      "description": "Transistor sizing, noise, circuits, layout and sensor readout ASICs.",
+      "goal": "Verified analog front-end with bias, gain, noise, corner and layout results.",
+      "steps": [
+        {
+          "name": "MOS circuits",
+          "concept": "Small-signal models, transconductance and bias.",
+          "deliverable": "Derive amplifier gain and bias.",
+          "resources": [
+            "R003",
+            "B011"
+          ],
+          "order": 1
+        },
+        {
+          "name": "Design building blocks",
+          "concept": "Current mirrors, differential pairs, compensation.",
+          "deliverable": "Design a 2-stage amplifier.",
+          "resources": [
+            "R034",
+            "R026"
+          ],
+          "order": 2
+        },
+        {
+          "name": "SPICE practice",
+          "concept": "AC/transient/noise analysis and automated sweeps.",
+          "deliverable": "Document simulations and assumptions.",
+          "resources": [
+            "R025",
+            "R028"
+          ],
+          "order": 3
+        },
+        {
+          "name": "Physical implementation",
+          "concept": "Open PDK layouts and extracted parasitics.",
+          "deliverable": "Layout checks and schematic extraction comparison.",
+          "resources": [
+            "R078",
+            "R074"
+          ],
+          "order": 4
+        },
+        {
+          "name": "Application",
+          "concept": "Build instrumentation chain for real sensing.",
+          "deliverable": "Noise and digitization analysis.",
+          "resources": [
+            "R038",
+            "S018"
+          ],
+          "order": 5
+        }
+      ]
+    },
+    {
+      "slug": "asic",
+      "name": "Digital ASIC RTL to GDS",
+      "track": "Micro & Nanoelectronics",
+      "description": "Digital logic, verification, synthesis and physical design with open tooling.",
+      "goal": "RTL tested in simulation and implemented in a PDK-aware backend flow.",
+      "steps": [
+        {
+          "name": "Logic design",
+          "concept": "FSM, timing, memory and architecture.",
+          "deliverable": "Make a well-specified ALU or register bank.",
+          "resources": [
+            "R054",
+            "B022"
+          ],
+          "order": 1
+        },
+        {
+          "name": "Code RTL",
+          "concept": "Synthesizable Verilog, clocks and resets.",
+          "deliverable": "Solve HDL exercises and test corners.",
+          "resources": [
+            "R047",
+            "R042"
+          ],
+          "order": 2
+        },
+        {
+          "name": "Verification",
+          "concept": "Waveforms, assertions and constrained stimuli.",
+          "deliverable": "Automated regression with checks.",
+          "resources": [
+            "R043",
+            "R041"
+          ],
+          "order": 3
+        },
+        {
+          "name": "Synthesis",
+          "concept": "Standard cells, logic depth, area and timing.",
+          "deliverable": "Synthesize and compare timing/area.",
+          "resources": [
+            "R040",
+            "R072"
+          ],
+          "order": 4
+        },
+        {
+          "name": "Place and route",
+          "concept": "Floorplan, placement, clock tree, routing and DRC.",
+          "deliverable": "Create GDS and inspect backend checks.",
+          "resources": [
+            "R071",
+            "R073"
+          ],
+          "order": 5
+        },
+        {
+          "name": "Chip project",
+          "concept": "Reproducible packaging and optional shuttle design.",
+          "deliverable": "Prepare a public checked RTL-to-GDS repo.",
+          "resources": [
+            "R081",
+            "G002"
+          ],
+          "order": 6
+        }
+      ]
+    },
+    {
+      "slug": "fpga",
+      "name": "FPGA and embedded systems",
+      "track": "Micro & Nanoelectronics",
+      "description": "Practical hardware design for architecture and inference acceleration.",
+      "goal": "Verified FPGA prototype with measured LUTs, clocks, latency and interfaces.",
+      "steps": [
+        {
+          "name": "Design basics",
+          "concept": "Logic, pipelining, control and datapaths.",
+          "deliverable": "Build a pipelined arithmetic block.",
+          "resources": [
+            "R002",
+            "B022"
+          ],
+          "order": 1
+        },
+        {
+          "name": "RTL implementation",
+          "concept": "Hardware description and unit testbenches.",
+          "deliverable": "Build UART or SPI and regression tests.",
+          "resources": [
+            "R047",
+            "R042"
+          ],
+          "order": 2
+        },
+        {
+          "name": "Vendor tool flow",
+          "concept": "Timing constraints, simulation, synthesis and bitstream.",
+          "deliverable": "Implement a design and inspect timing.",
+          "resources": [
+            "R057",
+            "R058"
+          ],
+          "order": 3
+        },
+        {
+          "name": "FPGA SoCs",
+          "concept": "RISC-V, address mapping and acceleration.",
+          "deliverable": "Add a sensor-processing core and benchmark.",
+          "resources": [
+            "R062",
+            "R067"
+          ],
+          "order": 4
+        },
+        {
+          "name": "Measurements",
+          "concept": "Evaluate real cost and reliability.",
+          "deliverable": "Document resource use, clock and latency.",
+          "resources": [
+            "R043",
+            "R150"
+          ],
+          "order": 5
+        }
+      ]
+    },
+    {
+      "slug": "photonics",
+      "name": "Integrated photonics and optical sensing",
+      "track": "Micro & Nanoelectronics",
+      "description": "Propagation, PIC modeling, physical layout and resonator-based sensing.",
+      "goal": "Microring sensor geometry, spectrum and temperature drift analysis.",
+      "steps": [
+        {
+          "name": "Optical basics",
+          "concept": "Maxwell equations, waveguides and resonances.",
+          "deliverable": "Derive waveguide mode and basic resonance.",
+          "resources": [
+            "R086",
+            "B032"
+          ],
+          "order": 1
+        },
+        {
+          "name": "FDTD methods",
+          "concept": "Sources, boundaries, meshing and spectra.",
+          "deliverable": "Simulate a ring and extract Q and FSR.",
+          "resources": [
+            "R100",
+            "R102"
+          ],
+          "order": 2
+        },
+        {
+          "name": "Photonic layout",
+          "concept": "Waveguide bends, coupling, design rules.",
+          "deliverable": "Build parametric GDS cell.",
+          "resources": [
+            "R098",
+            "R099"
+          ],
+          "order": 3
+        },
+        {
+          "name": "System level",
+          "concept": "S parameters, temperature compensation and robustness.",
+          "deliverable": "Quantify temperature shift and propose correction.",
+          "resources": [
+            "R106",
+            "R107"
+          ],
+          "order": 4
+        },
+        {
+          "name": "Research results",
+          "concept": "Compare results to a reference publication.",
+          "deliverable": "Reproducible graphs and models.",
+          "resources": [
+            "R179",
+            "R193"
+          ],
+          "order": 5
+        }
+      ]
+    },
+    {
+      "slug": "research",
+      "name": "Research and reporting",
+      "track": "Both",
+      "description": "Reading papers, benchmarking, scientific computing, uncertainty and technical communication.",
+      "goal": "A short reproducible research report with code, figures and citations.",
+      "steps": [
+        {
+          "name": "Search literature",
+          "concept": "Citation chains and research question scope.",
+          "deliverable": "Create a related work matrix.",
+          "resources": [
+            "R179",
+            "R180"
+          ],
+          "order": 1
+        },
+        {
+          "name": "Model and benchmark",
+          "concept": "Baselines, scripts and sensitivity analysis.",
+          "deliverable": "Plot a verified baseline with units.",
+          "resources": [
+            "R163",
+            "R164"
+          ],
+          "order": 2
+        },
+        {
+          "name": "Uncertainty",
+          "concept": "Statistical, numerical and physical limitations.",
+          "deliverable": "Sensitivity/uncertainty budget.",
+          "resources": [
+            "K027",
+            "R175"
+          ],
+          "order": 3
+        },
+        {
+          "name": "Write evidence",
+          "concept": "Paper structure, methods and diagrams.",
+          "deliverable": "Draft 5–8 page research note with linked code.",
+          "resources": [
+            "R192",
+            "R193"
+          ],
+          "order": 4
+        }
+      ]
+    }
+  ]
+}
