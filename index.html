@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Micro & Nano — Learning Library</title>
+<meta name="description" content="A practical library for microelectronics, nanoelectronics, IC design, FPGA, photonics, semiconductor physics and scientific research. Books, courses, tools, simulators and learning paths.">
+<meta name="theme-color" content="#f8faf7">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fafbf9;--nav:#f4f6f2;--ink:#26362b;--text:#435548;--muted:#54665a;--line:#dce5dc;--paper:#fff;--highlight:#e5eee6;--forest:#385e47;--soft:#f5f8f4;color-scheme:light}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font:16px/1.58 Outfit,system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased}
+a{color:inherit}button,input,select{font:inherit}button{cursor:pointer}a,button{-webkit-tap-highlight-color:transparent}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid #669677;outline-offset:3px}[hidden]{display:none!important}
+.layout{min-height:100vh}.sidebar{position:fixed;inset:0 auto 0 0;width:258px;z-index:30;border-right:1px solid var(--line);background:var(--nav);padding:26px 16px 22px;display:flex;flex-direction:column;overflow-y:auto;scrollbar-width:thin}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;padding:4px 12px 14px;margin-bottom:26px}.brand-emblem{flex:none;width:36px;height:36px;display:grid;place-items:center;border-radius:11px;background:var(--forest);color:white}.brand-emblem svg{width:19px;height:19px}.brand strong{display:block;font-weight:600;font-size:16px;letter-spacing:-.03em;line-height:1.3}.brand small{color:var(--muted);font-size:12px}
+.side-label{font-size:11px;letter-spacing:.095em;text-transform:uppercase;color:#61736a;margin:24px 11px 9px}
+.side-label:first-of-type{margin-top:0}.side-menu{display:grid;gap:3px}.side-btn{border:0;background:transparent;width:100%;color:#4e6052;display:flex;align-items:center;gap:12px;min-height:41px;text-align:left;padding:9px 11px;border-radius:9px;line-height:1.3;font-size:14px;transition:background-color .15s,color .15s}.side-btn svg{width:17px;height:17px;stroke-width:1.65;flex-shrink:0}.side-btn .nm{flex:1}.side-btn .small-number{font-size:12px;color:#66796c;font-variant-numeric:tabular-nums}.side-btn:hover{background:#e9eee8;color:#284735}.side-btn[aria-current="page"]{background:var(--highlight);color:#235039;font-weight:500}
+.topics{display:grid;gap:1px}.topics .side-btn{font-size:13px;min-height:38px;padding:8px 11px}.topics .side-btn .small-number{font-size:11px}.sidefoot{margin-top:auto;padding:25px 11px 5px;color:var(--muted);font-size:12px;line-height:1.65}.sidefoot a{text-decoration:none;color:#355c43}.sidefoot a:hover{text-decoration:underline;text-underline-offset:3px}.sidefoot hr{border:0;border-top:1px solid var(--line);margin:12px 0}
+.mobilebar{display:none}.scrim{display:none}
+.main{margin-left:258px;min-width:0}.inner{max-width:1100px;margin:0 auto;padding:0 57px 95px}
+.topline{min-height:61px;display:flex;justify-content:flex-end;align-items:center;border-bottom:1px solid #e6ece5;font-size:12px;color:#596b5d}
+.intro{padding:56px 0 34px}.intro h1{font-size:clamp(34px,3.8vw,44px);font-weight:500;line-height:1.15;letter-spacing:-.038em;margin:0 0 13px;max-width:670px}.intro p{max-width:675px;font-size:16px;line-height:1.65;color:var(--muted);margin:0}
+.path-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:14px 0 30px}
+.path-card{border:1px solid var(--line);background:#fff;border-radius:12px;padding:19px;min-height:150px;text-align:left;color:var(--ink);display:flex;flex-direction:column;gap:12px;transition:transform .16s ease,border-color .16s ease,background .16s}
+.path-card:hover{transform:translateY(-2px);border-color:#aecab5;background:#fcfdfb}
+.path-card .path-number{font-size:13px;color:#607766}
+.path-card strong{font-size:17px;line-height:1.28;font-weight:500;letter-spacing:-.012em}
+.path-card small{font-size:13px;line-height:1.5;color:var(--muted)}
+.section-header{display:flex;justify-content:space-between;align-items:baseline;gap:12px;border-bottom:1px solid var(--line);padding:0 0 17px}
+.section-header h2{font-size:22px;font-weight:500;letter-spacing:-.02em;line-height:1.3;margin:0}.resultcount{font-size:14px;color:#53665a;white-space:nowrap}
+.tools{display:flex;gap:10px;margin-top:21px}.search{flex:1;min-width:0;display:flex;align-items:center;gap:11px;background:#fff;border:1px solid #d9e2d9;border-radius:10px;padding:0 16px;height:50px}
+.search:focus-within{border-color:#7b9d86;box-shadow:0 0 0 3px #e0ece3}.search svg{width:18px;height:18px;flex:none;color:#63756a}.search input{height:100%;width:100%;outline:0;border:0;background:none;font-size:15px;color:var(--ink)}.search input::placeholder{color:#728074}
+.soft-button{background:#fff;border:1px solid #d9e2d9;border-radius:10px;min-width:109px;height:50px;display:flex;align-items:center;justify-content:center;gap:9px;padding:0 13px;color:#425749;font-size:14px}.soft-button:hover{background:#f0f5ef}.soft-button svg{width:17px;height:17px}
+.filters{display:grid;grid-template-columns:1fr 1fr 1fr auto;align-items:end;gap:14px;margin-top:12px;background:#fff;border:1px solid var(--line);border-radius:11px;padding:18px}
+.filters label{display:grid;gap:7px;color:#596b5f;font-size:13px;min-width:0}.filters select{width:100%;height:42px;padding:0 9px;border:1px solid #d8e3d9;background:#fff;color:#2c4534;border-radius:8px;font-size:14px;min-width:0}
+.clear{border:0;background:none;color:#2f6246;font-size:13px;text-decoration:underline;text-underline-offset:4px;padding:9px}
+.records{margin-top:22px;background:#fff;border:1px solid var(--line);border-radius:13px;overflow:hidden}.record{padding:25px 26px 24px;border-bottom:1px solid #e8eee7;transition:background-color .16s}.record:last-child{border-bottom:0}.record:hover{background:#fcfdfa}
+.rtop{display:flex;align-items:center;justify-content:space-between;gap:15px}.category{font-size:13px;color:#536a58}.rbookmark{border:0;background:none;padding:6px;margin:-5px -6px -5px 0;color:#66796b;border-radius:7px;display:grid;place-items:center}.rbookmark:hover{background:#ecf4ed;color:#2a6740}.rbookmark svg{width:18px;height:18px}.rbookmark[aria-pressed="true"]{color:#2a6740}.rbookmark[aria-pressed="true"] svg{fill:#daebde}
+.record h3{font-size:19px;letter-spacing:-.016em;font-weight:500;line-height:1.35;margin:11px 0 5px}.publisher{font-size:13px;color:#607168;margin:0}.rdesc{font-size:15px;color:#485d4e;line-height:1.63;margin:13px 0 14px;max-width:740px}
+.rbottom{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}.access{font-size:13px;color:#566b5a}.ract{display:flex;gap:21px;align-items:center}.ract button,.ract a{border:0;background:none;color:#335c43;font-size:14px;font-weight:500;text-decoration:none;padding:5px 0}.ract a{font-weight:400}.ract button:hover,.ract a:hover{text-decoration:underline;text-underline-offset:4px}
+.empty{text-align:center;padding:66px 23px;color:#596a5d}.empty h3{font-weight:500;color:#2c4836;font-size:18px;margin:0 0 8px}.empty p{margin:0}
+.note{max-width:760px;color:#5a6d5f;font-size:13px;line-height:1.72;margin:28px 0}
+.paths{margin-top:20px}.path-intro{margin:0 0 21px;line-height:1.7;color:#52685b;font-size:15px}.path-switch{display:flex;gap:9px;overflow-x:auto;padding:0 0 17px;scrollbar-width:thin}
+.path-pill{background:#fff;border:1px solid #d8e3d9;border-radius:10px;color:#49604e;white-space:nowrap;padding:8px 14px;font-size:13px}.path-pill[aria-pressed="true"]{background:#355f44;color:white;border-color:#355f44}
+.step{display:flex;gap:22px;border-bottom:1px solid #e3eae2;padding:22px 0}.step-num{font-size:15px;color:#567760;min-width:25px}.step-main{flex:1}.step h3{font-size:18px;font-weight:500;margin:0 0 6px}.step p{font-size:14px;color:#52675a;line-height:1.7;margin:0 0 11px}.step button{border:0;background:none;padding:0;color:#2b6342;font-size:14px}
+.detail{margin:0 0 0 auto;width:min(100%,565px);height:100dvh;max-height:100dvh;border:0;border-left:1px solid var(--line);overflow-y:auto;background:#fff;box-shadow:-15px 0 50px #2030211a;animation:arrive .2s ease}
+.detail::backdrop{background:#172c1e65;backdrop-filter:blur(2px)}
+@keyframes arrive{from{transform:translateX(23px);opacity:.7}to{transform:translateX(0);opacity:1}}
+.detail-head{display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;background:#fffffff5;border-bottom:1px solid var(--line);min-height:70px;padding:0 31px;backdrop-filter:blur(10px);font-size:14px;color:#617064}
+.detail-head button{border:1px solid #e0e7df;background:#fff;border-radius:9px;width:36px;height:36px;display:grid;place-items:center;color:#405743}.detail-head svg{width:19px;height:19px}
+.detail-body{padding:33px 36px 60px}.detail-kicker{font-size:14px;color:#53715b;margin:0 0 12px}.detail-body h2{font-weight:500;font-size:30px;letter-spacing:-.028em;line-height:1.22;margin:0 0 11px}.detail-provider{font-size:15px;color:#5d7161;margin:0 0 26px}
+.detail-stat{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:22px}.detail-stat span{font-size:13px;color:#4a604d;background:#eff3ee;border-radius:7px;padding:5px 10px}
+.dsection{border-top:1px solid #e1e9e0;padding:19px 0 0;margin-top:21px}.dsection h3{font-size:15px;font-weight:500;color:#3d5944;margin:0 0 7px}.dsection p{font-size:15px;line-height:1.75;color:#4c5e51;margin:0}
+.dactions{display:flex;gap:11px;flex-wrap:wrap;margin-top:30px}.visit{border:0;background:#365f46;color:white;text-decoration:none;border-radius:9px;min-height:45px;display:flex;align-items:center;padding:10px 19px;font-size:14px}.visit:hover{background:#284e36}.dsave{border:1px solid #c4d5c8;border-radius:9px;background:#fff;color:#365942;padding:10px 17px;font-size:14px}.original-url{word-break:break-word;font-size:12px;color:#617267;margin-top:18px}
+@media(max-width:1170px){.inner{padding:0 30px 80px}}
+@media(max-width:860px){.sidebar{transform:translateX(-102%);transition:transform .25s;box-shadow:16px 0 35px #1a30241b}.sidebar.open{transform:translateX(0)}.scrim{display:block;position:fixed;inset:0;z-index:25;background:#182e2060}.main{margin-left:0}.mobilebar{display:flex;align-items:center;justify-content:space-between;min-height:61px;border-bottom:1px solid var(--line)}.mobilebar button{border:0;background:none;color:#2a4d37;padding:8px;margin-left:-8px}.mobilebar svg{width:23px;height:23px}.mobilebar span{font-size:15px;font-weight:500}.topline{display:none}.intro{padding-top:40px}.path-cards{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:580px){.inner{padding:0 17px 62px}.intro{padding:34px 0 26px}.intro h1{font-size:34px}.intro p{font-size:15px}.path-cards{grid-template-columns:1fr;margin-top:10px;gap:9px}.path-card{min-height:auto;gap:4px;padding:16px}.path-card small{max-width:350px}.section-header h2{font-size:20px}.tools{gap:8px}.search{height:48px}.soft-button{min-width:46px;height:48px;padding:0 12px}.soft-button .btn-text{display:none}.filters{grid-template-columns:1fr;gap:11px}.record{padding:21px 19px}.record h3{font-size:18px}.rdesc{font-size:14px}.detail-body{padding:28px 24px}.detail-head{padding:0 24px}.detail-body h2{font-size:26px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style></head>
+<body>
+<div class="layout">
+<aside class="sidebar" id="sidebar" aria-label="Library navigation">
+<a class="brand" href="#" id="homeBrand"><span class="brand-emblem"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5a3 3 0 0 1 3-3h14v17H6a3 3 0 0 0-3 3V5z"/><path d="M3 18a3 3 0 0 1 3-3h14"/></svg></span><span><strong>Micro & Nano</strong><small>Learning library</small></span></a>
+<div class="side-label">Library</div>
+<nav class="side-menu" id="views">
+<button type="button" class="side-btn" data-view="all" aria-current="page"><span data-icon="layers"></span><span class="nm">Everything</span><span class="small-number" id="n-all"></span></button>
+<button type="button" class="side-btn" data-view="paths"><span data-icon="route"></span><span class="nm">Learning paths</span></button>
+<button type="button" class="side-btn" data-view="books"><span data-icon="book"></span><span class="nm">Bookshelf</span><span class="small-number" id="n-books"></span></button>
+<button type="button" class="side-btn" data-view="learn"><span data-icon="graduation"></span><span class="nm">Courses & lessons</span></button>
+<button type="button" class="side-btn" data-view="tools"><span data-icon="cpu"></span><span class="nm">Tools & simulators</span></button>
+<button type="button" class="side-btn" data-view="research"><span data-icon="search"></span><span class="nm">Research sources</span></button>
+<button type="button" class="side-btn" data-view="saved"><span data-icon="bookmark"></span><span class="nm">Saved</span><span class="small-number" id="n-saved"></span></button>
+</nav>
+<div class="side-label">Disciplines</div>
+<nav class="topics" id="domains" aria-label="Disciplines"></nav>
+<div class="sidefoot"><hr><a href="https://github.com/aminemons/resources" target="_blank" rel="noopener noreferrer">View repository ↗</a><br><a href="https://competitionsnano.vercel.app/" target="_blank" rel="noopener noreferrer">Competition Atlas ↗</a><div id="checkedText" style="margin-top:14px">Curated for micro & nanoelectronics.</div></div>
+</aside>
+<div class="scrim" id="scrim" hidden></div>
+<div class="main"><div class="inner">
+<div class="mobilebar"><button id="mobileMenu" aria-label="Open navigation" aria-expanded="false"><span data-icon="menu"></span></button><span>Micro & Nano</span><span style="width:30px"></span></div>
+<div class="topline">A practical reference for learning and building</div>
+<header class="intro"><h1 id="heroTitle">Everything you need to keep learning.</h1><p id="heroSub">Books, courses, IC design software, simulators, papers and real projects—organized by the work you want to do.</p></header>
+<section id="featured" aria-label="Recommended learning directions">
+<div class="path-cards">
+<button class="path-card" data-path="asic"><span class="path-number">01 / Digital hardware</span><strong>From Verilog to a real chip</strong><small>RTL, testbenches, synthesis, layout and tapeout.</small></button>
+<button class="path-card" data-path="analog"><span class="path-number">02 / Analog design</span><strong>Design a transistor-level circuit</strong><small>Device models, SPICE, sizing and custom layout.</small></button>
+<button class="path-card" data-path="photonics"><span class="path-number">03 / Photonics</span><strong>Build an integrated optical sensor</strong><small>Resonators, FDTD, layout and verification.</small></button>
+</div></section>
+<section id="listing" aria-labelledby="viewTitle">
+<div class="section-header"><h2 id="viewTitle">Explore the collection</h2><span class="resultcount" id="count">Loading…</span></div>
+<div class="tools" id="toolbar">
+<label class="search"><span data-icon="search"></span><input id="q" type="search" placeholder="Search topics, books, tools, courses…" aria-label="Search resources" autocomplete="off"></label>
+<button class="soft-button" id="filterToggle" aria-controls="filters" aria-expanded="false"><span data-icon="filter"></span><span class="btn-text">Filters</span></button>
+<button class="soft-button" id="export"><span data-icon="download"></span><span class="btn-text">Export</span></button>
+</div>
+<div class="filters" id="filters" hidden>
+<label>Format<select id="kind"><option value="">All formats</option></select></label>
+<label>Access<select id="access"><option value="">All access types</option><option value="free">Free / open</option><option value="paid">Paid / licensed</option><option value="mixed">Mixed</option></select></label>
+<label>Level<select id="level"><option value="">All levels</option><option value="Beginner">Beginner</option><option value="Intermediate">Intermediate</option><option value="Advanced">Advanced</option></select></label>
+<button class="clear" id="clear">Clear filters</button>
+</div>
+<div id="records" class="records"><div class="empty">Loading resources…</div></div>
+<p class="note">Paid books are included as reading recommendations; the book links search bibliographic listings, not free downloads. For full texts, try the publisher, university libraries, interlibrary loans or authorized lending services. Software access and academic licensing can change, so check each provider before installation.</p>
+</section>
+<section id="pathView" hidden aria-label="Learning paths">
+<div class="section-header"><h2>Choose a learning direction</h2><span class="resultcount">Structured starting points</span></div>
+<div class="paths"><p class="path-intro">Each path pairs theory with a usable tool and a small project. Open any linked resource to learn why it belongs at that step.</p><div id="pathSwitch" class="path-switch"></div><div id="pathSteps"></div></div>
+</section>
+</div></div></div>
+<dialog class="detail" id="detail" aria-labelledby="detailTitle"><div class="detail-head"><span>Resource details</span><button id="closeDetail" aria-label="Close details"><span data-icon="close"></span></button></div><div class="detail-body" id="detailBody"></div></dialog>
+<script>
+"use strict";
+const SVG={
+layers:'<rect x="3" y="4" width="18" height="4" rx="1"/><rect x="3" y="10" width="18" height="4" rx="1"/><rect x="3" y="16" width="18" height="4" rx="1"/>',
+route:'<circle cx="6" cy="5" r="2"/><circle cx="18" cy="19" r="2"/><path d="M6 7v5a5 5 0 0 0 5 5h5M14 7h6m-3-3 3 3-3 3"/>',
+book:'<path d="M3 5a3 3 0 0 1 3-3h14v17H6a3 3 0 0 0-3 3V5z"/><path d="M3 18a3 3 0 0 1 3-3h14"/>',
+graduation:'<path d="m2 9 10-5 10 5-10 5zM6 12v5c3 2 9 2 12 0v-5M22 10v6"/>',
+cpu:'<rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 2v4m6-4v4M9 18v4m6-4v4M2 9h4m-4 6h4m12-6h4m-4 6h4"/>',
+search:'<circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 5 5"/>',
+bookmark:'<path d="M6 3.5A1.5 1.5 0 0 1 7.5 2h9A1.5 1.5 0 0 1 18 3.5V22l-6-4-6 4z"/>',
+filter:'<path d="M4 6h16M7 12h10M10 18h4"/>',
+download:'<path d="M12 3v13m-5-5 5 5 5-5M4 18v3h16v-3"/>',
+menu:'<path d="M4 7h16M4 12h16M4 17h16"/>',
+close:'<path d="m5 5 14 14M19 5 5 19"/>',
+arrow:'<path d="M7 17 17 7M8 7h9v9"/>'
+};
+const ico=k=>'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+(SVG[k]||"")+'</svg>';
+document.querySelectorAll("[data-icon]").forEach(e=>e.innerHTML=ico(e.dataset.icon));
+const $=id=>document.getElementById(id);
+const escapeHTML=v=>String(v??"").replace(/[&<>"']/g,s=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[s]));
+const link=u=>{try{const v=new URL(u);return v.protocol==="https:"||v.protocol==="http:"?v.href:"#"}catch{return"#"}};
+let items=[],currentView="all",domain="",chosenPath="asic",selected=null,saved=new Set();
+try{saved=new Set(JSON.parse(localStorage.getItem("micro-nano-saved")||"[]"))}catch{}
+const paths={
+asic:{name:"Digital IC design",steps:[
+["MIT 6.004 Computation Structures","Understand logic, finite-state machines and processors before writing RTL."],
+["HDLBits","Practice Verilog in short exercises until sequential logic feels natural."],
+["Icarus Verilog","Run a simulation locally and make a testbench before using an FPGA."],
+["cocotb","Test the RTL with repeatable Python-driven verification."],
+["OpenROAD Flow Scripts","Learn synthesis, placement, timing and routing in an open ASIC flow."],
+["Tiny Tapeout","Turn a minimal design into a real submission after reviewing the shuttle conditions."]
+]},
+analog:{name:"Analog IC design",steps:[
+["MIT 6.012 Microelectronic Devices and Circuits","Learn MOS device behavior and gain stages before selecting transistor sizes."],
+["Design of Analog CMOS Integrated Circuits","Read amplifier and biasing chapters as a design reference."],
+["LTspice","Simulate bias points, transient response, gain and noise with practical models."],
+["Xschem","Create hierarchical transistor schematics for open silicon design."],
+["IHP SG13G2 BiCMOS Open PDK","Move from generic transistors to process-specific devices and layouts."],
+["KLayout","Inspect layout, connectivity and design rules."]
+]},
+photonics:{name:"Integrated photonics",steps:[
+["Fundamentals of Photonics","Build intuition about propagation, interference, modes and resonances."],
+["MEEP","Simulate resonators and study spectral response and mode profiles."],
+["gdsfactory","Draw parameterized waveguides, couplers and ring structures."],
+["SiEPIC Tools for KLayout","Practice photonic layout, connectivity and verification."],
+["Silicon Photonics Design: From Devices to Systems","Connect the component design to fabrication and measurement."]
+]},
+devices:{name:"Semiconductor devices",steps:[
+["MIT 6.012 lecture notes","Master junctions, electrostatics and MOSFET operation."],
+["Semiconductor Device Fundamentals","Work through device physics derivations and exercises."],
+["nanoHUB online simulation tools","Try interactive device simulations before advanced TCAD."],
+["DEVSIM semiconductor simulator","Explore spatial carrier profiles and drift-diffusion simulation."],
+["SkyWater SKY130 PDK","Connect device models and rules to an integrated-circuit process."]
+]},
+fpga:{name:"FPGA & embedded hardware",steps:[
+["Digital Design and Computer Architecture","Review combinational logic, datapaths, state machines and simple CPUs."],
+["HDLBits","Practice synthesizable Verilog with immediate tests."],
+["Project F FPGA tutorials","Build timing-aware display and practical digital circuits."],
+["AMD Vivado Design Suite","Synthesize, implement and inspect FPGA timing constraints."],
+["LiteX","Progress to RISC-V systems and integrated peripherals."],
+["KiCad","Build a companion board and learn pinout/power integrity basics."]
+]},
+research:{name:"Research & scientific computing",steps:[
+["MIT 6.041 Probabilistic Systems Analysis","Review uncertainty, statistics and stochastic behavior."],
+["NumPy","Handle simulation and measurement arrays."],
+["SciPy","Fit curves and optimize a physical model."],
+["Matplotlib","Create reproducible scientific graphs and figures."],
+["Google Scholar","Build a focused map of recent papers and citation chains."],
+["Zotero","Manage references and write citations without losing sources."]
+]}};
+const titleIndex=new Map();
+const titleViews={all:["Everything you need to keep learning.","Books, courses, IC design software, simulators, papers and real projects—organized by the work you want to do.","Explore the collection"],books:["A shelf of books worth studying.","Core textbooks for electronics, integrated circuits, photonics, nanotechnology and research. Paid titles are references, not downloads.","Bookshelf"],learn:["Start with the right explanation.","Courses, tutorials and learning materials with practical exercises.","Courses & lessons"],tools:["Choose tools for the actual job.","Simulation, design, verification and data analysis environments, from open source to professional.","Tools & simulators"],research:["Find better technical evidence.","Papers, standards, material databases and research communities.","Research sources"],saved:["Your personal reading list.","Saved resources live only in this browser.","Saved resources"],paths:["Learn with a direction.","A small number of deliberate steps from first principles to a working engineering project.","Guided paths"]};
+function isLearn(r){return ["Course","Learning site"].includes(r.kind)}
+function isTool(r){return ["Tool","Simulator","Simulation","Framework","Library","PDK","Project"].includes(r.kind)}
+function isResearch(r){return ["Database","Dataset","Reference"].includes(r.kind)}
+function accessType(s){if(/^paid/i.test(s)||s.includes("institutional")||s.includes("library"))return"paid";if(s==="Free"||s==="Open-source"||s==="Free account"||s==="Free viewing"||s==="Free resources")return"free";return"mixed"}
+function matchesView(r){if(domain)return r.domain===domain;if(currentView==="all")return true;if(currentView==="books")return r.kind==="Book";if(currentView==="learn")return isLearn(r);if(currentView==="tools")return isTool(r);if(currentView==="research")return isResearch(r);if(currentView==="saved")return saved.has(r.id);return true}
+function menuActive(){document.querySelectorAll(".side-btn").forEach(b=>{b.removeAttribute("aria-current");if(domain&&b.dataset.domain===domain||!domain&&b.dataset.view===currentView)b.setAttribute("aria-current","page")})}
+function setView(v,field=""){
+ currentView=v;domain=field;
+ $("pathView").hidden=v!=="paths";$("listing").hidden=v==="paths";$("featured").hidden=v!=="all"||!!field;
+ const labels=field?[field,"Handpicked resources and engineering tools for "+field.toLowerCase()+".",field]:titleViews[v]||titleViews.all;
+ $("heroTitle").textContent=labels[0];$("heroSub").textContent=labels[1];$("viewTitle").textContent=labels[2];
+ menuActive();if(v==="paths")drawPath();else render();closeNav();
+ window.scrollTo({top:0,behavior:"smooth"});
+}
+function drawDomains(){
+ const counts={};for(const x of items)counts[x.domain]=(counts[x.domain]||0)+1;
+ $("domains").innerHTML=Object.keys(counts).sort().map(x=>'<button type="button" class="side-btn" data-domain="'+escapeHTML(x)+'"><span class="nm">'+escapeHTML(x)+'</span><span class="small-number">'+counts[x]+'</span></button>').join("");
+ $("domains").querySelectorAll("[data-domain]").forEach(b=>b.onclick=()=>setView("all",b.dataset.domain));
+ $("n-all").textContent=items.length;$("n-books").textContent=items.filter(r=>r.kind==="Book").length;updateSavedCount();
+}
+function updateSavedCount(){$("n-saved").textContent=items.filter(r=>saved.has(r.id)).length}
+function save(r){if(saved.has(r.id))saved.delete(r.id);else saved.add(r.id);try{localStorage.setItem("micro-nano-saved",JSON.stringify([...saved]))}catch{}
+ updateSavedCount();render();if(selected?.id===r.id)drawDetail(r)}
+function render(){
+ if(currentView==="paths")return;
+ const search=$("q").value.trim().toLowerCase(),kind=$("kind").value,access=$("access").value,level=$("level").value;
+ let found=items.map((r,i)=>({...r,index:i})).filter(r=>matchesView(r)&&(!search||[r.title,r.provider,r.domain,r.kind,r.description].join(" ").toLowerCase().includes(search))&&(!kind||r.kind===kind)&&(!access||accessType(r.access)===access)&&(!level||r.level===level||r.level==="All levels"));
+ found.sort((a,b)=>a.domain.localeCompare(b.domain)||a.title.localeCompare(b.title));
+ $("count").textContent=found.length+(found.length===1?" resource":" resources");
+ $("records").innerHTML=found.length?found.map(r=>{
+ const isSaved=saved.has(r.id);
+ return '<article class="record"><div class="rtop"><span class="category">'+escapeHTML(r.domain)+' · '+escapeHTML(r.kind)+'</span><button type="button" class="rbookmark" data-save="'+r.index+'" aria-pressed="'+isSaved+'" aria-label="'+(isSaved?"Remove saved resource":"Save resource")+'">'+ico("bookmark")+'</button></div>'+
+ '<h3>'+escapeHTML(r.title)+'</h3><p class="publisher">'+escapeHTML(r.provider)+'</p><p class="rdesc">'+escapeHTML(r.description)+'</p><div class="rbottom"><span class="access">'+escapeHTML(r.access)+'</span><span class="ract"><button type="button" data-detail="'+r.index+'">Details</button><a href="'+escapeHTML(link(r.url))+'" target="_blank" rel="noopener noreferrer">'+(r.kind==="Book"?"Find book":"Open resource")+' ↗</a></span></div></article>'
+ }).join(""):'<div class="empty"><h3>No matching resources</h3><p>Try a different phrase, discipline or access filter.</p></div>';
+}
+function drawPath(){
+ $("pathSwitch").innerHTML=Object.entries(paths).map(([k,v])=>'<button class="path-pill" data-path="'+k+'" aria-pressed="'+(chosenPath===k)+'">'+escapeHTML(v.name)+'</button>').join("");
+ const p=paths[chosenPath];
+ $("pathSteps").innerHTML=p.steps.map(([name,why],i)=>{
+ const r=titleIndex.get(name.toLowerCase());
+ return '<div class="step"><div class="step-num">'+String(i+1).padStart(2,"0")+'</div><div class="step-main"><h3>'+escapeHTML(name)+'</h3><p>'+escapeHTML(why)+'</p>'+(r?'<button data-path-resource="'+escapeHTML(r.id)+'">View resource →</button>':'<span>Search the catalogue</span>')+'</div></div>';
+ }).join("");
+ $("pathSwitch").querySelectorAll("[data-path]").forEach(b=>b.onclick=()=>{chosenPath=b.dataset.path;drawPath()});
+ $("pathSteps").querySelectorAll("[data-path-resource]").forEach(b=>b.onclick=()=>{const r=items.find(x=>x.id===b.dataset.pathResource);if(r)openDetail(r)});
+}
+function drawDetail(r){
+ selected=r;
+ const sections=[["What it helps you do",r.description],["How to access it",r.kind==="Book"?"This is a bibliographic book search. Check publishers, university libraries, interlibrary loan or authorized lending. Availability is not guaranteed.":r.access+" — check the provider for current licensing, accounts and system requirements."],["Where it fits",r.domain+"; recommended level: "+r.level],["Source confidence",r.kind==="Book"?"Bibliographic entry; links to a book catalogue search.":"Curated link to the provider or a relevant resource page; automated checking does not confirm all site content."]];
+ $("detailBody").innerHTML='<p class="detail-kicker">'+escapeHTML(r.domain)+'</p><h2 id="detailTitle">'+escapeHTML(r.title)+'</h2><p class="detail-provider">'+escapeHTML(r.provider)+'</p><div class="detail-stat"><span>'+escapeHTML(r.kind)+'</span><span>'+escapeHTML(r.level)+'</span><span>'+escapeHTML(r.access)+'</span></div>'+
+ sections.map(s=>'<section class="dsection"><h3>'+escapeHTML(s[0])+'</h3><p>'+escapeHTML(s[1])+'</p></section>').join("")+
+ '<div class="dactions"><a class="visit" target="_blank" rel="noopener noreferrer" href="'+escapeHTML(link(r.url))+'">'+(r.kind==="Book"?"Find this book":"Open resource")+' ↗</a><button class="dsave" id="detailSave">'+(saved.has(r.id)?"Remove from saved":"Save for later")+'</button></div><p class="original-url">'+escapeHTML(r.url)+'</p>';
+ $("detailSave").onclick=()=>save(r)
+}
+function openDetail(r){drawDetail(r);$("detail").showModal()}
+function closeNav(){$("sidebar").classList.remove("open");$("scrim").hidden=true;$("mobileMenu").setAttribute("aria-expanded","false")}
+function openNav(){$("sidebar").classList.add("open");$("scrim").hidden=false;$("mobileMenu").setAttribute("aria-expanded","true")}
+$("mobileMenu").onclick=()=>$("sidebar").classList.contains("open")?closeNav():openNav();$("scrim").onclick=closeNav;
+$("homeBrand").onclick=e=>{e.preventDefault();setView("all")};
+document.querySelectorAll("#views .side-btn").forEach(b=>b.onclick=()=>setView(b.dataset.view));
+$("filterToggle").onclick=()=>{const x=$("filterToggle").getAttribute("aria-expanded")==="true";$("filterToggle").setAttribute("aria-expanded",String(!x));$("filters").hidden=x};
+$("clear").onclick=()=>{$("q").value="";$("kind").value="";$("level").value="";$("access").value="";render()};
+["q","kind","access","level"].forEach(k=>$(k).addEventListener(k==="q"?"input":"change",render));
+$("records").onclick=e=>{const s=e.target.closest("[data-save]"),d=e.target.closest("[data-detail]");if(s)save(items[Number(s.dataset.save)]);else if(d)openDetail(items[Number(d.dataset.detail)])};
+document.querySelectorAll(".path-card").forEach(b=>b.onclick=()=>{chosenPath=b.dataset.path;setView("paths")});
+$("closeDetail").onclick=()=>$("detail").close();$("detail").onclick=e=>{if(e.target===$("detail"))$("detail").close()};
+document.addEventListener("keydown",e=>{if(e.key==="Escape")closeNav();if(e.key==="/"&&!e.ctrlKey&&!e.metaKey&&!e.altKey&&!["INPUT","TEXTAREA","SELECT"].includes(document.activeElement.tagName)&&!$("detail").open){e.preventDefault();$("q").focus()}});
+$("export").onclick=()=>{
+ const fields=["domain","kind","title","provider","access","level","url","description"];
+ const rows=[fields.join(","),...items.map(r=>fields.map(k=>'"'+String(r[k]??"").replace(/"/g,'""')+'"').join(","))];
+ const blob=new Blob(["\uFEFF"+rows.join("\r\n")],{type:"text/csv;charset=utf-8"});const href=URL.createObjectURL(blob);const a=document.createElement("a");a.href=href;a.download="micro-nano-resources.csv";a.click();setTimeout(()=>URL.revokeObjectURL(href),1000)
+};
+fetch("./data/resources.json",{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("Fetch "+r.status);return r.json()}).then(data=>{
+ items=Array.isArray(data.resources)?data.resources:[];
+ titleIndex.clear();for(const r of items)titleIndex.set(r.title.toLowerCase(),r);
+ [...new Set(items.map(r=>r.kind))].sort().forEach(k=>{const o=document.createElement("option");o.textContent=k;o.value=k;$("kind").appendChild(o)});
+ drawDomains();
+ const day=data.meta?.curated;
+ if(day)$("checkedText").textContent="Catalogue curated "+day+". Source availability is reviewed separately.";
+ setView("all");
+}).catch(err=>{console.error(err);$("records").innerHTML='<div class="empty"><h3>Library data unavailable</h3><p>See the repository for the catalogue.</p></div>'; $("count").textContent="Unavailable"});
+</script></body></html>
