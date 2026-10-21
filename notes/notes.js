@@ -121,7 +121,7 @@ document.addEventListener("keydown",e=>{
  if(e.key==="Escape")closeSide();
  if(e.key==="/"&&!e.ctrlKey&&!e.metaKey&&!["INPUT","TEXTAREA","SELECT"].includes(document.activeElement?.tagName)){e.preventDefault();if(window.innerWidth<=850)openSide(true);$("search").focus()}
 });
-Promise.all(["lessons-1.json","lessons-2.json","lessons-3.json"].map(url=>fetch(url,{cache:"no-store"}).then(r=>{if(!r.ok)throw Error(url+" "+r.status);return r.json()}))).then(parts=>{
+Promise.all(["lessons-1.json","lessons-2.json","lessons-3.json","lessons-4.json"].map(url=>fetch(url,{cache:"no-store"}).then(r=>{if(!r.ok)throw Error(url+" "+r.status);return r.json()}))).then(parts=>{
  chapters=parts.flat();lookup=new Map(chapters.map(c=>[c.id,c]));
  route(new URLSearchParams(location.search).get("lesson"),false);
 }).catch(e=>{
