@@ -2,19 +2,19 @@ import fs from "node:fs";
 import assert from "node:assert/strict";
 import vm from "node:vm";
 const read=p=>fs.readFileSync(new URL(p,import.meta.url),"utf8");
-const paths=["lessons-1.json","lessons-2.json","lessons-3.json","lessons-4.json","advanced-1.json","advanced-2.json","advanced-3.json","advanced-4.json","advanced-5.json"];
+const paths=["lessons-1.json","lessons-2.json","lessons-3.json","lessons-4.json","advanced-1.json","advanced-2.json","advanced-3.json","advanced-4.json","advanced-5.json","advanced-6.json"];
 const lessons=paths.flatMap(p=>JSON.parse(read(p)));
 const ids=new Set();
 const allowed=new Set(["Advanced semiconductor physics","Device simulation and verification","Sensors and intelligent microsystems","Analog IC and instrumentation","Engineering laboratories","Core foundations","Semiconductor devices","IC design and digital systems","Sensors and smart systems","Photonics and quantum","Research methods"]);
 const shapes=["ohm","kcl","rc","sampling","calibration","bands","pn","moscap","mosfet","tcad","amplifier","readout","digital","rtl","asic","sensor","mems","process","heater","iot","ring","research","transport","noise"];
 const html=read("index.html"),css=read("notes.css"),script=read("notes.js");
-assert(lessons.length>=32,"All introductory lessons must be retained");
+assert(lessons.length>=33,"All introductory lessons must be retained");
 assert(html.includes('src="./notes.js"')&&html.includes('href="./notes.css"'));
 assert(html.includes("MathJax")&&html.includes('id="toc"'));
 assert(css.includes("@media print")&&css.includes("prefers-reduced-motion"));
 new vm.Script(script,{filename:"notes.js"});
 for(const l of lessons){
- if(l.id.startsWith("28-")||l.id.startsWith("29-")||l.id.startsWith("30-")||l.id.startsWith("31-")||l.id.startsWith("32-")){
+ if(l.id.startsWith("28-")||l.id.startsWith("29-")||l.id.startsWith("30-")||l.id.startsWith("31-")||l.id.startsWith("32-")||l.id.startsWith("33-")){
    assert(l.sections.length>=7&&l.checks.length>=6&&l.example.steps.length>=5,"Advanced study material too short: "+l.id);
    assert(l.checks.every(c=>c.hint&&c.difficulty),"Advanced practice must provide graded difficulty and hints: "+l.id);
  }
