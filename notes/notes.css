@@ -127,3 +127,64 @@ a{color:inherit;text-decoration:none}
 .figure[data-quantitative] svg{max-height:370px}
 .figure[data-quantitative] figcaption{font-size:14px;color:#455f4b;max-width:740px}
 @media(max-width:550px){.figure[data-quantitative]{padding:11px 8px}.figure[data-quantitative] figcaption{font-size:12px}}
+
+/* Long-form engineering editorial layout: comfortable measure and unmistakable maths. */
+.reader{max-width:948px;padding-left:70px;padding-right:70px}
+.reader>.content{max-width:790px}
+.lesson-section{max-width:790px;margin:0 0 43px}
+.lesson-section h2{font-size:25px;line-height:1.36;margin-bottom:18px;color:#22362a;font-weight:500}
+.lesson-section p{font-size:18px;line-height:1.86;letter-spacing:.002em;margin:0 0 20px;color:#2d4034}
+.lesson-section p+pre{margin-top:19px}
+.lesson-section strong{font-weight:600;color:#243f2d}
+.lesson-section em{color:#344f3e}
+.reader h1{font-size:clamp(37px,3.8vw,48px);line-height:1.19;max-width:800px;letter-spacing:-.037em;font-weight:500}
+.lede{font-size:19px;line-height:1.73;max-width:755px;color:#44594b}
+.eyebrow{font-size:13px;letter-spacing:.03em;color:#3d6a4d}
+.article-outline{border-top:1px solid #d9e5dc;border-bottom:1px solid #d9e5dc;padding:19px 0 22px;margin:22px 0 30px}
+.article-outline .outline-heading{font-size:15px;font-weight:500;color:#30533b;margin-bottom:10px}
+.article-outline ol{list-style:decimal;margin:0;padding:0 0 0 24px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:28px;row-gap:7px}
+.article-outline li{padding-left:2px;color:#64816a;font-size:14px;line-height:1.5}
+.article-outline a{color:#3b5744;text-decoration:none;font-size:14px}
+.article-outline a:hover{text-decoration:underline;text-underline-offset:4px}
+.math-status{font-size:13px;line-height:1.5;color:#745326;background:#fff8e8;border:1px solid #ecd8ac;border-radius:9px;padding:11px 14px;margin:-22px 0 25px}
+.math-figure{max-width:790px;border:0;border-top:1px solid #dbe5dd;border-bottom:1px solid #dbe5dd;background:transparent;margin:24px 0 33px;padding:20px 14px 19px}
+.math-display{color:#172d20;max-width:100%;font-size:1.16rem;line-height:1.8;overflow-x:auto;overflow-y:hidden;scrollbar-width:thin;text-align:center;padding:11px 3px 9px}
+.math-figure figcaption{font:14px/1.6 Outfit,system-ui,sans-serif;color:#56685b;max-width:650px;margin:3px auto 0;text-align:center}
+mjx-container{font-size:105%!important;color:#172d20!important}
+mjx-container[display="true"]{display:block!important;max-width:100%;overflow-x:auto;overflow-y:hidden;margin:0!important;padding:7px 0;scrollbar-width:thin}
+.lesson-section mjx-container:not([display="true"]){font-size:104%!important}
+.example{max-width:790px;margin:26px 0 41px;padding:26px 30px}
+.example .steps li{font-size:17px;line-height:1.78}
+.exercise{max-width:790px}
+.exercise p{font-size:17px;line-height:1.8}
+.solution{font-size:16px;line-height:1.8}
+.licensed-figure{max-width:760px;margin:30px auto 37px}
+.licensed-figure img{display:block;width:auto;height:auto;max-width:100%;max-height:420px;object-fit:contain;margin:auto;border:1px solid #e4ebe5;border-radius:6px}
+.licensed-figure figcaption{font-size:14px;color:#4a6251;line-height:1.6;margin-top:12px}
+.licensed-figure figcaption span{display:block;color:#607363;font-size:12px;margin-top:4px}
+.licensed-figure figcaption a{color:#355a40;text-underline-offset:3px}
+.guided-reading{margin:43px 0 47px;max-width:790px;border-top:1px solid #dbe5dd;padding-top:23px}
+.guided-reading>h2{font-weight:500;font-size:23px;letter-spacing:-.015em;margin:0 0 9px}
+.guided-reading>p{font-size:16px;color:#4e6255;line-height:1.68;margin:0 0 17px}
+.reading-entry{padding:18px 0;border-bottom:1px solid #e1e9e2}
+.reading-entry small{display:block;color:#54735c;font-size:12px;line-height:1.45;margin:0 0 6px}
+.reading-entry>a{display:block;color:#27583c;font-size:17px;text-decoration:none;line-height:1.43;font-weight:500}
+.reading-entry>a:hover{text-decoration:underline;text-underline-offset:4px}
+.reading-entry p{font-size:15px;line-height:1.65;color:#506257;margin:6px 0 0}
+.figure{max-width:790px}
+@media(max-width:1100px){.reader{padding-left:43px;padding-right:43px}}
+@media(max-width:850px){.reader{padding-left:26px;padding-right:26px}}
+@media(max-width:600px){
+.reader{padding-left:18px;padding-right:18px}
+.lesson-section p{font-size:16.5px;line-height:1.82}
+.lesson-section h2{font-size:22px}
+.lede{font-size:17px}
+.article-outline ol{grid-template-columns:1fr}
+.math-display{font-size:1rem;padding:8px 2px}
+.math-figure{padding:18px 2px;margin:20px 0 27px}
+.math-figure figcaption{font-size:12px}
+.example{padding:19px 16px}
+.exercise p{font-size:16px}
+.guided-reading>h2{font-size:20px}
+}
+@media print{.article-outline{break-after:avoid}.math-figure{break-inside:avoid}.licensed-figure{break-inside:avoid}.guided-reading{break-before:auto}.math-status{display:none}}
