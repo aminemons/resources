@@ -125,6 +125,28 @@
       "16-sensor-response",
       "18-fabrication",
       "05-uncertainty"
+    ],
+    "equations": [
+      {
+        "after": 3,
+        "tex": "\\frac{\\mathrm d\\theta}{\\mathrm dt}=k_\\mathrm{ads}C(1-\\theta)-k_\\mathrm{des}\\theta",
+        "caption": "First-order one-species surface-coverage kinetic model."
+      },
+      {
+        "after": 3,
+        "tex": "\\theta_\\infty=\\frac{KC}{1+KC},\\quad K=\\frac{k_\\mathrm{ads}}{k_\\mathrm{des}}",
+        "caption": "Langmuir-style equilibrium coverage under stated assumptions."
+      },
+      {
+        "after": 3,
+        "tex": "\\tau=\\frac{1}{k_\\mathrm{ads}C+k_\\mathrm{des}}",
+        "caption": "Approach-to-equilibrium timescale for coverage, not automatically for sensor resistance."
+      },
+      {
+        "after": 4,
+        "tex": "S_R=\\frac{R_\\mathrm{air}}{R_\\mathrm{gas}},\\quad \\Delta_R=\\frac{R_\\mathrm{air}-R_\\mathrm{gas}}{R_\\mathrm{air}}",
+        "caption": "Two distinct response metrics—never compare them without stating definitions."
+      }
     ]
   }
 ]
