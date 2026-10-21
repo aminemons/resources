@@ -265,3 +265,7 @@ mjx-container[display="true"]{display:block!important;max-width:100%;overflow-x:
 .prereqs span{display:block}
 .lesson-section{margin-top:15px}
 }
+
+.figure-fallback{font-size:14px;line-height:1.65;background:#f1f6f1;border:1px dashed #bad0bf;color:#4d6453;border-radius:7px;padding:15px 17px;text-align:center}
+.figure-fallback a{color:#27573a;text-decoration:underline;text-underline-offset:3px}
+.licensed-figure img[hidden]{display:none!important}
