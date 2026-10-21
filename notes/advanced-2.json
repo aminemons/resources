@@ -170,6 +170,17 @@
         "url": "https://books.google.com/books?q=Howe+Sodini+Microelectronics+An+Integrated+Approach",
         "task": "Use the MOS transistor chapters to compare the long-channel charge model with device limitations."
       }
+    ],
+    "licensedFigures": [
+      {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Scheme_of_metal_oxide_semiconductor_field-effect_transistor.svg/1280px-Scheme_of_metal_oxide_semiconductor_field-effect_transistor.svg.png",
+        "alt": "MOSFET cross section showing labeled source gate drain and p-type substrate",
+        "caption": "MOSFET physical cross-section; compare the real terminal arrangement with the charge-sheet mathematical model.",
+        "creator": "Arne Nordmann (Norro)",
+        "license": "CC BY-SA 2.5",
+        "licenseURL": "https://creativecommons.org/licenses/by-sa/2.5/",
+        "source": "https://commons.wikimedia.org/wiki/File:Scheme_of_metal_oxide_semiconductor_field-effect_transistor.svg"
+      }
     ]
   }
 ]
