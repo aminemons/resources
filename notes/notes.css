@@ -206,3 +206,23 @@ mjx-container[display="true"]{display:block!important;max-width:100%;overflow-x:
 .mems-space{height:95px;display:grid;place-items:center;color:#5e7462;font-size:13px;transition:height .2s ease;min-height:16px;border-left:1px dashed #b9cabc;border-right:1px dashed #b9cabc}
 @media(max-width:570px){.model-controls{grid-template-columns:1fr;gap:9px}.concept-lab h2{font-size:21px}.concept-readout{font-size:15px!important}}
 @media print{.concept-lab svg,.mems-gap{break-inside:avoid}}
+
+/* Inline TeX longer than the available reading measure is individually scrollable,
+   instead of widening the entire mobile document. Never hide the equation itself. */
+@media(max-width:700px){
+ .lesson-section mjx-container:not([display="true"]),
+ .solution mjx-container:not([display="true"]),
+ .problem mjx-container:not([display="true"]),
+ .note mjx-container:not([display="true"]){
+   display:inline-block!important;
+   max-width:100%!important;
+   overflow-x:auto!important;
+   overflow-y:hidden!important;
+   vertical-align:middle;
+   scrollbar-width:thin;
+ }
+ .math-figure,.math-display,.lesson-section,.example,.exercise{
+   min-width:0;
+   max-width:100%;
+ }
+}
