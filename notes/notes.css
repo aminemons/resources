@@ -269,3 +269,14 @@ mjx-container[display="true"]{display:block!important;max-width:100%;overflow-x:
 .figure-fallback{font-size:14px;line-height:1.65;background:#f1f6f1;border:1px dashed #bad0bf;color:#4d6453;border-radius:7px;padding:15px 17px;text-align:center}
 .figure-fallback a{color:#27573a;text-decoration:underline;text-underline-offset:3px}
 .licensed-figure img[hidden]{display:none!important}
+
+/* Editorial long-form reading uses a serif text face, while navigation remains Outfit. */
+.lesson-section p,.example .problem,.example .steps li,.exercise>p,.exercise .solution,.capstone>p,.capstone li,.guided-reading>p,.reading-entry p{
+ font-family:"Source Serif 4",Georgia,"Times New Roman",serif;
+ font-size:18px;line-height:1.76;letter-spacing:0;
+}
+.lesson-section p{font-size:19px;line-height:1.78}
+.lesson-section code,.example code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace}
+@media(max-width:600px){
+ .lesson-section p,.example .problem,.example .steps li,.exercise>p,.exercise .solution,.capstone>p,.capstone li{font-size:17.5px;line-height:1.74}
+}
