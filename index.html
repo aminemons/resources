@@ -299,13 +299,29 @@ function openPath(slug){
  const p=paths.find(x=>x.slug===slug);if(!p)return;
  currentPath=p;assignHead("guide",p.name,p.description,"Guided learning · "+p.track);visibleView("guide");renderGuide();navActive("paths");closeMenu();window.scrollTo({top:0,behavior:"smooth"});
 }
+const stageNotes={
+"foundation":["01-electricity","04-sampling","06-semiconductors","05-uncertainty"],
+"smart-systems":["16-sensor-response","17-mems","12-readout","20-iot","20-iot","20-iot","05-uncertainty"],
+"sensor-device":["16-sensor-response","06-semiconductors","18-fabrication","10-tcad","05-uncertainty"],
+"silvaco":["06-semiconductors","10-tcad","10-tcad","18-fabrication","10-tcad"],
+"fabrication":["18-fabrication","18-fabrication","18-fabrication","05-uncertainty"],
+"mems":["17-mems","17-mems","10-tcad","12-readout"],
+"materials":["06-semiconductors","18-fabrication","05-uncertainty","05-uncertainty","16-sensor-response"],
+"biosensors":["16-sensor-response","16-sensor-response","17-mems","12-readout"],
+"wireless":["20-iot","20-iot","20-iot","20-iot","05-uncertainty"],
+"analog":["09-mosfet","11-amplifier","11-amplifier","15-asic-flow","12-readout"],
+"asic":["13-logic","14-verilog","14-verilog","15-asic-flow","15-asic-flow","15-asic-flow"],
+"fpga":["13-logic","14-verilog","14-verilog","15-asic-flow","05-uncertainty"],
+"photonics":["21-photonics","21-photonics","21-photonics","21-photonics","22-research"],
+"research":["22-research","22-research","05-uncertainty","22-research"]
+};
 function renderGuide(){
  const p=currentPath;const completed=p.steps.filter(s=>done.has(p.slug+":"+s.order)).length;
  const pct=p.steps.length?Math.round(100*completed/p.steps.length):0;
  $("guideContent").innerHTML='<div class="path-summary"><h2 class="path-heading">'+esc(p.name)+'</h2><p>'+esc(p.description)+'</p><div class="outcome"><strong>What you should produce:</strong> '+esc(p.goal)+'</div><div class="progressline">'+completed+' of '+p.steps.length+' stages completed</div><div class="progressbar" aria-hidden="true"><i style="width:'+pct+'%"></i></div></div>'+
  '<div class="steps">'+p.steps.map(s=>{
  const resources=s.resources.map(id=>byId.get(id)).filter(Boolean);
- return '<section class="stage"><div class="stage-top"><input class="stage-check" type="checkbox" aria-label="Mark '+esc(s.name)+' completed" data-done="'+esc(p.slug)+':'+s.order+'" '+(done.has(p.slug+":"+s.order)?"checked":"")+'><div class="stage-body"><div class="stage-label">Stage '+s.order+'</div><h3>'+esc(s.name)+'</h3><p class="stage-learn">'+esc(s.concept)+'</p><div class="task"><strong>Practice:</strong> '+esc(s.deliverable)+'</div><div class="stage-reference">'+resources.map(r=>'<button type="button" class="resource-chip" data-reference="'+esc(r.id)+'">'+esc(r.title)+' ↗</button>').join("")+'</div></div></div></section>'
+ return '<section class="stage"><div class="stage-top"><input class="stage-check" type="checkbox" aria-label="Mark '+esc(s.name)+' completed" data-done="'+esc(p.slug)+':'+s.order+'" '+(done.has(p.slug+":"+s.order)?"checked":"")+'><div class="stage-body"><div class="stage-label">Stage '+s.order+'</div><h3>'+esc(s.name)+'</h3><p class="stage-learn">'+esc(s.concept)+'</p><div class="task"><strong>Practice:</strong> '+esc(s.deliverable)+'</div><div class="stage-reference">'+(stageNotes[p.slug]?.[s.order-1]?'<a class="resource-chip" style="text-decoration:none;background:#e6f0e7;color:#25583a" href="./notes/?lesson='+stageNotes[p.slug][s.order-1]+'">Read related lesson →</a>':"")+resources.map(r=>'<button type="button" class="resource-chip" data-reference="'+esc(r.id)+'">'+esc(r.title)+' ↗</button>').join("")+'</div></div></div></section>'
  }).join("")+'</div><p class="path-note">Tick a stage only after completing the exercise. Progress is stored in this browser and is not a formal school record. Some resources require an academic software license.</p>';
 }
 function accessKind(r){const a=(r.access||"").toLowerCase();return /paid|institutional|license|library|academic terms|subscription/.test(a)?"paid":"free"}
