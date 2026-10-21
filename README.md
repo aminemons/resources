@@ -51,6 +51,19 @@ Each upper-level chapter includes named prerequisites, equations and derivation 
 
 Examples and teaching diagrams are originally written, not reproduced from copyrighted books or journal figures. References include MIT 6.012, MIT 6.777, MIT 6.152 and official Silvaco documentation and training.
 
+### Reading experience and independent mastery
+
+The notes are organized for a gradual progression from introductory material to six longer advanced, self-contained courses. The advanced reader now has:
+
+- TeX notation rendered by MathJax (with alternate CDN and explicit failure state), 26 carefully captioned display derivations, scrolling for long formulas on mobile and automatic rendering after async engine load.
+- A stripped-down article layout with a comfortable reading measure, readable body serif text, Outfit navigation, optional outline and outcomes.
+- Scientifically generated MOSFET, PN depletion and MEMS curves plus interactive ideal-device experiments. **Interactive models are educational approximations, not measurement or licensed TCAD.**
+- References to real introductory engineering articles on Medium where relevant, MIT course readings/problem sets and licensed/published books. The articles inform narrative teaching style; the theory and problems are independently written and checked.
+- CC-BY-SA licensed reference figures with full creator/source/license credits and a visible link fallback if third-party hosting is inaccessible.
+- Six independent capstones with concrete deliverables and acceptance criteria. They require reproducible calculations, software, validation and a technical report—not merely a reading-completion tick.
+
+GitHub Actions additionally runs a Chromium smoke test that loads all six advanced chapters, tests MathJax markup and numerical figures on both desktop and mobile, and confirms the advanced chapters provide guided sources and mastery projects. Automated rendering does not constitute an expert technical peer review, verified software licenses or experimental validation.
+
 ## Catalogue data
 
 - `data/resources.json`: Resource records: name, type, subject, provider, student tracks, acquisition/licensing, difficulty, learning/practice/reference intent, description and source URL.
