@@ -136,6 +136,20 @@
         "tex": "\\nabla\\!\\cdot(\\varepsilon\\nabla\\psi)=-q(p-n+N_D^+-N_A^-)",
         "caption": "Poisson's equation couples mobile and ionized charge to electrostatic potential."
       }
+    ],
+    "reading": [
+      {
+        "label": "University foundation",
+        "title": "MIT 6.012: transport, drift, diffusion and the five basic equations",
+        "url": "https://ocw.mit.edu/courses/6-012-microelectronic-devices-and-circuits-fall-2009/pages/lecture-notes/",
+        "task": "Before reading the equations, predict the sign of conventional electron diffusion current for an increasing carrier density."
+      },
+      {
+        "label": "Reference textbook",
+        "title": "Pierret — Semiconductor Device Fundamentals",
+        "url": "https://books.google.com/books?q=Pierret+Semiconductor+Device+Fundamentals",
+        "task": "Work the drift/diffusion and equilibrium exercises; derive dimensions independently."
+      }
     ]
   }
 ]
