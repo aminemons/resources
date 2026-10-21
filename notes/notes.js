@@ -44,6 +44,16 @@ function diagram(type){
  words.forEach((w,i)=>{const x=32+i*132;s+=box(x,91,111,61,'#e2eee5')+txt(x+11,127,w);if(i<3)s+=path('M'+(x+112)+' 120h18')});
  label=type==='readout'?'A typical sensor analog signal chain.':type==='iot'?'Data passes from sensor to microcontroller, radio and storage.':type==='asic'?'Typical digital ASIC flow, before required physical checks.':'A responsible research workflow.';break;
  }
+ case'transport':
+ s+=path('M72 188H502M72 45V188','#8aa192',2)+path('M91 166L448 61','#479363',3);
+ s+=path('M92 102H437','#93b4c2',2)+path('m428 94 12 8-12 8','#93b4c2',2);
+ s+=path('M428 148H92','#c28762',2)+path('m102 140-12 8 12 8','#c28762',2);
+ s+=txt(314,49,'Carrier density rises')+txt(333,93,'E field →')+txt(126,143,'diffusion ←')+txt(105,216,'Position x');
+ label='Illustrative carrier gradient, field and particle diffusion. Conventional current signs must be assigned separately.';break;
+ case'noise':
+ s+=path('M75 192H494M75 48V192','#8aa192',2)+path('M77 96H255C298 96 328 120 355 143S428 178 484 181','#3f8060',3);
+ s+=path('M255 95V193','#a2bca7',1)+txt(211,213,'fc')+txt(113,78,'White-noise response')+txt(311,58,'Filter attenuation')+txt(484,217,'f');
+ label='Conceptual first-order low-pass noise response; noise-equivalent bandwidth is based on integrated squared response.';break;
  case'digital':
  s+=path('M124 78H228M124 165H228M228 54H276A59 59 0 0 1 276 189H228Z')+path('M335 121H456')+txt(99,80,'A')+txt(98,169,'B')+txt(411,103,'Y')+txt(246,127,'AND');label='A two-input AND logic gate.';break;
  case'rtl':
@@ -90,7 +100,7 @@ function home(){
  document.title="Engineering Study Notes | Micro & Nano";
  const groups=[...new Set(chapters.map(c=>c.unit))];
  const entries=groups.map(unit=>'<h2 class="group-head">'+esc(unit)+'</h2><div class="lesson-index">'+chapters.filter(c=>c.unit===unit).map(c=>'<button class="index-row" data-open="'+c.id+'"><span class="idx">'+String(chapters.indexOf(c)+1).padStart(2,"0")+'</span><span><strong>'+esc(c.title)+'</strong><small>'+esc(c.summary)+'</small></span></button>').join("")+'</div>').join("");
- $("content").innerHTML='<p class="eyebrow">Original engineering study notes</p><h1>Understand the subject from the beginning.</h1><p class="lede">Read a concept, work through the equations, inspect a technical figure and solve problems without leaving the site. Chapters cover circuits, semiconductor devices, IC design, MEMS sensors, microfabrication and practical research.</p><div class="essentials"><span>'+chapters.length+' chapters · '+[...read].filter(id=>lookup.has(id)).length+' read here · '+groups.length+' units</span><a class="primary-btn" href="'+lessonUrl(chapters[0].id)+'" data-open="'+chapters[0].id+'">Start chapter 1 →</a></div><h2 class="divider-title">Subjects</h2><div class="catalog">'+groups.map(unit=>{const list=chapters.filter(c=>c.unit===unit);return '<button data-open="'+list[0].id+'"><strong>'+esc(unit)+'</strong><small>'+list.length+' lessons · '+esc(list[0].title)+'</small></button>'}).join("")+'</div><h2 class="divider-title">Contents</h2>'+entries+'<p class="note">These original lessons provide a foundation and do not replace specialist textbooks, foundry rules, current software manuals or supervised laboratory safety training.</p>';
+ $("content").innerHTML='<p class="eyebrow">Original engineering study notes</p><h1>Understand the subject from the beginning.</h1><p class="lede">Read a concept, work through the equations, inspect a technical figure and solve problems without leaving the site. Chapters cover circuits, semiconductor devices, IC design, MEMS sensors, microfabrication and practical research.</p><div class="essentials"><span>'+chapters.length+' chapters · '+[...read].filter(id=>lookup.has(id)).length+' read here · '+groups.length+' units</span><a class="primary-btn" href="'+lessonUrl(chapters[0].id)+'" data-open="'+chapters[0].id+'">Start chapter 1 →</a></div><h2 class="divider-title">Subjects</h2><div class="catalog">'+groups.map(unit=>{const list=chapters.filter(c=>c.unit===unit);return '<button data-open="'+list[0].id+'"><strong>'+esc(unit)+'</strong><small>'+list.length+' lessons · '+esc(list[0].title)+'</small></button>'}).join("")+'</div><h2 class="divider-title">Upper-level study</h2><p class="intro-desc">Graduate-level device models, assumptions, derivations and quantitative engineering exercises.</p><div class="lesson-index">'+chapters.filter(c=>/^(28|29|30|31|32)-/.test(c.id)).map(c=>'<button class="index-row" data-open="'+c.id+'"><span class="idx">→</span><span><strong>'+esc(c.title)+'</strong><small>'+esc(c.summary)+'</small></span></button>').join("")+'</div><h2 class="divider-title">All chapters</h2>'+entries+'<p class="note">These original lessons provide a foundation and do not replace specialist textbooks, foundry rules, current software manuals or supervised laboratory safety training.</p>';
  linkNext($("content"));
 }
 function lesson(c){
@@ -104,8 +114,8 @@ function lesson(c){
  c.sections.map((s,n)=>'<section class="lesson-section" id="part-'+n+'"><h2>'+(n+1)+'. '+esc(s.title)+'</h2>'+s.html+'</section>').join("")+
  diagram(c.diagram)+
  '<section class="example"><span class="number">Worked example</span><h2>'+esc(example.title)+'</h2><p class="problem">'+esc(example.problem)+'</p><details><summary>Show the complete worked solution</summary><div class="solution"><ol class="steps">'+example.steps.map(s=>'<li><div>'+s+'</div></li>').join("")+'</ol></div></details></section>'+
- '<section id="exercises"><h2 class="divider-title">Practice problems</h2><p class="intro-desc">Try each problem first, then open its solution to check your method and units.</p>'+
- c.checks.map((q,n)=>'<div class="exercise"><h3>Exercise '+(n+1)+'</h3><p>'+esc(q.prompt)+'</p><details><summary>Reveal answer and explanation</summary><div class="solution">'+q.answer+'</div></details></div>').join("")+'</section>'+
+ '<section id="exercises"><h2 class="divider-title">Practice problems</h2><p class="intro-desc">Attempt the problem without notes, open a hint only if needed, then compare your method and units to the full solution.</p>'+
+ c.checks.map((q,n)=>'<div class="exercise"><h3>Exercise '+(n+1)+(q.difficulty?' · '+esc(q.difficulty):'')+'</h3><p>'+esc(q.prompt)+'</p>'+(q.hint?'<details class="hint"><summary>Show a hint</summary><div class="solution">'+esc(q.hint)+'</div></details>':'')+'<details class="answer"><summary>Reveal answer and explanation</summary><div class="solution">'+q.answer+'</div></details></div>').join("")+'</section>'+
  '<section><h2 class="divider-title">Further reading</h2><p class="note">These references support the subject. The explanatory text, examples and vector diagrams here are originally authored, not scanned or copied from the linked books or papers.</p><ul class="source-list">'+c.sources.map(s=>'<li><a href="'+esc(s.url)+'" target="_blank" rel="noopener noreferrer">'+esc(s.title)+' ↗</a></li>').join("")+'</ul></section>'+
  '<div class="nextprev">'+(chapters[i-1]?'<a href="'+lessonUrl(chapters[i-1].id)+'" data-open="'+chapters[i-1].id+'" class="nav-next"><small>← Previous</small>'+esc(chapters[i-1].title)+'</a>':'<span></span>')+(chapters[i+1]?'<a href="'+lessonUrl(chapters[i+1].id)+'" data-open="'+chapters[i+1].id+'" class="nav-next"><small>Next →</small>'+esc(chapters[i+1].title)+'</a>':"")+'</div>';
  $("read").onclick=()=>{read.has(c.id)?read.delete(c.id):read.add(c.id);persist();$("read").textContent=read.has(c.id)?"✓ Read":"Mark read";toc()};
@@ -128,7 +138,7 @@ document.addEventListener("keydown",e=>{
  if(e.key==="Escape")closeSide();
  if(e.key==="/"&&!e.ctrlKey&&!e.metaKey&&!["INPUT","TEXTAREA","SELECT"].includes(document.activeElement?.tagName)){e.preventDefault();if(window.innerWidth<=850)openSide(true);$("search").focus()}
 });
-Promise.all(["lessons-1.json","lessons-2.json","lessons-3.json","lessons-4.json"].map(url=>fetch(url,{cache:"no-store"}).then(r=>{if(!r.ok)throw Error(url+" "+r.status);return r.json()}))).then(parts=>{
+Promise.all(["lessons-1.json","lessons-2.json","lessons-3.json","lessons-4.json","advanced-1.json","advanced-2.json","advanced-3.json","advanced-4.json","advanced-5.json"].map(url=>fetch(url,{cache:"no-store"}).then(r=>{if(!r.ok)throw Error(url+" "+r.status);return r.json()}))).then(parts=>{
  chapters=parts.flat();lookup=new Map(chapters.map(c=>[c.id,c]));
  route(new URLSearchParams(location.search).get("lesson"),false);
 }).catch(e=>{
