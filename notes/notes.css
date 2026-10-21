@@ -188,3 +188,21 @@ mjx-container[display="true"]{display:block!important;max-width:100%;overflow-x:
 .guided-reading>h2{font-size:20px}
 }
 @media print{.article-outline{break-after:avoid}.math-figure{break-inside:avoid}.licensed-figure{break-inside:avoid}.guided-reading{break-before:auto}.math-status{display:none}}
+
+/* Physical model explorations, presented as part of the article rather than game cards. */
+.concept-lab{max-width:790px;border-top:1px solid #b5cfbc;border-bottom:1px solid #b5cfbc;padding:25px 0 24px;margin:34px 0 44px}
+.concept-kicker{font-size:12px;letter-spacing:.035em;color:#3c6a4a}
+.concept-lab h2{font-weight:500;font-size:23px;margin:7px 0 8px}
+.concept-lab>p{font-size:15px;line-height:1.72;color:#405749;max-width:700px}
+.concept-lab svg{width:100%;height:auto;max-height:380px;display:block;font:13px Outfit,system-ui,sans-serif;fill:#35483b;margin:14px auto}
+.model-controls{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 26px;padding:12px 0 18px}
+.model-controls label{display:block;min-width:0;color:#405847;font-size:14px}
+.model-controls output{font-size:14px;color:#1e4f34;float:right;font-variant-numeric:tabular-nums}
+.model-controls input[type=range]{display:block;width:100%;margin:15px 0 5px;accent-color:#2f6b49;cursor:pointer}
+.concept-readout{font-weight:500;color:#23543a!important;font-size:17px!important;font-variant-numeric:tabular-nums}
+.model-caveat{color:#566c5c!important;font-size:13px!important;line-height:1.6!important}
+.mems-gap{max-width:360px;margin:19px auto 20px;text-align:center}
+.mems-gap .plate{background:#d5e6da;border:1px solid #8eaa94;padding:9px;color:#2e5940;font-size:13px}
+.mems-space{height:95px;display:grid;place-items:center;color:#5e7462;font-size:13px;transition:height .2s ease;min-height:16px;border-left:1px dashed #b9cabc;border-right:1px dashed #b9cabc}
+@media(max-width:570px){.model-controls{grid-template-columns:1fr;gap:9px}.concept-lab h2{font-size:21px}.concept-readout{font-size:15px!important}}
+@media print{.concept-lab svg,.mems-gap{break-inside:avoid}}
