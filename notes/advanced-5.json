@@ -5,7 +5,7 @@
     "title": "Design a sensor front-end from a noise and bandwidth budget",
     "summary": "Derive integrated noise, choose anti-alias bandwidth and gain, compare amplifier noise with ADC quantization, and defend the tradeoffs in a realistic sensor chain.",
     "level": "Upper undergraduate / Master's",
-    "diagram": "readout",
+    "diagram": "noise",
     "objectives": [
       "Convert input voltage spectral density to RMS noise over bandwidth.",
       "Use equivalent noise bandwidth of a first-order low-pass filter.",
