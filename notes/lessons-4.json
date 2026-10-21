@@ -223,18 +223,16 @@
   {
     "id": "27-xrd",
     "unit": "Engineering laboratories",
-    "title": "Sensors and smart systems",
-    "summary": "XRD and Bragg’s law for sensor materials",
-    "level": "Hands-on",
-    "diagram": "Understand what an X-ray diffraction peak says about lattice spacing—and what it does not.",
-    "objectives": "Intermediate",
-    "sections": "bands",
-    "example": [
+    "title": "XRD and Bragg’s law for sensor materials",
+    "summary": "Understand what an X-ray diffraction peak says about lattice spacing—and what it does not.",
+    "level": "Intermediate",
+    "diagram": "bands",
+    "objectives": [
       "Distinguish θ from 2θ",
       "Calculate a d spacing from Bragg’s law",
       "Avoid overclaiming phase purity from one peak"
     ],
-    "checks": [
+    "sections": [
       {
         "title": "What a powder diffractogram measures",
         "html": "<p>Crystalline planes scatter X-rays coherently. Under the usual diffraction geometry and conditions, constructive interference is described by Bragg's law \\(n\\lambda=2d\\sin\\theta\\), where \\(d\\) is spacing between planes, \\(\\lambda\\) is wavelength, and \\(\\theta\\) is the Bragg angle. Instruments commonly label their horizontal axis \\(2\\theta\\)—not \\(\\theta\\). Confusing the two creates large errors.</p>"
@@ -248,7 +246,7 @@
         "html": "<p>An oxide sensing film may change conductivity when analytes interact with its surface. XRD can help investigate bulk crystal phases, but does not directly measure electrical selectivity, surface adsorption chemistry or gas detection limits. Combine XRD with suitable surface characterization, electrical response measurements, repeat tests and device specifications.</p>"
       }
     ],
-    "sources": {
+    "example": {
       "title": "Convert a diffraction peak to d spacing",
       "problem": "A first-order peak using Cu Kα radiation with λ=0.15406 nm occurs at 2θ=30°. Estimate d.",
       "steps": [
@@ -257,6 +255,26 @@
         "\\(d=0.15406/(2\\sin15^\\circ)\\approx0.2976\\ \\mathrm{nm}\\).",
         "Actual phase assignment requires comparing many peaks, instrument calibration and likely compositions."
       ]
-    }
+    },
+    "checks": [
+      {
+        "prompt": "An XRD diffractogram reports 2θ=60°. What θ goes into Bragg’s law?",
+        "answer": "\\(\\theta=30^\\circ\\)."
+      },
+      {
+        "prompt": "Can a single XRD peak prove a gas-sensor film has excellent selectivity?",
+        "answer": "No. XRD describes crystal diffraction; selectivity requires measured responses to target and interfering species under controlled conditions."
+      }
+    ],
+    "sources": [
+      {
+        "title": "International Union of Crystallography",
+        "url": "https://www.iucr.org/"
+      },
+      {
+        "title": "NIST Material Measurement Laboratory",
+        "url": "https://www.nist.gov/mml"
+      }
+    ]
   }
 ]
