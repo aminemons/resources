@@ -99,7 +99,7 @@ function lesson(c){
  const example=c.example;
  $("content").innerHTML='<p class="eyebrow">'+esc(c.unit)+' · Chapter '+String(i+1).padStart(2,"0")+'</p>'+
  '<h1>'+esc(c.title)+'</h1><p class="lede">'+esc(c.summary)+'</p>'+
- '<div class="essentials"><span>'+esc(c.level)+' · '+c.sections.length+' explanations · '+c.checks.length+' problems</span><div class="actions"><button id="print" class="plain-btn">Print</button><button id="read" class="plain-btn">'+(done?"✓ Read":"Mark read")+'</button></div></div>'+
+ '<div class="essentials"><span>'+esc(c.level)+' · '+c.sections.length+' explanations · '+c.checks.length+' problems</span><div class="actions"><button id="print" class="plain-btn">Print</button><button id="printAnswers" class="plain-btn">Print with solutions</button><button id="read" class="plain-btn">'+(done?"✓ Read":"Mark read")+'</button></div></div>'+
  '<section class="objectives"><h2>You will learn to</h2><ul>'+c.objectives.map(t=>'<li>'+esc(t)+'</li>').join("")+'</ul></section>'+
  c.sections.map((s,n)=>'<section class="lesson-section" id="part-'+n+'"><h2>'+(n+1)+'. '+esc(s.title)+'</h2>'+s.html+'</section>').join("")+
  diagram(c.diagram)+
@@ -110,6 +110,13 @@ function lesson(c){
  '<div class="nextprev">'+(chapters[i-1]?'<a href="'+lessonUrl(chapters[i-1].id)+'" data-open="'+chapters[i-1].id+'" class="nav-next"><small>← Previous</small>'+esc(chapters[i-1].title)+'</a>':'<span></span>')+(chapters[i+1]?'<a href="'+lessonUrl(chapters[i+1].id)+'" data-open="'+chapters[i+1].id+'" class="nav-next"><small>Next →</small>'+esc(chapters[i+1].title)+'</a>':"")+'</div>';
  $("read").onclick=()=>{read.has(c.id)?read.delete(c.id):read.add(c.id);persist();$("read").textContent=read.has(c.id)?"✓ Read":"Mark read";toc()};
  $("print").onclick=()=>window.print();
+ $("printAnswers").onclick=()=>{
+  const details=[...$("content").querySelectorAll("details")];
+  const previous=details.map(node=>node.open);
+  details.forEach(node=>node.open=true);
+  window.addEventListener("afterprint",()=>details.forEach((node,i)=>node.open=previous[i]),{once:true});
+  window.print();
+ };
  linkNext($("content"));math();
 }
 $("menu").onclick=()=>openSide(!$("sidebar").classList.contains("open"));
