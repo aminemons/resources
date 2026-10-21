@@ -105,6 +105,10 @@
         "title": "MIT 6.012 — Problem sets",
         "url": "https://ocw.mit.edu/courses/6-012-microelectronic-devices-and-circuits-fall-2009/pages/assignments/"
       }
+    ],
+    "prerequisites": [
+      "06-semiconductors",
+      "07-pn-junction"
     ]
   }
 ]
