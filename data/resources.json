@@ -495,7 +495,7 @@
       "provider": "Texas Instruments",
       "access": "Free",
       "level": "Intermediate",
-      "url": "https://www.ti.com/video/series/precision-labs/ti-precision-labs-overview.html",
+      "url": "https://www.ti.com/video/series/precision-labs.html",
       "description": "Structured lessons on op-amps, ADCs, sensors and power.",
       "source_status": "curated",
       "last_checked": null
@@ -1340,7 +1340,7 @@
       "provider": "Ansys",
       "access": "Paid / institutional",
       "level": "Advanced",
-      "url": "https://www.ansys.com/products/optics/ansys-lumerical-fdtd",
+      "url": "https://optics.ansys.com/hc/en-us/articles/360033154434-FDTD-product-reference-manual",
       "description": "Commercial electromagnetic simulation for photonic structures.",
       "source_status": "curated",
       "last_checked": null
@@ -1353,7 +1353,7 @@
       "provider": "Ansys",
       "access": "Paid / institutional",
       "level": "Advanced",
-      "url": "https://www.ansys.com/products/optics/ansys-lumerical-interconnect",
+      "url": "https://www.ansys.com/products/optics/interconnect",
       "description": "Photonic integrated circuit system-level circuit modeling.",
       "source_status": "curated",
       "last_checked": null
@@ -1613,7 +1613,7 @@
       "provider": "MIT OpenCourseWare",
       "access": "Free",
       "level": "Beginner",
-      "url": "https://ocw.mit.edu/courses/3-091-introduction-to-solid-state-chemistry-fall-2010/",
+      "url": "https://ocw.mit.edu/courses/3-091-introduction-to-solid-state-chemistry-fall-2018/",
       "description": "Atomic structure, bonding, solids and materials behavior.",
       "source_status": "curated",
       "last_checked": null
@@ -2584,12 +2584,12 @@
       "id": "R199",
       "domain": "Research & community",
       "kind": "Reference",
-      "title": "Open Source Silicon Slack / community",
-      "provider": "Open Source Silicon",
+      "title": "FOSSi open hardware community",
+      "provider": "FOSSi Foundation",
       "access": "Free / account",
       "level": "Intermediate",
-      "url": "https://www.opensourceicdesign.com/",
-      "description": "Community links and learning around open silicon design.",
+      "url": "https://fossi-foundation.org/",
+      "description": "Open-source silicon community, projects and events; use its official website for current discussion channels.",
       "source_status": "curated",
       "last_checked": null
     },
