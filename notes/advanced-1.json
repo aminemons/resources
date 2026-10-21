@@ -109,6 +109,33 @@
     "prerequisites": [
       "06-semiconductors",
       "07-pn-junction"
+    ],
+    "equations": [
+      {
+        "after": 0,
+        "tex": "J_{n,\\mathrm{drift}}=q\\mu_n nE,\\qquad J_{p,\\mathrm{drift}}=q\\mu_p pE",
+        "caption": "Conventional drift-current density; both signs are positive for a positive field."
+      },
+      {
+        "after": 1,
+        "tex": "\\begin{aligned}J_n &= q\\mu_n nE+qD_n\\frac{\\mathrm dn}{\\mathrm dx}\\\\J_p &= q\\mu_p pE-qD_p\\frac{\\mathrm dp}{\\mathrm dx}\\end{aligned}",
+        "caption": "Combine mobility and carrier concentration gradients with consistent signs."
+      },
+      {
+        "after": 2,
+        "tex": "\\frac{D_n}{\\mu_n}=\\frac{D_p}{\\mu_p}=\\frac{k_BT}{q}\\equiv V_\\mathrm{th}",
+        "caption": "Classical Einstein relation: nondegenerate statistics and equilibrium assumptions."
+      },
+      {
+        "after": 4,
+        "tex": "\\begin{aligned}\\frac{\\partial n}{\\partial t}&=\\frac{1}{q}\\frac{\\partial J_n}{\\partial x}+G_n-R_n\\\\\\frac{\\partial p}{\\partial t}&=-\\frac{1}{q}\\frac{\\partial J_p}{\\partial x}+G_p-R_p\\end{aligned}",
+        "caption": "The opposite current-divergence signs reflect electron and hole charges."
+      },
+      {
+        "after": 5,
+        "tex": "\\nabla\\!\\cdot(\\varepsilon\\nabla\\psi)=-q(p-n+N_D^+-N_A^-)",
+        "caption": "Poisson's equation couples mobile and ionized charge to electrostatic potential."
+      }
     ]
   }
 ]
