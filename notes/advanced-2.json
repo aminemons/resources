@@ -144,6 +144,32 @@
         "tex": "V_T(V_{\\mathrm{SB}})=V_{T0}+\\gamma\\left(\\sqrt{2\\phi_F+V_{\\mathrm{SB}}}-\\sqrt{2\\phi_F}\\right)",
         "caption": "Classical body-effect model for the stated p-substrate convention."
       }
+    ],
+    "reading": [
+      {
+        "label": "Illustrated Medium article",
+        "title": "Abhinav Sudhakar — MOS transistor: I–V characteristics",
+        "url": "https://medium.com/@abhinavsudhakar14/i-v-characteristics-of-a-mosfet-ae37e302cb91",
+        "task": "Notice the causal chain: electrostatics → channel charge → integration → regions. Reproduce it from memory rather than copying the article."
+      },
+      {
+        "label": "Medium research explainer",
+        "title": "Emily Yan — MOSFET threshold-voltage extraction",
+        "url": "https://medium.com/chip-design-insider/mosfet-threshold-voltage-extraction-how-to-get-power-management-right-from-the-beginning-d98746c618f4",
+        "task": "Compare constant-current and linear-extrapolation definitions. Explain why two extraction methods need not yield identical thresholds."
+      },
+      {
+        "label": "University practice",
+        "title": "MIT 6.012: MOSFET characterization assignment",
+        "url": "https://ocw.mit.edu/courses/6-012-microelectronic-devices-and-circuits-fall-2005/pages/assignments/",
+        "task": "Attempt homework 5–6 only after deriving the channel-current law yourself."
+      },
+      {
+        "label": "Reference textbook",
+        "title": "Howe & Sodini — Microelectronics: An Integrated Approach",
+        "url": "https://books.google.com/books?q=Howe+Sodini+Microelectronics+An+Integrated+Approach",
+        "task": "Use the MOS transistor chapters to compare the long-channel charge model with device limitations."
+      }
     ]
   }
 ]
