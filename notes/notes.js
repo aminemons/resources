@@ -213,6 +213,11 @@ function mountConceptExplorer(c){
   input.addEventListener("input",redraw);redraw();
  }
 }
+function renderCapstone(c){
+ const a=c.capstone;
+ if(!a)return "";
+ return '<section class="capstone"><span class="concept-kicker">Independent engineering project</span><h2>'+esc(a.title)+'</h2><p>'+esc(a.brief)+'</p><h3>What you must produce</h3><ol>'+a.deliverables.map(x=>'<li>'+esc(x)+'</li>').join("")+'</ol><h3>Evidence needed to claim mastery</h3><ul>'+a.acceptance.map(x=>'<li>'+esc(x)+'</li>').join("")+'</ul><p class="capstone-note">These are assessment criteria, not a guarantee of professional expertise. Submit code, reports and data for real technical review.</p></section>';
+}
 function lesson(c){
  document.title=c.title+" | Micro & Nano Study Notes";
  const i=chapters.indexOf(c),done=read.has(c.id);
@@ -226,6 +231,7 @@ function lesson(c){
  '<section class="example"><span class="number">Worked example</span><h2>'+esc(example.title)+'</h2><p class="problem">'+esc(example.problem)+'</p><details><summary>Show the complete worked solution</summary><div class="solution"><ol class="steps">'+example.steps.map(s=>'<li><div>'+s+'</div></li>').join("")+'</ol></div></details></section>'+
  '<section id="exercises"><h2 class="divider-title">Practice problems</h2><p class="intro-desc">Attempt the problem without notes, open a hint only if needed, then compare your method and units to the full solution.</p>'+
  c.checks.map((q,n)=>'<div class="exercise"><h3>Exercise '+(n+1)+(q.difficulty?' · '+esc(q.difficulty):'')+'</h3><p>'+esc(q.prompt)+'</p>'+(q.hint?'<details class="hint"><summary>Show a hint</summary><div class="solution">'+esc(q.hint)+'</div></details>':'')+'<details class="answer"><summary>Reveal answer and explanation</summary><div class="solution">'+q.answer+'</div></details></div>').join("")+'</section>'+
+ renderCapstone(c)+
  '<section><h2 class="divider-title">Further reading</h2><p class="note">These references support the subject. The explanatory text, examples and vector diagrams here are originally authored, not scanned or copied from the linked books or papers.</p><ul class="source-list">'+c.sources.map(s=>'<li><a href="'+esc(s.url)+'" target="_blank" rel="noopener noreferrer">'+esc(s.title)+' ↗</a></li>').join("")+'</ul></section>'+
  renderGuidedReading(c)+
  '<div class="nextprev">'+(chapters[i-1]?'<a href="'+lessonUrl(chapters[i-1].id)+'" data-open="'+chapters[i-1].id+'" class="nav-next"><small>← Previous</small>'+esc(chapters[i-1].title)+'</a>':'<span></span>')+(chapters[i+1]?'<a href="'+lessonUrl(chapters[i+1].id)+'" data-open="'+chapters[i+1].id+'" class="nav-next"><small>Next →</small>'+esc(chapters[i+1].title)+'</a>':"")+'</div>';
