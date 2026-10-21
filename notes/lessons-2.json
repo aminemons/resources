@@ -1,0 +1,443 @@
+[
+  {
+    "id": "09-mosfet",
+    "unit": "Semiconductor devices",
+    "title": "The MOSFET: voltage-controlled current",
+    "summary": "The physical origin of a transistor channel, cutoff, triode operation and saturation.",
+    "level": "Intermediate",
+    "diagram": "mosfet",
+    "objectives": [
+      "Describe NMOS terminals and bias conditions",
+      "Use a square-law long-channel model",
+      "Understand transconductance and model limitations"
+    ],
+    "sections": [
+      {
+        "title": "A transistor is not just a switch",
+        "html": "<p>An enhancement-mode NMOS has gate, source, drain and body terminals. A positive gate-to-source bias may create an inversion channel between source and drain; drain bias then moves carriers through it. The gate controls the channel primarily through an electric field. The insulating gate oxide means an ideal MOS gate draws no steady DC current, although practical devices have leakage and substantial charging currents during switching.</p>"
+      },
+      {
+        "title": "Simplified long-channel regions",
+        "html": "<p>Let overdrive be \\(V_\\mathrm{OV}=V_{GS}-V_T\\). In the ideal long-channel square-law model, cutoff is roughly \\(V_{GS}\\leq V_T\\) and \\(I_D\\approx0\\), ignoring subthreshold current. For \\(0\\leq V_{DS}<V_\\mathrm{OV}\\), the triode-region current is \\(I_D=\\mu_n C'_\\mathrm{ox}(W/L)[V_\\mathrm{OV}V_{DS}-V_{DS}^2/2]\\). For \\(V_{DS}\\geq V_\\mathrm{OV}\\) saturation is approximately \\(I_D=\\tfrac12\\mu_n C'_\\mathrm{ox}(W/L)V_\\mathrm{OV}^2\\).</p><p>Real short-channel transistors exhibit mobility degradation, channel-length modulation, subthreshold conduction, velocity saturation and many other effects. Use technology-provided SPICE models for design—not these equations as a signoff substitute.</p>"
+      },
+      {
+        "title": "Why gm matters",
+        "html": "<p>Transconductance is the local slope \\(g_m=\\partial I_D/\\partial V_{GS}\\) at fixed \\(V_{DS}\\). For the ideal saturation model with a constant threshold and mobility, \\(g_m=2I_D/V_\\mathrm{OV}\\). Greater \\(g_m\\) can improve gain and input-referred noise performance, but it costs bias current and capacitance and is not an automatic improvement across every circuit.</p>"
+      }
+    ],
+    "example": {
+      "title": "Bias current and transconductance",
+      "problem": "An NMOS follows an ideal saturation square-law with k = μnC′ox(W/L) = 1 mA/V² and VOV = 0.20 V. Compute ID and gm.",
+      "steps": [
+        "\\(I_D=\\tfrac12kV_\\mathrm{OV}^2=\\tfrac12(1)(0.20)^2=0.020\\ \\mathrm{mA}=20\\ \\mu\\mathrm{A}\\).",
+        "\\(g_m=kV_\\mathrm{OV}=(1\\ \\mathrm{mA/V^2})(0.20\\ \\mathrm{V})=0.20\\ \\mathrm{mA/V}=0.20\\ \\mathrm{mS}\\).",
+        "The calculation assumes long-channel saturation and ignores channel-length modulation. Verify \\(V_{DS}\\ge V_\\mathrm{OV}\\)."
+      ]
+    },
+    "checks": [
+      {
+        "prompt": "If an ideal saturation MOSFET has ID=100 µA and VOV=0.2 V, what is gm?",
+        "answer": "\\(g_m=2I_D/V_\\mathrm{OV}=2(100\\ \\mu A)/0.2 V=1\\ \\mathrm{mS}\\)."
+      },
+      {
+        "prompt": "Does saturation mean the physical drain current becomes completely independent of VDS?",
+        "answer": "No. It is approximately independent in the simplest ideal model; channel-length modulation and short-channel effects cause finite output conductance."
+      }
+    ],
+    "sources": [
+      {
+        "title": "MIT semiconductor transistor lecture notes",
+        "url": "https://ocw.mit.edu/courses/6-012-microelectronic-devices-and-circuits-spring-2009/pages/lecture-notes/"
+      }
+    ]
+  },
+  {
+    "id": "10-tcad",
+    "unit": "Semiconductor devices",
+    "title": "Device TCAD and Silvaco workflow",
+    "summary": "Understand what a simulator solves, how decks are organized and what makes a result believable.",
+    "level": "Advanced",
+    "diagram": "tcad",
+    "objectives": [
+      "Identify mesh, regions, electrodes and boundary conditions",
+      "Distinguish device and process simulations",
+      "Test convergence and compare physical models"
+    ],
+    "sections": [
+      {
+        "title": "From an equation to a device model",
+        "html": "<p>Technology computer-aided design (TCAD) simulates semiconductor behavior within a geometry, using coupled physical equations and material models. Device simulation often solves Poisson's equation together with carrier continuity and drift-diffusion relations. It produces fields, carrier concentrations, terminal currents and other quantities—but only under the assumptions and parameters you supplied.</p><p>The usual building blocks are geometry, mesh, materials and doping, contacts, transport/recombination models, numerical method, boundary voltages and requested output sweeps. A program may converge mathematically while still modeling the wrong device.</p>"
+      },
+      {
+        "title": "Silvaco tools have different jobs",
+        "html": "<p><strong>ATHENA</strong> and <strong>Victory Process</strong> model fabrication operations to obtain process-derived structures. <strong>ATLAS</strong> and <strong>Victory Device</strong> simulate electrical and optoelectronic behavior in a structure. <strong>DeckBuild</strong> manages inputs and runs, and plotting tools present outputs. Actual command syntax depends on installed versions and licensed modules.</p><p>Begin with a vendor-installed example matching your tool version. Identify each parameter, then change exactly one condition and explain the direction of the resulting change. Do not copy arbitrary decks and assume their physics is transferable.</p>"
+      },
+      {
+        "title": "Mesh and validation",
+        "html": "<p>Refine the mesh in regions of strong electric field or carrier gradient—junctions, thin films and contacts—then compare results against a coarser mesh. Confirm physical dimensions and doping profiles. Record solver warnings, convergence failures and current normalization (a 2D result may be expressed per depth unit rather than as device-total current).</p><p>Compare a simple analytic limit or a trusted reference measurement; a polished plot alone is <em>not validation</em>. Keep both the input deck and the specific version of the simulation software alongside published results.</p>"
+      }
+    ],
+    "example": {
+      "title": "Estimate relative mesh error",
+      "problem": "A simulated diode current is 0.96 mA with mesh A, 1.00 mA with finer mesh B, and 1.01 mA with finer mesh C. Compare the last two as a simple convergence diagnostic.",
+      "steps": [
+        "Use mesh B as the previous estimate, mesh C as the finer estimate.",
+        "Relative change against the finer value is \\(\\lvert1.01-1.00\\rvert/1.01 \\times 100\\%\\approx0.99\\%\\).",
+        "This change is smaller than A-to-B's \\(\\lvert1.00-0.96\\rvert/1.00\\times100=4\\%\\).",
+        "A single shrinking difference suggests convergence but does <em>not</em> establish a strict error bound or validate the physical model."
+      ]
+    },
+    "checks": [
+      {
+        "prompt": "A TCAD result is smooth and converged. Does that prove the physical model is correct?",
+        "answer": "No. Numerical convergence and physical validation are separate. Compare geometry, parameter assumptions, mesh refinement and independent reference behavior."
+      },
+      {
+        "prompt": "Should you reuse a Silvaco script from an unknown software version without checking the installed example?",
+        "answer": "No. Confirm licenses, available modules, syntax and normalization using vendor documentation and installed examples."
+      }
+    ],
+    "sources": [
+      {
+        "title": "Silvaco official introductory webinar",
+        "url": "https://silvaco.com/tcad/tcad-webinars/silvaco-tcad-introduction-and-the-basics-part-2/"
+      },
+      {
+        "title": "Silvaco TCAD training materials",
+        "url": "https://silvaco.com/resources/technical-library/tcad-training-materials/"
+      }
+    ]
+  },
+  {
+    "id": "11-amplifier",
+    "unit": "IC design and digital systems",
+    "title": "The common-source amplifier",
+    "summary": "Turn a MOSFET operating point into a small-signal voltage gain.",
+    "level": "Intermediate",
+    "diagram": "amplifier",
+    "objectives": [
+      "Explain why bias is necessary",
+      "Calculate idealized common-source gain",
+      "Separate DC bias from signal variation"
+    ],
+    "sections": [
+      {
+        "title": "First choose a DC operating point",
+        "html": "<p>An amplifier does not create free energy. A power supply provides the energy, and a small input signal controls how much current reaches the load. For an NMOS common-source stage with drain resistor \\(R_D\\) and drain supply \\(V_{DD}\\), the bias voltage is approximately \\(V_D=V_{DD}-I_D R_D\\). Choose enough headroom to keep the transistor in the intended region during signal excursions.</p>"
+      },
+      {
+        "title": "Linearizing around that bias",
+        "html": "<p>For a small input variation \\(v_{gs}\\), the drain current changes approximately by \\(i_d=g_m v_{gs}\\). The resistor converts current change to a drain-voltage change of opposite sign: \\(v_{out}\\approx -g_mR_D v_{in}\\), giving \\(A_v\\approx-g_mR_D\\) if the MOS output resistance is large and the load is effectively high impedance.</p><p>A more realistic midband gain uses \\(R_D\\parallel r_o\\parallel R_L\\): \\(A_v\\approx-g_m(R_D\\parallel r_o\\parallel R_L)\\), assuming an AC-grounded supply and bypassed/source-fixed configuration. Output inversion is a characteristic of this topology.</p>"
+      },
+      {
+        "title": "Frequency response and distortion",
+        "html": "<p>The small-signal model is valid only when changes are small enough that the device stays near its bias point. Larger signals can clip or distort. Parasitic capacitances create high-frequency rolloff; coupling and bypass capacitors may produce low-frequency cutoffs. Check AC gain, transient waveforms, power dissipation and bias under process and temperature variation.</p>"
+      }
+    ],
+    "example": {
+      "title": "Estimate midband gain",
+      "problem": "A common-source amplifier has gm = 2 mS and an effective drain resistance RD∥ro∥RL = 3 kΩ. Estimate gain and the response to a 10 mV small-signal input.",
+      "steps": [
+        "Convert \\(g_m=0.002\\ \\mathrm{S}\\) and \\(R_\\mathrm{eff}=3000\\ \\Omega\\).",
+        "\\(A_v=-g_mR_\\mathrm{eff}=-(0.002)(3000)=-6\\ \\mathrm{V/V}\\).",
+        "For \\(v_{in}=10\\ \\mathrm{mV}\\), the ideal incremental output is \\(v_{out}\\approx-60\\ \\mathrm{mV}\\).",
+        "Actual swing must remain within the allowable transistor output-voltage range."
+      ]
+    },
+    "checks": [
+      {
+        "prompt": "Why is the common-source gain normally negative?",
+        "answer": "An increase in gate voltage tends to increase drain current, increasing resistor drop and reducing the drain output voltage."
+      },
+      {
+        "prompt": "An ideal stage has gm=1 mS and RD=5 kΩ with other loads negligible. Estimate Av.",
+        "answer": "\\(A_v\\approx-0.001\\times5000=-5\\ \\mathrm{V/V}\\)."
+      }
+    ],
+    "sources": [
+      {
+        "title": "MIT single-stage amplifier notes",
+        "url": "https://ocw.mit.edu/courses/6-012-microelectronic-devices-and-circuits-fall-2005/pages/lecture-notes/"
+      }
+    ]
+  },
+  {
+    "id": "12-readout",
+    "unit": "IC design and digital systems",
+    "title": "Sensor readout: gain, noise and ADC",
+    "summary": "Connect weak analog sensor signals to a digitizer without losing what you wanted to measure.",
+    "level": "Intermediate",
+    "diagram": "readout",
+    "objectives": [
+      "Understand differential versus common-mode voltage",
+      "Choose a realistic gain for an ADC",
+      "Check noise and headroom"
+    ],
+    "sections": [
+      {
+        "title": "A sensor signal is rarely ready for a microcontroller",
+        "html": "<p>A resistive bridge or photodiode may produce microvolts to millivolts while sitting on a much larger common-mode voltage. A useful <strong>instrumentation amplifier</strong> amplifies the difference between two inputs while ideally rejecting equal changes on both. In practice, input common-mode range, gain error, offset, noise, drift and output swing are finite.</p>"
+      },
+      {
+        "title": "Treat the signal chain as a system",
+        "html": "<p>A typical chain is sensor → protection/bias → amplifier → anti-alias filter → ADC → calibration and digital processing. Choose the ADC input range before choosing gain. If the sensor produces \\(\\pm 10\\ \\mathrm{mV}\\) and the ADC accepts 0–3.3 V, a gain of 100 produces \\(\\pm1\\ \\mathrm{V}\\); you still need an appropriate mid-supply offset so negative values do not violate the ADC input range.</p><p>A SAR ADC may demand a driver that can charge its switched sampling capacitor rapidly, even if an instrumentation amplifier looks good at low frequencies. Always read ADC input-drive recommendations.</p>"
+      },
+      {
+        "title": "Noise budgeting",
+        "html": "<p>For independent, uncorrelated RMS noise contributions referred to the same node, combine by root sum of squares: \\(\\sigma_\\mathrm{tot}=\\sqrt{\\sigma_1^2+\\sigma_2^2+\\dots}\\). Offset is not random noise. Higher gain amplifies both useful signal and input-referred noise, and may drive the amplifier into saturation. Filters improve bandwidth-specific noise but increase response time.</p>"
+      }
+    ],
+    "example": {
+      "title": "Bridge sensor to ADC",
+      "problem": "A differential bridge sensor spans −5 mV to +5 mV. An amplifier has gain 200 and output offset 1.65 V. Find the ideal output span.",
+      "steps": [
+        "Input range: \\(v_d\\in[-0.005,+0.005]\\ \\mathrm{V}\\).",
+        "Apply \\(v_{out}=1.65+200v_d\\).",
+        "At −5 mV: \\(v_{out}=1.65-1.00=0.65\\ \\mathrm{V}\\).",
+        "At +5 mV: \\(v_{out}=1.65+1.00=2.65\\ \\mathrm{V}\\). This fits nominally in 0–3.3 V, ignoring output swing and offset constraints."
+      ]
+    },
+    "checks": [
+      {
+        "prompt": "What is an instrumentation amplifier's key purpose compared with a plain single-ended gain stage?",
+        "answer": "Amplify a small differential signal while rejecting a large common-mode component within the specified input range."
+      },
+      {
+        "prompt": "Uncorrelated noise sources contribute 3 mV RMS and 4 mV RMS at the same node. What is the combined RMS?",
+        "answer": "\\(\\sqrt{3^2+4^2}=5\\ \\mathrm{mV RMS}\\)."
+      }
+    ],
+    "sources": [
+      {
+        "title": "TI Precision Labs on instrumentation amplifiers",
+        "url": "https://www.ti.com/video/6118886700001"
+      },
+      {
+        "title": "TI bridge sensor signal-chain design",
+        "url": "https://www.ti.com/document-viewer/lit/html/SBAT003A"
+      }
+    ]
+  },
+  {
+    "id": "13-logic",
+    "unit": "IC design and digital systems",
+    "title": "Boolean logic and synchronous circuits",
+    "summary": "From logic gates to flip-flops, timing constraints and hardware state.",
+    "level": "Beginner",
+    "diagram": "digital",
+    "objectives": [
+      "Understand AND, OR and XOR",
+      "Differentiate combinational from sequential circuits",
+      "Recognize setup and hold requirements"
+    ],
+    "sections": [
+      {
+        "title": "Combinational logic has no stored state",
+        "html": "<p>A combinational circuit computes output from current inputs. Examples include AND, XOR, adders and multiplexers. Boolean algebra allows functions to be simplified: \\(A\\oplus B=1\\) exactly when inputs differ. Real gates have nonzero propagation delay, so internal hazards or glitches can appear even when Boolean equations are correct.</p>"
+      },
+      {
+        "title": "Sequential circuits remember",
+        "html": "<p>A flip-flop stores one bit sampled at a clock event. A register is a collection of flip-flops. In synchronous design, combinational logic computes the <em>next state</em> between clock edges; registers commit state at clock edges. A finite-state machine is a disciplined way to describe this evolution.</p>"
+      },
+      {
+        "title": "Timing is a physical constraint",
+        "html": "<p>A simplified register-to-register setup condition is \\(T_\\mathrm{clk}\\ge t_{cq,\\max}+t_{\\mathrm{logic},\\max}+t_\\mathrm{setup}\\) when clock skew and uncertainty are omitted. Hold timing gives a minimum-delay constraint and cannot be repaired just by slowing the clock. Even perfectly simulated Boolean logic may fail in hardware when timing constraints are wrong.</p>"
+      }
+    ],
+    "example": {
+      "title": "Maximum clock rate",
+      "problem": "For a register-to-register path: clock-to-Q = 0.2 ns, combinational delay = 2.7 ns and setup time = 0.3 ns. Ignore skew, uncertainty and routing not included in the stated delays. Find the minimum period.",
+      "steps": [
+        "Sum required times: \\(T_\\mathrm{min}=0.2+2.7+0.3=3.2\\ \\mathrm{ns}\\).",
+        "Maximum idealized clock \\(f_\\mathrm{max}=1/(3.2\\times10^{-9})=312.5\\ \\mathrm{MHz}\\).",
+        "Actual timing closure must also account for wire delays, uncertainty, skew and setup constraints from the target technology."
+      ]
+    },
+    "checks": [
+      {
+        "prompt": "Is a two-input AND gate sequential?",
+        "answer": "No, it is combinational: its output is determined by its present inputs."
+      },
+      {
+        "prompt": "Does reducing clock frequency always fix a hold-time violation?",
+        "answer": "No. Hold timing depends on minimum data-path delay and clock relationships, not the available clock period in the same way setup does."
+      }
+    ],
+    "sources": [
+      {
+        "title": "MIT computation structures",
+        "url": "https://ocw.mit.edu/courses/6-004-computation-structures-spring-2009/"
+      },
+      {
+        "title": "HDLBits Verilog exercises",
+        "url": "https://hdlbits.01xz.net/wiki/Main_Page"
+      }
+    ]
+  },
+  {
+    "id": "14-verilog",
+    "unit": "IC design and digital systems",
+    "title": "Verilog: write, simulate and verify RTL",
+    "summary": "Learn what always blocks mean, how to avoid latches and why a testbench matters.",
+    "level": "Intermediate",
+    "diagram": "rtl",
+    "objectives": [
+      "Distinguish continuous assignments from clocked logic",
+      "Write a basic counter",
+      "Verify function with simulation and waveforms"
+    ],
+    "sections": [
+      {
+        "title": "Hardware description is not ordinary software",
+        "html": "<p>Verilog describes a network of concurrent hardware processes. Statements outside a procedural block such as <code>assign y = a &amp; b;</code> describe combinational connections. Clocked <code>always @(posedge clk)</code> typically infers flip-flops when written with synthesizable patterns. It is not a program executing each line once in chronological order.</p>"
+      },
+      {
+        "title": "Blocking and nonblocking assignments",
+        "html": "<p>Use nonblocking assignment <code>&lt;=</code> for registers in a clocked block so right-hand sides are evaluated from the pre-edge state. A common beginner error is using blocking assignments in sequential logic and accidentally depending on simulator process ordering. In Verilog-2001 a combinational block usually uses <code>always @(*)</code> and blocking assignment <code>=</code>, with all outputs assigned on every branch to avoid inferred latches.</p>"
+      },
+      {
+        "title": "Write a testbench before trusting the waveforms",
+        "html": "<p>A good testbench drives inputs, checks expected outputs and reports failures rather than only displaying a waveform. Test reset, minimum/maximum counts, transitions and simultaneous events. Use Icarus Verilog or Verilator for local simulation, GTKWave for waveform inspection, and later a target FPGA tool for synthesis and timing. Passing a basic testbench does <em>not</em> prove timing closure or full functional coverage.</p>"
+      }
+    ],
+    "example": {
+      "title": "A four-bit synchronous counter",
+      "problem": "Read this synthesizable Verilog-2001 module. What count follows 4'b1111 on the next positive clock edge when reset is inactive?",
+      "steps": [
+        "<pre><code>module counter4(input clk, input rst,\n                output reg [3:0] count);\n  always @(posedge clk) begin\n    if (rst) count &lt;= 4'b0000;\n    else     count &lt;= count + 4'b0001;\n  end\nendmodule</code></pre>",
+        "The register contains four bits, so arithmetic wraps modulo \\(2^4=16\\).",
+        "For reset low, \\(15+1=16\\) is truncated to four bits; the next count is \\(0\\).",
+        "The reset here is <em>synchronous</em>: it takes effect only at a rising edge."
+      ]
+    },
+    "checks": [
+      {
+        "prompt": "In synthesizable sequential Verilog, which assignment operator is conventionally preferred?",
+        "answer": "Nonblocking <code>&lt;=</code> in the clocked register block."
+      },
+      {
+        "prompt": "Why can an incomplete combinational case/if infer a latch?",
+        "answer": "The output must retain a previous value when not assigned, so storage is required. Set defaults or cover all conditions deliberately."
+      }
+    ],
+    "sources": [
+      {
+        "title": "HDLBits: Clocked versus combinational blocks",
+        "url": "https://hdlbits.01xz.net/wiki/Alwaysblock2"
+      }
+    ]
+  },
+  {
+    "id": "15-asic-flow",
+    "unit": "IC design and digital systems",
+    "title": "From RTL to GDSII: the digital chip flow",
+    "summary": "Understand synthesis, floorplanning, placement, routing and what signoff checks mean.",
+    "level": "Intermediate",
+    "diagram": "asic",
+    "objectives": [
+      "Know the stages in a digital ASIC workflow",
+      "Distinguish simulation from physical validation",
+      "Interpret area, timing and power tradeoffs"
+    ],
+    "sections": [
+      {
+        "title": "The design has several representations",
+        "html": "<p>You start with RTL describing behavior. Logic synthesis maps RTL to gates from a standard-cell library. The resulting netlist is functionally oriented but has little physical geometry. <strong>Floorplanning</strong> sets block dimensions and power structure; <strong>placement</strong> assigns locations; <strong>clock-tree synthesis</strong> distributes the clock; <strong>routing</strong> connects metal wires.</p>"
+      },
+      {
+        "title": "The PDK supplies the physical rules",
+        "html": "<p>A process design kit contains device models, layer definitions, design rules, extraction setups and technology-dependent libraries, subject to the foundry and release. The same RTL synthesized into two libraries can have different power, area and timing. Open-source flows such as Yosys + OpenROAD can teach the process with supported PDKs.</p>"
+      },
+      {
+        "title": "A GDS file is not proof of a working chip",
+        "html": "<p><strong>STA</strong> checks timing constraints using characterized delays. <strong>DRC</strong> checks physical layout rules. <strong>LVS</strong> compares layout-extracted connectivity against the intended circuit. Parasitic extraction estimates interconnect behavior; power and IR-drop analysis may also be required. A tutorial flow can demonstrate these methods without completing all foundry signoff or guaranteeing successful fabrication.</p>"
+      }
+    ],
+    "example": {
+      "title": "Timing margin under a simple clock",
+      "problem": "A design has a 10 ns clock period. Required margin for clock uncertainty and setup is 1 ns total, and the worst data path delay is 8.4 ns. Find idealized slack.",
+      "steps": [
+        "Allowed data delay \\(=10-1=9\\ \\mathrm{ns}\\).",
+        "Slack \\(=9-8.4=0.6\\ \\mathrm{ns}\\). Positive under these simplified assumptions.",
+        "An actual STA report includes clock-to-Q, routing, clock latency/skew, uncertainty and path-specific constraints."
+      ]
+    },
+    "checks": [
+      {
+        "prompt": "Can correct functional RTL simulation guarantee a fabricated chip will meet timing?",
+        "answer": "No. Delay, interconnect, variation, physical rules and manufacturing effects remain."
+      },
+      {
+        "prompt": "What does LVS check?",
+        "answer": "Whether layout-extracted connectivity matches the intended schematic or netlist under the LVS setup."
+      }
+    ],
+    "sources": [
+      {
+        "title": "OpenROAD flow tutorial",
+        "url": "https://openroad-flow-scripts.readthedocs.io/en/latest/tutorials/FlowTutorial.html"
+      },
+      {
+        "title": "SkyWater open PDK",
+        "url": "https://github.com/google/skywater-pdk"
+      }
+    ]
+  },
+  {
+    "id": "16-sensor-response",
+    "unit": "Sensors and smart systems",
+    "title": "Sensor sensitivity, calibration and response time",
+    "summary": "From the physical quantity you care about to measured output and usable error.",
+    "level": "Beginner",
+    "diagram": "sensor",
+    "objectives": [
+      "Write a sensor transfer function",
+      "Calculate sensitivity and offset",
+      "Distinguish sensitivity from selectivity and response time"
+    ],
+    "sections": [
+      {
+        "title": "Every sensor has an input and output",
+        "html": "<p>The <strong>measurand</strong> is the physical quantity you intend to determine, such as pressure, temperature or gas concentration. The <strong>transduction mechanism</strong> converts that quantity into a measurable electrical or optical response. A calibration curve connects input \\(x\\) to measured output \\(y\\). For a locally linear sensor, \\(y=Sx+b\\), where \\(S\\) is sensitivity and \\(b\\) is offset.</p>"
+      },
+      {
+        "title": "More sensitivity does not guarantee a better instrument",
+        "html": "<p><strong>Sensitivity</strong> measures output change per unit input, such as mV/kPa. <strong>Selectivity</strong> concerns discrimination against other influencing quantities. <strong>Resolution</strong> and noise set small-change detectability; <strong>accuracy</strong>, hysteresis, drift and calibration quality affect trustworthiness. Dynamic response is often reported as an approximate \\(t_{90}\\) (time needed to reach 90% of a step response); the exact definition depends on the specified test.</p>"
+      },
+      {
+        "title": "Static and dynamic measurements",
+        "html": "<p>A gas sensor may have a slow chemical equilibration process while an accelerometer can respond quickly. If a first-order ideal step response is \\(y(t)=y_\\infty(1-e^{-t/\\tau})\\), then \\(t_{90}=\\tau\\ln 10\\approx2.303\\tau\\). Real sensors may have more complex multi-time-constant or nonlinear behavior; measure rather than assume the first-order approximation.</p>"
+      }
+    ],
+    "example": {
+      "title": "Pressure sensor calibration",
+      "problem": "A pressure sensor gives 0.50 V at 0 kPa and 2.50 V at 100 kPa. Assume a linear relationship. Find S and estimate pressure at 1.70 V.",
+      "steps": [
+        "Sensitivity \\(S=(2.50-0.50)/(100-0)=0.020\\ \\mathrm{V/kPa}\\).",
+        "Offset \\(b=0.50\\ \\mathrm{V}\\).",
+        "Solve \\(p=(V-b)/S=(1.70-0.50)/0.020=60\\ \\mathrm{kPa}\\).",
+        "This is interpolation within the calibrated range. Accuracy still depends on calibration error and drift."
+      ]
+    },
+    "checks": [
+      {
+        "prompt": "A sensor's output changes 6 mV over 3 °C. What is local sensitivity?",
+        "answer": "\\(S=6/3=2\\ \\mathrm{mV/^\\circ C}\\)."
+      },
+      {
+        "prompt": "If a first-order sensor has τ=4 s, estimate t90.",
+        "answer": "\\(t_{90}\\approx2.303\\times4=9.21\\ \\mathrm{s}\\)."
+      }
+    ],
+    "sources": [
+      {
+        "title": "MIT MEMS course and measurement design",
+        "url": "https://ocw.mit.edu/courses/6-777j-design-and-fabrication-of-microelectromechanical-devices-spring-2007/pages/syllabus/"
+      },
+      {
+        "title": "TI sensor conditioning course",
+        "url": "https://www.ti.com/video/series/precision-labs.html"
+      }
+    ]
+  }
+]
