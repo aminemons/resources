@@ -158,6 +158,17 @@
         "url": "https://www.mdpi.com/2072-666X/7/10/188",
         "task": "Observe how actual microfabricated comb-drive geometry differs from the simple parallel-plate model."
       }
+    ],
+    "licensedFigures": [
+      {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/e/e9/MEMS.png",
+        "alt": "Photograph of a microfabricated MEMS resonator structure",
+        "caption": "Microfabricated MEMS resonator. A real structure has spatial deformation and constraints unlike an ideal rigid parallel-plate actuator.",
+        "creator": "Huseyintet",
+        "license": "CC BY-SA 4.0",
+        "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "source": "https://commons.wikimedia.org/wiki/File:MEMS.png"
+      }
     ]
   }
 ]
