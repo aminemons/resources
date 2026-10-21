@@ -30,7 +30,11 @@ try {
    assert.equal(result.status,"","Math error: "+JSON.stringify(result));
    assert.equal(result.externalIllustrations,1,"No licensed MOSFET figure");
    assert.equal(pageErrors.length,0,"Browser errors: "+pageErrors.join(" | "));
-   if(viewport.name==="mobile")assert(result.bodyWidth<=result.viewportWidth+2,"Mobile page overflow: "+JSON.stringify(result));
+   if(viewport.name==="mobile"){
+    const offenders=await page.evaluate(()=>[...document.querySelectorAll("body *")].filter(el=>{const b=el.getBoundingClientRect();return b.right>innerWidth+2&&b.width>0&&getComputedStyle(el).position!=="fixed"}).slice(0,20).map(el=>({tag:el.tagName,id:el.id,cls:String(el.className).slice(0,90),right:el.getBoundingClientRect().right,width:el.getBoundingClientRect().width})));
+    console.log("MOBILE OVERFLOW ANALYSIS",JSON.stringify(offenders));
+    assert(result.bodyWidth<=result.viewportWidth+2,"Mobile page overflow: "+JSON.stringify(result));
+   }
    await page.screenshot({path:"notes-"+viewport.name+".png",fullPage:false});
    console.log(viewport.name.toUpperCase()+" MathJax PASS",JSON.stringify(result));
    await page.close();
