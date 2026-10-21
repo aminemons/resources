@@ -40,6 +40,26 @@
       {
         "title": "7. From physical theory to circuit design",
         "html": "<p>To design a common-source or differential-stage bias, first choose power/current and available supply swing. Obtain realistic transistor curves or PDK models; calculate \\(g_m\\), \\(g_{ds}\\), and capacitances around the actual operating point. Only then decide the gain, speed and noise budget. Use hand calculations to detect a mistaken bias, and simulator corner checks to explore process and temperature variability.</p><p>Do not present a hand-derived square-law current as a foundry simulation result. In reports, label analytical estimate, compact-model prediction, TCAD prediction and measurement separately.</p>"
+      },
+      {
+        "title": "Why threshold is not an ideal on/off switch",
+        "html": "<p>On a physical transistor, current does not suddenly appear at one exact gate voltage. Even below the commonly extracted threshold, thermally activated diffusion can move carriers along the surface. In a useful simplified weak-inversion regime, current varies approximately exponentially with gate bias, whereas the strong-inversion charge-sheet model leads to an approximate square law. Both approximate regimes describe the *same physical device* and meet through moderate inversion.</p><p>In weak inversion, a commonly used local approximation is \\(I_D\\propto \\exp[(V_{GS}-V_T)/(nV_{\\mathrm{th}})]\\) with subthreshold slope factor \\(n>1\\). Differentiate its logarithm: \\(g_m/I_D\\approx 1/(nV_{\\mathrm{th}})\\). At 300 K with \\(n=1.5\\), this is roughly \\(25.8\\,\\mathrm{V}^{-1}\\), compared with \\(10\\,\\mathrm{V}^{-1}\\) for a square-law device at \\(V_{OV}=0.20\\,\\mathrm V\\). This does *not* mean weak inversion always produces the best amplifier: it often involves less current density and lower speed for a fixed device area.</p><p>The MOS threshold should be associated with a clearly stated extraction convention. Some technologies report constant-current threshold, others extract from linear-current extrapolation or mathematical compact-model parameters. Comparing two unlabeled threshold numbers can be misleading, especially when geometry, drain bias and measurement temperature differ.</p>"
+      },
+      {
+        "title": "A practical gm/ID decision tree",
+        "html": "<p>Analog design starts with desired noise, gain, bandwidth, power and output swing. A traditional overdrive approach sizes transistor width by solving the long-channel current law for W/L. A gm/ID approach instead chooses an inversion level and uses a device-specific relationship between current efficiency, intrinsic gain, capacitances and current density. In a real technology, those relationships come from measured or compact-model-generated lookup tables.</p><p>Suppose a target current is \\(I_D=100\\,\\mu\\mathrm A\\) and an ideal strong-inversion overdrive is \\(V_{OV}=0.20\\,\\mathrm V\\). Then \\(g_m=2I_D/V_{OV}=1\\,\\mathrm{mS}\\). If the process gives \\(\\mu C'_{ox}=100\\,\\mu\\mathrm{A/V^2}\\), solving the ideal saturation law gives \\(W/L=2I_D/(\\mu C'_{ox}V_{OV}^2)=50\\). This is a first sizing estimate, not a foundry-calibrated layout result.</p><p>Why must we revisit the estimate? Wider transistors create larger gate/diffusion capacitances, and a drain current budget sets both thermal-noise and power tradeoffs. Designers compare gm, gm/ID, gm/gds, fT and capacitances at the actual bias point and across process/voltage/temperature (PVT) corners. The best choice differs for an always-on low-noise sensor frontend and a high-speed ADC driver.</p>"
+      },
+      {
+        "title": "Extract gm and output conductance from I–V sweeps",
+        "html": "<p>Derivatives are experimentally useful local measurements. Once an ID–VGS or ID–VDS dataset is available, estimate gm with a centered difference at fixed VDS and output conductance gds with a centered difference at fixed VGS. Choose voltage perturbations small enough to approximate derivatives, but not so small that numerical or instrument noise dominates. Smoothness, bias state and model region matter.</p><p>The numerical formulas are \\(g_m\\approx[I_D(V_{GS}+h,V_{DS})-I_D(V_{GS}-h,V_{DS})]/(2h)\\) and \\(g_{ds}\\approx[I_D(V_{GS},V_{DS}+h)-I_D(V_{GS},V_{DS}-h)]/(2h)\\). In a consistent positive-current convention, both are in siemens. Then \\(r_o=1/g_{ds}\\) for nonzero positive output conductance. If a simulator produces source-oriented current, check its sign definition before differentiating.</p><p>Do not take gm directly from one current measurement or infer output resistance from an I–V plot whose horizontal scale is unknown. For serious work, show the sweep interval, extracted bias point, units, derivative step size and a sensitivity check showing gm does not change dramatically when h is halved.</p>"
+      },
+      {
+        "title": "A complete first-pass common-source design",
+        "html": "<p>Imagine an analog supply of 1.8 V. You want a low-power transistor stage with drain current of 100 µA and overdrive around 0.2 V in a simplified long-channel model. If the drain resistor is 5 kΩ, its DC voltage drop is 0.5 V, leaving drain DC potential near 1.3 V. The device is in the *ideal* saturation region if its VDS exceeds VOV (assuming its source is at 0 V). This verifies the operating *point*, not the entire output swing.</p><p>At \\(g_m=1\\,\\mathrm{mS}\\), if \\(r_o=125\\,\\mathrm{k\\Omega}\\) and the next-stage load is \\(R_L=10\\,\\mathrm{k\\Omega}\\), the midband small-signal gain estimate is \\(A_v=-g_m(R_D\\parallel r_o\\parallel R_L)\\approx -3.20\\ \\mathrm{V/V}\\). Remove the load and the gain changes. Add source degeneration and the gain changes again. The circuit may distort or clip if the input excursion drives the transistor outside the range where the local derivative is valid.</p><p>Real designers must also calculate amplifier input/output capacitances, thermal and flicker noise, common-mode limits, load requirements, startup bias stability, supply rejection and layout-related mismatch. A successful DC bias is the *first check* of a working circuit, not the last.</p>"
+      },
+      {
+        "title": "Hands-on: reproduce a transistor current sweep in SPICE",
+        "html": "<p>Start with the ideal model so you know what the simulator *should* produce. This example uses a deliberately simple Level-1 NMOS compact model in ngspice. The model parameter KP corresponds to the chosen process transconductance parameter in the idealized LEVEL=1 interpretation; W and L choose geometry. Verify your simulator's MOS model syntax in its installed documentation.</p><p><pre><code>* Educational Level-1 NMOS current sweep\nVg g 0 DC 0.85\nVd d 0 DC 0\nM1 d g 0 0 nmos_ideal W=50u L=1u\n.model nmos_ideal NMOS (LEVEL=1 VTO=0.45 KP=100u LAMBDA=0.0)\n.dc Vd 0 1.5 0.025\n.control\nrun\nplot -i(Vd)\n.endc\n.end</code></pre></p><p>Save as a SPICE netlist and run it in an environment with ngspice installed. For VGS = 0.85 V and VT = 0.45 V, overdrive is 0.40 V; ideal β is 5 mA/V² and saturation current should approach about 0.40 mA once VDS exceeds about 0.40 V. Note that ngspice reports the current through an independent voltage source with a source-oriented sign; plotting −i(Vd) often makes the drain-current direction positive. This example has not been run inside this website.</p><p>Then run four investigations separately: halve VGS overdrive, change W/L, enable a nonzero LAMBDA, and change the load. Save each curve and explain *why* it moves. Finally find an open PDK compatible with your simulator and repeat using its compact models, clearly marking differences caused by the more realistic device description.</p>"
       }
     ],
     "example": {
@@ -97,6 +117,30 @@
         "prompt": "For γ=0.4 V^0.5, 2φF=0.6 V, and VSB=0.4 V, estimate ΔVT.",
         "hint": "Apply (Delta V_T=gamma(sqrt{2phi_F+V_{SB}}-sqrt{2phi_F})).",
         "answer": "\\(\\Delta V_T=0.4(\\sqrt{1.0}-\\sqrt{0.6})\\approx0.4(1-0.77460)\\approx0.0902\\ \\mathrm{V}\\). This is a classical square-root estimate."
+      },
+      {
+        "difficulty": "Mastery: interpretation",
+        "prompt": "An engineer says that an NMOS carries exactly zero drain current when VGS is 10 mV below threshold. Explain why this statement is physically inaccurate.",
+        "hint": "Recall the gradual transition through weak inversion and the limitations of the square-law cutoff approximation.",
+        "answer": "Subthreshold conduction usually exists because carriers can diffuse even below the threshold extracted by a chosen convention. A simplified weak-inversion model has \\(I_D\\propto\\exp[(V_{GS}-V_T)/(nV_{\\mathrm{th}})]\\), not a perfect discontinuous switch. Whether the current matters depends on device and application."
+      },
+      {
+        "difficulty": "Mastery: design",
+        "prompt": "For ID=100 µA, μC′ox=100 µA/V² and VOV=0.2 V, calculate the ideal W/L needed in saturation, plus gm.",
+        "hint": "Rearrange ID = (μC′ox/2)(W/L)VOV².",
+        "answer": "\\(W/L=2(100\\,\\mu A)/[(100\\,\\mu A/V^2)(0.20\\,V)^2]=50\\). \\(g_m=2I_D/V_{OV}=1\\,\\mathrm{mS}\\). This is an ideal first sizing only."
+      },
+      {
+        "difficulty": "Mastery: extraction",
+        "prompt": "A measured output-characteristic sweep gives 100 µA at 0.9 V and 104 µA at 1.1 V, for fixed gate bias. Estimate gds and ro using a secant approximation.",
+        "hint": "Use ΔID / ΔVDS. Convert microamperes to amperes.",
+        "answer": "\\(g_{ds}\\approx(104-100)\\,\\mu A/(1.1-0.9)\\,V=20\\,\\mu S\\). Hence \\(r_o\\approx1/(20\\,\\mu S)=50\\,k\\Omega\\). This estimate covers a finite interval, not an infinitesimal derivative."
+      },
+      {
+        "difficulty": "Mastery: verification",
+        "prompt": "Your level-1 SPICE curve predicts 0.4 mA at VGS=0.85 V, but your BSIM PDK model predicts 0.25 mA. Does this prove the PDK is wrong?",
+        "hint": "Which physical and compact-model effects were omitted from the simple model?",
+        "answer": "No. Mobility reduction, series resistance, threshold shifts, short-channel effects and calibrated process parameters differ. Verify model/device geometry, voltage and temperature definitions, then compare to measured silicon or reliable PDK characterization."
       }
     ],
     "sources": [
@@ -169,6 +213,12 @@
         "title": "Howe & Sodini — Microelectronics: An Integrated Approach",
         "url": "https://books.google.com/books?q=Howe+Sodini+Microelectronics+An+Integrated+Approach",
         "task": "Use the MOS transistor chapters to compare the long-channel charge model with device limitations."
+      },
+      {
+        "label": "Open engineering textbook",
+        "title": "MIT 6.012 course readings, device and transistor sections",
+        "url": "https://ocw.mit.edu/courses/6-012-microelectronic-devices-and-circuits-fall-2005/pages/readings/",
+        "task": "Cross-check the progression from charge-sheet electrostatics to MOSFET compact models and single-stage amplifiers."
       }
     ],
     "licensedFigures": [
